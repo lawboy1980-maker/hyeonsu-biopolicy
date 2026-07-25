@@ -36,12 +36,94 @@ function renderTopicDetail(key,slug=null){
 }
 function updateUrl(view,topic=null){const u=new URL(window.location.href);if(view==='dashboard'){u.search=''}else{u.searchParams.set('view',view);if(topic)u.searchParams.set('topic',topic);else u.searchParams.delete('topic')}history.pushState({},'',u)}
 function applyUrlState(){const p=new URLSearchParams(location.search);const view=p.get('view');const topic=p.get('topic');if(view){setView(view,topic,false)}}
-function renderSection(key,topic=null){const s=state.data.sections[key];document.documentElement.style.setProperty('--hero1',s.colors[0]);document.documentElement.style.setProperty('--hero2',s.colors[1]);$('#sectionHero').innerHTML=`<span class="eyebrow light">${s.title.toUpperCase()} INTELLIGENCE</span><h2>${s.title}</h2><p>${s.description}</p>`;renderTopicDetail(key,topic);$('#sectionKpis').innerHTML=s.kpis.map(k=>`<div class="mini-kpi"><strong>${k[0]}</strong><span>${k[1]}</span></div>`).join('');$('#sectionQuestions').innerHTML=s.questions.map(q=>`<div class="question-item">${q}</div>`).join('');renderIndicatorTable(key)}
+
+function technologyStatusClass(status){
+  if(status==='진행 중') return 'is-doing';
+  if(status==='검토') return 'is-review';
+  if(status==='상시') return 'is-always';
+  return 'is-plan';
+}
+function renderTechnologyTopic(slug){
+  const data=state.data.technologyV14;
+  const topic=data.topics[slug]||Object.values(data.topics)[0];
+  state.currentTopic=slug;
+  $$('.technology-topic-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.topic===slug));
+  $('#technologyTopicTitle').textContent=topic.title;
+  $('#technologyTopicDefinition').textContent=topic.definition;
+  $('#technologyAgendaList').innerHTML=topic.agenda.map(item=>`<article class="technology-agenda-item"><div><strong>${item.title}</strong><p>${item.description}</p></div><span class="technology-status ${technologyStatusClass(item.status)}">${item.status}</span></article>`).join('');
+  $('#technologyCoreTech').innerHTML=topic.coreTech.map(item=>`<span class="technology-chip">${item}</span>`).join('');
+  $('#technologyTrendTabs').innerHTML=Object.keys(topic.trends).map((name,i)=>`<button class="technology-trend-tab ${i===0?'active':''}" data-trend="${name}">${name}</button>`).join('');
+  $('#technologyTrendContent').textContent=topic.trends[Object.keys(topic.trends)[0]];
+  $('#technologyResourceList').innerHTML=topic.resources.map(item=>`<article class="technology-resource-item"><span class="resource-kind">${item.type}</span><strong>${item.title}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
+}
+function renderTechnologyV14(topic=null){
+  const data=state.data.technologyV14;
+  const entries=Object.entries(data.topics);
+  const selected=topic&&data.topics[topic]?topic:entries[0][0];
+  $('#technologyTopicTabs').innerHTML=entries.map(([slug,item])=>`<button class="technology-topic-tab ${slug===selected?'active':''}" data-topic="${slug}"><strong>${item.title}</strong><span>${item.short}</span></button>`).join('');
+  $('#technologyGeneralKpis').innerHTML=data.generalKpis.map(item=>`<article class="technology-general-kpi"><span>${item.label}</span><strong>${item.value}</strong><small>${item.meta}</small></article>`).join('');
+  $('#technologyAiQuestions').innerHTML=data.aiQuestions.map((item,i)=>`<button class="technology-ai-question"><span>AI 정책질문 ${i+1}</span><strong>${item.title}</strong><p>${item.description}</p></button>`).join('');
+  renderTechnologyTopic(selected);
+}
+
+function renderSection(key,topic=null){
+  const s=state.data.sections[key];
+  document.documentElement.style.setProperty('--hero1',s.colors[0]);
+  document.documentElement.style.setProperty('--hero2',s.colors[1]);
+  $('#sectionHero').innerHTML=`<span class="eyebrow light">${s.title.toUpperCase()} INTELLIGENCE</span><h2>${s.title}</h2><p>${s.description}</p>`;
+  const isTechnology=key==='technology';
+  $('#technologyWorkspace').hidden=!isTechnology;
+  $('#topicWorkspace').style.display=isTechnology?'none':'grid';
+  $('#legacySectionSummary').style.display=isTechnology?'none':'grid';
+  $('#legacyIndicatorPanel').style.display=isTechnology?'none':'block';
+  if(isTechnology){
+    renderTechnologyV14(topic);
+  }else{
+    renderTopicDetail(key,topic);
+    $('#sectionKpis').innerHTML=s.kpis.map(k=>`<div class="mini-kpi"><strong>${k[0]}</strong><span>${k[1]}</span></div>`).join('');
+    $('#sectionQuestionTitle').textContent='주요 정책 질문';
+    $('#sectionQuestions').innerHTML=s.questions.map(q=>`<div class="question-item">${q}</div>`).join('');
+    renderIndicatorTable(key);
+  }
+}
 function renderIndicatorTable(filter=''){const q=($('#indicatorSearch')?.value||'').toLowerCase();const rows=state.data.indicators.filter(r=>(!filter||r[0]===state.data.sections[filter]?.title||filter==='explorer'||filter==='archive')&&r.join(' ').toLowerCase().includes(q));$('#indicatorTable').innerHTML=rows.map(r=>`<tr>${r.map(c=>`<td>${c||'-'}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="5">검색 결과가 없습니다.</td></tr>'}
-function setView(view,topic=null,shouldUpdateUrl=true){state.currentView=view;state.currentTopic=topic;$$('.view').forEach(v=>v.classList.remove('active'));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'INSTITUTION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};$('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';if(view==='dashboard'){$('#dashboardView').classList.add('active');$('#pageTitle').textContent='바이오정책 인텔리전스';$('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.'}else if(view==='assistant'){$('#assistantView').classList.add('active');$('#pageTitle').textContent='AI 정책 Q&A';$('#pageSubtitle').textContent='등록된 정책정보를 연결해 빠르게 탐색합니다.'}else{$('#sectionView').classList.add('active');const key=['technology','policy','industry','institution'].includes(view)?view:'technology';renderSection(key,topic);if(view==='explorer'||view==='archive'){renderIndicatorTable(view);$('#topicWorkspace').style.display='none';$('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·제도 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`}else{$('#topicWorkspace').style.display='grid'}$('#pageTitle').textContent=topic&&state.data.topicDetails?.[key]?.[topic]?state.data.topicDetails[key][topic].title:view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.sections[key].title;$('#pageSubtitle').textContent=topic?'선택한 주제를 분야별 정보체계 안에서 탐색합니다.':'핵심 질문과 지표를 중심으로 탐색합니다.'}if(shouldUpdateUrl)updateUrl(view,topic);closeSidebar();window.scrollTo({top:0,behavior:'smooth'})}
+function setView(view,topic=null,shouldUpdateUrl=true){
+  state.currentView=view;state.currentTopic=topic;
+  $$('.view').forEach(v=>v.classList.remove('active'));
+  $$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
+  const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'INSTITUTION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};
+  $('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';
+  if(view==='dashboard'){
+    $('#dashboardView').classList.add('active');
+    $('#pageTitle').textContent='바이오정책 인텔리전스';
+    $('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.';
+  }else if(view==='assistant'){
+    $('#assistantView').classList.add('active');
+    $('#pageTitle').textContent='AI 정책 Q&A';
+    $('#pageSubtitle').textContent='등록된 정책정보를 연결해 빠르게 탐색합니다.';
+  }else{
+    $('#sectionView').classList.add('active');
+    const key=['technology','policy','industry','institution'].includes(view)?view:'technology';
+    renderSection(key,topic);
+    if(view==='explorer'||view==='archive'){
+      $('#technologyWorkspace').hidden=true;
+      $('#topicWorkspace').style.display='none';
+      $('#legacySectionSummary').style.display='none';
+      $('#legacyIndicatorPanel').style.display='block';
+      renderIndicatorTable(view);
+      $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·제도 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
+    }
+    const techTitle=topic&&state.data.technologyV14?.topics?.[topic]?.title;
+    const legacyTitle=topic&&state.data.topicDetails?.[key]?.[topic]?.title;
+    $('#pageTitle').textContent=techTitle||legacyTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.sections[key].title);
+    $('#pageSubtitle').textContent=view==='technology'?'바이오 일반의 핵심지표와 AI 정책질문, 기술주제를 탐색합니다.':topic?'선택한 주제를 분야별 정보체계 안에서 탐색합니다.':'핵심 질문과 지표를 중심으로 탐색합니다.';
+  }
+  if(shouldUpdateUrl)updateUrl(view,topic);
+  closeSidebar();window.scrollTo({top:0,behavior:'smooth'});
+}
 function renderPromptChips(){const prompts=['합성생물학을 4개 영역으로 요약해줘','BT 투자 지표를 알려줘','바이오산업 인력 현황은?'];$('#promptChips').innerHTML=prompts.map(p=>`<button class="prompt-chip">${p}</button>`).join('')}
 function answerQuestion(q){const t=Object.keys(state.data.topics).find(k=>q.includes(k));if(t){const o=state.data.topics[t];return `${t}은 다음과 같이 연결됩니다.\n\n기술: ${o.기술.join(', ')}\n정책: ${o.정책.join(', ')}\n산업: ${o.산업.join(', ')}\n제도: ${o.제도.join(', ')}`}if(q.includes('투자'))return '정부 BT 연구개발비는 예시 데이터 기준 2024년 5.2조원입니다.';if(q.includes('인력'))return '바이오산업 인력은 예시 데이터 기준 2024년 10.3만명입니다.';return '현재 데모는 등록된 주제와 지표를 중심으로 답변합니다.'}
 function addMessage(text,type){const d=document.createElement('div');d.className=type==='user'?'user-message':'assistant-message';d.textContent=text;$('#chatLog').appendChild(d);$('#chatLog').scrollTop=$('#chatLog').scrollHeight}
-function bindEvents(){$$('.nav-item').forEach(n=>n.addEventListener('click',()=>setView(n.dataset.view)));document.addEventListener('click',e=>{const a=e.target.closest('[data-topic-link]');if(!a)return;e.preventDefault();setView(a.dataset.view,a.dataset.topic)});$('#topicOverviewButton').addEventListener('click',()=>setView(state.currentView));window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);setView(p.get('view')||'dashboard',p.get('topic'),false)});$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));$('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');$('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';setTimeout(renderCharts,80)});$('#menuButton').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#sidebarOverlay').classList.add('show')});$('#sidebarOverlay').addEventListener('click',closeSidebar);$('#indicatorSearch').addEventListener('input',()=>renderIndicatorTable(state.currentView));$('#promptChips').addEventListener('click',e=>{if(e.target.matches('.prompt-chip')){$('#chatInput').value=e.target.textContent;$('#chatForm').requestSubmit()}});$('#chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('#chatInput').value.trim();if(!q)return;addMessage(q,'user');$('#chatInput').value='';setTimeout(()=>addMessage(answerQuestion(q),'assistant'),300)});$$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()))}
+function bindEvents(){$$('.nav-item').forEach(n=>n.addEventListener('click',()=>setView(n.dataset.view)));document.addEventListener('click',e=>{const a=e.target.closest('[data-topic-link]');if(!a)return;e.preventDefault();setView(a.dataset.view,a.dataset.topic)});document.addEventListener('click',e=>{const tab=e.target.closest('.technology-topic-tab');if(tab){renderTechnologyTopic(tab.dataset.topic);updateUrl('technology',tab.dataset.topic);$('#technologyTopicDetail').scrollIntoView({behavior:'smooth',block:'start'});return;}const trend=e.target.closest('.technology-trend-tab');if(trend){const topic=state.data.technologyV14.topics[state.currentTopic];$$('.technology-trend-tab').forEach(t=>t.classList.remove('active'));trend.classList.add('active');$('#technologyTrendContent').textContent=topic.trends[trend.dataset.trend];}});$('#topicOverviewButton').addEventListener('click',()=>setView(state.currentView));window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);setView(p.get('view')||'dashboard',p.get('topic'),false)});$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));$('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');$('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';setTimeout(renderCharts,80)});$('#menuButton').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#sidebarOverlay').classList.add('show')});$('#sidebarOverlay').addEventListener('click',closeSidebar);$('#indicatorSearch').addEventListener('input',()=>renderIndicatorTable(state.currentView));$('#promptChips').addEventListener('click',e=>{if(e.target.matches('.prompt-chip')){$('#chatInput').value=e.target.textContent;$('#chatForm').requestSubmit()}});$('#chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('#chatInput').value.trim();if(!q)return;addMessage(q,'user');$('#chatInput').value='';setTimeout(()=>addMessage(answerQuestion(q),'assistant'),300)});$$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()))}
 function closeSidebar(){$('#sidebar').classList.remove('open');$('#sidebarOverlay').classList.remove('show')}
 document.addEventListener('DOMContentLoaded',init);

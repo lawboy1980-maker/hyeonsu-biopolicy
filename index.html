@@ -114,6 +114,77 @@
 
     <section id="sectionView" class="view">
       <div class="section-hero" id="sectionHero"></div>
+
+      <!-- v1.4 기술 전용 화면: 기술주제 상단 배치 -->
+      <section id="technologyWorkspace" class="technology-workspace" hidden>
+        <nav class="technology-topic-tabs" id="technologyTopicTabs" aria-label="기술주제"></nav>
+
+        <section class="panel technology-overview-panel">
+          <div class="panel-heading technology-heading">
+            <div>
+              <span class="eyebrow">TECHNOLOGY INTELLIGENCE</span>
+              <h2>기술 분야 개요</h2>
+              <p>바이오 일반의 연구역량을 핵심지표와 AI 정책질문을 중심으로 살펴봅니다.</p>
+            </div>
+          </div>
+
+          <div class="technology-overview-grid">
+            <div class="technology-copy">
+              <strong>바이오기술</strong>
+              <p>생명현상의 이해와 활용을 통해 의약, 농업, 식품, 소재, 환경 및 제조 분야의 혁신을 창출하는 핵심 기반기술입니다.</p>
+            </div>
+            <div class="technology-general-kpis" id="technologyGeneralKpis"></div>
+          </div>
+        </section>
+
+        <section class="panel technology-ai-panel">
+          <div class="panel-heading technology-heading">
+            <div>
+              <span class="eyebrow">AI POLICY QUESTIONS</span>
+              <h2>AI 정책질문</h2>
+              <p>바이오 일반의 지표와 자료를 바탕으로 정책 분석을 시작합니다.</p>
+            </div>
+          </div>
+          <div class="technology-question-grid" id="technologyAiQuestions"></div>
+        </section>
+
+        <section class="panel technology-topic-detail" id="technologyTopicDetail">
+          <div class="technology-topic-head">
+            <div>
+              <span class="eyebrow">TECHNOLOGY TOPIC</span>
+              <h2 id="technologyTopicTitle">합성생물학</h2>
+              <p id="technologyTopicDefinition"></p>
+            </div>
+          </div>
+
+          <div class="technology-detail-grid">
+            <section class="technology-detail-block agenda-block">
+              <div class="subsection-heading"><h3>정책 아젠다</h3><p>현재 수행 중이거나 향후 추진할 정책업무</p></div>
+              <div class="technology-agenda-list" id="technologyAgendaList"></div>
+            </section>
+
+            <section class="technology-detail-block">
+              <div class="subsection-heading"><h3>핵심기술</h3><p>기술주제를 구성하는 주요 기술요소</p></div>
+              <div class="technology-chip-list" id="technologyCoreTech"></div>
+            </section>
+          </div>
+
+          <div class="technology-detail-grid lower-grid">
+            <section class="technology-detail-block">
+              <div class="subsection-heading"><h3>국내외 동향</h3><p>기술·정책·산업·제도 관점의 흐름</p></div>
+              <div class="technology-trend-tabs" id="technologyTrendTabs"></div>
+              <div class="technology-trend-content" id="technologyTrendContent"></div>
+            </section>
+
+            <section class="technology-detail-block">
+              <div class="subsection-heading"><h3>관련자료</h3><p>보고서·법령·논문·BioIN 등 원문 연결</p></div>
+              <div class="technology-resource-list" id="technologyResourceList"></div>
+            </section>
+          </div>
+        </section>
+      </section>
+
+      <!-- 정책·산업·제도는 v1.3 구조 유지 -->
       <section class="topic-workspace" id="topicWorkspace">
         <aside class="topic-side-panel">
           <span class="eyebrow" id="topicMenuEyebrow">TOPICS</span>
@@ -128,11 +199,11 @@
           <div class="topic-detail-grid" id="topicDetailGrid"></div>
         </section>
       </section>
-      <div class="dashboard-grid section-grid">
+      <div class="dashboard-grid section-grid" id="legacySectionSummary">
         <section class="panel"><div class="panel-heading"><h2>핵심 지표</h2></div><div id="sectionKpis" class="mini-kpi-grid"></div></section>
-        <section class="panel"><div class="panel-heading"><h2>주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
+        <section class="panel"><div class="panel-heading"><h2 id="sectionQuestionTitle">주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
       </div>
-      <section class="panel"><div class="panel-heading"><h2>관련 지표 목록</h2><input id="indicatorSearch" class="search-input" placeholder="지표명 검색"></div><div class="table-wrap"><table><thead><tr><th>구분</th><th>번호</th><th>주요 내용</th><th>그래프</th><th>핵심 질문</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
+      <section class="panel" id="legacyIndicatorPanel"><div class="panel-heading"><h2>관련 지표 목록</h2><input id="indicatorSearch" class="search-input" placeholder="지표명 검색"></div><div class="table-wrap"><table><thead><tr><th>구분</th><th>번호</th><th>주요 내용</th><th>그래프</th><th>핵심 질문</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
     </section>
 
     <section id="assistantView" class="view">
