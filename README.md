@@ -1,23 +1,16 @@
-# BioPolicy Intelligence Platform v1.1
+# BioPolicy Intelligence Platform v1.2
 
-메인 대시보드를 정책 현안 중심으로 재설계한 GitHub Pages용 정적 웹사이트입니다.
+## 반영사항
+- 1행: 주요현안 / 다가오는 일정 50:50, 동일 높이
+- 2행: 핵심 KPI
+- 3행: Quick Access / Topic Explorer 10개
+- 4행: 주요 차트 4개, 데스크톱 2×2
+- 합성생물학 카드에서 내부 주제 허브와 BioIN 컬렉션 연결
+- Quick Access 항목은 `data/dashboard.json`에서 추후 자유롭게 수정 가능
 
-## 이번 버전의 변경점
+## 실행
+GitHub Pages에 업로드하거나 로컬 서버에서 실행하세요.
 
-- 오늘의 최우선 현안 히어로 영역
-- 주요 현안과 일정을 첫 화면 상단으로 이동
-- 핵심 지표를 보조 영역으로 재배치
-- 기술 → 정책 → 산업 → 제도 가치사슬 강화
-- 정책 투자·기술수준·시장규모 분석 영역 정리
-- 반응형 화면 및 다크모드 유지
-
-## 업로드 구조
-
-저장소 최상위에 아래 항목을 그대로 업로드합니다.
-
-- `index.html`
-- `assets/`
-- `data/`
-- `README.md`
-
-현재 수치는 UI 검증용 예시값입니다.
+```bash
+python -m http.server 8000
+```

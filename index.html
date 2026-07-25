@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="기술·정책·산업·제도를 연결하는 바이오정책 인텔리전스 플랫폼">
-  <title>BioPolicy Intelligence</title>
+  <title>BioPolicy Intelligence Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,11 +16,10 @@
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#" data-view-link="dashboard">
+    <a class="brand" href="index.html">
       <span class="brand-mark">BP</span>
       <span><strong>BioPolicy</strong><small>Intelligence Platform</small></span>
     </a>
-
     <nav class="main-nav" aria-label="주 메뉴">
       <p class="nav-label">OVERVIEW</p>
       <button class="nav-item active" data-view="dashboard"><i class="bi bi-grid-1x2-fill"></i><span>대시보드</span></button>
@@ -34,11 +33,7 @@
       <button class="nav-item" data-view="archive"><i class="bi bi-folder2-open"></i><span>정책자료실</span></button>
       <button class="nav-item" data-view="assistant"><i class="bi bi-stars"></i><span>AI 정책 Q&A</span></button>
     </nav>
-
-    <div class="sidebar-footer">
-      <div class="profile-badge">KH</div>
-      <div><strong>김현수</strong><span>BioPolicy Lab</span></div>
-    </div>
+    <div class="sidebar-footer"><div class="profile-badge">BP</div><div><strong>BioPolicy Lab</strong><span>Policy Intelligence</span></div></div>
   </aside>
 
   <main class="main-content">
@@ -58,7 +53,7 @@
     <section id="dashboardView" class="view active">
       <section class="hero-panel">
         <div class="hero-copy">
-          <span class="eyebrow light">DAILY POLICY BRIEF</span>
+          <span class="eyebrow light">BIOPOLICY INTELLIGENCE</span>
           <h2>바이오 혁신의 변화를<br>정책 관점에서 연결합니다.</h2>
           <p>기술 신호, 정부 정책, 산업 성과, 법·제도 변화를 하나의 흐름으로 추적합니다.</p>
           <div class="hero-actions">
@@ -69,20 +64,25 @@
         <div class="hero-spotlight" id="heroSpotlight"></div>
       </section>
 
+      <!-- 1행: 주요현안 / 다가오는 일정 -->
       <div class="dashboard-grid lead-grid">
-        <section class="panel issues-panel">
+        <section class="panel equal-panel">
           <div class="panel-heading">
-            <div><span class="eyebrow">PRIORITY ISSUES</span><h2>오늘의 주요 현안</h2></div>
-            <button class="text-button">전체보기 <i class="bi bi-arrow-right"></i></button>
+            <div><span class="eyebrow">PRIORITY ISSUES</span><h2>주요현안</h2></div>
+            <button class="text-button">더보기 <i class="bi bi-arrow-right"></i></button>
           </div>
           <div class="issue-list" id="issueList"></div>
         </section>
-        <section class="panel schedule-panel">
-          <div class="panel-heading"><div><span class="eyebrow">SCHEDULE</span><h2>다가오는 일정</h2></div></div>
+        <section class="panel equal-panel">
+          <div class="panel-heading">
+            <div><span class="eyebrow">UPCOMING SCHEDULE</span><h2>다가오는 일정</h2></div>
+            <button class="text-button">더보기 <i class="bi bi-arrow-right"></i></button>
+          </div>
           <div class="schedule-list" id="scheduleList"></div>
         </section>
       </div>
 
+      <!-- 2행: KPI -->
       <section class="panel kpi-panel">
         <div class="panel-heading">
           <div><span class="eyebrow">KEY INDICATORS</span><h2>핵심 지표</h2></div>
@@ -91,38 +91,24 @@
         <div class="kpi-grid" id="kpiGrid"></div>
       </section>
 
-      <section class="panel value-chain-panel">
-        <div class="panel-heading">
-          <div><span class="eyebrow">BIO INNOVATION VALUE CHAIN</span><h2>기술 → 정책 → 산업 → 제도</h2></div>
-          <label class="topic-filter"><span>분석 주제</span><select id="topicSelect" aria-label="주제 선택"></select></label>
+      <!-- 3행: Quick Access / Topic Explorer -->
+      <section class="panel topic-panel">
+        <div class="panel-heading topic-heading">
+          <div><span class="eyebrow">QUICK ACCESS</span><h2>주제별 정책 탐색</h2><p>플랫폼 내부 분석과 BioIN 주제 컬렉션을 함께 탐색합니다.</p></div>
+          <span class="data-note">주제는 추후 자유롭게 교체·추가 가능</span>
         </div>
-        <div class="topic-summary" id="topicSummary"></div>
-        <div class="value-chain" id="valueChain"></div>
+        <div class="topic-grid" id="topicGrid"></div>
       </section>
 
-      <div class="dashboard-grid analytics-grid">
-        <section class="panel chart-panel wide-chart">
-          <div class="panel-heading"><div><span class="eyebrow">POLICY INVESTMENT</span><h2>정부 BT 연구개발비 추이</h2></div><span class="panel-unit">단위: 조원</span></div>
-          <div class="chart-wrap"><canvas id="policyChart"></canvas></div>
-        </section>
-        <section class="panel snapshot-panel">
-          <div class="panel-heading"><div><span class="eyebrow">GLOBAL POSITION</span><h2>기술수준 비교</h2></div></div>
-          <div class="chart-wrap compact"><canvas id="technologyChart"></canvas></div>
-        </section>
-        <section class="panel snapshot-panel">
-          <div class="panel-heading"><div><span class="eyebrow">INDUSTRY SCALE</span><h2>시장규모 추이</h2></div></div>
-          <div class="chart-wrap compact"><canvas id="industryChart"></canvas></div>
-        </section>
-      </div>
-
-      <section class="panel trends-panel">
-        <div class="panel-heading"><div><span class="eyebrow">LATEST SIGNALS</span><h2>영역별 최근 동향</h2></div></div>
-        <div class="trend-columns" id="trendColumns"></div>
-      </section>
-
-      <section class="panel source-panel">
-        <div class="panel-heading"><div><span class="eyebrow">DATA SOURCES</span><h2>데이터 연계 현황</h2></div><button class="text-button" id="refreshSources">상태 새로고침</button></div>
-        <div class="source-grid" id="sourceGrid"></div>
+      <!-- 4행: 4개 차트 -->
+      <section class="analytics-section">
+        <div class="section-title-row"><div><span class="eyebrow">DATA SNAPSHOT</span><h2>주요 통계 차트</h2></div><span class="data-note">JSON 데이터 기반</span></div>
+        <div class="dashboard-grid analytics-grid">
+          <section class="panel chart-panel"><div class="panel-heading"><div><h2>정부 BT 연구개발 추이</h2></div><span class="panel-unit">단위: 조원</span></div><div class="chart-wrap"><canvas id="policyChart"></canvas></div></section>
+          <section class="panel chart-panel"><div class="panel-heading"><div><h2>기술수준 추이</h2></div><span class="panel-unit">단위: %</span></div><div class="chart-wrap"><canvas id="technologyChart"></canvas></div></section>
+          <section class="panel chart-panel"><div class="panel-heading"><div><h2>시장규모 추이</h2></div><span class="panel-unit">단위: 조원</span></div><div class="chart-wrap"><canvas id="industryChart"></canvas></div></section>
+          <section class="panel chart-panel"><div class="panel-heading"><div><h2>바이오산업 인력 추이</h2></div><span class="panel-unit">단위: 만명</span></div><div class="chart-wrap"><canvas id="workforceChart"></canvas></div></section>
+        </div>
       </section>
     </section>
 
@@ -132,13 +118,13 @@
         <section class="panel"><div class="panel-heading"><h2>핵심 지표</h2></div><div id="sectionKpis" class="mini-kpi-grid"></div></section>
         <section class="panel"><div class="panel-heading"><h2>주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
       </div>
-      <section class="panel"><div class="panel-heading"><h2>관련 지표 목록</h2><input id="indicatorSearch" class="search-input" placeholder="지표명 검색"></div><div class="table-wrap"><table><thead><tr><th>구분</th><th>번호</th><th>주요 내용</th><th>그래프</th><th>머리말</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
+      <section class="panel"><div class="panel-heading"><h2>관련 지표 목록</h2><input id="indicatorSearch" class="search-input" placeholder="지표명 검색"></div><div class="table-wrap"><table><thead><tr><th>구분</th><th>번호</th><th>주요 내용</th><th>그래프</th><th>핵심 질문</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
     </section>
 
     <section id="assistantView" class="view">
       <div class="assistant-layout">
         <section class="panel assistant-intro"><span class="eyebrow">AI POLICY ASSISTANT</span><h2>기술·정책·산업·제도를 연결해 질문하세요</h2><p>현재 등록된 예시 데이터 안에서 답변하는 데모입니다.</p><div class="prompt-chips" id="promptChips"></div></section>
-        <section class="panel chat-panel"><div class="chat-log" id="chatLog"><div class="assistant-message">안녕하세요. 바이오정책 관련 주제나 지표를 입력해 주세요.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="예: 합성생물학의 기술·정책·산업·제도를 요약해줘" autocomplete="off"><button type="submit"><i class="bi bi-send"></i></button></form></section>
+        <section class="panel chat-panel"><div class="chat-log" id="chatLog"><div class="assistant-message">안녕하세요. 바이오정책 관련 주제나 지표를 입력해 주세요.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="예: 합성생물학의 정책과 산업을 요약해줘" autocomplete="off"><button type="submit"><i class="bi bi-send"></i></button></form></section>
       </div>
     </section>
   </main>
