@@ -1,23 +1,13 @@
-# Hyeonsu BioPolicy
+# BioPolicy Intelligence Dashboard
 
-## 1단계: 새 홈페이지 적용
+기술 → 정책 → 산업 → 제도를 연결하는 정적 웹 대시보드입니다.
 
-이 압축파일의 폴더와 파일을 GitHub 저장소 최상단에 업로드합니다.
+## GitHub Pages 배포
+1. 이 폴더의 `index.html`, `css`, `js`, `data`를 저장소 루트에 업로드합니다.
+2. GitHub 저장소 `Settings → Pages`에서 `Deploy from a branch`를 선택합니다.
+3. Branch는 `main`, Folder는 `/(root)`로 저장합니다.
+4. 1~3분 후 Pages 주소를 새로고침합니다.
 
-필수 파일:
-- index.html
-- css/style.css
-- js/app.js
-- data/dashboard.json
-
-업로드 후 GitHub Pages가 자동으로 다시 배포됩니다.
-
-## 2단계: KBIOIS 연결
-
-현재 dashboard.json에는 0과 '연결 준비' 상태가 들어 있습니다.
-API 호출 형식이 확정되면 GitHub Actions와 수집 스크립트를 추가해 실제 수치로 교체합니다.
-
-## 주의
-
-API 인증키를 index.html, JavaScript 또는 공개 JSON 파일에 직접 입력하지 마세요.
-인증키는 GitHub Repository Secret에 저장해야 합니다.
+## 데이터 수정
+화면 데이터는 `data/dashboard.json`에서 수정합니다.
+현재 통계값은 UI 시연용 예시값입니다.
