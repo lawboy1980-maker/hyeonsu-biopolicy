@@ -91,11 +91,11 @@
         <div class="kpi-grid" id="kpiGrid"></div>
       </section>
 
-      <!-- 3행: Quick Access / Topic Explorer -->
+      <!-- 3행: Quick Research -->
       <section class="panel topic-panel">
         <div class="panel-heading topic-heading">
-          <div><span class="eyebrow">QUICK ACCESS</span><h2>주제별 정책 탐색</h2><p>플랫폼 내부 분석과 BioIN 주제 컬렉션을 함께 탐색합니다.</p></div>
-          <span class="data-note">주제는 추후 자유롭게 교체·추가 가능</span>
+          <div><span class="eyebrow">QUICK RESEARCH</span><h2>Quick Research</h2><p>기술·정책·산업·제도 순으로 핵심 주제를 빠르게 탐색합니다.</p></div>
+          <span class="data-note">카드를 선택하면 해당 분야의 주제 페이지로 이동합니다.</span>
         </div>
         <div class="topic-grid" id="topicGrid"></div>
       </section>
@@ -114,6 +114,20 @@
 
     <section id="sectionView" class="view">
       <div class="section-hero" id="sectionHero"></div>
+      <section class="topic-workspace" id="topicWorkspace">
+        <aside class="topic-side-panel">
+          <span class="eyebrow" id="topicMenuEyebrow">TOPICS</span>
+          <h2 id="topicMenuTitle">주제</h2>
+          <nav class="topic-side-nav" id="topicSideNav" aria-label="분야별 주제"></nav>
+        </aside>
+        <section class="panel topic-detail-panel">
+          <div class="topic-detail-head">
+            <div><span class="eyebrow" id="topicCategoryLabel">TOPIC</span><h2 id="topicDetailTitle">분야 개요</h2><p id="topicDetailSummary"></p></div>
+            <button class="text-button" id="topicOverviewButton"><i class="bi bi-grid"></i> 분야 전체 보기</button>
+          </div>
+          <div class="topic-detail-grid" id="topicDetailGrid"></div>
+        </section>
+      </section>
       <div class="dashboard-grid section-grid">
         <section class="panel"><div class="panel-heading"><h2>핵심 지표</h2></div><div id="sectionKpis" class="mini-kpi-grid"></div></section>
         <section class="panel"><div class="panel-heading"><h2>주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
