@@ -1,85 +1,300 @@
 {
-  "updated_at": "2026-07-26 23:13 KST",
-  "domestic": [],
-  "government": [],
-  "overseas": [],
+  "updated_at": "2026-07-26 23:38 KST",
+  "domestic": [
+    {
+      "title": "AI 신약 기업 표적항암제 개발 지원",
+      "source": "영남신문",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1YY1U3MHhBY1kweFg1RjZDZEJRSUE2MzFTRTlFY0RvX2swQTdTMmdiODRMVzVBQ1k4SHVVRGhMRWZzd1paX1Z4c3ZsLWtxSl9BcTBDOXpjeWY4TzhnWTJ6aGpqX2pvTTk4dWJhRXh3?oc=5"
+    },
+    {
+      "title": "中, 바이오 AI혁신 선언…\"신약 개발기간 10→4년 반 단축\"",
+      "source": "네이트",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE85ZkZnS2UwampsQ1N2Wm9COF83ZHItYmxabEttTDcxVDB6bDRpX0pZcjJxSnd2MDhJRUlQNFFNSkVoWnF6azR0YW9wM3pIWTBQbzEw?oc=5"
+    },
+    {
+      "title": "中 \"5년 내 글로벌 바이오 시장 선도\"…美 견제 속 198조원 기술 수출",
+      "source": "마켓인",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBkVXhCb3NQVnc2dXU4WjVLbENnd3I5QXVHSjlEZFFtMFFtZ2lPRGVEQV9adFAtRGE2ektncXRiUGFLSEVCVHJFVzEtUnhSTTg1LTF4a2d5QVBuY1lkNjhnbFJRWDBpRGk5elptN1ZuQkNlRnM?oc=5"
+    },
+    {
+      "title": "[AI 시대의 유망산업 시리즈 No.4 AI 바이오·헬스케어] \"AI가 의사를 돕는 시대를 넘어 신약을 설계한다\"…바이오·헬스케어, AI가 바꾸는 미래산업의 중심으로",
+      "source": "코리아포스트 한글판",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBKam5YS0RsanJqRXN0T1R4OUJKZlpkVjJOcHhROWlobUhBbGljVTBtaEpXUGYwNkRXeEllVW9CYnAtUkRIcU9XUjc2VXpORDN1MTNUUDBnYlpCRk5jMFBncUI4aGkxTk9PdmxtQXR3?oc=5"
+    },
+    {
+      "title": "한국제약바이오협회, AI 신약개발 전문인력 전주기 교육체계 본격 가동",
+      "source": "얼리어답터뉴스",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBuWjNMUElma3BZcFhSUHlUbFd4V0FoS21vN181OWJpeU1kaDV2VWduTi1uckl2c3hEZ05nNDRNOTVwSVN0cVMyVg?oc=5"
+    },
+    {
+      "title": "[인터뷰] 파로스아이바이오 \"기술이전 집중…미국·유럽 시장 공략 본격화\"",
+      "source": "뉴스1",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBPcE9IWElBalF4cnpRckJUQWU5RGdUMmhreVpyWlhZbmdjVFNqTFkwbmQyRWpmZXVIbzJoTVh2MFRTYVNTdEpHUUxBYTBPaTRxNUY2UDhMRXh0Qlg1Rko3ag?oc=5"
+    },
+    {
+      "title": "완전히 AI가 설계한 신약 \"시간 문제\"…아스트라제네카가 내놓은 청사진",
+      "source": "디지털투데이",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBWd2U2dm5kNzB5X2pGUVFLcEpfc0wtazd2X1VxaW5HYVlrbW10MWxiSHR1eXJ0VTdHVnVrbmxkX3ZFdllLS25GOXBOWExybUFPNlhGMlhvYnJzTDlhSThjNzRQYW1UeERlQ0dIeE9Nc0VnXzg?oc=5"
+    },
+    {
+      "title": "수원시, 첨단전략산업 컨퍼런스 개최…반도체·바이오 육성 논의",
+      "source": "인천일보",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41YnpDa3FLVFEtT0ttTDI2QnlzVVhUZ2NaMUZBUzhTV1p5NTZadnRtdTAtUDhmczRlZlFWbUYyVzZxbDJDY25heUlCNVRJUEwwelpuN1R4VjExYUxLVm1PQjJTa2lFN25uVnF3VnV6Znc?oc=5"
+    },
+    {
+      "title": "파로스아이바이오-케이메디허브 공동연구 협약",
+      "source": "데일리메디",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1nbE9PV3pYMkNkVFpNZDZPcjFoZl9IVEhRcHBVZGFTR29mYkVOQU41d2J6a2tzRnhEenFnczd1TWpXOGJTeGRYOFF1TUJpeWhtRjJWdlBTYUNickVrT25tRmlpOS1pRVo0bXpWT0pnNG1hZmlY?oc=5"
+    },
+    {
+      "title": "한미약품, AI 기반 신약개발 기술 확보...비만 혁신신약 개발 가속",
+      "source": "아시아에이",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE04Y3dLRzNLZTA1V2F6TnV0VWxocDJJNlR3Yk12WEpsMVJ4NzFubFF6MV9IWlZkRUR1MEczX0dhaXlibVJ1dWpVMktUbGw1ZGFESTJrYVNWbnRTZlVlSWQ5ZEFnSmd4N3lqQVHSAW5BVV95cUxPTWpTNjlTMVpXcWtnX2F6MC1OMmlpaS1UaHlTdTJGQ25PVG84YkQtTkhka1lvZVBUdkoyNDRYaHpqVzRaaHZObmxvLTZGUnk0WkdXM25KQjU5aW5zZGVjbzEweXlKSFhqMnAxdkhwUQ?oc=5"
+    },
+    {
+      "title": "\"데이터 안 풀어도 AI 학습\" K멜로디 'R&D 대전환' 시험대",
+      "source": "파이낸셜뉴스",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1LY2tyV0tMblBpbzY0VkhqZ2dvLThhNlA5NlN1LUJqTVBVNTFqRW5jT0lpb1RhbUg3RDJQeFlRSzNRNzZTZGZqWEZtb3kxMVNCRkJjeV85S0MyZw?oc=5"
+    },
+    {
+      "title": "한미약품, AI가 설계한 '세계 첫 근육 증가형 비만신약'…美 ISMB서 플랫폼 경쟁력 공개",
+      "source": "바이오타임즈",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA0V1BoN1UtQ2d5TWhoNzhjSlBRRVRsZ3pKNHBYOFRTall5QmphVzJUUVFob2hubHNweGF1ejlUdkZNSmdKYXV4OWxSMXh1NEJTRnRYOHZhVjRZQ0M1WHY3ZzAxRVFBS05qcmU3RQ?oc=5"
+    }
+  ],
+  "government": [
+    {
+      "title": "7.26.(일) 폭염 일일상황보고 입니다.(17시기준)",
+      "source": "경기도뉴스포털",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcnl3MGdjYjhJRFI5MS1hdzhTWm5aUFNxWkJBTVFaYm9pN3Z2b21hMjN0b0V0VUZaNDQ0QVluMm9SRnlPM0h6aldTZ09VTzZsQVNfaHlCc2xFSmVHNDRaeUNIRWZlNnJDTEJzLUdxQ2FGNVJReDQtckdfV3J2XzZjNDhmUGM?oc=5"
+    },
+    {
+      "title": "경기도, 필수조례 정비 박차...“연내 정비율 제고 총력”",
+      "source": "경기도뉴스포털",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZ3lqQlFMZE1sZU9ZdjIwSzJkanBSWjd6MzhCVVVVS1ZtdDRFSW5HMjhjc2hTcHpBTEFlcE1abjFEbXJVNk5ZT2hERzFWTUJFWXJOVk1HZTh5eXB1eThnNVFMZHMzRV81S21nZzdIX3g3eXFib3JSY2R1WGFrdzV5UlJ2MmY?oc=5"
+    },
+    {
+      "title": "경기도, 공동주택 보수공사 ‘셀프 견적 프로그램’ 2026년판 배포",
+      "source": "경기도뉴스포털",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVUYwNEhKMURXcUMxQkpJVmN3OE5RT1AxS094dGNtaTliVkpNV1N5UHVwSnZGYmREVzlpLXAwakM3R2RDTHhiR081dHZXZk81U0NVbC1EMWRaWk5ycGNHX0lDSTM1czVUNXhucHFUcnBZWDFIUVNVek1xeGxoTjNmX2lFaWc?oc=5"
+    },
+    {
+      "title": "제2차 생명공학육성기본계획(07~16)",
+      "source": "국가 과학기술자문회의",
+      "date": "2026-07-26",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdll6Smp5QmVwYnc4VnNsaXZodVlsZU9WVmFkNng4dTZoOUVyMjJNbGU1THRyVExUUlR4V3ZIZ2RVUWkxVjNXQTRBSG1TQ1NfdGp2cjFObWswbmhCSHdsdHNUcENWRWxGMWtheXk1ajZSV2Q1cDFkMVVmbFl2YzBtNnZYazQzcHQ3RkpCVEg3OFpLb1h5OGFGdWNacDNNdmtERFQ5alhpWG9iUQ?oc=5"
+    },
+    {
+      "title": "[규제개혁법] 바이오의약품 CDMO 규제지원 등 식약처 소관 법률 제.개정안 국회 본회의 통과 | 보도자료 | 최신소식",
+      "source": "식품의약품안전처",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPV1dfeGE1OUVVeHZmYnpJVTktd2JqbXBKdDdvWlJZNXJOc1hBUHM1b184QUdUMWY2ZEVnckp4alJkN0lCUmxpMFMwcGp2RXRodVVRZ2N6Mk1vWnB6WXgyRHBnZDd1dnpNTm9iOVRIOGJvVW5QZXliM0hhNTg4WmxuX0I0bmNZZUVJdUtQY1prc213QWV3MWZNb2J3?oc=5"
+    },
+    {
+      "title": "[성균관대학교 바이오헬스규제과학과] 2026학년도 전기 일반전형 신입생 모집 | 공지사항 | 최신소식",
+      "source": "식품의약품안전처",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQnctNzhuS25faGFDZ1J3dXRMRDJKajJmMllWU05ZczIya0VMMTdMd0FaeDZBLXRUclFjWW5PT3pjckY1UU1OYnBCWVN4NWRSTmNJYnFOSlN6ZkUwdFR2UzNhMi1mMXVRci1pODNxaUdySmZrdGYxQ2ptak1ZXzZtRDk5UVR4WklybW1fNDBOT1RFUURWZHk2dw?oc=5"
+    },
+    {
+      "title": "[보도참고] 식약처, 바이오시밀러 3상 임상 요건 합리화 등 제품화 규제 지원 | 보도자료 | 최신소식",
+      "source": "식품의약품안전처",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdjFSQVBiZDdHbFVNdW1FX1NpUU9EbFFyY1dPeFY2NHF0LVl5VHVYaHJMbVluckd4Mkx3azdCR3VHdFNCa0JwaFFIbEJZV2VYUzNCb3VNNlhzWEZPNDR6SmNVREtHQXcyUmVwRE03Z0J4eFFfWHJ6eHRKVVV5OEpJbmpyUzRnNjJZLXZkY29EQkVZdEpBY1ZBOV9R?oc=5"
+    },
+    {
+      "title": "[아주대학교 바이오헬스규제과학과] 2026학년도 전기 신입생 모집 안내(10/10~23) | 공지사항 | 최신소식",
+      "source": "식품의약품안전처",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVk11cTdxNlRJYzFPcWtYbFFWYmRpYWFXRFR5VW50cDNGRGtkY0ViVm9IREhBZlYtc01Nb2YxN2tUb0JSY01BZXJySHRrQmtPUlVQMFFMT0pfeFY3NDIzenJhN3NKT3dhSEgtOGFLRHg3ZFRvTTZJUjZxQ3lYaXkyX2ozTHJCYnZMRU9BVzF5ekVIaXNRQTRhMg?oc=5"
+    },
+    {
+      "title": "보도자료 - 알림소식 - 강원지방중소벤처기업청",
+      "source": "중소벤처기업부",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE04aE5vclVGcjd4c0F2Qks4VDJ0aTdNOGJnZDJpYkdqeFZSdVE3RWVEVG83cDYzTzU1M2tiOXBWSjhCVkVhVEdKMHlNbEQta3docVRzdjBjMDhNemFhVjNld2tJOHlBbWhXTHlrbUhwYWhfWXZXVktHTTNSVlZYdw?oc=5"
+    },
+    {
+      "title": "경기북부 미래기술인재 양성 거점 ‘경기도기술학교 북부캠퍼스’ 고양시에 개소",
+      "source": "경기도뉴스포털",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb2EzaC1INDhkUzRuNFZ3QUZYN3lOUEd6Q0VKYm5HQVZhRlpPb0s3VEF2amppM191VGZaTjhWYktCbTdSbkJpTEU3N3Bxbko4Rmp0STRvM25OX3pNRU5aTzR4Q21hdlFZelNKX09JOEozejY5MF9zZlEyZTE5aDRaWHN6Yzc?oc=5"
+    },
+    {
+      "title": "붙임. 첨단바이오의약품 장기추적조사 ‘전자증례기록서(eCRF) 길라잡이’ 발간(260626).pdf onmiviewer",
+      "source": "장기추적조사시스템",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9wZEdiYWRjSndkNVZWMG9QUjc4OC1qQ2xNZDNOWFFQR19RYW5zZHlZRmp4M2RfX2xZcEN4blFVQ0NMVG45M2tPQ0Q5b2RKRUNXRkUzTDBidFkydw?oc=5"
+    },
+    {
+      "title": "경기도-경과원, 반려마루 여주에서 반려동물 스타트업 역량강화 교육",
+      "source": "경기도뉴스포털",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMzFNclI3bXY2dDd3SXR0Z25LdTU0Q0FmTnlfam1oWlRCVHRQWHRxVVZ4LURITE5ZcElmZExIc21PenJBX0M5SXBQMENPMDdueWJyWWdkdmxnQTdGLWFpU1N1SDlKVHUwUEhVQUlJYThETWtjSHVndjlubVRRM2NrSV9BMlM?oc=5"
+    }
+  ],
+  "overseas": [
+    {
+      "title": "Biotech companies are being reshaped by AI",
+      "source": "SiliconANGLE",
+      "date": "2026-07-25",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lZ0dpRDMtNUM4c1dnSG8yZjlVWmgtWmp6ckdFSGg2a3ExbTRScmRKR21TUWJVb1VfeUZzdDQtRHJSSTVvNThHdm5BQTI0Y3BnOVhsSDU3TVYxR2o2VU9TWnlYS19ib1RoY1lSMTE1VXdXeW1qeVhsYXVuamd5OEk?oc=5"
+    },
+    {
+      "title": "Insilico Says AI, China Research Model Cuts Drug Development Timeline to Just One Year",
+      "source": "Medical Dialogues",
+      "date": "2026-07-24",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNVE1Za1E3NEhkNkJ0Z2RGMlhyUm9kOWRxZWlLYlFpajNuM2hTNVlXRjV4NzBPOXo3RmFXLXJiS2JlQ3Nrck5uZ2VRNU5QeVE4R0lsekNTbUxOWWNVbDZPTVotNHF2SlNkQVljYUJXTGpMa3NYdEZTMU5MY1IxcmhKSFk0M2t4a3RnWUkxRExsMWVkQ1psQ1hGX3doZTlnQ2g0R2pqV28wcmJvZHhDQ0pCdHpmbzV3T0cwMGVWVmxxR0I4VXFFN2F2SElZVzRSZW5rWC1iTlpjOXVNWTAyU3NB0gHkAUFVX3lxTFB0U2NFNEkwZlVYNUQyeERpSmFZRmlkcEhibDNKSEhSRGNrUEF3RlBjZy0yY3FYdm5DLUFoNG9XeXBWUG9RWS1lektLR29BZ1FzMUlKdmNxNGNLNTZUenlYZTdpNmNFa3dGY2hxV2JnallUeGQ4YllhdDVqQk1nOVl0R29NM3BCVkRlQlRyenBrVm1SVzg1QTYzZkJoV1FsLUNsS1BUNzJCZTVrRmdkb0hMbG9uRWJ6a1hBa285cmFKUG1EV0pjUXFtTW83VmVwajU3YmcycnlVSEZiSTR1eFB3OGtxSw?oc=5"
+    },
+    {
+      "title": "An AI Biotech Just Reported a 46% Revenue Jump and Its First Recurring Platform Contracts, as Its Pivot Starts Showing Up in the Numbers",
+      "source": "PR Newswire",
+      "date": "2026-07-23",
+      "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOYzc2bnotMzJtclV3eFI2RUJqV2I2aDFGcFlsdzFpMDZIX2daczMyWXNkamk1SkMxSUxGYTdjV3BxdlljY1FCZVBGVlQ0WkZ5WDItTF9oSnJDSnF5REE2UlRLczRld1YyQmdwRVJGZzF3TVNLYWY1NERVX0pEQ2h2NTJ1cThDNUpobXl1d3FMdERLQzY1UGU3UkVFQWdQa0xWcEZsN0tMNlNIYmVkdzR4VW5mZmxGU2FBMERhWXNqeVZtS09rUjVuekZkX1RobE9LZUFjWGNMSjRVdHRIOVlzYnpET0RUVnpHcTYtc3JJeHAzeDZJQWktbk9rTzZHQVZyaGVMNnNBQUpNYkFSZHVxTlZlSHQ0dEV0UWc?oc=5"
+    },
+    {
+      "title": "AI shortens drug discovery to around 1 year in China, Insilico CEO says",
+      "source": "Reuters",
+      "date": "2026-07-23",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPU2hPemVGZW1od1dteWxLOVRyMEs0elY2c0lJeGRkNHd4eVNIVnlCUjJ0MjQ3ekFTYXVFakFwZm4yYUtMWHVRa3BmYzRZM3JuaVRKNlUwRV9fdDdsNnRqY2dFTnExRVRYRW51b2VRWFZRcDA0TVlKQWxtdzRpRGRWWldSOHQ1MkVrSy1fa0UzeXo2NHlRSkt5VHdGWGgtdllhRVlIb0NpNm9pcHZpekFxWERhNkl5XzdWVVo3UE5QN3ZzX0NtenhpSks2Q1p6RlU5Zmc?oc=5"
+    },
+    {
+      "title": "Rise of AI and Biotech Reshaping Healthcare Sector",
+      "source": "HKTDC Research",
+      "date": "2026-07-23",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ka2lzOVJXSWNwUDdvcGJXdk1HTmROU3JTTGtpalBxOTM4S25BSTZiSmxsb1JJUmU4SXotOXR1OHI1SWhLNHd0am1xNHIxcjZZN1hqbzh3ZkE2UDFRTDRJZTl3?oc=5"
+    },
+    {
+      "title": "NIH joins Trump’s $5B AI mission with biomedical research push",
+      "source": "Fierce Biotech",
+      "date": "2026-07-23",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQN2Q1bXR0eGhjRXFWaG8yNkR3c0hhMzlqU0txb25JRlFsMFpwMWZnV3BKeUIwMWZVdGcxZE5WR2hsUmZNY0M0VGZwOHhwdWdFcGdBdzdHRF9oREFVbVhFQ1V2MHRpY0dZOFlLdF95bHZaSzVuenkxaWxmT2w3bUc4ZUFnb0FLck1XRXhJUkpHaEIzdUhYZktUdWd2MA?oc=5"
+    },
+    {
+      "title": "OMEICOS takes repurposed drug directly into Phase 3",
+      "source": "European Biotechnology Magazine",
+      "date": "2026-07-22",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ282U2treEZIZUhlUmw0NUx6c3ctcXljaFkxNkxvWlZjRXM0dWlRcGQ3T3RLTjZtaWZVRWNobDQ5SVZ3YTQ1MlhINHdSdi1UNnNTTkVqV0ppSXBPUnRNSUJxOU0xM3hUcG1kQUtrSG5jOXBPUFBOWUVrUEFNQmVuaHdaTkhocmxPaWpEemw0aFlRdlJRejlUYU5EWEtEWVJ0?oc=5"
+    },
+    {
+      "title": "Strides Pharma's CDMO Unit Secures ₹801 Crore In Pre-listing Investment Round",
+      "source": "ascendants.in",
+      "date": "2026-07-22",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ2drTHRMUzlTNVhUY3ZGTG1XSXhJc1ZwZmwwM3lKdkZSU2hXbnpHRUNsNU9JZFFVazh2UlVVV2JUMVFVekV0SWZMdmdLUTFXRENZV1IzdEdwQlJ6SjRxY1c2N1F4Uk5BbHp6djIwellvYzFtb3FXRWprc1poenNfT0p6NDhoc2lqMkNLcWcyUU9GaWFfU0Q5VERxdkV4dzgybHp0eG9sWEdJUnhqQlo0M3hMM0tyd2JfN20zVTloVDhuNW9KdEhnOE5WQndHZFJYaU1Xc0ZwcXRWNWNN?oc=5"
+    },
+    {
+      "title": "Agentic AI in biomedical research: What is it and can it expedite science?",
+      "source": "Stanford Medicine",
+      "date": "2026-07-22",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcGtmcFlsRktpWkpKOGdtbF9BZDR3bXRPWlB4MVVJNEFBWkNIaHFlZ0N5OXlEcmZIYUNzYmJuaFdrMkdBZTh4NUREY0FmTEk5SFA2aEFjekxvWmRlLVpPZXN2MW0zdFVyMXNRal9Na3pJQWIzaVZESzBYeE1mVTJtbGpZRW1rbWY4SkxPQUdR?oc=5"
+    },
+    {
+      "title": "Daphne Koller on Why Insitro Skipped Biotech’s Shortcut",
+      "source": "observer.com",
+      "date": "2026-07-22",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdDNKQTExWEdwYkZmSHlNQlZvY2JwQktjcXBacFA4YzhDdm1rbzJ0VDVHOE9PbURQMkdKS0g1WmZzbXlsbUNUUWM0V2U0MVRuZWVnRXE2bFpEN05QNW1rOHQ2bmQ1R21NclNFZi1nTFRqVHB5dGJkaTZlVVE2YXZxNkRYS1pHdjF1cXpVMg?oc=5"
+    },
+    {
+      "title": "Investors bet on AI drug discovery despite approval gap",
+      "source": "Financial Times",
+      "date": "2026-07-21",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQaWNmODdNYTdpZDhUUUdUU0tobmQyTVZBdnNpekU1eTg2SmFLaUZUMldySVpPWTBnMHZubGtnR1hJM1hiWkF2U0k0WUs5UkR3TXVDRHNnUnR5THNzV1R2cy1jdDhQWVdySUtCWEVncmVxMXFxZ1dhQm1jbWJqc0IxcmtoRDI?oc=5"
+    },
+    {
+      "title": "An Overview of U.S.-China Life Sciences Competition and Cooperation",
+      "source": "Asia Society",
+      "date": "2026-07-21",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbG9GTGVRbFpFb2VESy1hbzBuMVRVVjR5RExLWUhTaUl3QkxJdXpkdERUTEExMVdQbkJ6dnJQYlZFRkFkR3RrY2JCcVpTS21aWS1zSjU2U0pQTHhJM1RQRUt4aGhpazl1X0NZVG1XNXkzc0RzQ2RFSklWYWhUVUdMNlpBcnV4U1JvOTlQNHF4SDlYeUNZZ0FvLTZ0RGFUNEhfemc?oc=5"
+    }
+  ],
   "nature": [
     {
       "title": "Combined effect of Al2O3 microparticle-enhanced cultivation (MPEC) and inoculation strategy on Streptomyces rimosus",
       "source": "Nature",
-      "date": "Sun, 26 Jul 2026 00:",
+      "date": "2026-07-26",
       "url": "https://www.nature.com/articles/s41598-026-63686-7"
     },
     {
       "title": "Polyethylene glycol-enhanced removal of 2,4-dichlorophenol and 4-chlorophenol by peroxidase from shepherd’s purse (Capsella bursa-pastoris)",
       "source": "Nature",
-      "date": "Sun, 26 Jul 2026 00:",
+      "date": "2026-07-26",
       "url": "https://www.nature.com/articles/s41598-026-64317-x"
     },
     {
       "title": "Sustained simvastatin delivery via poly(lactide) nanoparticles enhances early osteogenic-associated responses in human periodontal ligament stem cells",
       "source": "Nature",
-      "date": "Sun, 26 Jul 2026 00:",
+      "date": "2026-07-26",
       "url": "https://www.nature.com/articles/s41598-026-63776-6"
     },
     {
       "title": "Flow cytometry as a tool for real-time monitoring of antifungal activity and aggregation in Candida auris",
       "source": "Nature",
-      "date": "Sun, 26 Jul 2026 00:",
+      "date": "2026-07-26",
       "url": "https://www.nature.com/articles/s41598-026-63581-1"
     },
     {
       "title": "Design and transfection of CRISPR/Cas9 constructs for the myostatin gene in Labeo rohita muscle cells",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41598-026-61844-5"
     },
     {
       "title": "Doxorubicin-loaded gold nanoparticles for enhanced anticancer efficacy: in vitro, in vivo, and FTIR-based tissue analysis",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41598-026-61018-3"
     },
     {
       "title": "Finding the perfect promoter for Cas9 in homing gene drives using single cell transcriptome data",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41467-026-76107-0"
     },
     {
       "title": "Effectiveness of pH on formation and characterization of chitosan-alginate nanoparticles and nanohydrogels based on the formed nanoparticles",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41598-026-62504-4"
     },
     {
       "title": "Chromosome-level genome assembly of the Shiqi pigeon (Columba livia)",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41597-026-07987-6"
     },
     {
       "title": "Generation of high-producing CHO cell lines using cell picking system combined with fluorescent labeling of secreted products",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s41598-026-63844-x"
     },
     {
       "title": "Transparent silk hydrogels as a versatile platform for cell culture and imaging",
       "source": "Nature",
-      "date": "Sat, 25 Jul 2026 00:",
+      "date": "2026-07-25",
       "url": "https://www.nature.com/articles/s43246-026-01299-3"
     },
     {
       "title": "In vivo study of the effect of composition and implantation site on scaffold degradation rate",
       "source": "Nature",
-      "date": "Fri, 24 Jul 2026 00:",
+      "date": "2026-07-24",
       "url": "https://www.nature.com/articles/s43246-026-01308-5"
     }
   ],
-  "errors": [
-    "domestic: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /hbrd_News.do?bid=todaynews (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a64467a10>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
-    "government: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /board.do?bid=division (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a63ce6240>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
-    "overseas: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /hbrd_News.do?bid=overseanews (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a63ce66f0>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))"
-  ]
+  "errors": []
 }
