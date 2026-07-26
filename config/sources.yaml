@@ -1,0 +1,57 @@
+{
+  "settings": {
+    "max_items_per_section": 12,
+    "domestic_max_age_days": 4,
+    "government_max_age_days": 14,
+    "overseas_max_age_days": 7,
+    "nature_max_age_days": 14,
+    "request_timeout_seconds": 25
+  },
+  "domestic": {
+    "queries": [
+      "(바이오 OR 생명공학 OR 제약바이오) (정책 OR 산업 OR 기술 OR 규제) when:4d",
+      "(합성생물학 OR 바이오파운드리 OR AI 신약 OR 디지털바이오) when:4d",
+      "(세포치료 OR 유전자치료 OR mRNA OR 바이오의약품 OR CDMO) when:4d"
+    ],
+    "allowed_sources": [
+      "연합뉴스", "뉴스1", "전자신문", "디지털타임스", "서울경제", "한국경제",
+      "매일경제", "파이낸셜뉴스", "머니투데이", "조선비즈", "이데일리",
+      "바이오스펙테이터", "바이오타임즈", "히트뉴스", "약업신문", "데일리팜",
+      "메디파나뉴스", "청년의사", "헬로디디", "메디칼업저버", "데일리메디"
+    ]
+  },
+  "government": {
+    "feeds": [
+      {"name": "과학기술정보통신부", "url": "https://www.msit.go.kr/user/rss/rss.do?bbsSeqNo=94"},
+      {"name": "보건복지부", "url": "https://www.mohw.go.kr/rss/board.es?mid=a10503000000&bid=0027&info"},
+      {"name": "식품의약품안전처", "url": "https://www.mfds.go.kr/www/rss/brd.do?brdId=ntc0021"}
+    ]
+  },
+  "overseas": {
+    "queries": [
+      "(biotech OR biopharma) (policy OR regulation OR industry OR technology) when:7d",
+      "(synthetic biology OR AI drug discovery OR biofoundry OR gene therapy OR cell therapy) when:7d",
+      "(FDA OR EMA) (biologics OR biotech OR gene therapy OR cell therapy) when:7d"
+    ],
+    "allowed_sources": [
+      "Reuters", "Financial Times", "STAT", "Fierce Biotech", "BioSpace",
+      "Endpoints News", "GEN", "Nature Biotechnology", "Science", "Cell",
+      "MIT Technology Review", "The Scientist", "BioCentury", "European Biotechnology"
+    ]
+  },
+  "nature": {
+    "feeds": [
+      {"name": "Nature News", "url": "https://www.nature.com/nature/articles?type=news&format=rss"}
+    ]
+  },
+  "bio_keywords_ko": [
+    "바이오", "생명공학", "제약", "신약", "합성생물학", "바이오파운드리", "유전자",
+    "세포치료", "유전자치료", "mRNA", "백신", "바이오의약품", "CDMO", "헬스케어",
+    "의료", "식약처", "규제", "임상", "진단", "유전체", "단백질", "AI 신약"
+  ],
+  "bio_keywords_en": [
+    "biotech", "biotechnology", "biopharma", "drug", "therapy", "gene", "cell", "vaccine",
+    "mrna", "synthetic biology", "biofoundry", "biologics", "genome", "protein", "clinical",
+    "fda", "ema", "diagnostic", "health", "crispr", "pharma"
+  ]
+}
