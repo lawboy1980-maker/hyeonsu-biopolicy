@@ -3,7 +3,7 @@ const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(
 async function init(){try{if(window.DASHBOARD_DATA){state.data=window.DASHBOARD_DATA;}else{const r=await fetch('data/dashboard.json');if(!r.ok)throw new Error('data load failed');state.data=await r.json();}renderAll();bindEvents();}catch(e){document.body.innerHTML='<main style="padding:40px;font-family:sans-serif"><h1>데이터를 불러오지 못했습니다.</h1><p>파일 구성과 경로를 확인해 주세요.</p></main>'}}
 function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderNews();renderKpis();renderQuickAccess();renderCharts();renderPromptChips();applyUrlState()}
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
-function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·제도</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
+function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·규제</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
 function renderSchedules(){$('#scheduleList').innerHTML=state.data.schedules.slice(0,5).map(s=>`<div class="schedule-item"><span class="badge">${s.date}</span><span>${s.title}</span><i class="bi bi-chevron-right"></i></div>`).join('')}
 function renderNews(filter=state.newsFilter){state.newsFilter=filter;const items=(state.data.news||[]).filter(n=>filter==='전체'||n.category===filter);$('#newsGrid').innerHTML=items.map(n=>`<article class="news-card"><div class="news-meta"><span class="news-category">${n.category}</span><span>${n.source} · ${n.date}</span></div><h3>${n.title}</h3><p>${n.summary||''}</p><a href="${n.url||'#'}" ${n.url&&n.url!=='#'?'target="_blank" rel="noopener noreferrer"':''}>기사 보기 <i class="bi bi-arrow-up-right"></i></a></article>`).join('')||'<p class="empty-state">등록된 뉴스가 없습니다.</p>';$$('.news-filter').forEach(b=>b.classList.toggle('active',b.dataset.newsFilter===filter))}
@@ -139,8 +139,8 @@ function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
   $('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';
   if(view==='dashboard'){
     $('#dashboardView').classList.add('active');
-    $('#pageTitle').textContent='바이오정책 인텔리전스';
-    $('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.';
+    $('#pageTitle').textContent='HyLab';
+    $('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.';
   }else if(view==='assistant'){
     $('#assistantView').classList.add('active');
     $('#pageTitle').textContent='AI 정책 Q&A';
@@ -153,7 +153,7 @@ function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
             $('#legacySectionSummary').style.display='none';
       $('#legacyIndicatorPanel').style.display='block';
       renderIndicatorTable(view);
-      $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·제도 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
+      $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·규제 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
     }
     const researchTitle=topic&&state.data.researchAreasV2?.[key]?.topics?.[topic]?.title;
     $('#pageTitle').textContent=researchTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.researchAreasV2?.[key]?.title||state.data.sections[key].title);

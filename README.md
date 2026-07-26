@@ -1,4 +1,4 @@
-# BioPolicy Intelligence Platform v2.1
+# HyLab Digital Research Workspace v2.2
 
 GitHub Pages용 정적 웹사이트입니다.
 
@@ -34,3 +34,11 @@ GitHub Pages용 정적 웹사이트입니다.
 ```
 
 뉴스는 최상위 `news` 배열에서 관리합니다.
+
+
+## v2.2 브랜드 변경
+- BioPolicy → HyLab
+- BP → HL
+- Intelligence Platform → Digital Research Workspace
+- 대시보드 및 상위 메뉴의 제도 → 규제
+- Technology, Policy, Industry, Regulation 영역에 HyLab Intelligence 표기 적용

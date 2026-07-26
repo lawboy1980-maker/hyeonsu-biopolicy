@@ -35,7 +35,7 @@
       "soft": "#f3f0ff"
     },
     {
-      "area": "제도",
+      "area": "규제",
       "label": "주요 바이오 법령",
       "value": "32건",
       "meta": "전년 대비 ▲ 3건",
@@ -466,8 +466,8 @@
       ]
     },
     "institution": {
-      "title": "제도",
-      "description": "법률·규제·윤리·안전·거버넌스를 연결해 제도 기반을 점검합니다.",
+      "title": "규제",
+      "description": "법률·규제·윤리·안전·거버넌스를 연결해 규제 기반을 점검합니다.",
       "colors": [
         "#c65f21",
         "#f39a57"
@@ -1136,7 +1136,7 @@
   },
   "researchAreasV2": {
     "technology": {
-      "eyebrow": "BIO TECHNOLOGY",
+      "eyebrow": "HYLAB / TECHNOLOGY INTELLIGENCE",
       "title": "기술",
       "subtitle": "바이오 기술의 변화와 연구역량을 연결합니다.",
       "overview": "합성생물학, AI 바이오, 신약개발, 그린·화이트바이오의 핵심기술과 연구자료를 주제별로 탐색합니다.",
@@ -1448,7 +1448,7 @@
       ]
     },
     "policy": {
-      "eyebrow": "BIO POLICY",
+      "eyebrow": "HYLAB / POLICY INTELLIGENCE",
       "title": "정책",
       "subtitle": "국가 바이오전략과 실행체계를 연결합니다.",
       "overview": "국가전략과 기본계획에서 연도별 시행계획, 기술평가, 실태조사·통계, 바이오인력까지 정책의 수립·이행·평가 전 과정을 탐색합니다.",
@@ -1554,7 +1554,7 @@
       ]
     },
     "industry": {
-      "eyebrow": "BIO INDUSTRY",
+      "eyebrow": "HYLAB / INDUSTRY INTELLIGENCE",
       "title": "산업",
       "subtitle": "연구성과가 시장과 산업생태계로 이어지는 경로를 분석합니다.",
       "overview": "기술사업화, 바이오클러스터, 소부장, 투자·금융을 중심으로 바이오산업의 성장 기반과 병목요인을 살펴봅니다.",
@@ -1649,7 +1649,7 @@
       ]
     },
     "institution": {
-      "eyebrow": "BIO REGULATION",
+      "eyebrow": "HYLAB / REGULATION INTELLIGENCE",
       "title": "규제",
       "subtitle": "법·제도, 규제와 표준화를 하나의 체계로 연결합니다.",
       "overview": "바이오혁신을 뒷받침하는 법·제도, 인허가와 규제과학, 국제표준과 시험·인증 체계를 종합적으로 탐색합니다.",
@@ -1755,7 +1755,7 @@
       "url": "#"
     },
     {
-      "category": "제도",
+      "category": "규제",
       "title": "첨단바이오 규제과학 및 국제표준 논의",
       "source": "Regulation Watch",
       "date": "2026.07.23",

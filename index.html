@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="기술·정책·산업·제도를 연결하는 바이오정책 인텔리전스 플랫폼">
-  <title>BioPolicy Intelligence Platform</title>
+  <meta name="description" content="기술·정책·산업·규제를 연결하는 HyLab 디지털 연구 워크스페이스">
+  <title>HyLab | Digital Research Workspace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <script src="assets/js/data.js?v=2.1.0" defer></script>
-  <script src="assets/js/app.js?v=2.1.0" defer></script>
+  <script src="assets/js/data.js?v=2.2.0" defer></script>
+  <script src="assets/js/app.js?v=2.2.0" defer></script>
 </head>
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="index.html">
-      <span class="brand-mark">BP</span>
-      <span><strong>BioPolicy</strong><small>Intelligence Platform</small></span>
+      <span class="brand-mark">HL</span>
+      <span><strong>HyLab</strong><small>Digital Research Workspace</small></span>
     </a>
     <nav class="main-nav" aria-label="주 메뉴">
       <p class="nav-label">OVERVIEW</p>
@@ -28,22 +28,22 @@
       <button class="nav-item" data-view="technology"><i class="bi bi-cpu"></i><span>기술</span></button>
       <button class="nav-item" data-view="policy"><i class="bi bi-bank"></i><span>정책</span></button>
       <button class="nav-item" data-view="industry"><i class="bi bi-buildings"></i><span>산업</span></button>
-      <button class="nav-item" data-view="institution"><i class="bi bi-shield-check"></i><span>제도</span></button>
+      <button class="nav-item" data-view="institution"><i class="bi bi-shield-check"></i><span>규제</span></button>
       <p class="nav-label">TOOLS</p>
       <button class="nav-item" data-view="explorer"><i class="bi bi-database"></i><span>통계·데이터</span></button>
       <button class="nav-item" data-view="archive"><i class="bi bi-folder2-open"></i><span>정책자료실</span></button>
       <button class="nav-item" data-view="assistant"><i class="bi bi-stars"></i><span>AI 정책 Q&A</span></button>
     </nav>
-    <div class="sidebar-footer"><div class="profile-badge">BP</div><div><strong>BioPolicy Lab</strong><span>Policy Intelligence</span></div></div>
+    <div class="sidebar-footer"><div class="profile-badge">HL</div><div><strong>HyLab</strong><span>Bio Policy Intelligence</span></div></div>
   </aside>
 
   <main class="main-content">
     <header class="topbar">
       <button class="icon-button mobile-only" id="menuButton" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
       <div class="page-title">
-        <span class="breadcrumb">BIOPOLICY / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
-        <h1 id="pageTitle">기술 <span class="version-badge">V2.1</span></h1>
-        <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.</p>
+        <span class="breadcrumb">HYLAB / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
+        <h1 id="pageTitle">HyLab <span class="version-badge">V2.2</span></h1>
+        <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.</p>
       </div>
       <div class="topbar-actions">
         <label class="year-filter"><span>기준연도</span><select id="yearSelect" aria-label="기준연도 선택"></select></label>
@@ -54,9 +54,9 @@
     <section id="dashboardView" class="view active">
       <section class="hero-panel">
         <div class="hero-copy">
-          <span class="eyebrow light">BIOPOLICY INTELLIGENCE</span>
-          <h2>바이오 혁신의 변화를<br>정책 관점에서 연결합니다.</h2>
-          <p>기술 신호, 정부 정책, 산업 성과, 법·제도 변화를 하나의 흐름으로 추적합니다.</p>
+          <span class="eyebrow light">DIGITAL RESEARCH WORKSPACE</span>
+          <h2>HyLab</h2>
+          <p>기술 신호, 정부 정책, 산업 성과, 법·규제 변화를 하나의 흐름으로 연결합니다.</p>
           <div class="hero-actions">
             <button class="primary-button" data-jump="assistant"><i class="bi bi-stars"></i> AI 정책 검색</button>
             <button class="secondary-button" data-jump="explorer"><i class="bi bi-bar-chart"></i> 통계 탐색</button>
@@ -86,13 +86,13 @@
       <!-- 2행: 바이오 정책 뉴스 -->
       <section class="panel news-panel">
         <div class="panel-heading news-heading">
-          <div><span class="eyebrow">BIO POLICY NEWS</span><h2>바이오 정책 뉴스</h2><p>기술·정책·산업·제도의 주요 변화를 한곳에서 확인합니다.</p></div>
+          <div><span class="eyebrow">BIO POLICY NEWS</span><h2>바이오 정책 뉴스</h2><p>기술·정책·산업·규제의 주요 변화를 한곳에서 확인합니다.</p></div>
           <div class="news-filters" id="newsFilters" aria-label="뉴스 분야 필터">
             <button class="news-filter active" data-news-filter="전체">전체</button>
             <button class="news-filter" data-news-filter="기술">기술</button>
             <button class="news-filter" data-news-filter="정책">정책</button>
             <button class="news-filter" data-news-filter="산업">산업</button>
-            <button class="news-filter" data-news-filter="제도">제도</button>
+            <button class="news-filter" data-news-filter="규제">규제</button>
           </div>
         </div>
         <div class="news-grid" id="newsGrid"></div>
@@ -110,7 +110,7 @@
       <!-- 4행: Quick Research -->
       <section class="panel topic-panel">
         <div class="panel-heading topic-heading">
-          <div><span class="eyebrow">QUICK RESEARCH</span><h2>Quick Research</h2><p>기술·정책·산업·제도 순으로 핵심 주제를 빠르게 탐색합니다.</p></div>
+          <div><span class="eyebrow">QUICK RESEARCH</span><h2>Quick Research</h2><p>기술·정책·산업·규제 순으로 핵심 주제를 빠르게 탐색합니다.</p></div>
           <span class="data-note">카드를 선택하면 해당 분야의 주제 페이지로 이동합니다.</span>
         </div>
         <div class="topic-grid" id="topicGrid"></div>
@@ -158,7 +158,7 @@
           <div class="research-subtopic-grid" id="researchSubtopicGrid"></div>
           <div class="research-selected-subtopic" id="researchSelectedSubtopic" hidden></div>
           <div class="research-content-grid">
-            <section class="research-content-block"><div class="subsection-heading"><h3>Featured Reports</h3><p>핵심 기술·정책·산업·제도 보고서</p></div><div class="research-list" id="researchReports"></div></section>
+            <section class="research-content-block"><div class="subsection-heading"><h3>Featured Reports</h3><p>핵심 기술·정책·산업·규제 보고서</p></div><div class="research-list" id="researchReports"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Resources</h3><p>법령·통계·원문 데이터</p></div><div class="research-list" id="researchResources"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>HyLab Reports</h3><p>HyLab 분석자료와 브리프</p></div><div class="research-list" id="researchHylab"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Research Notes</h3><p>연구 메모와 정책질문</p></div><div class="research-list" id="researchNotes"></div></section>
@@ -180,7 +180,7 @@
 
     <section id="assistantView" class="view">
       <div class="assistant-layout">
-        <section class="panel assistant-intro"><span class="eyebrow">AI POLICY ASSISTANT</span><h2>기술·정책·산업·제도를 연결해 질문하세요</h2><p>현재 등록된 예시 데이터 안에서 답변하는 데모입니다.</p><div class="prompt-chips" id="promptChips"></div></section>
+        <section class="panel assistant-intro"><span class="eyebrow">AI POLICY ASSISTANT</span><h2>기술·정책·산업·규제를 연결해 질문하세요</h2><p>현재 등록된 예시 데이터 안에서 답변하는 데모입니다.</p><div class="prompt-chips" id="promptChips"></div></section>
         <section class="panel chat-panel"><div class="chat-log" id="chatLog"><div class="assistant-message">안녕하세요. 바이오정책 관련 주제나 지표를 입력해 주세요.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="예: 합성생물학의 정책과 산업을 요약해줘" autocomplete="off"><button type="submit"><i class="bi bi-send"></i></button></form></section>
       </div>
     </section>
