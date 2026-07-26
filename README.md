@@ -41,3 +41,7 @@ python -m http.server 8000
 - 생산규모는 시범 구현에서 `국내판매 + 수출`로 산출합니다. KBIOIS의 공식 생산규모 정의와 다른 경우 `config/kbiois-indicators.json`의 소스를 조정해야 합니다.
 - API가 제공하지 않는 연도는 오류 목록에 남기고 나머지 연도는 계속 갱신합니다.
 - 인증키는 소스코드나 JSON 파일에 저장하지 마십시오.
+
+## 배포 대상
+- GitHub 저장소: `lawboy1980-maker/hyeonsu-biopolicy`
+- GitHub Pages: `https://lawboy1980-maker.github.io/hyeonsu-biopolicy/`
