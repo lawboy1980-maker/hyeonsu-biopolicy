@@ -1,52 +1,46 @@
-# BioPolicy Intelligence Platform v1.4
+# BioPolicy Intelligence Platform v1.5
 
 ## 버전 성격
 
-v1.4는 v1.3 파일 위에 일부 코드를 덧씌운 버전이 아니라, 지금까지 합의한 **Technology 정보구조를 기준으로 새로 설계한 독립 버전**입니다.
+v1.5는 v1.4의 **Technology 정보구조를 유지**하면서, 플랫폼의 첫 진입화면인 **Home Dashboard**를 통합한 버전입니다.
 
-## v1.4에서 반영한 합의사항
+## v1.5 핵심 변경
 
-### 기술 메인
-1. 기술 배너
-2. 기술주제 상단 탭
-   - 합성생물학
-   - AI 바이오
-   - 신약개발
-   - 그린·화이트바이오
-3. 바이오기술 개요
-4. 바이오 일반 핵심지표
-5. AI 정책질문
+### 1. Home Dashboard 신설
+- Quick Research
+- 바이오 일반 주요 통계
+- 최신 기사·보도자료
+- Research Hub
+- AI 정책질문
 
-### 기술주제 상세
-1. 한줄 정의
-2. 정책 아젠다
-3. 핵심지표
-4. 핵심기술
-5. 국내외 동향
-6. 관련자료
+### 2. Technology v1.4 계승
+- 기술 배너
+- 상단 기술주제 탭
+  - 합성생물학
+  - AI 바이오
+  - 신약개발
+  - 그린·화이트바이오
+- 바이오기술 개요
+- 바이오 일반 핵심지표
+- AI 정책질문
+- 기술주제별 상세
+  - 한줄 정의
+  - 정책 아젠다
+  - 핵심지표
+  - 핵심기술
+  - 국내외 동향
+  - 관련자료
 
-## 중요한 변경
-
-- 기술주제를 왼쪽 사이드 메뉴에서 제거하고, 배너 아래 상단 탭으로 이동했습니다.
-- `주요 정책 질문`을 `AI 정책질문`으로 변경했습니다.
-- 정책 아젠다는 뉴스가 아니라 실제 추진 중이거나 준비 중인 정책업무로 구성했습니다.
-- 기술 메인의 핵심지표와 개별 기술주제의 핵심지표를 구분했습니다.
-- JSON fetch 없이 실행되므로 `index.html`을 더블클릭해도 화면이 동작합니다.
-- 정책·산업·기관은 v1.4에서 임의로 재설계하지 않고 다음 버전 대상으로 남겨두었습니다.
-
-## 설치 방법
-
-1. 기존 저장소를 백업하거나 별도 브랜치를 만듭니다.
-2. 저장소 루트의 기존 파일을 삭제합니다.
-3. 이 압축파일의 내용물을 저장소 루트에 업로드합니다.
-4. `index.html`, `assets/css/style.css`, `assets/js/app.js` 구조를 유지합니다.
-5. GitHub Pages 배포가 완료되면 브라우저에서 강력 새로고침합니다.
-   - Windows: `Ctrl + F5`
+### 3. 연결 방식
+- 대시보드의 Technology 카드와 기술주제 버튼이 Technology 상세화면으로 연결됩니다.
+- 정책·산업·기관은 임의로 상세설계하지 않고 다음 버전 대상으로 유지합니다.
+- JSON `fetch()` 없이 실행되므로 `index.html`을 더블클릭해도 주요 화면이 동작합니다.
+- Chart.js와 아이콘은 CDN을 사용하므로 차트와 아이콘 표시는 인터넷 연결이 필요합니다.
 
 ## 파일 구조
 
 ```text
-biopolicy-platform-v1.4-redesign/
+biopolicy-platform-v1.5-dashboard/
 ├─ index.html
 ├─ README.md
 └─ assets/
@@ -54,4 +48,21 @@ biopolicy-platform-v1.4-redesign/
    │  └─ style.css
    └─ js/
       └─ app.js
+```
+
+## GitHub 적용 방법
+
+1. 기존 저장소에서 백업 브랜치를 생성합니다.
+2. 이 압축파일의 내용물을 저장소 루트에 업로드합니다.
+3. 아래 구조가 유지되는지 확인합니다.
+   - `index.html`
+   - `assets/css/style.css`
+   - `assets/js/app.js`
+4. GitHub Pages 배포가 완료된 뒤 강력 새로고침합니다.
+   - Windows: `Ctrl + F5`
+
+## 권장 커밋 메시지
+
+```text
+feat: integrate v1.5 home dashboard with technology v1.4
 ```

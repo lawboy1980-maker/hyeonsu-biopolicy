@@ -1,40 +1,236 @@
-const DATA={
-  bioKpis:[
-    {label:'국가 기술수준',value:'82.1%',meta:'전년 대비 +1.3%p',icon:'bi-speedometer2',color:'#2d6cdf',soft:'#eef4ff'},
-    {label:'바이오 시장규모',value:'76.4조원',meta:'최근 5년 연평균 +7.8%',icon:'bi-graph-up',color:'#1b9c84',soft:'#ebf8f5'},
-    {label:'국가 바이오 R&D',value:'5.8조원',meta:'정부 R&D 중 16.2%',icon:'bi-cash-stack',color:'#7658d8',soft:'#f1edff'},
-    {label:'논문·특허',value:'43,820건',meta:'세계 점유율 4.9%',icon:'bi-journal-text',color:'#ef8b3a',soft:'#fff3e8'},
-    {label:'바이오기업',value:'1,420개',meta:'혁신형 기업 지속 증가',icon:'bi-buildings',color:'#3ca66b',soft:'#ebf8ef'},
-    {label:'기술사업화',value:'2,640건',meta:'공공연구성과 이전 기준',icon:'bi-arrow-left-right',color:'#2d6cdf',soft:'#eef4ff'},
-    {label:'전문인력',value:'11.8만명',meta:'연구·산업 인력 합계',icon:'bi-people',color:'#1b9c84',soft:'#ebf8f5'},
-    {label:'세계 경쟁력',value:'7위',meta:'종합기술역량 기준',icon:'bi-trophy',color:'#ef8b3a',soft:'#fff3e8'}
+const $ = (s, p=document) => p.querySelector(s);
+const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+
+const DATA = {
+  homeKpis: [
+    {label:"국가 바이오 R&D 투자", value:"5.8조원", change:"전년 대비 6.2%"},
+    {label:"바이오산업 생산규모", value:"23.4조원", change:"전년 대비 7.5%"},
+    {label:"바이오기업", value:"1,186개", change:"신규 42개사"},
+    {label:"바이오 논문", value:"31,482편", change:"전년 대비 4.8%"},
+    {label:"바이오 특허", value:"12,740건", change:"전년 대비 3.1%"}
   ],
-  questions:[
-    ['우리나라 바이오 기술은 세계적으로 어느 수준인가?','기술수준, 논문, 특허와 R&D 투자를 종합 비교합니다.'],
-    ['어떤 바이오 기술이 빠르게 성장하고 있는가?','연구성과, 산업성장률, 투자신호를 분석합니다.'],
-    ['연구성과가 산업과 정책으로 연결되고 있는가?','사업화와 정책수요 간 연계성을 진단합니다.'],
-    ['향후 우선 육성해야 할 바이오 기술은 무엇인가?','기술성숙도, 시장성, 정책적 중요도를 함께 살펴봅니다.']
+  news: [
+    {category:"보도자료", source:"과학기술정보통신부", title:"AI 바이오 혁신생태계 조성을 위한 정책 방향", summary:"AI와 바이오 융합 연구개발 및 인프라 지원 방향을 정리한 예시 콘텐츠입니다.", date:"2026.07.26"},
+    {category:"정책", source:"정책브리핑", title:"합성생물학 육성정책 추진체계와 향후 과제", summary:"기본계획, 기술수준평가 및 정책전문기관의 역할을 중심으로 구성한 예시입니다.", date:"2026.07.24"},
+    {category:"산업", source:"Bio Industry", title:"혁신신약 분야 투자 및 기술수출 동향", summary:"국내외 혁신신약 기업의 투자·공동개발·기술사업화 흐름을 정리한 예시입니다.", date:"2026.07.22"},
+    {category:"해외", source:"OECD", title:"바이오경제와 신흥기술 거버넌스 국제동향", summary:"주요국 바이오 정책과 거버넌스 변화 방향을 비교한 예시입니다.", date:"2026.07.19"}
   ],
-  topics:{
-    synbio:{index:'01',title:'합성생물학',subtitle:'설계·제작·바이오제조',definition:'생명시스템을 설계·제작하는 공학기술로, 바이오제조와 AI 기반 바이오혁신을 이끄는 핵심 플랫폼 기술입니다.',oneLine:'생명시스템을 공학적으로 설계하고 제작하여 바이오제조와 신산업을 창출하는 플랫폼 기술',kpis:[['기술수준','80.4%'],['국가 R&D','4,120억원'],['논문','2,840건'],['특허','1,130건']],agenda:[['법·계획','기본계획 수립','합성생물학 육성을 위한 중장기 정책방향과 이행체계를 마련합니다.','progress','추진 중'],['법·제도','시행령 제정','법 시행을 위한 위임사항과 세부 기준을 설계합니다.','progress','추진 중'],['정책기반','정책전문기관 운영','법정 정책지원 기능과 산학연 협력체계를 구축합니다.','review','검토'],['평가','기술수준평가','국가 기술경쟁력과 주요국 격차를 정례적으로 분석합니다.','plan','예정'],['평가','기술영향평가','사회·경제·윤리적 영향과 대응방안을 사전에 검토합니다.','plan','예정'],['규제','규제발굴·개선','연구·산업 현장의 규제 이슈를 상시 발굴하고 개선을 지원합니다.','review','검토']],tech:[['DBTL','설계-제작-시험-학습'],['바이오파운드리','자동화·고속화 연구시설'],['DNA 합성','유전정보 설계·제작'],['세포공장','미생물 기반 생산시스템'],['유전자회로','생물학적 제어시스템'],['대사공학','생산경로 최적화']],trends:{기술:['AI 기반 설계와 자동화 실험이 결합되면서 DBTL 사이클의 고속화가 핵심 흐름으로 부상하고 있습니다.',['바이오파운드리 자동화','대규모 설계공간 탐색','무세포 시스템 확대']],정책:['주요국은 바이오제조 역량, 공공 바이오파운드리, 데이터 인프라와 바이오안보를 중심으로 정책을 강화하고 있습니다.',['국가 바이오제조 전략','공공 인프라 투자','국제표준·안전 거버넌스']],산업:['의약·소재·식품·에너지 분야에서 플랫폼 기업과 바이오제조 투자가 확대되고 있습니다.',['플랫폼 기업 성장','정밀발효 투자 확대','스케일업 수요 증가']],제도:['연구 초기 안전관리, 데이터 이용, 자동화 제조 검증과 책임체계 마련이 주요 과제입니다.',['안전·보안 기준','데이터 권리','자동화 공정 검증']]},resources:[['법령','합성생물학 육성법','제정 법률과 주요 조문','2025'],['보고서','합성생물학 정책·산업 분석','기술과 정책 현황 종합','2026'],['BioIN','글로벌 합성생물학 동향','주요국 정책과 산업 사례','2026'],['논문','Synthetic Biology Governance','거버넌스 비교연구','2026']]},
-    aibio:{index:'02',title:'AI 바이오',subtitle:'데이터·AI·연구혁신',definition:'인공지능을 활용해 바이오 데이터의 해석, 예측, 설계와 실험을 고도화하는 융합 기술 분야입니다.',oneLine:'대규모 바이오 데이터와 AI를 결합해 발견·예측·설계·실험의 전 과정을 혁신하는 융합기술',kpis:[['AI 바이오 R&D','6,300억원'],['데이터셋','1,240개'],['전문인력','9,800명'],['관련기업','286개']],agenda:[['인프라','AI-Bio 혁신거점','연구·데이터·컴퓨팅·산업을 연결하는 거점을 구축합니다.','progress','추진 중'],['데이터','바이오 데이터 활용','고품질 데이터의 구축·개방·공동활용 체계를 마련합니다.','progress','추진 중'],['신뢰성','AI 신뢰성 확보','설명가능성·재현성·책임성 기준을 검토합니다.','review','검토'],['컴퓨팅','국가 컴퓨팅 인프라','GPU·클라우드와 바이오 특화 컴퓨팅 기반을 강화합니다.','plan','예정'],['인력','융합인력 양성','바이오와 AI를 함께 이해하는 전문인력을 육성합니다.','plan','예정'],['거버넌스','AI 활용 책임체계','연구·의료·산업 현장의 책임분담 원칙을 검토합니다.','review','검토']],tech:[['바이오 파운데이션 모델','범용 생명정보 학습'],['단백질 설계','구조·기능 예측 및 생성'],['멀티오믹스 AI','복합 생명정보 통합'],['생성형 AI','후보물질·서열 설계'],['연구자동화','AI-로봇 실험 연계'],['정밀의료 AI','환자 맞춤형 예측']],trends:{기술:['대규모 파운데이션 모델, 멀티모달 통합과 생성형 설계 기술이 빠르게 발전하고 있습니다.',['생물학적 언어모델','멀티오믹스 통합','에이전트형 연구자동화']],정책:['데이터 접근성, 국가 AI 컴퓨팅 인프라, 연구보안과 책임 있는 AI 활용이 핵심 정책주제입니다.',['국가 데이터 전략','AI 컴퓨팅 지원','신뢰·책임 가이드라인']],산업:['AI 신약개발, 정밀의료와 단백질 설계 기업을 중심으로 투자와 협업이 확대되고 있습니다.',['빅테크-바이오 협업','AI 신약 플랫폼','클라우드 연구환경']],제도:['AI 결과의 검증가능성, 데이터 권리, 의료·연구 활용 책임이 핵심 제도과제입니다.',['성능 검증','개인정보·데이터 권리','책임소재']]},resources:[['보고서','AI-Bio 혁신전략','국가 AI 바이오 정책방향','2026'],['BioIN','AI 바이오 글로벌 동향','기술·시장·정책 분석','2026'],['논문','Foundation Models for Biology','파운데이션 모델 리뷰','2025'],['데이터','국가 바이오 데이터맵','주요 데이터 자원 현황','2026']]},
-    drug:{index:'03',title:'신약개발',subtitle:'발굴·임상·사업화',definition:'질병 표적 발굴부터 후보물질, 비임상, 임상, 허가와 사업화에 이르는 전주기 기술·산업 분야입니다.',oneLine:'질병의 원인을 규명하고 안전성과 유효성을 갖춘 치료제를 발굴·검증·사업화하는 전주기 혁신 분야',kpis:[['기술수출','18.2조원'],['파이프라인','1,180개'],['임상시험','835건'],['신약기업','410개']],agenda:[['전략','국가 신약개발 전략','전주기 투자와 미션형 R&D 체계를 강화합니다.','progress','추진 중'],['AI','AI 신약개발','AI 기반 후보물질 발굴과 검증체계를 구축합니다.','progress','추진 중'],['규제과학','규제과학 고도화','신기술과 신규 모달리티 평가기준을 마련합니다.','review','검토'],['임상','임상지원 강화','임상시험 인프라와 환자 접근성을 개선합니다.','plan','예정'],['사업화','글로벌 기술사업화','기술이전과 글로벌 공동개발을 지원합니다.','progress','추진 중'],['인프라','전주기 데이터 연계','발굴부터 임상까지 데이터를 연결하는 기반을 강화합니다.','review','검토']],tech:[['표적발굴','질환 기전과 표적 규명'],['후보물질 최적화','효능·독성·약동학 개선'],['ADC','항체-약물 접합체'],['세포·유전자치료제','첨단바이오의약품'],['mRNA','핵산 기반 치료제'],['임상개발','환자·시험 설계']],trends:{기술:['AI 설계, 신규 모달리티, 정밀의료와 바이오마커 기반 임상개발이 확대되고 있습니다.',['생성형 신약설계','신규 모달리티','디지털 임상']],정책:['전주기 연계, 미션형 투자, 임상 경쟁력과 글로벌 사업화 지원이 주요 방향입니다.',['K-문샷형 투자','임상 인프라','글로벌 공동개발']],산업:['빅파마와 바이오텍 간 오픈이노베이션, 기술수출과 공동개발이 활발해지고 있습니다.',['기술이전 확대','공동개발 증가','플랫폼 기업 성장']],제도:['첨단바이오의약품과 AI 활용 신약개발의 평가기준 및 규제과학 역량이 중요해지고 있습니다.',['신규 모달리티 평가','AI 활용 검증','실사용데이터']]},resources:[['보고서','국가 신약개발 전략','전주기 지원체계','2026'],['BioIN','글로벌 신약개발 동향','시장·기술 변화','2026'],['논문','AI-Driven Drug Discovery','AI 신약개발 리뷰','2025'],['특허','신규 모달리티 특허분석','ADC·세포유전자치료제','2026']]},
-    green:{index:'04',title:'그린·화이트바이오',subtitle:'농업·소재·바이오제조',definition:'농업·식품·소재·에너지·환경 분야에 바이오기술을 적용해 지속가능한 산업 전환을 촉진하는 분야입니다.',oneLine:'생물자원과 생물공정을 활용해 농업·식품·소재·에너지 산업의 지속가능한 전환을 촉진하는 분야',kpis:[['시장규모','31.5조원'],['관련기업','720개'],['국가 R&D','1.9조원'],['수출','8.4조원']],agenda:[['전략','바이오제조 전략','바이오 기반 소재·화학·연료 산업을 육성합니다.','progress','추진 중'],['탄소중립','저탄소 전환','저탄소 공정과 바이오 전환기술을 확대합니다.','progress','추진 중'],['규제','신규소재 규제개선','미생물·신규소재 활용 관련 제도를 정비합니다.','review','검토'],['지역','지역산업 육성','지역 특화자원과 바이오산업을 연계합니다.','plan','예정'],['순환경제','바이오 순환경제','폐자원과 부산물의 바이오 기반 재활용을 촉진합니다.','plan','예정'],['표준','바이오제품 표준화','환경성·안전성·품질 평가기반을 마련합니다.','review','검토']],tech:[['바이오소재','생분해·기능성 소재'],['정밀발효','미생물 기반 고부가 생산'],['스마트농업','데이터 기반 생산관리'],['미생물 생산','산업용 세포공장'],['바이오연료','저탄소 에너지'],['업사이클링','폐자원 고부가화']],trends:{기술:['정밀발효, 바이오소재, 미생물 기반 생산과 저탄소 공정기술이 빠르게 발전하고 있습니다.',['정밀발효 상용화','생분해 소재','바이오 리파이너리']],정책:['탄소중립, 공급망 안정, 지역산업 전환과 바이오경제 확산이 주요 정책축입니다.',['탄소중립 연계','지역 바이오클러스터','바이오제조 지원']],산업:['식품·소재·화학·에너지 기업의 바이오 전환과 스타트업 투자가 증가하고 있습니다.',['대기업 전환투자','대체식품 시장','바이오소재 수요']],제도:['신규 식품·소재 안전성, 정밀육종 구분과 환경성 평가기준이 주요 이슈입니다.',['신규식품 안전성','정밀육종 제도','환경성 표시']]},resources:[['보고서','그린·화이트바이오 산업전망','산업·시장 분석','2026'],['BioIN','바이오제조 정책동향','주요국 전략 비교','2026'],['법령','바이오경제 관련 제도','국내 제도 현황','2026'],['뉴스','글로벌 정밀발효 투자동향','주요 투자사례','2026']]}
+  bioKpis: [
+    {label:"기술수준", value:"82.1%", change:"최고기술국 대비"},
+    {label:"정부 R&D", value:"5.8조원", change:"바이오 분야"},
+    {label:"논문", value:"31,482편", change:"최근 연도"},
+    {label:"특허", value:"12,740건", change:"최근 연도"},
+    {label:"산업 생산", value:"23.4조원", change:"바이오산업"}
+  ],
+  aiQuestions: [
+    "국가 바이오기술 수준을 높이기 위해 우선 투자할 분야는 무엇인가?",
+    "바이오 R&D 성과가 산업화로 연결되지 못하는 병목은 무엇인가?",
+    "주요국 정책 변화가 국내 바이오 전략에 미치는 영향은 무엇인가?"
+  ],
+  topics: {
+    "synthetic-biology": {
+      index:"01", title:"합성생물학",
+      definition:"생명시스템을 설계·제작·재구성하여 새로운 기능과 산업적 가치를 구현하는 공학적 바이오기술입니다.",
+      oneLine:"바이오를 분석하는 기술에서 설계하고 제조하는 기술로 전환시키는 기반기술",
+      kpis:[["정책단계","법·기본계획"],["핵심인프라","바이오파운드리"],["정책범위","R&D·산업·안전"]],
+      agendas:[
+        ["진행 중","합성생물학 기본계획","법정 기본계획 수립을 위한 비전·목표·추진과제 설계"],
+        ["준비","현황조사·통계체계","분류체계와 조사방법론을 기반으로 정책통계를 구축"],
+        ["상시","규제 발굴·지원","연구·산업 현장의 규제이슈를 발굴하고 개선과제를 제안"]
+      ],
+      tech:["DBTL 자동화","유전자회로 설계","무세포 시스템","바이오파운드리"],
+      trends:{
+        "기술":"자동화·AI·고속실험을 결합한 설계-제작-시험-학습 체계가 확산되고 있습니다.",
+        "정책":"주요국은 바이오제조 역량과 공급망·안보를 국가전략 차원에서 다루고 있습니다.",
+        "산업":"의약품, 소재, 식품, 화학제품 등 다양한 제조분야로 적용이 확대되고 있습니다.",
+        "제도":"안전·보안·데이터·표준·책임성에 관한 선제적 제도 논의가 중요해지고 있습니다."
+      },
+      resources:[["정책","합성생물학 육성법"],["계획","합성생물학 기본계획 자료"],["분석","글로벌 정책동향 브리프"]]
+    },
+    "ai-bio": {
+      index:"02", title:"AI 바이오",
+      definition:"인공지능을 활용해 생명현상을 해석하고 신약·단백질·세포·바이오공정을 설계하는 융합기술입니다.",
+      oneLine:"데이터와 계산을 통해 바이오 연구의 탐색·설계·검증 속도를 높이는 기술",
+      kpis:[["정책단계","생태계 구축"],["핵심자원","데이터·컴퓨팅"],["정책범위","연구·인프라·인재"]],
+      agendas:[
+        ["진행 중","AI 바이오 혁신거점","데이터·컴퓨팅·실험 인프라를 연계한 연구거점 설계"],
+        ["준비","AI 바이오 핵심기술 로드맵","기술분류, 미션, 투자우선순위 및 성과지표 정립"],
+        ["검토","책임성과 신뢰기반","데이터 품질, 검증, 책임관계 및 윤리원칙 검토"]
+      ],
+      tech:["멀티오믹스 AI","생성형 단백질 설계","AI 신약개발","자율실험실"],
+      trends:{
+        "기술":"파운데이션 모델과 생성형 AI가 단백질·분자·세포 설계로 확장되고 있습니다.",
+        "정책":"데이터 접근성, 컴퓨팅 자원, 실험검증 인프라를 묶는 정책이 중요해지고 있습니다.",
+        "산업":"플랫폼 기업과 제약·바이오기업 간 공동개발 및 기술이전이 확대되고 있습니다.",
+        "제도":"AI 결과의 검증가능성, 설명가능성, 의료·연구 책임관계가 주요 쟁점입니다."
+      },
+      resources:[["전략","AI 바이오 국가전략"],["동향","글로벌 AI 바이오 투자동향"],["분석","AI 신약개발 정책이슈"]]
+    },
+    "drug-development": {
+      index:"03", title:"신약개발",
+      definition:"질병기전을 규명하고 유효물질 발굴부터 비임상·임상·허가까지 치료제를 개발하는 전주기 기술영역입니다.",
+      oneLine:"과학적 발견을 안전하고 유효한 치료제로 전환하는 고위험·장기 연구개발 과정",
+      kpis:[["정책단계","전주기 지원"],["핵심성과","후보물질·임상"],["정책범위","R&D·규제·사업화"]],
+      agendas:[
+        ["진행 중","AI 신약개발 문샷","난제 중심의 국가 임무와 연구개발 포트폴리오 설계"],
+        ["준비","차세대 모달리티 전략","신규 표적과 치료방식에 대한 원천기술 및 사업화 지원"],
+        ["상시","규제과학 연계","첨단 치료제의 평가기술과 인허가 예측가능성 강화"]
+      ],
+      tech:["표적발굴","신규 모달리티","전임상 모델","정밀의료"],
+      trends:{
+        "기술":"AI, 오믹스, 공간생물학, 환자유래 모델이 전주기 의사결정에 활용되고 있습니다.",
+        "정책":"대형 임무형 사업과 공공데이터·인프라 연계가 확대되고 있습니다.",
+        "산업":"기술수출과 공동개발이 주요 사업화 경로로 자리 잡고 있습니다.",
+        "제도":"혁신기술에 대한 규제과학, 실사용데이터 및 조건부 허가 논의가 확대되고 있습니다."
+      },
+      resources:[["로드맵","AI 신약개발 난제지도"],["산업","기술수출 동향"],["제도","첨단치료제 규제동향"]]
+    },
+    "green-white-bio": {
+      index:"04", title:"그린·화이트바이오",
+      definition:"농업·식품·소재·환경·에너지·제조 분야에서 생물자원과 생물공정을 활용하는 산업바이오 영역입니다.",
+      oneLine:"바이오기술로 생산과 소비의 지속가능성을 높이는 산업전환 기술",
+      kpis:[["정책단계","산업전환"],["핵심자원","바이오매스·균주"],["정책범위","농식품·소재·제조"]],
+      agendas:[
+        ["준비","바이오제조 전략","바이오 기반 소재·화학·식품 제조역량과 실증기반 강화"],
+        ["검토","Bio for AI","AI 인프라의 에너지·저장·자원 문제를 바이오기술로 해결하는 장기 아젠다"],
+        ["상시","시장창출·표준","공공조달, 인증, 표준 및 탄소가치 연계방안 검토"]
+      ],
+      tech:["정밀발효","바이오리파이너리","세포공장","바이오리칭"],
+      trends:{
+        "기술":"정밀발효, 대사공학, 효소공학과 공정자동화가 결합되고 있습니다.",
+        "정책":"기후·공급망·제조혁신 정책과 바이오경제 전략의 연계가 강화되고 있습니다.",
+        "산업":"식품, 화학, 소재, 에너지 분야에서 바이오 기반 대체제품 시장이 확대되고 있습니다.",
+        "제도":"제품 분류, 안전성, 표시, 인증, 탄소감축 가치 인정이 주요 과제입니다."
+      },
+      resources:[["전략","바이오경제 전환전략"],["산업","정밀발효 시장동향"],["기획","Bio for AI 컨셉페이퍼"]]
+    }
   }
 };
 
-let currentTopic='synbio';let currentTrend='기술';let overviewChart;
-const qs=s=>document.querySelector(s);const qsa=s=>[...document.querySelectorAll(s)];
+const state = {view:"home", topic:"synthetic-biology", chart:null};
 
-document.addEventListener('DOMContentLoaded',()=>{renderTabs();renderBioKpis();renderQuestions();renderTopic(currentTopic);initChart();bindNavigation();bindTheme();bindMobile();});
+function setHeader(view){
+  const meta = {
+    home:["HOME","대시보드","바이오 정책 연구를 시작하는 통합 진입 화면입니다."],
+    quick:["QUICK RESEARCH","통합검색","기술·정책·산업·기관 자료를 한 번에 탐색합니다."],
+    technology:["TECHNOLOGY","기술","바이오 기술의 현재와 정책적 대응을 한 화면에서 탐색합니다."],
+    ai:["AI POLICY QUESTIONS","AI 정책질문","정책질문과 출처 기반 분석을 위한 공간입니다."],
+    policy:["POLICY","정책","정책 영역은 다음 버전에서 설계합니다."],
+    industry:["INDUSTRY","산업","산업 영역은 다음 버전에서 설계합니다."],
+    institution:["INSTITUTION","기관","기관·제도 영역은 다음 버전에서 설계합니다."]
+  }[view];
+  $("#breadcrumbLabel").textContent=meta[0]; $("#pageTitle").textContent=meta[1]; $("#pageSubtitle").textContent=meta[2];
+}
 
-function renderTabs(){qs('#topicTabs').innerHTML=Object.entries(DATA.topics).map(([key,t])=>`<button class="topic-tab ${key===currentTopic?'active':''}" data-topic="${key}"><strong>${t.title}</strong><small>${t.subtitle}</small></button>`).join('');qsa('.topic-tab').forEach(b=>b.addEventListener('click',()=>{currentTopic=b.dataset.topic;currentTrend='기술';renderTopic(currentTopic);qs('#topicDetailSection').scrollIntoView({behavior:'smooth',block:'start'});}));}
-function renderBioKpis(){qs('#bioKpiGrid').innerHTML=DATA.bioKpis.map(k=>`<article class="bio-kpi" style="--kpi-color:${k.color};--kpi-soft:${k.soft}"><div class="bio-kpi-top"><span class="bio-kpi-label">${k.label}</span><span class="bio-kpi-icon"><i class="bi ${k.icon}"></i></span></div><div class="bio-kpi-value">${k.value}</div><div class="bio-kpi-meta"><strong>${k.meta}</strong></div></article>`).join('');}
-function renderQuestions(){qs('#aiQuestionGrid').innerHTML=DATA.questions.map((q,i)=>`<button class="question-card"><span class="question-number">AI POLICY QUESTION ${String(i+1).padStart(2,'0')}</span><strong>${q[0]}</strong><p>${q[1]}</p><span class="question-action">분석 시작 <i class="bi bi-arrow-right"></i></span></button>`).join('');}
-function renderTopic(key){const t=DATA.topics[key];qsa('.topic-tab').forEach(b=>b.classList.toggle('active',b.dataset.topic===key));qs('#topicTitle').textContent=t.title;qs('#topicDefinition').textContent=t.definition;qs('#topicIndex').textContent=t.index;qs('#oneLineDefinition').textContent=t.oneLine;qs('#topicKpiGrid').innerHTML=t.kpis.map(k=>`<div class="topic-kpi"><span>${k[0]}</span><strong>${k[1]}</strong></div>`).join('');qs('#agendaSummary').textContent=`총 ${t.agenda.length}개 정책업무`;qs('#agendaGrid').innerHTML=t.agenda.map(a=>`<article class="agenda-card"><div class="agenda-top"><span class="agenda-category">${a[0]}</span><span class="agenda-status status-${a[3]}">${a[4]}</span></div><h3>${a[1]}</h3><p>${a[2]}</p><div class="agenda-foot"><span>정책업무</span><span>상세관리 예정</span></div></article>`).join('');qs('#coreTechGrid').innerHTML=t.tech.map((x,i)=>`<div class="core-tech"><span class="core-tech-icon"><i class="bi ${['bi-diagram-3','bi-robot','bi-code-slash','bi-boxes','bi-bezier2','bi-gear'][i]}"></i></span><div><strong>${x[0]}</strong><span>${x[1]}</span></div></div>`).join('');renderTrendTabs();renderTrend();qs('#resourceGrid').innerHTML=t.resources.map(r=>`<article class="resource-card"><span class="resource-type">${r[0]}</span><h3>${r[1]}</h3><p>${r[2]}</p><div class="resource-meta">${r[3]}</div></article>`).join('');}
-function renderTrendTabs(){qs('#trendTabs').innerHTML=['기술','정책','산업','제도'].map(x=>`<button class="trend-tab ${x===currentTrend?'active':''}" data-trend="${x}">${x}</button>`).join('');qsa('.trend-tab').forEach(b=>b.addEventListener('click',()=>{currentTrend=b.dataset.trend;renderTrendTabs();renderTrend();}));}
-function renderTrend(){const t=DATA.topics[currentTopic].trends[currentTrend];qs('#trendContent').innerHTML=`<h3>${currentTrend} 동향</h3><p>${t[0]}</p><div class="trend-list">${t[1].map(x=>`<div><i class="bi bi-check-circle-fill"></i><span>${x}</span></div>`).join('')}</div>`;}
-function initChart(){const ctx=qs('#overviewChart');overviewChart=new Chart(ctx,{type:'line',data:{labels:['2020','2021','2022','2023','2024'],datasets:[{data:[76.2,77.8,79.1,80.8,82.1],borderColor:'#2d6cdf',backgroundColor:'rgba(45,108,223,.12)',fill:true,tension:.35,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#8b97aa',font:{size:10}}},y:{display:false,min:70,max:85}}}});}
-function bindNavigation(){qsa('[data-view]').forEach(b=>b.addEventListener('click',()=>{const view=b.dataset.view;qsa('.nav-item').forEach(x=>x.classList.toggle('active',x===b));if(view==='technology'){qs('#technologyView').classList.add('active');qs('#placeholderView').classList.remove('active');qs('#pageTitle').textContent='기술';qs('#breadcrumbLabel').textContent='TECHNOLOGY';qs('#pageSubtitle').textContent='바이오 기술의 현재와 정책적 대응을 한 화면에서 탐색합니다.';}else{qs('#technologyView').classList.remove('active');qs('#placeholderView').classList.add('active');const names={quick:'Quick Research',policy:'정책',industry:'산업',institution:'기관'};qs('#placeholderTitle').textContent=names[view]||'준비 중';qs('#pageTitle').textContent=names[view]||'준비 중';qs('#breadcrumbLabel').textContent=(view||'NEXT').toUpperCase();qs('#pageSubtitle').textContent='다음 버전에서 순차적으로 설계합니다.';}}));}
-function bindTheme(){qs('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');qs('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';});}
-function bindMobile(){const sidebar=qs('#sidebar'),overlay=qs('#sidebarOverlay');qs('#menuButton').addEventListener('click',()=>{sidebar.classList.add('open');overlay.classList.add('show');});overlay.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});}
+function setView(view){
+  state.view=view;
+  $$(".view").forEach(v=>v.classList.remove("active"));
+  const target = ["policy","industry","institution"].includes(view) ? $("#placeholderView") : $(`#${view}View`);
+  target.classList.add("active");
+  $$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+  if(["policy","industry","institution"].includes(view)){
+    const labels={policy:["정책","국가전략, 기본계획, 사업 및 정책수단 영역은 다음 버전에서 별도로 설계합니다."],industry:["산업","시장, 기업, 투자, 기술수출 및 산업생태계 영역은 다음 버전에서 설계합니다."],institution:["기관","법령, 규제, 가이드라인, 정책기관 및 거버넌스 영역은 다음 버전에서 설계합니다."]};
+    $("#placeholderTitle").textContent=labels[view][0]; $("#placeholderDescription").textContent=labels[view][1];
+  }
+  setHeader(view); closeSidebar(); window.scrollTo({top:0,behavior:"smooth"});
+  history.replaceState({}, "", view==="home" ? location.pathname : `#${view}${view==="technology"?"/"+state.topic:""}`);
+}
+
+function renderKpis(){
+  const html=DATA.homeKpis.map(x=>`<article class="kpi-card"><span>${x.label}</span><strong>${x.value}</strong><small>▲ ${x.change}</small></article>`).join("");
+  $("#homeKpiGrid").innerHTML=html;
+  $("#bioKpiGrid").innerHTML=DATA.bioKpis.map(x=>`<article class="kpi-card"><span>${x.label}</span><strong>${x.value}</strong><small>${x.change}</small></article>`).join("");
+}
+
+function renderNews(filter="전체"){
+  const categories=["전체",...new Set(DATA.news.map(x=>x.category))];
+  $("#newsFilters").innerHTML=categories.map(c=>`<button class="news-filter ${c===filter?"active":""}" data-news-filter="${c}">${c}</button>`).join("");
+  const rows=filter==="전체"?DATA.news:DATA.news.filter(x=>x.category===filter);
+  $("#newsList").innerHTML=rows.map(x=>`<article class="news-item"><div class="news-source">${x.source}</div><div><h3>${x.title}</h3><p>${x.summary}</p></div><div class="news-date">${x.date}</div></article>`).join("");
+}
+
+function renderTechnology(){
+  const keys=Object.keys(DATA.topics);
+  $("#topicTabs").innerHTML=keys.map(k=>`<button class="topic-tab ${k===state.topic?"active":""}" data-topic="${k}">${DATA.topics[k].title}</button>`).join("");
+  $("#aiQuestionGrid").innerHTML=DATA.aiQuestions.map((q,i)=>`<article class="question-card"><span>POLICY QUESTION 0${i+1}</span><p>${q}</p></article>`).join("");
+  renderTopic(state.topic);
+  if(window.Chart){
+    if(state.chart) state.chart.destroy();
+    state.chart=new Chart($("#overviewChart"),{type:"line",data:{labels:["2020","2021","2022","2023","2024"],datasets:[{data:[76.2,77.5,79.1,80.4,82.1],borderColor:"#11a59b",backgroundColor:"rgba(17,165,155,.12)",fill:true,tension:.35,pointRadius:3}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{display:false},x:{grid:{display:false}}}}});
+  }
+}
+
+function renderTopic(slug){
+  state.topic=slug; const t=DATA.topics[slug];
+  $$(".topic-tab").forEach(b=>b.classList.toggle("active",b.dataset.topic===slug));
+  $("#topicTitle").textContent=t.title; $("#topicDefinition").textContent=t.definition; $("#topicIndex").textContent=t.index; $("#oneLineDefinition").textContent=t.oneLine;
+  $("#topicKpiGrid").innerHTML=t.kpis.map(x=>`<div class="topic-kpi"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join("");
+  $("#agendaSummary").textContent=`총 ${t.agendas.length}개 정책업무`;
+  $("#agendaGrid").innerHTML=t.agendas.map(x=>`<article class="agenda-card"><span>${x[0]}</span><h3>${x[1]}</h3><p>${x[2]}</p></article>`).join("");
+  $("#coreTechGrid").innerHTML=t.tech.map(x=>`<div class="core-tech">${x}</div>`).join("");
+  const trendKeys=Object.keys(t.trends);
+  $("#trendTabs").innerHTML=trendKeys.map((x,i)=>`<button class="trend-tab ${i===0?"active":""}" data-trend="${x}">${x}</button>`).join("");
+  $("#trendContent").textContent=t.trends[trendKeys[0]];
+  $("#resourceGrid").innerHTML=t.resources.map(x=>`<article class="resource-card"><span>${x[0]}</span><h3>${x[1]}</h3><p>관련 정책자료 예시</p></article>`).join("");
+  history.replaceState({}, "", `#technology/${slug}`);
+}
+
+function demoSearch(q, target){
+  const value=q.trim();
+  target.innerHTML=value?`<strong>“${value}”</strong> 관련 자료를 찾았습니다. 실제 데이터 연동 후 검색결과와 출처가 표시됩니다.`:"검색어를 입력해 주세요.";
+  target.classList.add("show");
+}
+
+function renderQuickResults(q){
+  const value=q.trim();
+  if(!value){$("#quickSearchResults").innerHTML="";return}
+  const candidates=[
+    ["Technology",`${value} 관련 기술주제와 핵심기술을 탐색합니다.`],
+    ["Policy Agenda",`${value} 관련 추진 중·준비 중 정책업무를 탐색합니다.`],
+    ["Latest Updates",`${value} 관련 기사·보도자료를 탐색합니다.`]
+  ];
+  $("#quickSearchResults").innerHTML=candidates.map(x=>`<article class="search-result-card"><strong>${x[0]}</strong><p>${x[1]}</p></article>`).join("");
+}
+
+function demoAi(q,target){
+  const value=q.trim();
+  target.innerHTML=value?`<strong>시연 답변</strong><br>“${value}”에 대한 정책분석 영역입니다. 실제 구현에서는 내부 연구자료와 외부 자료를 검색하고 출처를 함께 제시합니다.`:"정책질문을 입력해 주세요.";
+  target.classList.add("show");
+}
+
+function closeSidebar(){ $("#sidebar").classList.remove("open"); $("#sidebarOverlay").classList.remove("show"); }
+
+document.addEventListener("click",e=>{
+  const viewButton=e.target.closest("[data-view]");
+  if(viewButton){setView(viewButton.dataset.view);return}
+  const topic=e.target.closest("[data-topic]");
+  if(topic){renderTopic(topic.dataset.topic);return}
+  const shortcut=e.target.closest("[data-topic-shortcut]");
+  if(shortcut){state.topic=shortcut.dataset.topicShortcut;setView("technology");renderTechnology();return}
+  const filter=e.target.closest("[data-news-filter]");
+  if(filter){renderNews(filter.dataset.newsFilter);return}
+  const trend=e.target.closest("[data-trend]");
+  if(trend){
+    $$(".trend-tab").forEach(b=>b.classList.remove("active"));trend.classList.add("active");
+    $("#trendContent").textContent=DATA.topics[state.topic].trends[trend.dataset.trend];return;
+  }
+  const tag=e.target.closest("[data-search-query]");
+  if(tag){$("#homeSearchInput").value=tag.dataset.searchQuery;demoSearch(tag.dataset.searchQuery,$("#homeSearchResult"))}
+});
+
+$("#homeSearchButton").addEventListener("click",()=>demoSearch($("#homeSearchInput").value,$("#homeSearchResult")));
+$("#homeSearchInput").addEventListener("keydown",e=>{if(e.key==="Enter")demoSearch(e.target.value,$("#homeSearchResult"))});
+$("#homeAiButton").addEventListener("click",()=>demoAi($("#homeAiInput").value,$("#homeAiResult")));
+$("#quickSearchButton").addEventListener("click",()=>renderQuickResults($("#quickSearchInput").value));
+$("#quickSearchInput").addEventListener("keydown",e=>{if(e.key==="Enter")renderQuickResults(e.target.value)});
+$("#aiWorkspaceButton").addEventListener("click",()=>demoAi($("#aiWorkspaceInput").value,$("#aiWorkspaceResult")));
+
+$("#themeButton").addEventListener("click",()=>document.body.classList.toggle("dark"));
+$("#menuButton").addEventListener("click",()=>{$("#sidebar").classList.add("open");$("#sidebarOverlay").classList.add("show")});
+$("#sidebarOverlay").addEventListener("click",closeSidebar);
+
+renderKpis(); renderNews(); renderTechnology();
+const hash=location.hash.replace("#","");
+if(hash.startsWith("technology/")){state.topic=hash.split("/")[1]||state.topic;setView("technology");renderTechnology()}
+else if(["quick","technology","ai","policy","industry","institution"].includes(hash)){setView(hash)}
+else setView("home");
