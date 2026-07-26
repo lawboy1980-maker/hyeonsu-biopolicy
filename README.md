@@ -1,68 +1,36 @@
-# BioPolicy Intelligence Platform v1.5
+# BioPolicy Intelligence Platform v1.5.1 Hotfix
 
-## 버전 성격
+## 수정 목적
 
-v1.5는 v1.4의 **Technology 정보구조를 유지**하면서, 플랫폼의 첫 진입화면인 **Home Dashboard**를 통합한 버전입니다.
+GitHub Pages에서 `index.html`은 v1.5로 바뀌었지만, 기존 v1.4의 `style.css` 또는 `app.js`가 남아 있거나 캐시되어 화면이 깨지는 문제를 방지합니다.
 
-## v1.5 핵심 변경
+## 핵심 수정
 
-### 1. Home Dashboard 신설
-- Quick Research
-- 바이오 일반 주요 통계
-- 최신 기사·보도자료
-- Research Hub
-- AI 정책질문
+- CSS 파일명을 `dashboard-v1.5.1.css`로 변경
+- JavaScript 파일명을 `dashboard-v1.5.1.js`로 변경
+- `?v=151` 캐시 무효화 쿼리 추가
+- 기존 `style.css`, `app.js`와 충돌하지 않도록 분리
 
-### 2. Technology v1.4 계승
-- 기술 배너
-- 상단 기술주제 탭
-  - 합성생물학
-  - AI 바이오
-  - 신약개발
-  - 그린·화이트바이오
-- 바이오기술 개요
-- 바이오 일반 핵심지표
-- AI 정책질문
-- 기술주제별 상세
-  - 한줄 정의
-  - 정책 아젠다
-  - 핵심지표
-  - 핵심기술
-  - 국내외 동향
-  - 관련자료
+## 업로드 방법
 
-### 3. 연결 방식
-- 대시보드의 Technology 카드와 기술주제 버튼이 Technology 상세화면으로 연결됩니다.
-- 정책·산업·기관은 임의로 상세설계하지 않고 다음 버전 대상으로 유지합니다.
-- JSON `fetch()` 없이 실행되므로 `index.html`을 더블클릭해도 주요 화면이 동작합니다.
-- Chart.js와 아이콘은 CDN을 사용하므로 차트와 아이콘 표시는 인터넷 연결이 필요합니다.
-
-## 파일 구조
+저장소 루트에 아래 파일을 그대로 업로드합니다.
 
 ```text
-biopolicy-platform-v1.5-dashboard/
-├─ index.html
-├─ README.md
-└─ assets/
-   ├─ css/
-   │  └─ style.css
-   └─ js/
-      └─ app.js
+index.html
+README.md
+assets/css/dashboard-v1.5.1.css
+assets/js/dashboard-v1.5.1.js
 ```
 
-## GitHub 적용 방법
+기존 파일은 남아 있어도 되지만, 새 `index.html`이 반드시 위의 새 파일명을 가리켜야 합니다.
 
-1. 기존 저장소에서 백업 브랜치를 생성합니다.
-2. 이 압축파일의 내용물을 저장소 루트에 업로드합니다.
-3. 아래 구조가 유지되는지 확인합니다.
-   - `index.html`
-   - `assets/css/style.css`
-   - `assets/js/app.js`
-4. GitHub Pages 배포가 완료된 뒤 강력 새로고침합니다.
-   - Windows: `Ctrl + F5`
+GitHub Pages 배포 후:
 
-## 권장 커밋 메시지
+1. 배포가 완료될 때까지 1~3분 기다립니다.
+2. 브라우저에서 `Ctrl + F5`
+3. 그래도 이전 화면이면 시크릿 창에서 접속합니다.
 
-```text
-feat: integrate v1.5 home dashboard with technology v1.4
-```
+## 정상 여부 확인
+
+브라우저 주소 끝에 `#technology`가 있을 때 Technology 화면이 열리고,
+홈 화면에는 통계 카드와 뉴스 목록이 표시되어야 합니다.
