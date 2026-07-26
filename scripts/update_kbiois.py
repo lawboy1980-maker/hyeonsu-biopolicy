@@ -48,24 +48,50 @@ def request_json(base_url: str, api_key: str, statbl_id: str, cycle: str, year: 
     raise RuntimeError(f"KBIOIS request failed: {statbl_id}/{year}: {last_error}")
 
 
-def extract_rows(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, str]]:
-    # KBIOIS response wrapper casing differs across examples; detect it defensively.
-    wrapper = next((v for k, v in payload.items() if k.lower() == "sttsapitbldata"), None)
-    if not isinstance(wrapper, list):
-        return [], {"code": "INVALID_RESPONSE", "message": "SttsApiTblData wrapper not found"}
-    status = {"code": "", "message": ""}
+def extract_rows(payload: Any) -> tuple[list[dict[str, Any]], dict[str, str]]:
+    """Extract KBIOIS rows despite wrapper casing/root-shape differences.
+
+    KBIOIS responses have appeared as either a top-level dict or list, and the
+    service wrapper name has varied in capitalization. This parser therefore
+    searches recursively for row arrays and RESULT status objects instead of
+    relying on one exact wrapper key.
+    """
     rows: list[dict[str, Any]] = []
-    for block in wrapper:
-        if not isinstance(block, dict):
-            continue
-        if isinstance(block.get("head"), list):
-            for head in block["head"]:
-                result = head.get("RESULT") if isinstance(head, dict) else None
-                if isinstance(result, dict):
-                    status = {"code": str(result.get("CODE", "")), "message": str(result.get("MESSAGE", ""))}
-        if isinstance(block.get("row"), list):
-            rows.extend(r for r in block["row"] if isinstance(r, dict))
-    return rows, status
+    status = {"code": "", "message": ""}
+
+    def walk(node: Any) -> None:
+        nonlocal status
+        if isinstance(node, dict):
+            for key, value in node.items():
+                key_lower = str(key).lower()
+
+                if key_lower == "row" and isinstance(value, list):
+                    rows.extend(item for item in value if isinstance(item, dict))
+                    continue
+
+                if key_lower == "result" and isinstance(value, dict):
+                    code = value.get("CODE") or value.get("code") or ""
+                    message = value.get("MESSAGE") or value.get("message") or ""
+                    if code or message:
+                        status = {"code": str(code), "message": str(message)}
+
+                walk(value)
+
+        elif isinstance(node, list):
+            for item in node:
+                walk(item)
+
+    walk(payload)
+
+    if rows:
+        return rows, status
+
+    top_keys = list(payload.keys()) if isinstance(payload, dict) else []
+    shape = type(payload).__name__
+    return [], {
+        "code": status.get("code") or "INVALID_RESPONSE",
+        "message": status.get("message") or f"No row array found; root={shape}; keys={top_keys[:12]}",
+    }
 
 
 def to_number(value: Any) -> float | None:
@@ -172,9 +198,10 @@ def main() -> int:
                 merged = merge_sources(source_results, indicator.get("method", "single_source"))
                 series.append({"year": year, **merged})
             if year_errors:
-                output["errors"].append({"indicator": indicator["id"], "year": year, "messages": year_errors})
+                error_entry = {"indicator": indicator["id"], "year": year, "messages": year_errors}
+                output["errors"].append(error_entry)
+                print("KBIOIS_WARNING " + json.dumps(error_entry, ensure_ascii=False), file=sys.stderr)
                 if args.strict:
-                    print(json.dumps(output["errors"][-1], ensure_ascii=False), file=sys.stderr)
                     return 1
 
         latest = series[-1] if series else None
@@ -197,7 +224,14 @@ def main() -> int:
     temp_path = output_path.with_suffix(output_path.suffix + ".tmp")
     temp_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     temp_path.replace(output_path)
-    print(f"Wrote {output_path} with {len(output['indicators'])} indicators; errors={len(output['errors'])}")
+    populated = sum(1 for item in output["indicators"] if item.get("series"))
+    print(
+        f"Wrote {output_path} with {len(output['indicators'])} indicators; "
+        f"populated={populated}; errors={len(output['errors'])}"
+    )
+    if populated == 0:
+        print("ERROR: KBIOIS returned no usable rows for any indicator.", file=sys.stderr)
+        return 1
     return 0
 
 

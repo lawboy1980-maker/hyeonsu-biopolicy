@@ -1,6 +1,6 @@
 {
   "provider": "KBIOIS",
-  "base_url": "https://www.kbiois.or.kr/openapi/SttsApiTblData.do",
+  "base_url": "https://www.kbiois.or.kr/openapi/Sttsapitbldata.do",
   "cycle": "YY",
   "start_year": 2016,
   "indicators": [
