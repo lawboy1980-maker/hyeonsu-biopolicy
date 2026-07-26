@@ -14,6 +14,11 @@
   <script src="assets/js/data.js?v=2.3.0" defer></script>
   <script src="assets/js/statistics.js?v=2.3.0" defer></script>
   <script src="assets/js/app.js?v=2.3.0" defer></script>
+  <script src="assets/js/kbiois-pilot.js?v=3.0.0" defer></script>
+
+  <style>
+    .kbiois-panel{margin-top:24px}.kbiois-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.kbiois-kpi-card{padding:20px;border:1px solid var(--line,#dbe3ee);border-radius:16px;background:var(--card,#fff)}.kbiois-kpi-card span,.kbiois-kpi-card small{display:block;color:var(--muted,#64748b)}.kbiois-kpi-card strong{display:block;margin:10px 0;font-size:30px}.kbiois-charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}.kbiois-chart-card{padding:18px;border:1px solid var(--line,#dbe3ee);border-radius:16px;background:var(--card,#fff)}.kbiois-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.kbiois-chart-head span{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--primary,#2563eb)}.kbiois-chart-head h3{margin:4px 0 0}.kbiois-chart-wrap{height:230px;margin-top:16px}.kbiois-empty{grid-column:1/-1;padding:28px;border:1px dashed var(--line,#cbd5e1);border-radius:14px;text-align:center}.kbiois-empty p{color:var(--muted,#64748b)}@media(max-width:1100px){.kbiois-charts{grid-template-columns:1fr}.kbiois-kpi-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <div class="app-shell">
@@ -106,6 +111,15 @@
           <span class="data-note">원자료 연결 · 2020~2021년 기준</span>
         </div>
         <div class="kpi-grid" id="kpiGrid"></div>
+      </section>
+
+      <section class="panel kbiois-panel" id="kbioisPilotPanel">
+        <div class="panel-heading">
+          <div><span class="eyebrow">KBIOIS OPEN API PILOT</span><h2>생산규모·업체수·종사자수</h2><p>전체 시계열과 분야별 구성을 KBIOIS 캐시 데이터로 표시합니다.</p></div>
+          <span class="data-note" id="kbioisUpdatedAt">업데이트 확인 중</span>
+        </div>
+        <div class="kbiois-kpi-grid" id="kbioisKpiGrid"></div>
+        <div class="kbiois-charts" id="kbioisCharts"></div>
       </section>
 
       <!-- 4행: Quick Research -->

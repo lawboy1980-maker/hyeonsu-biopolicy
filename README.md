@@ -1,18 +1,43 @@
-# HyLab Digital Research Workspace v2.3
+# HyLab Digital Research Workspace — KBIOIS Pilot
 
-## 이번 버전의 데이터 연결
-- 원본 `내손안의바이오통계_2022.xlsm` 연결
-- 대시보드 핵심지표 8개를 실제 원자료 값으로 교체
-- 실제 시계열 7개를 JSON/JavaScript 데이터로 변환
-- 통계·데이터 메뉴에 113개 HyLab 통계분류표 연결
-- 대분류 필터와 검색 제공
-- 원자료 Excel 다운로드 연결
+## 시범 연동 범위
+- 바이오산업 생산규모: 국내판매 + 수출 합산
+- 바이오산업 업체수
+- 바이오산업 종사자수
+- 각 지표는 전체 시계열과 분야별 구성을 함께 저장합니다.
 
-## 주요 파일
-- `assets/js/statistics.js`: 정적 웹에서 바로 사용하는 통계 데이터
-- `data/statistics.json`: 향후 API/자동화 전환용 JSON
-- `source/내손안의바이오통계_2022.xlsm`: 연결된 원자료
-- `source/HyLab_통계분류표_v1.0.xlsx`: 분류 기준표
+## 구조
+```text
+KBIOIS OpenAPI → scripts/update_kbiois.py → data/kbiois-pilot.json → index.html
+```
+브라우저에서 KBIOIS를 직접 호출하지 않습니다. 인증키는 GitHub Secret에 보관하고, GitHub Actions가 정적 JSON 캐시를 생성합니다.
 
-## 주의
-현재 수치는 원본 파일 기준 2020~2021년 데이터입니다. 화면에 기준연도와 출처를 함께 표시했으며, 최신 데이터로 업데이트가 필요합니다.
+## GitHub 설정
+1. 저장소 `Settings → Secrets and variables → Actions`로 이동합니다.
+2. Repository secret 이름을 `KBIOIS_API_KEY`로 등록합니다.
+3. `Actions → Update KBIOIS Pilot → Run workflow`를 실행합니다.
+4. 생성된 `data/kbiois-pilot.json`이 자동 커밋되면 GitHub Pages 화면이 갱신됩니다.
+
+## 로컬 실행
+```bash
+export KBIOIS_API_KEY="발급받은_인증키"
+python scripts/update_kbiois.py
+python -m http.server 8000
+```
+Windows PowerShell:
+```powershell
+$env:KBIOIS_API_KEY="발급받은_인증키"
+python scripts/update_kbiois.py
+python -m http.server 8000
+```
+
+## 통계표 코드
+- 분야별 국내판매: `T228313007602109`
+- 분야별 수출: `T221983007616496`
+- 분야별 업체: `T233613007424798`
+- 분야별 인력: `T229813007584612`
+
+## 유의사항
+- 생산규모는 시범 구현에서 `국내판매 + 수출`로 산출합니다. KBIOIS의 공식 생산규모 정의와 다른 경우 `config/kbiois-indicators.json`의 소스를 조정해야 합니다.
+- API가 제공하지 않는 연도는 오류 목록에 남기고 나머지 연도는 계속 갱신합니다.
+- 인증키는 소스코드나 JSON 파일에 저장하지 마십시오.

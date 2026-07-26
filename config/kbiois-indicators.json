@@ -1,0 +1,36 @@
+{
+  "provider": "KBIOIS",
+  "base_url": "https://www.kbiois.or.kr/openapi/SttsApiTblData.do",
+  "cycle": "YY",
+  "start_year": 2016,
+  "indicators": [
+    {
+      "id": "production",
+      "title": "바이오산업 생산규모",
+      "unit": "백만원",
+      "method": "sum_sources",
+      "sources": [
+        {"statbl_id": "T228313007602109", "label": "국내판매"},
+        {"statbl_id": "T221983007616496", "label": "수출"}
+      ]
+    },
+    {
+      "id": "companies",
+      "title": "바이오산업 업체수",
+      "unit": "개사",
+      "method": "single_source",
+      "sources": [
+        {"statbl_id": "T233613007424798", "label": "업체"}
+      ]
+    },
+    {
+      "id": "workforce",
+      "title": "바이오산업 종사자수",
+      "unit": "명",
+      "method": "single_source",
+      "sources": [
+        {"statbl_id": "T229813007584612", "label": "종사자"}
+      ]
+    }
+  ]
+}
