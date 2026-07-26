@@ -1,0 +1,1372 @@
+window.DASHBOARD_DATA = {
+  "years": [
+    2024,
+    2023,
+    2022,
+    2021,
+    2020
+  ],
+  "kpis": [
+    {
+      "area": "기술",
+      "label": "바이오 기술수준",
+      "value": "82.3%",
+      "meta": "주요국 대비 ▲ 1.8%p",
+      "icon": "bi-cpu",
+      "color": "#2f6df6",
+      "soft": "#eef4ff"
+    },
+    {
+      "area": "정책",
+      "label": "정부 BT 연구개발비",
+      "value": "5.2조원",
+      "meta": "전년 대비 ▲ 12.4%",
+      "icon": "bi-bank",
+      "color": "#2f9b58",
+      "soft": "#edf8f0"
+    },
+    {
+      "area": "산업",
+      "label": "바이오산업 시장규모",
+      "value": "92.1조원",
+      "meta": "전년 대비 ▲ 9.3%",
+      "icon": "bi-bar-chart-line",
+      "color": "#7357e9",
+      "soft": "#f3f0ff"
+    },
+    {
+      "area": "제도",
+      "label": "주요 바이오 법령",
+      "value": "32건",
+      "meta": "전년 대비 ▲ 3건",
+      "icon": "bi-shield-check",
+      "color": "#ef7d32",
+      "soft": "#fff3eb"
+    }
+  ],
+  "issues": [
+    {
+      "level": "긴급",
+      "title": "합성생물학 육성법 시행령 의견 제출",
+      "dday": "D-6"
+    },
+    {
+      "level": "중요",
+      "title": "제5차 생명공학육성 기본계획 수립",
+      "dday": "D-12"
+    },
+    {
+      "level": "검토",
+      "title": "바이오파운드리 규제 개선안 검토회의",
+      "dday": "D-14"
+    },
+    {
+      "level": "검토",
+      "title": "AI 신약개발 K-문샷 운영계획 검토",
+      "dday": "D-20"
+    },
+    {
+      "level": "일반",
+      "title": "해외 바이오보안 정책 동향 모니터링",
+      "dday": "D-30"
+    }
+  ],
+  "schedules": [
+    {
+      "date": "07.30",
+      "title": "합성생물학 연구기관 세미나"
+    },
+    {
+      "date": "08.05",
+      "title": "시행령 검토의견 제출 마감"
+    },
+    {
+      "date": "08.12",
+      "title": "정책전문기관 운영계획 보고"
+    },
+    {
+      "date": "08.20",
+      "title": "Bio for AI 컨셉페이퍼 중간보고"
+    },
+    {
+      "date": "08.28",
+      "title": "AI 신약개발 운영위원회"
+    }
+  ],
+  "quickAccess": [
+    {
+      "title": "합성생물학",
+      "slug": "synthetic-biology",
+      "category": "technology",
+      "categoryLabel": "기술",
+      "description": "육성법·바이오파운드리·바이오제조",
+      "icon": "bi-diagram-3",
+      "badge": "핵심",
+      "internalUrl": "index.html?view=technology&topic=synthetic-biology",
+      "bioinUrl": "https://www.bioin.or.kr/collectView.do?collection_sn=10"
+    },
+    {
+      "title": "AI 바이오",
+      "slug": "ai-bio",
+      "category": "technology",
+      "categoryLabel": "기술",
+      "description": "AI 신약·단백질 설계·바이오데이터",
+      "icon": "bi-stars",
+      "badge": "NEW",
+      "internalUrl": "index.html?view=technology&topic=ai-bio",
+      "bioinUrl": ""
+    },
+    {
+      "title": "신약개발",
+      "slug": "drug-development",
+      "category": "technology",
+      "categoryLabel": "기술",
+      "description": "후보물질·임상·기술이전",
+      "icon": "bi-capsule",
+      "badge": "",
+      "internalUrl": "index.html?view=technology&topic=drug-development",
+      "bioinUrl": ""
+    },
+    {
+      "title": "그린·화이트바이오",
+      "slug": "green-white-bio",
+      "category": "technology",
+      "categoryLabel": "기술",
+      "description": "농생명·산업바이오·바이오제조",
+      "icon": "bi-leaf",
+      "badge": "",
+      "internalUrl": "index.html?view=technology&topic=green-white-bio",
+      "bioinUrl": ""
+    },
+    {
+      "title": "기본계획",
+      "slug": "basic-plan",
+      "category": "policy",
+      "categoryLabel": "정책",
+      "description": "국가전략 · 기본계획 · 로드맵",
+      "icon": "bi-map",
+      "badge": "",
+      "internalUrl": "index.html?view=policy&topic=basic-plan",
+      "bioinUrl": ""
+    },
+    {
+      "title": "시행계획",
+      "slug": "implementation-plan",
+      "category": "policy",
+      "categoryLabel": "정책",
+      "description": "연도별 시행계획 · 주요사업 · 추진현황",
+      "icon": "bi-calendar-check",
+      "badge": "",
+      "internalUrl": "index.html?view=policy&topic=implementation-plan",
+      "bioinUrl": ""
+    },
+    {
+      "title": "기술평가",
+      "slug": "technology-assessment",
+      "category": "policy",
+      "categoryLabel": "정책",
+      "description": "기술영향평가 · 기술수준평가",
+      "icon": "bi-clipboard-data",
+      "badge": "",
+      "internalUrl": "index.html?view=policy&topic=technology-assessment",
+      "bioinUrl": ""
+    },
+    {
+      "title": "실태조사·통계",
+      "slug": "survey-statistics",
+      "category": "policy",
+      "categoryLabel": "정책",
+      "description": "실태조사 · 바이오통계 · 주요 통계",
+      "icon": "bi-bar-chart",
+      "badge": "",
+      "internalUrl": "index.html?view=policy&topic=survey-statistics",
+      "bioinUrl": ""
+    },
+    {
+      "title": "바이오인력",
+      "slug": "bio-workforce",
+      "category": "policy",
+      "categoryLabel": "정책",
+      "description": "인력정책 · 인력양성 · 교육·훈련",
+      "icon": "bi-people",
+      "badge": "",
+      "internalUrl": "index.html?view=policy&topic=bio-workforce",
+      "bioinUrl": ""
+    },
+    {
+      "title": "기술사업화",
+      "slug": "technology-commercialization",
+      "category": "industry",
+      "categoryLabel": "산업",
+      "description": "기술이전 · 사업화 · 창업·스핀오프",
+      "icon": "bi-graph-up-arrow",
+      "badge": "",
+      "internalUrl": "index.html?view=industry&topic=technology-commercialization",
+      "bioinUrl": ""
+    },
+    {
+      "title": "바이오클러스터",
+      "slug": "bio-cluster",
+      "category": "industry",
+      "categoryLabel": "산업",
+      "description": "지역 클러스터 · 혁신거점 · 바이오파크",
+      "icon": "bi-buildings",
+      "badge": "",
+      "internalUrl": "index.html?view=industry&topic=bio-cluster",
+      "bioinUrl": ""
+    },
+    {
+      "title": "소부장",
+      "slug": "materials-parts-equipment",
+      "category": "industry",
+      "categoryLabel": "산업",
+      "description": "소재 · 부품 · 장비",
+      "icon": "bi-gear-wide-connected",
+      "badge": "",
+      "internalUrl": "index.html?view=industry&topic=materials-parts-equipment",
+      "bioinUrl": ""
+    },
+    {
+      "title": "투자·금융",
+      "slug": "investment-finance",
+      "category": "industry",
+      "categoryLabel": "산업",
+      "description": "VC · 펀드 · 기술가치평가",
+      "icon": "bi-cash-stack",
+      "badge": "",
+      "internalUrl": "index.html?view=industry&topic=investment-finance",
+      "bioinUrl": ""
+    },
+    {
+      "title": "법·제도",
+      "slug": "law-institution",
+      "category": "institution",
+      "categoryLabel": "규제",
+      "description": "법률 · 시행령·시행규칙 · 정책제도",
+      "icon": "bi-bank2",
+      "badge": "",
+      "internalUrl": "index.html?view=institution&topic=law-institution",
+      "bioinUrl": ""
+    },
+    {
+      "title": "규제",
+      "slug": "bio-regulation",
+      "category": "institution",
+      "categoryLabel": "규제",
+      "description": "규제정책 · 인허가 · 규제혁신",
+      "icon": "bi-sliders",
+      "badge": "",
+      "internalUrl": "index.html?view=institution&topic=bio-regulation",
+      "bioinUrl": ""
+    },
+    {
+      "title": "표준화",
+      "slug": "standardization",
+      "category": "institution",
+      "categoryLabel": "규제",
+      "description": "국제표준 · ISO · 시험·인증",
+      "icon": "bi-patch-check",
+      "badge": "",
+      "internalUrl": "index.html?view=institution&topic=standardization",
+      "bioinUrl": ""
+    }
+  ],
+  "charts": {
+    "policy": {
+      "labels": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "data": [
+        3.1,
+        3.6,
+        4.0,
+        4.6,
+        5.2
+      ]
+    },
+    "technology": {
+      "labels": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "data": [
+        76.8,
+        78.1,
+        79.5,
+        80.5,
+        82.3
+      ]
+    },
+    "industry": {
+      "labels": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "data": [
+        63.0,
+        67.2,
+        72.8,
+        84.3,
+        92.1
+      ]
+    },
+    "workforce": {
+      "labels": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "data": [
+        8.7,
+        9.1,
+        9.5,
+        9.9,
+        10.3
+      ]
+    }
+  },
+  "topics": {
+    "합성생물학": {
+      "기술": [
+        "DNA 설계·합성",
+        "바이오파운드리",
+        "세포공장"
+      ],
+      "정책": [
+        "기본계획",
+        "정부 R&D 투자",
+        "공공 인프라"
+      ],
+      "산업": [
+        "바이오제조",
+        "기업·투자",
+        "시장 창출"
+      ],
+      "제도": [
+        "육성법",
+        "안전·보안",
+        "윤리·거버넌스"
+      ]
+    },
+    "AI 바이오": {
+      "기술": [
+        "AI 신약개발",
+        "단백질 설계",
+        "멀티오믹스"
+      ],
+      "정책": [
+        "국가전략",
+        "데이터 사업",
+        "컴퓨팅 인프라"
+      ],
+      "산업": [
+        "플랫폼 기업",
+        "기술이전",
+        "VC 투자"
+      ],
+      "제도": [
+        "데이터 활용",
+        "의료 AI 책임",
+        "인허가"
+      ]
+    }
+  },
+  "sections": {
+    "technology": {
+      "title": "기술",
+      "description": "논문·특허·기술수준과 신흥기술을 통해 우리나라의 바이오 연구역량을 살펴봅니다.",
+      "colors": [
+        "#2459c8",
+        "#3d8af7"
+      ],
+      "kpis": [
+        [
+          "82.3%",
+          "기술수준"
+        ],
+        [
+          "세계 6위",
+          "SCIE 논문"
+        ],
+        [
+          "12.4%",
+          "특허 증가율"
+        ]
+      ],
+      "questions": [
+        "우리나라 바이오 기술은 세계적으로 어느 수준인가?",
+        "어떤 바이오 기술이 빠르게 성장하고 있는가?",
+        "연구성과가 산업과 정책으로 연결되고 있는가?"
+      ]
+    },
+    "policy": {
+      "title": "정책",
+      "description": "정부 투자, 국가계획, R&D 사업 및 주요국 정책을 추적합니다.",
+      "colors": [
+        "#1e7c45",
+        "#4cb978"
+      ],
+      "kpis": [
+        [
+          "5.2조원",
+          "정부 BT 투자"
+        ],
+        [
+          "17개",
+          "주요 정책사업"
+        ],
+        [
+          "12개",
+          "부처 참여"
+        ]
+      ],
+      "questions": [
+        "우리나라의 BT R&D 투자는 어떤 수준인가?",
+        "부처별·분야별 투자구조는 어떠한가?",
+        "국가전략과 사업은 어떻게 연결되는가?"
+      ]
+    },
+    "industry": {
+      "title": "산업",
+      "description": "시장·기업·인력·투자·수출입 지표를 통해 산업성과를 진단합니다.",
+      "colors": [
+        "#5b42be",
+        "#8d72f0"
+      ],
+      "kpis": [
+        [
+          "92.1조원",
+          "시장규모"
+        ],
+        [
+          "10.3만명",
+          "종사자"
+        ],
+        [
+          "1.2조원",
+          "VC 투자"
+        ]
+      ],
+      "questions": [
+        "바이오산업 전반적인 규모는 어떠한가?",
+        "산업 인력과 기업은 어떻게 변화하는가?",
+        "기술이 산업적 성과로 이어지고 있는가?"
+      ]
+    },
+    "institution": {
+      "title": "제도",
+      "description": "법률·규제·윤리·안전·거버넌스를 연결해 제도 기반을 점검합니다.",
+      "colors": [
+        "#c65f21",
+        "#f39a57"
+      ],
+      "kpis": [
+        [
+          "32건",
+          "주요 법령"
+        ],
+        [
+          "8건",
+          "규제과제"
+        ],
+        [
+          "5개",
+          "국제규범"
+        ]
+      ],
+      "questions": [
+        "신흥 바이오기술을 뒷받침하는 법제도는 충분한가?",
+        "어떤 규제 공백이 존재하는가?",
+        "국제규범 변화가 국내에 어떤 영향을 주는가?"
+      ]
+    }
+  },
+  "indicators": [
+    [
+      "정책",
+      "1",
+      "우리나라 BT 연구개발비 흐름",
+      "O",
+      "우리나라의 BT 연구개발비 흐름은 어떠한가?"
+    ],
+    [
+      "산업",
+      "1",
+      "국내 바이오 인력 현황",
+      "O",
+      "우리나라 바이오 분야의 전반적인 인력 현황은?"
+    ],
+    [
+      "기술",
+      "1",
+      "국내 바이오 SCIE 논문발표 수 및 순위",
+      "O",
+      "바이오 기술수준은 어떠한가?"
+    ],
+    [
+      "산업",
+      "4",
+      "국내 바이오 시장규모",
+      "O",
+      "바이오산업 전반적인 규모는 어떠한가?"
+    ],
+    [
+      "제도",
+      "1",
+      "바이오 관련 주요 법령 및 시행단계",
+      "O",
+      "바이오 혁신을 뒷받침하는 제도는 어떠한가?"
+    ]
+  ],
+  "topicDetails": {
+    "technology": {
+      "synthetic-biology": {
+        "title": "합성생물학",
+        "summary": "생명 시스템을 설계·제작하는 기술과 바이오제조 기반을 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "합성생물학의 개념, 범위와 정책적 중요성"
+          ],
+          [
+            "핵심기술",
+            "DNA 설계·합성, 세포공장, 바이오파운드리"
+          ],
+          [
+            "기술로드맵",
+            "연구개발 단계와 중장기 발전 방향"
+          ],
+          [
+            "관련 정책",
+            "육성계획, 정부 R&D 및 공공 인프라"
+          ],
+          [
+            "관련 산업",
+            "바이오제조, 기업·투자와 시장 창출"
+          ],
+          [
+            "관련 제도",
+            "육성법, 안전·보안 및 윤리·거버넌스"
+          ],
+          [
+            "관련 통계",
+            "투자, 논문, 특허와 산업 지표"
+          ],
+          [
+            "보고서·뉴스·BioIN",
+            "정책자료와 외부 전문정보 연결"
+          ]
+        ]
+      },
+      "ai-bio": {
+        "title": "AI 바이오",
+        "summary": "AI와 바이오 데이터가 연구개발과 산업혁신을 어떻게 변화시키는지 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "AI for Bio와 Bio for AI의 범위"
+          ],
+          [
+            "핵심기술",
+            "AI 신약개발, 단백질 설계, 멀티오믹스"
+          ],
+          [
+            "기술로드맵",
+            "데이터·모델·실험 자동화의 발전 경로"
+          ],
+          [
+            "관련 정책",
+            "국가전략, 데이터 사업과 컴퓨팅 인프라"
+          ],
+          [
+            "관련 산업",
+            "플랫폼 기업, 기술이전과 투자"
+          ],
+          [
+            "관련 제도",
+            "데이터 활용, 의료 AI 책임과 인허가"
+          ]
+        ]
+      },
+      "drug-development": {
+        "title": "신약개발",
+        "summary": "후보물질 발굴부터 임상과 기술이전까지 신약개발 전주기를 분석합니다.",
+        "sections": [
+          [
+            "개요",
+            "신약개발 전주기와 주요 참여자"
+          ],
+          [
+            "핵심기술",
+            "표적 발굴, 후보물질 설계, 임상 예측"
+          ],
+          [
+            "기술로드맵",
+            "발굴·전임상·임상 단계별 발전 방향"
+          ],
+          [
+            "관련 정책",
+            "국가 R&D, 임상지원과 혁신신약 정책"
+          ],
+          [
+            "관련 산업",
+            "제약·바이오기업, 투자와 기술수출"
+          ],
+          [
+            "관련 제도",
+            "임상시험, 허가·심사와 약가제도"
+          ]
+        ]
+      },
+      "green-white-bio": {
+        "title": "그린·화이트바이오",
+        "summary": "농생명과 산업바이오를 중심으로 지속가능한 바이오경제 전환을 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "그린바이오와 화이트바이오의 범위"
+          ],
+          [
+            "핵심기술",
+            "정밀육종, 바이오소재, 산업 미생물"
+          ],
+          [
+            "기술로드맵",
+            "농업·식품·소재·에너지 분야의 발전 방향"
+          ],
+          [
+            "관련 정책",
+            "그린바이오 산업 육성과 바이오제조 정책"
+          ],
+          [
+            "관련 산업",
+            "농생명, 식품, 소재와 바이오연료"
+          ],
+          [
+            "관련 제도",
+            "LMO, 정밀육종, 환경·안전 규제"
+          ]
+        ]
+      }
+    },
+    "policy": {
+      "basic-plan": {
+        "title": "기본계획",
+        "summary": "국가 바이오정책의 중장기 목표와 시행체계를 종합적으로 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "기본계획의 법적 근거와 정책적 역할"
+          ],
+          [
+            "계획체계",
+            "기본계획·시행계획·부처별 계획의 관계"
+          ],
+          [
+            "핵심과제",
+            "연구개발, 산업, 인력, 인프라와 제도"
+          ],
+          [
+            "추진체계",
+            "부처·전문기관·산학연의 역할"
+          ],
+          [
+            "성과관리",
+            "성과지표, 이행점검과 환류"
+          ]
+        ]
+      },
+      "bio-workforce": {
+        "title": "바이오인력",
+        "summary": "바이오 분야의 인력 수급, 전문인력 양성과 교육정책을 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "바이오인력의 범위와 정책 수요"
+          ],
+          [
+            "인력현황",
+            "연구·산업 인력 규모와 구성"
+          ],
+          [
+            "수급전망",
+            "직무별·기술별 인력 수요 전망"
+          ],
+          [
+            "양성정책",
+            "대학, 대학원, 재직자 교육과 훈련"
+          ],
+          [
+            "정책과제",
+            "미스매치 해소와 글로벌 인재 확보"
+          ]
+        ]
+      },
+      "international-cooperation": {
+        "title": "국제협력",
+        "summary": "주요국 바이오정책과 국제규범, 공동연구 및 정책협력을 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "바이오 국제협력의 범위와 목적"
+          ],
+          [
+            "주요국 정책",
+            "미국, 영국, EU, 일본 등 정책 동향"
+          ],
+          [
+            "국제규범",
+            "OECD, UNESCO 등 국제 논의"
+          ],
+          [
+            "공동연구",
+            "국제공동 R&D와 연구 네트워크"
+          ],
+          [
+            "정책협력",
+            "정부 간 협력과 글로벌 의제 대응"
+          ]
+        ]
+      }
+    },
+    "industry": {
+      "technology-commercialization": {
+        "title": "기술사업화",
+        "summary": "연구성과가 창업, 투자, 기술이전과 시장으로 이어지는 과정을 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "바이오 기술사업화의 구조와 특성"
+          ],
+          [
+            "기술이전",
+            "특허, 라이선싱과 산학연 협력"
+          ],
+          [
+            "창업·성장",
+            "바이오 스타트업과 스케일업"
+          ],
+          [
+            "투자",
+            "벤처투자, 정책금융과 민간자본"
+          ],
+          [
+            "정책과제",
+            "사업화 병목과 지원체계 개선"
+          ]
+        ]
+      }
+    },
+    "institution": {
+      "bio-regulation": {
+        "title": "바이오규제",
+        "summary": "신흥 바이오기술의 규제과학, 인허가와 규제개선 과제를 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "바이오규제의 대상과 정책적 목적"
+          ],
+          [
+            "규제과학",
+            "안전성·유효성 평가와 규제 근거"
+          ],
+          [
+            "인허가",
+            "제품·기술별 심사와 승인체계"
+          ],
+          [
+            "규제개선",
+            "현장 규제 발굴과 개선 절차"
+          ],
+          [
+            "국제동향",
+            "주요국 규제 변화와 정합성"
+          ]
+        ]
+      },
+      "law-institution": {
+        "title": "법·제도",
+        "summary": "바이오 관련 법률, 시행령과 거버넌스 체계를 종합적으로 살펴봅니다.",
+        "sections": [
+          [
+            "개요",
+            "바이오 법제도의 범위와 구조"
+          ],
+          [
+            "법률",
+            "주요 법률의 목적과 적용범위"
+          ],
+          [
+            "하위법령",
+            "시행령·시행규칙과 행정규칙"
+          ],
+          [
+            "거버넌스",
+            "부처, 위원회와 전문기관의 역할"
+          ],
+          [
+            "제도과제",
+            "법적 공백, 중복과 정합성 개선"
+          ]
+        ]
+      }
+    }
+  },
+  "technologyV14": {
+    "generalKpis": [
+      {
+        "label": "바이오 기술수준",
+        "value": "82.3%",
+        "meta": "주요국 대비 수준"
+      },
+      {
+        "label": "SCIE 논문 순위",
+        "value": "세계 6위",
+        "meta": "바이오 분야 전체"
+      },
+      {
+        "label": "특허 증가율",
+        "value": "12.4%",
+        "meta": "전년 대비"
+      },
+      {
+        "label": "정부 BT 연구개발비",
+        "value": "5.2조원",
+        "meta": "2024년 예시 데이터"
+      }
+    ],
+    "aiQuestions": [
+      {
+        "title": "우리나라 바이오 기술은 세계적으로 어느 수준인가?",
+        "description": "기술수준, 논문, 특허와 R&D 투자지표를 종합 분석합니다."
+      },
+      {
+        "title": "어떤 바이오 기술이 빠르게 성장하고 있는가?",
+        "description": "연구성과와 신흥기술 신호를 비교해 성장 분야를 탐색합니다."
+      },
+      {
+        "title": "연구성과가 산업과 정책으로 연결되고 있는가?",
+        "description": "논문·특허·사업화와 정책 간 연계성을 살펴봅니다."
+      },
+      {
+        "title": "향후 우선 육성해야 할 바이오 기술은 무엇인가?",
+        "description": "기술성숙도, 성장성 및 정책적 중요도를 함께 분석합니다."
+      }
+    ],
+    "topics": {
+      "synthetic-biology": {
+        "title": "합성생물학",
+        "short": "설계·제작·바이오제조",
+        "definition": "합성생물학은 생명시스템을 설계·제작하는 공학기술로, 바이오제조와 AI 기반 바이오혁신을 이끄는 핵심 플랫폼 기술입니다.",
+        "agenda": [
+          {
+            "title": "기본계획",
+            "description": "합성생물학 육성을 위한 중장기 정책방향 수립",
+            "status": "진행 중"
+          },
+          {
+            "title": "시행령",
+            "description": "법 시행을 위한 하위법령 및 세부기준 마련",
+            "status": "진행 중"
+          },
+          {
+            "title": "정책전문기관",
+            "description": "법정 정책지원 기능과 추진체계 구축",
+            "status": "검토"
+          },
+          {
+            "title": "기술수준평가",
+            "description": "국가 기술경쟁력과 기술격차 분석체계 마련",
+            "status": "예정"
+          },
+          {
+            "title": "기술영향평가",
+            "description": "사회·경제·윤리적 영향과 정책대응 검토",
+            "status": "예정"
+          },
+          {
+            "title": "규제개선",
+            "description": "연구·산업 현장의 규제 이슈 발굴 및 개선",
+            "status": "상시"
+          },
+          {
+            "title": "국제협력",
+            "description": "OECD·UNESCO 등 국제논의 및 정책협력 대응",
+            "status": "상시"
+          }
+        ],
+        "coreTech": [
+          "DBTL",
+          "바이오파운드리",
+          "DNA 설계·합성",
+          "세포공장",
+          "유전자회로",
+          "대사공학"
+        ],
+        "trends": {
+          "기술": "AI 기반 설계와 자동화 실험이 결합되면서 DBTL 사이클의 고속화·표준화가 핵심 흐름으로 부상하고 있습니다.",
+          "정책": "주요국은 바이오제조 역량, 공공 바이오파운드리, 데이터 인프라와 바이오안보를 중심으로 정책을 강화하고 있습니다.",
+          "산업": "의약·소재·식품·에너지 분야에서 플랫폼 기업과 바이오제조 투자가 확대되고 있습니다.",
+          "제도": "연구 초기 안전관리, 데이터 이용, 자동화 제조 검증과 책임체계가 주요 제도 이슈입니다."
+        },
+        "resources": [
+          {
+            "type": "법령",
+            "title": "합성생물학 육성법"
+          },
+          {
+            "type": "보고서",
+            "title": "합성생물학 기술·산업·정책 분석"
+          },
+          {
+            "type": "BioIN",
+            "title": "합성생물학 정책동향 브리프"
+          },
+          {
+            "type": "논문",
+            "title": "Synthetic Biology Governance Review"
+          }
+        ]
+      },
+      "ai-bio": {
+        "title": "AI 바이오",
+        "short": "데이터·AI·연구혁신",
+        "definition": "AI 바이오는 인공지능을 활용해 바이오 데이터의 해석, 예측, 설계와 실험을 고도화하는 융합 기술 분야입니다.",
+        "agenda": [
+          {
+            "title": "AI-Bio 혁신거점",
+            "description": "연구·데이터·컴퓨팅·산업 연계 기반 구축",
+            "status": "진행 중"
+          },
+          {
+            "title": "AI 신약개발",
+            "description": "전주기 AI 활용과 검증체계 고도화",
+            "status": "진행 중"
+          },
+          {
+            "title": "바이오데이터",
+            "description": "고품질 데이터 구축과 공동활용 체계 마련",
+            "status": "진행 중"
+          },
+          {
+            "title": "AI 윤리·신뢰성",
+            "description": "설명가능성·재현성·책임성 기준 검토",
+            "status": "검토"
+          },
+          {
+            "title": "컴퓨팅 인프라",
+            "description": "GPU·클라우드·데이터센터 기반 강화",
+            "status": "예정"
+          }
+        ],
+        "coreTech": [
+          "바이오 파운데이션 모델",
+          "멀티오믹스 AI",
+          "단백질 설계",
+          "생성형 AI",
+          "AI 신약개발",
+          "연구자동화"
+        ],
+        "trends": {
+          "기술": "대규모 바이오 파운데이션 모델, 멀티모달 데이터 통합과 생성형 설계 기술이 빠르게 발전하고 있습니다.",
+          "정책": "데이터 접근성, 국가 AI 컴퓨팅 인프라, 연구보안과 책임 있는 AI 활용이 핵심 정책 주제로 부상하고 있습니다.",
+          "산업": "AI 신약개발, 정밀의료와 단백질 설계 기업을 중심으로 투자와 협업이 확대되고 있습니다.",
+          "제도": "AI 결과의 검증가능성, 활용 책임, 데이터 권리와 개인정보 보호가 핵심 제도 과제입니다."
+        },
+        "resources": [
+          {
+            "type": "보고서",
+            "title": "AI-Bio 기술혁신 전망"
+          },
+          {
+            "type": "BioIN",
+            "title": "AI 바이오 글로벌 동향"
+          },
+          {
+            "type": "논문",
+            "title": "Foundation Models for Biology"
+          },
+          {
+            "type": "정책",
+            "title": "AI-Bio 혁신거점 추진자료"
+          }
+        ]
+      },
+      "drug-development": {
+        "title": "신약개발",
+        "short": "발굴·임상·사업화",
+        "definition": "신약개발은 질병 표적 발굴부터 후보물질, 비임상, 임상, 허가와 사업화에 이르는 전주기 기술 분야입니다.",
+        "agenda": [
+          {
+            "title": "국가 신약개발 전략",
+            "description": "전주기 투자와 미션형 R&D 체계 강화",
+            "status": "진행 중"
+          },
+          {
+            "title": "AI 신약개발",
+            "description": "AI 기반 후보물질 발굴과 검증체계 구축",
+            "status": "진행 중"
+          },
+          {
+            "title": "규제과학",
+            "description": "신기술·신규 모달리티 평가기준 고도화",
+            "status": "검토"
+          },
+          {
+            "title": "임상지원",
+            "description": "임상시험 인프라와 환자 접근성 개선",
+            "status": "예정"
+          },
+          {
+            "title": "기술사업화",
+            "description": "글로벌 기술이전과 스케일업 지원",
+            "status": "예정"
+          }
+        ],
+        "coreTech": [
+          "표적발굴",
+          "후보물질 설계",
+          "ADC",
+          "세포·유전자치료제",
+          "mRNA",
+          "임상개발"
+        ],
+        "trends": {
+          "기술": "AI 설계, 신규 모달리티, 정밀의료와 바이오마커 기반 임상개발이 확대되고 있습니다.",
+          "정책": "전주기 연계, 미션형 투자, 임상 경쟁력과 글로벌 사업화 지원이 주요 정책방향입니다.",
+          "산업": "빅파마와 바이오텍 간 오픈이노베이션, 기술수출과 공동개발이 활발해지고 있습니다.",
+          "제도": "첨단바이오의약품과 AI 활용 신약개발에 대한 평가기준 및 규제과학 역량이 중요해지고 있습니다."
+        },
+        "resources": [
+          {
+            "type": "보고서",
+            "title": "국가 신약개발 전략"
+          },
+          {
+            "type": "BioIN",
+            "title": "글로벌 신약개발 동향"
+          },
+          {
+            "type": "논문",
+            "title": "AI-Driven Drug Discovery"
+          },
+          {
+            "type": "특허",
+            "title": "신규 모달리티 특허분석"
+          }
+        ]
+      },
+      "green-white-bio": {
+        "title": "그린·화이트바이오",
+        "short": "농업·소재·바이오제조",
+        "definition": "그린·화이트바이오는 농업·식품·소재·에너지·환경 분야에 바이오기술을 적용해 지속가능한 산업 전환을 촉진하는 분야입니다.",
+        "agenda": [
+          {
+            "title": "바이오제조 전략",
+            "description": "바이오 기반 소재·화학·연료 산업 육성",
+            "status": "진행 중"
+          },
+          {
+            "title": "탄소중립 연계",
+            "description": "저탄소 공정과 바이오 전환기술 확대",
+            "status": "진행 중"
+          },
+          {
+            "title": "규제개선",
+            "description": "신규소재·미생물 활용 관련 제도 정비",
+            "status": "검토"
+          },
+          {
+            "title": "지역산업 육성",
+            "description": "지역 특화자원과 바이오산업 연계",
+            "status": "예정"
+          },
+          {
+            "title": "순환경제",
+            "description": "폐자원·부산물의 바이오 기반 재활용 촉진",
+            "status": "예정"
+          }
+        ],
+        "coreTech": [
+          "정밀육종",
+          "정밀발효",
+          "바이오소재",
+          "산업 미생물",
+          "바이오연료",
+          "업사이클링"
+        ],
+        "trends": {
+          "기술": "정밀발효, 바이오소재, 미생물 기반 생산과 저탄소 공정기술이 빠르게 발전하고 있습니다.",
+          "정책": "탄소중립, 공급망 안정, 지역산업 전환과 바이오경제 확산이 주요 정책축으로 자리 잡고 있습니다.",
+          "산업": "식품·소재·화학·에너지 기업의 바이오 전환과 스타트업 투자가 증가하고 있습니다.",
+          "제도": "신규 식품·소재 안전성, 정밀육종 구분과 환경성 평가기준이 주요 이슈입니다."
+        },
+        "resources": [
+          {
+            "type": "보고서",
+            "title": "그린·화이트바이오 산업전망"
+          },
+          {
+            "type": "BioIN",
+            "title": "바이오제조 정책동향"
+          },
+          {
+            "type": "법령",
+            "title": "그린바이오·바이오경제 관련 제도"
+          },
+          {
+            "type": "산업",
+            "title": "글로벌 정밀발효 투자동향"
+          }
+        ]
+      }
+    }
+  },
+  "researchAreasV2": {
+    "policy": {
+      "eyebrow": "BIO POLICY",
+      "title": "정책",
+      "subtitle": "국가 바이오전략과 실행체계를 연결합니다.",
+      "overview": "국가전략과 기본계획에서 연도별 시행계획, 기술평가, 실태조사·통계, 바이오인력까지 정책의 수립·이행·평가 전 과정을 탐색합니다.",
+      "topics": {
+        "basic-plan": {
+          "title": "기본계획",
+          "short": "Strategy & Planning",
+          "icon": "bi-map",
+          "summary": "국가 바이오정책의 중장기 방향과 정책체계를 살펴봅니다.",
+          "children": [
+            "국가전략",
+            "기본계획",
+            "로드맵"
+          ]
+        },
+        "implementation-plan": {
+          "title": "시행계획",
+          "short": "Implementation",
+          "icon": "bi-calendar-check",
+          "summary": "기본계획을 실행하는 연도별 계획과 주요사업을 추적합니다.",
+          "children": [
+            "연도별 시행계획",
+            "주요사업",
+            "추진현황"
+          ]
+        },
+        "technology-assessment": {
+          "title": "기술평가",
+          "short": "Assessment",
+          "icon": "bi-clipboard-data",
+          "summary": "기술의 수준과 사회·경제적 영향을 체계적으로 진단합니다.",
+          "children": [
+            "기술영향평가",
+            "기술수준평가"
+          ]
+        },
+        "survey-statistics": {
+          "title": "실태조사·통계",
+          "short": "Survey & Statistics",
+          "icon": "bi-bar-chart",
+          "summary": "정책수립의 근거가 되는 실태조사와 바이오통계를 제공합니다.",
+          "children": [
+            "실태조사",
+            "바이오통계",
+            "주요 통계"
+          ]
+        },
+        "bio-workforce": {
+          "title": "바이오인력",
+          "short": "Workforce",
+          "icon": "bi-people",
+          "summary": "바이오 인력정책과 양성·교육훈련 체계를 살펴봅니다.",
+          "children": [
+            "인력정책",
+            "인력양성",
+            "교육·훈련"
+          ]
+        }
+      },
+      "stats": [
+        [
+          "5.2조원",
+          "정부 BT 연구개발비"
+        ],
+        [
+          "17개",
+          "주요 정책사업"
+        ],
+        [
+          "12개",
+          "참여 부처"
+        ],
+        [
+          "5개",
+          "정책영역"
+        ]
+      ],
+      "questions": [
+        "국가전략과 기본계획은 어떻게 연결되는가?",
+        "시행계획의 이행성과는 어떻게 점검하는가?",
+        "기술평가와 통계는 정책에 어떻게 환류되는가?",
+        "미래 바이오인력 수요에 어떻게 대응해야 하는가?"
+      ]
+    },
+    "industry": {
+      "eyebrow": "BIO INDUSTRY",
+      "title": "산업",
+      "subtitle": "연구성과가 시장과 산업생태계로 이어지는 경로를 분석합니다.",
+      "overview": "기술사업화, 바이오클러스터, 소부장, 투자·금융을 중심으로 바이오산업의 성장 기반과 병목요인을 살펴봅니다.",
+      "topics": {
+        "technology-commercialization": {
+          "title": "기술사업화",
+          "short": "Commercialization",
+          "icon": "bi-graph-up-arrow",
+          "summary": "연구성과가 기술이전, 창업과 시장으로 이어지는 과정을 분석합니다.",
+          "children": [
+            "기술이전",
+            "사업화",
+            "창업·스핀오프"
+          ]
+        },
+        "bio-cluster": {
+          "title": "바이오클러스터",
+          "short": "Bio Cluster",
+          "icon": "bi-buildings",
+          "summary": "지역 혁신거점과 산학연 협력 기반을 살펴봅니다.",
+          "children": [
+            "지역 클러스터",
+            "혁신거점",
+            "바이오파크",
+            "산학연 협력"
+          ]
+        },
+        "materials-parts-equipment": {
+          "title": "소부장",
+          "short": "Materials & Equipment",
+          "icon": "bi-gear-wide-connected",
+          "summary": "바이오 소재·부품·장비와 공급망 경쟁력을 분석합니다.",
+          "children": [
+            "소재",
+            "부품",
+            "장비",
+            "공급망"
+          ]
+        },
+        "investment-finance": {
+          "title": "투자·금융",
+          "short": "Investment & Finance",
+          "icon": "bi-cash-stack",
+          "summary": "민간투자와 정책금융, 기술가치평가를 살펴봅니다.",
+          "children": [
+            "VC",
+            "펀드",
+            "기술가치평가",
+            "기술수출·투자"
+          ]
+        }
+      },
+      "stats": [
+        [
+          "92.1조원",
+          "바이오산업 시장규모"
+        ],
+        [
+          "10.3만명",
+          "산업 종사자"
+        ],
+        [
+          "1.2조원",
+          "VC 투자"
+        ],
+        [
+          "4개",
+          "산업영역"
+        ]
+      ],
+      "questions": [
+        "연구성과가 기술이전과 창업으로 이어지는가?",
+        "클러스터는 지역 혁신을 촉진하는가?",
+        "바이오 소부장 공급망은 안정적인가?",
+        "민간투자와 정책금융은 어디에 집중되는가?"
+      ]
+    },
+    "institution": {
+      "eyebrow": "BIO REGULATION",
+      "title": "규제",
+      "subtitle": "법·제도, 규제와 표준화를 하나의 체계로 연결합니다.",
+      "overview": "바이오혁신을 뒷받침하는 법·제도, 인허가와 규제과학, 국제표준과 시험·인증 체계를 종합적으로 탐색합니다.",
+      "topics": {
+        "law-institution": {
+          "title": "법·제도",
+          "short": "Law & Governance",
+          "icon": "bi-bank2",
+          "summary": "바이오 관련 법률과 하위법령, 정책제도와 거버넌스를 살펴봅니다.",
+          "children": [
+            "법률",
+            "시행령·시행규칙",
+            "정책제도",
+            "거버넌스"
+          ]
+        },
+        "bio-regulation": {
+          "title": "규제",
+          "short": "Regulation",
+          "icon": "bi-sliders",
+          "summary": "규제정책과 인허가, 규제혁신 및 규제과학을 분석합니다.",
+          "children": [
+            "규제정책",
+            "인허가",
+            "규제혁신",
+            "규제과학"
+          ]
+        },
+        "standardization": {
+          "title": "표준화",
+          "short": "Standardization",
+          "icon": "bi-patch-check",
+          "summary": "국제표준과 시험·인증, 데이터 표준의 동향을 살펴봅니다.",
+          "children": [
+            "국제표준",
+            "ISO",
+            "시험·인증",
+            "데이터 표준"
+          ]
+        }
+      },
+      "stats": [
+        [
+          "32건",
+          "주요 바이오 법령"
+        ],
+        [
+          "8건",
+          "규제개선 과제"
+        ],
+        [
+          "5개",
+          "국제규범"
+        ],
+        [
+          "3개",
+          "규제영역"
+        ]
+      ],
+      "questions": [
+        "신흥 바이오기술의 법적 공백은 무엇인가?",
+        "규제과학은 인허가를 어떻게 지원하는가?",
+        "규제혁신과 안전성은 어떻게 균형을 이루는가?",
+        "국제표준 변화가 국내 산업에 미치는 영향은 무엇인가?"
+      ]
+    }
+  }
+};

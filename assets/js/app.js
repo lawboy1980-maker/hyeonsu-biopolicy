@@ -1,236 +1,152 @@
-const $ = (s, p=document) => p.querySelector(s);
-const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+const state={data:null,charts:[],currentView:'technology',currentTopic:null};
+const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+async function init(){try{if(window.DASHBOARD_DATA){state.data=window.DASHBOARD_DATA;}else{const r=await fetch('data/dashboard.json');if(!r.ok)throw new Error('data load failed');state.data=await r.json();}renderAll();bindEvents();}catch(e){document.body.innerHTML='<main style="padding:40px;font-family:sans-serif"><h1>데이터를 불러오지 못했습니다.</h1><p>파일 구성과 경로를 확인해 주세요.</p></main>'}}
+function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderKpis();renderQuickAccess();renderCharts();renderPromptChips();applyUrlState()}
+function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
+function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·제도</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
+function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
+function renderSchedules(){$('#scheduleList').innerHTML=state.data.schedules.slice(0,5).map(s=>`<div class="schedule-item"><span class="badge">${s.date}</span><span>${s.title}</span><i class="bi bi-chevron-right"></i></div>`).join('')}
+function renderKpis(){$('#kpiGrid').innerHTML=state.data.kpis.map(k=>`<article class="kpi-card" style="--accent:${k.color};--soft:${k.soft}"><div class="kpi-top"><span class="kpi-label">${k.area}</span><span class="kpi-icon"><i class="bi ${k.icon}"></i></span></div><div class="kpi-name">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-meta">${k.meta.replace('▲','<strong>▲</strong>')}</div></article>`).join('')}
+function renderQuickAccess(){
+  const colors={technology:'#2f6df6',policy:'#2f9b58',industry:'#7357e9',institution:'#ef7d32'};
+  $('#topicGrid').innerHTML=state.data.quickAccess.map(t=>`<article class="topic-card" style="--topic-accent:${colors[t.category]}"><div class="topic-card-top"><span class="topic-icon"><i class="bi ${t.icon}"></i></span><span class="topic-category">${t.categoryLabel}</span></div><div class="topic-title-row"><h3>${t.title}</h3>${t.badge?`<span class="topic-badge">${t.badge}</span>`:''}</div><p>${t.description}</p><div class="topic-actions"><a class="topic-primary" href="${t.internalUrl}" data-topic-link data-view="${t.category}" data-topic="${t.slug}">바로가기 <i class="bi bi-arrow-right"></i></a>${t.bioinUrl?`<a class="topic-external" href="${t.bioinUrl}" target="_blank" rel="noopener noreferrer">BioIN <i class="bi bi-box-arrow-up-right"></i></a>`:''}</div></article>`).join('')
+}
+function chartOptions(){return {responsive:true,maintainAspectRatio:false,interaction:{intersect:false,mode:'index'},plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#7e8da2'}},y:{beginAtZero:false,grid:{color:'rgba(120,140,170,.15)'},ticks:{color:'#7e8da2'}}}}}
+function makeLine(id,data,color){return new Chart($(id),{type:'line',data:{labels:data.labels,datasets:[{data:data.data,borderColor:color,backgroundColor:hexToRgba(color,.12),fill:true,tension:.35,pointRadius:4,pointBackgroundColor:color,borderWidth:2.5}]},options:chartOptions()})}
+function hexToRgba(hex,a){const n=parseInt(hex.slice(1),16);return `rgba(${n>>16},${n>>8&255},${n&255},${a})`}
+function renderCharts(){state.charts.forEach(c=>c.destroy());state.charts=[];const d=state.data.charts;state.charts.push(makeLine('#policyChart',d.policy,'#2f9b58'));state.charts.push(makeLine('#technologyChart',d.technology,'#2f6df6'));state.charts.push(makeLine('#industryChart',d.industry,'#7357e9'));state.charts.push(makeLine('#workforceChart',d.workforce,'#ef7d32'))}
+function getTopicItems(key){return Object.entries(state.data.topicDetails?.[key]||{})}
+function renderTopicNavigation(key,selected=null){
+  const section=state.data.sections[key];
+  $('#topicMenuTitle').textContent=`${section.title} 주제`;
+  $('#topicMenuEyebrow').textContent=`${section.title.toUpperCase()} TOPICS`;
+  $('#topicSideNav').innerHTML=getTopicItems(key).map(([slug,item])=>`<a href="index.html?view=${key}&topic=${slug}" class="topic-side-link ${slug===selected?'active':''}" data-topic-link data-view="${key}" data-topic="${slug}"><span>${item.title}</span><i class="bi bi-chevron-right"></i></a>`).join('');
+}
+function renderTopicDetail(key,slug=null){
+  state.currentTopic=slug;
+  renderTopicNavigation(key,slug);
+  const detail=slug?state.data.topicDetails?.[key]?.[slug]:null;
+  const section=state.data.sections[key];
+  $('#topicCategoryLabel').textContent=detail?`${section.title} / QUICK RESEARCH`:`${section.title} INTELLIGENCE`;
+  $('#topicDetailTitle').textContent=detail?detail.title:`${section.title} 분야 개요`;
+  $('#topicDetailSummary').textContent=detail?detail.summary:section.description;
+  const cards=detail?.sections||section.questions.map((q,i)=>[`핵심 질문 ${i+1}`,q]);
+  $('#topicDetailGrid').innerHTML=cards.map(([title,text])=>`<article class="topic-detail-card"><h3>${title}</h3><p>${text}</p></article>`).join('');
+  $('#topicOverviewButton').style.visibility=detail?'visible':'hidden';
+}
+function updateUrl(view,topic=null){const u=new URL(window.location.href);if(view==='dashboard'){u.search=''}else{u.searchParams.set('view',view);if(topic)u.searchParams.set('topic',topic);else u.searchParams.delete('topic')}history.pushState({},'',u)}
+function applyUrlState(){const p=new URLSearchParams(location.search);const view=p.get('view')||'technology';const topic=p.get('topic');setView(view,topic,false)}
 
-const DATA = {
-  homeKpis: [
-    {label:"국가 바이오 R&D 투자", value:"5.8조원", change:"전년 대비 6.2%"},
-    {label:"바이오산업 생산규모", value:"23.4조원", change:"전년 대비 7.5%"},
-    {label:"바이오기업", value:"1,186개", change:"신규 42개사"},
-    {label:"바이오 논문", value:"31,482편", change:"전년 대비 4.8%"},
-    {label:"바이오 특허", value:"12,740건", change:"전년 대비 3.1%"}
-  ],
-  news: [
-    {category:"보도자료", source:"과학기술정보통신부", title:"AI 바이오 혁신생태계 조성을 위한 정책 방향", summary:"AI와 바이오 융합 연구개발 및 인프라 지원 방향을 정리한 예시 콘텐츠입니다.", date:"2026.07.26"},
-    {category:"정책", source:"정책브리핑", title:"합성생물학 육성정책 추진체계와 향후 과제", summary:"기본계획, 기술수준평가 및 정책전문기관의 역할을 중심으로 구성한 예시입니다.", date:"2026.07.24"},
-    {category:"산업", source:"Bio Industry", title:"혁신신약 분야 투자 및 기술수출 동향", summary:"국내외 혁신신약 기업의 투자·공동개발·기술사업화 흐름을 정리한 예시입니다.", date:"2026.07.22"},
-    {category:"해외", source:"OECD", title:"바이오경제와 신흥기술 거버넌스 국제동향", summary:"주요국 바이오 정책과 거버넌스 변화 방향을 비교한 예시입니다.", date:"2026.07.19"}
-  ],
-  bioKpis: [
-    {label:"기술수준", value:"82.1%", change:"최고기술국 대비"},
-    {label:"정부 R&D", value:"5.8조원", change:"바이오 분야"},
-    {label:"논문", value:"31,482편", change:"최근 연도"},
-    {label:"특허", value:"12,740건", change:"최근 연도"},
-    {label:"산업 생산", value:"23.4조원", change:"바이오산업"}
-  ],
-  aiQuestions: [
-    "국가 바이오기술 수준을 높이기 위해 우선 투자할 분야는 무엇인가?",
-    "바이오 R&D 성과가 산업화로 연결되지 못하는 병목은 무엇인가?",
-    "주요국 정책 변화가 국내 바이오 전략에 미치는 영향은 무엇인가?"
-  ],
-  topics: {
-    "synthetic-biology": {
-      index:"01", title:"합성생물학",
-      definition:"생명시스템을 설계·제작·재구성하여 새로운 기능과 산업적 가치를 구현하는 공학적 바이오기술입니다.",
-      oneLine:"바이오를 분석하는 기술에서 설계하고 제조하는 기술로 전환시키는 기반기술",
-      kpis:[["정책단계","법·기본계획"],["핵심인프라","바이오파운드리"],["정책범위","R&D·산업·안전"]],
-      agendas:[
-        ["진행 중","합성생물학 기본계획","법정 기본계획 수립을 위한 비전·목표·추진과제 설계"],
-        ["준비","현황조사·통계체계","분류체계와 조사방법론을 기반으로 정책통계를 구축"],
-        ["상시","규제 발굴·지원","연구·산업 현장의 규제이슈를 발굴하고 개선과제를 제안"]
-      ],
-      tech:["DBTL 자동화","유전자회로 설계","무세포 시스템","바이오파운드리"],
-      trends:{
-        "기술":"자동화·AI·고속실험을 결합한 설계-제작-시험-학습 체계가 확산되고 있습니다.",
-        "정책":"주요국은 바이오제조 역량과 공급망·안보를 국가전략 차원에서 다루고 있습니다.",
-        "산업":"의약품, 소재, 식품, 화학제품 등 다양한 제조분야로 적용이 확대되고 있습니다.",
-        "제도":"안전·보안·데이터·표준·책임성에 관한 선제적 제도 논의가 중요해지고 있습니다."
-      },
-      resources:[["정책","합성생물학 육성법"],["계획","합성생물학 기본계획 자료"],["분석","글로벌 정책동향 브리프"]]
-    },
-    "ai-bio": {
-      index:"02", title:"AI 바이오",
-      definition:"인공지능을 활용해 생명현상을 해석하고 신약·단백질·세포·바이오공정을 설계하는 융합기술입니다.",
-      oneLine:"데이터와 계산을 통해 바이오 연구의 탐색·설계·검증 속도를 높이는 기술",
-      kpis:[["정책단계","생태계 구축"],["핵심자원","데이터·컴퓨팅"],["정책범위","연구·인프라·인재"]],
-      agendas:[
-        ["진행 중","AI 바이오 혁신거점","데이터·컴퓨팅·실험 인프라를 연계한 연구거점 설계"],
-        ["준비","AI 바이오 핵심기술 로드맵","기술분류, 미션, 투자우선순위 및 성과지표 정립"],
-        ["검토","책임성과 신뢰기반","데이터 품질, 검증, 책임관계 및 윤리원칙 검토"]
-      ],
-      tech:["멀티오믹스 AI","생성형 단백질 설계","AI 신약개발","자율실험실"],
-      trends:{
-        "기술":"파운데이션 모델과 생성형 AI가 단백질·분자·세포 설계로 확장되고 있습니다.",
-        "정책":"데이터 접근성, 컴퓨팅 자원, 실험검증 인프라를 묶는 정책이 중요해지고 있습니다.",
-        "산업":"플랫폼 기업과 제약·바이오기업 간 공동개발 및 기술이전이 확대되고 있습니다.",
-        "제도":"AI 결과의 검증가능성, 설명가능성, 의료·연구 책임관계가 주요 쟁점입니다."
-      },
-      resources:[["전략","AI 바이오 국가전략"],["동향","글로벌 AI 바이오 투자동향"],["분석","AI 신약개발 정책이슈"]]
-    },
-    "drug-development": {
-      index:"03", title:"신약개발",
-      definition:"질병기전을 규명하고 유효물질 발굴부터 비임상·임상·허가까지 치료제를 개발하는 전주기 기술영역입니다.",
-      oneLine:"과학적 발견을 안전하고 유효한 치료제로 전환하는 고위험·장기 연구개발 과정",
-      kpis:[["정책단계","전주기 지원"],["핵심성과","후보물질·임상"],["정책범위","R&D·규제·사업화"]],
-      agendas:[
-        ["진행 중","AI 신약개발 문샷","난제 중심의 국가 임무와 연구개발 포트폴리오 설계"],
-        ["준비","차세대 모달리티 전략","신규 표적과 치료방식에 대한 원천기술 및 사업화 지원"],
-        ["상시","규제과학 연계","첨단 치료제의 평가기술과 인허가 예측가능성 강화"]
-      ],
-      tech:["표적발굴","신규 모달리티","전임상 모델","정밀의료"],
-      trends:{
-        "기술":"AI, 오믹스, 공간생물학, 환자유래 모델이 전주기 의사결정에 활용되고 있습니다.",
-        "정책":"대형 임무형 사업과 공공데이터·인프라 연계가 확대되고 있습니다.",
-        "산업":"기술수출과 공동개발이 주요 사업화 경로로 자리 잡고 있습니다.",
-        "제도":"혁신기술에 대한 규제과학, 실사용데이터 및 조건부 허가 논의가 확대되고 있습니다."
-      },
-      resources:[["로드맵","AI 신약개발 난제지도"],["산업","기술수출 동향"],["제도","첨단치료제 규제동향"]]
-    },
-    "green-white-bio": {
-      index:"04", title:"그린·화이트바이오",
-      definition:"농업·식품·소재·환경·에너지·제조 분야에서 생물자원과 생물공정을 활용하는 산업바이오 영역입니다.",
-      oneLine:"바이오기술로 생산과 소비의 지속가능성을 높이는 산업전환 기술",
-      kpis:[["정책단계","산업전환"],["핵심자원","바이오매스·균주"],["정책범위","농식품·소재·제조"]],
-      agendas:[
-        ["준비","바이오제조 전략","바이오 기반 소재·화학·식품 제조역량과 실증기반 강화"],
-        ["검토","Bio for AI","AI 인프라의 에너지·저장·자원 문제를 바이오기술로 해결하는 장기 아젠다"],
-        ["상시","시장창출·표준","공공조달, 인증, 표준 및 탄소가치 연계방안 검토"]
-      ],
-      tech:["정밀발효","바이오리파이너리","세포공장","바이오리칭"],
-      trends:{
-        "기술":"정밀발효, 대사공학, 효소공학과 공정자동화가 결합되고 있습니다.",
-        "정책":"기후·공급망·제조혁신 정책과 바이오경제 전략의 연계가 강화되고 있습니다.",
-        "산업":"식품, 화학, 소재, 에너지 분야에서 바이오 기반 대체제품 시장이 확대되고 있습니다.",
-        "제도":"제품 분류, 안전성, 표시, 인증, 탄소감축 가치 인정이 주요 과제입니다."
-      },
-      resources:[["전략","바이오경제 전환전략"],["산업","정밀발효 시장동향"],["기획","Bio for AI 컨셉페이퍼"]]
+function technologyStatusClass(status){
+  if(status==='진행 중') return 'is-doing';
+  if(status==='검토') return 'is-review';
+  if(status==='상시') return 'is-always';
+  return 'is-plan';
+}
+function renderTechnologyTopic(slug){
+  const data=state.data.technologyV14;
+  const topic=data.topics[slug]||Object.values(data.topics)[0];
+  state.currentTopic=slug;
+  $$('.technology-topic-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.topic===slug));
+  $('#technologyTopicTitle').textContent=topic.title;
+  $('#technologyTopicDefinition').textContent=topic.definition;
+  $('#technologyAgendaList').innerHTML=topic.agenda.map(item=>`<article class="technology-agenda-item"><div><strong>${item.title}</strong><p>${item.description}</p></div><span class="technology-status ${technologyStatusClass(item.status)}">${item.status}</span></article>`).join('');
+  $('#technologyCoreTech').innerHTML=topic.coreTech.map(item=>`<span class="technology-chip">${item}</span>`).join('');
+  $('#technologyTrendTabs').innerHTML=Object.keys(topic.trends).map((name,i)=>`<button class="technology-trend-tab ${i===0?'active':''}" data-trend="${name}">${name}</button>`).join('');
+  $('#technologyTrendContent').textContent=topic.trends[Object.keys(topic.trends)[0]];
+  $('#technologyResourceList').innerHTML=topic.resources.map(item=>`<article class="technology-resource-item"><span class="resource-kind">${item.type}</span><strong>${item.title}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
+}
+function renderTechnologyV14(topic=null){
+  const data=state.data.technologyV14;
+  const entries=Object.entries(data.topics);
+  const selected=topic&&data.topics[topic]?topic:entries[0][0];
+  $('#technologyTopicTabs').innerHTML=entries.map(([slug,item])=>`<button class="technology-topic-tab ${slug===selected?'active':''}" data-topic="${slug}"><strong>${item.title}</strong><span>${item.short}</span></button>`).join('');
+  $('#technologyGeneralKpis').innerHTML=data.generalKpis.map(item=>`<article class="technology-general-kpi"><span>${item.label}</span><strong>${item.value}</strong><small>${item.meta}</small></article>`).join('');
+  $('#technologyAiQuestions').innerHTML=data.aiQuestions.map((item,i)=>`<button class="technology-ai-question"><span>AI 정책질문 ${i+1}</span><strong>${item.title}</strong><p>${item.description}</p></button>`).join('');
+  renderTechnologyTopic(selected);
+}
+
+
+function renderResearchArea(key,slug=null){
+  const area=state.data.researchAreasV2?.[key];
+  if(!area)return;
+  const entries=Object.entries(area.topics);
+  const selected=slug&&area.topics[slug]?slug:null;
+  $('#researchEyebrow').textContent=area.eyebrow;
+  $('#researchOverviewTitle').textContent=area.title;
+  $('#researchOverviewText').textContent=area.overview;
+  $('#researchAreaHeading').textContent=`${area.title} Areas`;
+  $('#researchStats').innerHTML=area.stats.map(([value,label])=>`<article class="research-stat"><strong>${value}</strong><span>${label}</span></article>`).join('');
+  $('#researchAreaGrid').innerHTML=entries.map(([topic,item])=>`<a class="research-area-card ${topic===selected?'active':''}" href="index.html?view=${key}&topic=${topic}" data-topic-link data-view="${key}" data-topic="${topic}"><span class="research-card-icon"><i class="bi ${item.icon}"></i></span><span class="research-card-kicker">${item.short}</span><h3>${item.title}</h3><p>${item.summary}</p><div class="research-card-children">${item.children.map(child=>`<span>${child}</span>`).join('')}</div><strong class="research-card-link">Explore <i class="bi bi-arrow-right"></i></strong></a>`).join('');
+  $('#researchQuestions').innerHTML=area.questions.map((q,i)=>`<article class="research-question"><span>Q${String(i+1).padStart(2,'0')}</span><strong>${q}</strong></article>`).join('');
+  $('#researchTopicPanel').hidden=!selected;
+  if(!selected)return;
+  const item=area.topics[selected];
+  $('#researchBreadcrumb').innerHTML=`<button data-view="${key}">Research</button><i class="bi bi-chevron-right"></i><button data-view="${key}">${area.title}</button><i class="bi bi-chevron-right"></i><strong>${item.title}</strong>`;
+  $('#researchTopicEyebrow').textContent=`${area.eyebrow} / TOPIC`;
+  $('#researchTopicTitle').textContent=item.title;
+  $('#researchTopicSummary').textContent=item.summary;
+  $('#researchSubtopicGrid').innerHTML=item.children.map((child,i)=>`<article class="research-subtopic"><span>${String(i+1).padStart(2,'0')}</span><h3>${child}</h3><p>${item.title} 분야의 ${child} 관련 정책·지표·자료를 연결합니다.</p><button type="button">자료 보기 <i class="bi bi-arrow-right"></i></button></article>`).join('');
+  const list=(kind)=>item.children.slice(0,3).map((child,i)=>`<article class="research-list-item"><span>${kind}</span><strong>${item.title} ${child} ${i===0?'동향과 주요 과제':'자료'}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
+  $('#researchReports').innerHTML=list('REPORT');
+  $('#researchResources').innerHTML=list('SOURCE');
+  $('#researchHylab').innerHTML=list('HYLAB');
+  $('#researchNotes').innerHTML=list('NOTE');
+  requestAnimationFrame(()=>$('#researchTopicPanel').scrollIntoView({behavior:'smooth',block:'start'}));
+}
+
+function renderSection(key,topic=null){
+  const s=state.data.sections[key];
+  document.documentElement.style.setProperty('--hero1',s.colors[0]);
+  document.documentElement.style.setProperty('--hero2',s.colors[1]);
+  const isTechnology=key==='technology';
+  const isResearch=['policy','industry','institution'].includes(key);
+  const area=state.data.researchAreasV2?.[key];
+  $('#sectionHero').innerHTML=`<span class="eyebrow light">${isTechnology?'TECHNOLOGY INTELLIGENCE':area?.eyebrow||s.title.toUpperCase()}</span><h2>${isTechnology?s.title:area?.title||s.title}</h2><p>${isTechnology?s.description:area?.subtitle||s.description}</p>`;
+  $('#technologyWorkspace').hidden=!isTechnology;
+  $('#researchWorkspace').hidden=!isResearch;
+  $('#legacySectionSummary').style.display='none';
+  $('#legacyIndicatorPanel').style.display='none';
+  if(isTechnology)renderTechnologyV14(topic);
+  if(isResearch)renderResearchArea(key,topic);
+}
+function renderIndicatorTable(filter=''){const q=($('#indicatorSearch')?.value||'').toLowerCase();const rows=state.data.indicators.filter(r=>(!filter||r[0]===state.data.sections[filter]?.title||filter==='explorer'||filter==='archive')&&r.join(' ').toLowerCase().includes(q));$('#indicatorTable').innerHTML=rows.map(r=>`<tr>${r.map(c=>`<td>${c||'-'}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="5">검색 결과가 없습니다.</td></tr>'}
+function setView(view,topic=null,shouldUpdateUrl=true){
+  state.currentView=view;state.currentTopic=topic;
+  $$('.view').forEach(v=>v.classList.remove('active'));
+  $$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
+  const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'REGULATION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};
+  $('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';
+  if(view==='dashboard'){
+    $('#dashboardView').classList.add('active');
+    $('#pageTitle').textContent='바이오정책 인텔리전스';
+    $('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.';
+  }else if(view==='assistant'){
+    $('#assistantView').classList.add('active');
+    $('#pageTitle').textContent='AI 정책 Q&A';
+    $('#pageSubtitle').textContent='등록된 정책정보를 연결해 빠르게 탐색합니다.';
+  }else{
+    $('#sectionView').classList.add('active');
+    const key=['technology','policy','industry','institution'].includes(view)?view:'technology';
+    renderSection(key,topic);
+    if(view==='explorer'||view==='archive'){
+      $('#technologyWorkspace').hidden=true;
+            $('#legacySectionSummary').style.display='none';
+      $('#legacyIndicatorPanel').style.display='block';
+      renderIndicatorTable(view);
+      $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·제도 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
     }
+    const techTitle=topic&&state.data.technologyV14?.topics?.[topic]?.title;
+    const researchTitle=topic&&state.data.researchAreasV2?.[key]?.topics?.[topic]?.title;
+    $('#pageTitle').textContent=techTitle||researchTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.researchAreasV2?.[key]?.title||state.data.sections[key].title);
+    $('#pageSubtitle').textContent=view==='technology'?'바이오 일반의 핵심지표와 AI 정책질문, 기술주제를 탐색합니다.':topic?'선택한 세부 영역의 자료와 연구질문을 탐색합니다.':'영역 카드를 통해 하위 주제와 자료로 이동합니다.';
   }
-};
-
-const state = {view:"home", topic:"synthetic-biology", chart:null};
-
-function setHeader(view){
-  const meta = {
-    home:["HOME","대시보드","바이오 정책 연구를 시작하는 통합 진입 화면입니다."],
-    quick:["QUICK RESEARCH","통합검색","기술·정책·산업·기관 자료를 한 번에 탐색합니다."],
-    technology:["TECHNOLOGY","기술","바이오 기술의 현재와 정책적 대응을 한 화면에서 탐색합니다."],
-    ai:["AI POLICY QUESTIONS","AI 정책질문","정책질문과 출처 기반 분석을 위한 공간입니다."],
-    policy:["POLICY","정책","정책 영역은 다음 버전에서 설계합니다."],
-    industry:["INDUSTRY","산업","산업 영역은 다음 버전에서 설계합니다."],
-    institution:["INSTITUTION","기관","기관·제도 영역은 다음 버전에서 설계합니다."]
-  }[view];
-  $("#breadcrumbLabel").textContent=meta[0]; $("#pageTitle").textContent=meta[1]; $("#pageSubtitle").textContent=meta[2];
+  if(shouldUpdateUrl)updateUrl(view,topic);
+  closeSidebar();window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function setView(view){
-  state.view=view;
-  $$(".view").forEach(v=>v.classList.remove("active"));
-  const target = ["policy","industry","institution"].includes(view) ? $("#placeholderView") : $(`#${view}View`);
-  target.classList.add("active");
-  $$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
-  if(["policy","industry","institution"].includes(view)){
-    const labels={policy:["정책","국가전략, 기본계획, 사업 및 정책수단 영역은 다음 버전에서 별도로 설계합니다."],industry:["산업","시장, 기업, 투자, 기술수출 및 산업생태계 영역은 다음 버전에서 설계합니다."],institution:["기관","법령, 규제, 가이드라인, 정책기관 및 거버넌스 영역은 다음 버전에서 설계합니다."]};
-    $("#placeholderTitle").textContent=labels[view][0]; $("#placeholderDescription").textContent=labels[view][1];
-  }
-  setHeader(view); closeSidebar(); window.scrollTo({top:0,behavior:"smooth"});
-  history.replaceState({}, "", view==="home" ? location.pathname : `#${view}${view==="technology"?"/"+state.topic:""}`);
-}
-
-function renderKpis(){
-  const html=DATA.homeKpis.map(x=>`<article class="kpi-card"><span>${x.label}</span><strong>${x.value}</strong><small>▲ ${x.change}</small></article>`).join("");
-  $("#homeKpiGrid").innerHTML=html;
-  $("#bioKpiGrid").innerHTML=DATA.bioKpis.map(x=>`<article class="kpi-card"><span>${x.label}</span><strong>${x.value}</strong><small>${x.change}</small></article>`).join("");
-}
-
-function renderNews(filter="전체"){
-  const categories=["전체",...new Set(DATA.news.map(x=>x.category))];
-  $("#newsFilters").innerHTML=categories.map(c=>`<button class="news-filter ${c===filter?"active":""}" data-news-filter="${c}">${c}</button>`).join("");
-  const rows=filter==="전체"?DATA.news:DATA.news.filter(x=>x.category===filter);
-  $("#newsList").innerHTML=rows.map(x=>`<article class="news-item"><div class="news-source">${x.source}</div><div><h3>${x.title}</h3><p>${x.summary}</p></div><div class="news-date">${x.date}</div></article>`).join("");
-}
-
-function renderTechnology(){
-  const keys=Object.keys(DATA.topics);
-  $("#topicTabs").innerHTML=keys.map(k=>`<button class="topic-tab ${k===state.topic?"active":""}" data-topic="${k}">${DATA.topics[k].title}</button>`).join("");
-  $("#aiQuestionGrid").innerHTML=DATA.aiQuestions.map((q,i)=>`<article class="question-card"><span>POLICY QUESTION 0${i+1}</span><p>${q}</p></article>`).join("");
-  renderTopic(state.topic);
-  if(window.Chart){
-    if(state.chart) state.chart.destroy();
-    state.chart=new Chart($("#overviewChart"),{type:"line",data:{labels:["2020","2021","2022","2023","2024"],datasets:[{data:[76.2,77.5,79.1,80.4,82.1],borderColor:"#11a59b",backgroundColor:"rgba(17,165,155,.12)",fill:true,tension:.35,pointRadius:3}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{display:false},x:{grid:{display:false}}}}});
-  }
-}
-
-function renderTopic(slug){
-  state.topic=slug; const t=DATA.topics[slug];
-  $$(".topic-tab").forEach(b=>b.classList.toggle("active",b.dataset.topic===slug));
-  $("#topicTitle").textContent=t.title; $("#topicDefinition").textContent=t.definition; $("#topicIndex").textContent=t.index; $("#oneLineDefinition").textContent=t.oneLine;
-  $("#topicKpiGrid").innerHTML=t.kpis.map(x=>`<div class="topic-kpi"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join("");
-  $("#agendaSummary").textContent=`총 ${t.agendas.length}개 정책업무`;
-  $("#agendaGrid").innerHTML=t.agendas.map(x=>`<article class="agenda-card"><span>${x[0]}</span><h3>${x[1]}</h3><p>${x[2]}</p></article>`).join("");
-  $("#coreTechGrid").innerHTML=t.tech.map(x=>`<div class="core-tech">${x}</div>`).join("");
-  const trendKeys=Object.keys(t.trends);
-  $("#trendTabs").innerHTML=trendKeys.map((x,i)=>`<button class="trend-tab ${i===0?"active":""}" data-trend="${x}">${x}</button>`).join("");
-  $("#trendContent").textContent=t.trends[trendKeys[0]];
-  $("#resourceGrid").innerHTML=t.resources.map(x=>`<article class="resource-card"><span>${x[0]}</span><h3>${x[1]}</h3><p>관련 정책자료 예시</p></article>`).join("");
-  history.replaceState({}, "", `#technology/${slug}`);
-}
-
-function demoSearch(q, target){
-  const value=q.trim();
-  target.innerHTML=value?`<strong>“${value}”</strong> 관련 자료를 찾았습니다. 실제 데이터 연동 후 검색결과와 출처가 표시됩니다.`:"검색어를 입력해 주세요.";
-  target.classList.add("show");
-}
-
-function renderQuickResults(q){
-  const value=q.trim();
-  if(!value){$("#quickSearchResults").innerHTML="";return}
-  const candidates=[
-    ["Technology",`${value} 관련 기술주제와 핵심기술을 탐색합니다.`],
-    ["Policy Agenda",`${value} 관련 추진 중·준비 중 정책업무를 탐색합니다.`],
-    ["Latest Updates",`${value} 관련 기사·보도자료를 탐색합니다.`]
-  ];
-  $("#quickSearchResults").innerHTML=candidates.map(x=>`<article class="search-result-card"><strong>${x[0]}</strong><p>${x[1]}</p></article>`).join("");
-}
-
-function demoAi(q,target){
-  const value=q.trim();
-  target.innerHTML=value?`<strong>시연 답변</strong><br>“${value}”에 대한 정책분석 영역입니다. 실제 구현에서는 내부 연구자료와 외부 자료를 검색하고 출처를 함께 제시합니다.`:"정책질문을 입력해 주세요.";
-  target.classList.add("show");
-}
-
-function closeSidebar(){ $("#sidebar").classList.remove("open"); $("#sidebarOverlay").classList.remove("show"); }
-
-document.addEventListener("click",e=>{
-  const viewButton=e.target.closest("[data-view]");
-  if(viewButton){setView(viewButton.dataset.view);return}
-  const topic=e.target.closest("[data-topic]");
-  if(topic){renderTopic(topic.dataset.topic);return}
-  const shortcut=e.target.closest("[data-topic-shortcut]");
-  if(shortcut){state.topic=shortcut.dataset.topicShortcut;setView("technology");renderTechnology();return}
-  const filter=e.target.closest("[data-news-filter]");
-  if(filter){renderNews(filter.dataset.newsFilter);return}
-  const trend=e.target.closest("[data-trend]");
-  if(trend){
-    $$(".trend-tab").forEach(b=>b.classList.remove("active"));trend.classList.add("active");
-    $("#trendContent").textContent=DATA.topics[state.topic].trends[trend.dataset.trend];return;
-  }
-  const tag=e.target.closest("[data-search-query]");
-  if(tag){$("#homeSearchInput").value=tag.dataset.searchQuery;demoSearch(tag.dataset.searchQuery,$("#homeSearchResult"))}
-});
-
-$("#homeSearchButton").addEventListener("click",()=>demoSearch($("#homeSearchInput").value,$("#homeSearchResult")));
-$("#homeSearchInput").addEventListener("keydown",e=>{if(e.key==="Enter")demoSearch(e.target.value,$("#homeSearchResult"))});
-$("#homeAiButton").addEventListener("click",()=>demoAi($("#homeAiInput").value,$("#homeAiResult")));
-$("#quickSearchButton").addEventListener("click",()=>renderQuickResults($("#quickSearchInput").value));
-$("#quickSearchInput").addEventListener("keydown",e=>{if(e.key==="Enter")renderQuickResults(e.target.value)});
-$("#aiWorkspaceButton").addEventListener("click",()=>demoAi($("#aiWorkspaceInput").value,$("#aiWorkspaceResult")));
-
-$("#themeButton").addEventListener("click",()=>document.body.classList.toggle("dark"));
-$("#menuButton").addEventListener("click",()=>{$("#sidebar").classList.add("open");$("#sidebarOverlay").classList.add("show")});
-$("#sidebarOverlay").addEventListener("click",closeSidebar);
-
-renderKpis(); renderNews(); renderTechnology();
-const hash=location.hash.replace("#","");
-if(hash.startsWith("technology/")){state.topic=hash.split("/")[1]||state.topic;setView("technology");renderTechnology()}
-else if(["quick","technology","ai","policy","industry","institution"].includes(hash)){setView(hash)}
-else setView("home");
+function renderPromptChips(){const prompts=['합성생물학을 4개 영역으로 요약해줘','BT 투자 지표를 알려줘','바이오산업 인력 현황은?'];$('#promptChips').innerHTML=prompts.map(p=>`<button class="prompt-chip">${p}</button>`).join('')}
+function answerQuestion(q){const t=Object.keys(state.data.topics).find(k=>q.includes(k));if(t){const o=state.data.topics[t];return `${t}은 다음과 같이 연결됩니다.\n\n기술: ${o.기술.join(', ')}\n정책: ${o.정책.join(', ')}\n산업: ${o.산업.join(', ')}\n제도: ${o.제도.join(', ')}`}if(q.includes('투자'))return '정부 BT 연구개발비는 예시 데이터 기준 2024년 5.2조원입니다.';if(q.includes('인력'))return '바이오산업 인력은 예시 데이터 기준 2024년 10.3만명입니다.';return '현재 데모는 등록된 주제와 지표를 중심으로 답변합니다.'}
+function addMessage(text,type){const d=document.createElement('div');d.className=type==='user'?'user-message':'assistant-message';d.textContent=text;$('#chatLog').appendChild(d);$('#chatLog').scrollTop=$('#chatLog').scrollHeight}
+function bindEvents(){$$('.nav-item').forEach(n=>n.addEventListener('click',()=>setView(n.dataset.view)));document.addEventListener('click',e=>{const a=e.target.closest('[data-topic-link]');if(!a)return;e.preventDefault();setView(a.dataset.view,a.dataset.topic)});document.addEventListener('click',e=>{const tab=e.target.closest('.technology-topic-tab');if(tab){renderTechnologyTopic(tab.dataset.topic);updateUrl('technology',tab.dataset.topic);$('#technologyTopicDetail').scrollIntoView({behavior:'smooth',block:'start'});return;}const trend=e.target.closest('.technology-trend-tab');if(trend){const topic=state.data.technologyV14.topics[state.currentTopic];$$('.technology-trend-tab').forEach(t=>t.classList.remove('active'));trend.classList.add('active');$('#technologyTrendContent').textContent=topic.trends[trend.dataset.trend];}});$('#researchOverviewButton').addEventListener('click',()=>setView(state.currentView));document.addEventListener('click',e=>{const b=e.target.closest('.research-breadcrumb button[data-view]');if(b)setView(b.dataset.view)});window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);setView(p.get('view')||'technology',p.get('topic'),false)});$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));$('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');$('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';setTimeout(renderCharts,80)});$('#menuButton').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#sidebarOverlay').classList.add('show')});$('#sidebarOverlay').addEventListener('click',closeSidebar);$('#indicatorSearch').addEventListener('input',()=>renderIndicatorTable(state.currentView));$('#promptChips').addEventListener('click',e=>{if(e.target.matches('.prompt-chip')){$('#chatInput').value=e.target.textContent;$('#chatForm').requestSubmit()}});$('#chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('#chatInput').value.trim();if(!q)return;addMessage(q,'user');$('#chatInput').value='';setTimeout(()=>addMessage(answerQuestion(q),'assistant'),300)});$$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()))}
+function closeSidebar(){$('#sidebar').classList.remove('open');$('#sidebarOverlay').classList.remove('show')}
+document.addEventListener('DOMContentLoaded',init);
