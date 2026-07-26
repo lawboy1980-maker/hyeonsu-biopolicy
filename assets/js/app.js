@@ -1,11 +1,12 @@
-const state={data:null,charts:[],currentView:'technology',currentTopic:null};
+const state={data:null,charts:[],currentView:'technology',currentTopic:null,currentSubtopic:null,newsFilter:'전체'};
 const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
 async function init(){try{if(window.DASHBOARD_DATA){state.data=window.DASHBOARD_DATA;}else{const r=await fetch('data/dashboard.json');if(!r.ok)throw new Error('data load failed');state.data=await r.json();}renderAll();bindEvents();}catch(e){document.body.innerHTML='<main style="padding:40px;font-family:sans-serif"><h1>데이터를 불러오지 못했습니다.</h1><p>파일 구성과 경로를 확인해 주세요.</p></main>'}}
-function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderKpis();renderQuickAccess();renderCharts();renderPromptChips();applyUrlState()}
+function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderNews();renderKpis();renderQuickAccess();renderCharts();renderPromptChips();applyUrlState()}
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
 function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·제도</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
 function renderSchedules(){$('#scheduleList').innerHTML=state.data.schedules.slice(0,5).map(s=>`<div class="schedule-item"><span class="badge">${s.date}</span><span>${s.title}</span><i class="bi bi-chevron-right"></i></div>`).join('')}
+function renderNews(filter=state.newsFilter){state.newsFilter=filter;const items=(state.data.news||[]).filter(n=>filter==='전체'||n.category===filter);$('#newsGrid').innerHTML=items.map(n=>`<article class="news-card"><div class="news-meta"><span class="news-category">${n.category}</span><span>${n.source} · ${n.date}</span></div><h3>${n.title}</h3><p>${n.summary||''}</p><a href="${n.url||'#'}" ${n.url&&n.url!=='#'?'target="_blank" rel="noopener noreferrer"':''}>기사 보기 <i class="bi bi-arrow-up-right"></i></a></article>`).join('')||'<p class="empty-state">등록된 뉴스가 없습니다.</p>';$$('.news-filter').forEach(b=>b.classList.toggle('active',b.dataset.newsFilter===filter))}
 function renderKpis(){$('#kpiGrid').innerHTML=state.data.kpis.map(k=>`<article class="kpi-card" style="--accent:${k.color};--soft:${k.soft}"><div class="kpi-top"><span class="kpi-label">${k.area}</span><span class="kpi-icon"><i class="bi ${k.icon}"></i></span></div><div class="kpi-name">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-meta">${k.meta.replace('▲','<strong>▲</strong>')}</div></article>`).join('')}
 function renderQuickAccess(){
   const colors={technology:'#2f6df6',policy:'#2f9b58',industry:'#7357e9',institution:'#ef7d32'};
@@ -34,8 +35,8 @@ function renderTopicDetail(key,slug=null){
   $('#topicDetailGrid').innerHTML=cards.map(([title,text])=>`<article class="topic-detail-card"><h3>${title}</h3><p>${text}</p></article>`).join('');
   $('#topicOverviewButton').style.visibility=detail?'visible':'hidden';
 }
-function updateUrl(view,topic=null){const u=new URL(window.location.href);if(view==='dashboard'){u.search=''}else{u.searchParams.set('view',view);if(topic)u.searchParams.set('topic',topic);else u.searchParams.delete('topic')}history.pushState({},'',u)}
-function applyUrlState(){const p=new URLSearchParams(location.search);const view=p.get('view')||'technology';const topic=p.get('topic');setView(view,topic,false)}
+function updateUrl(view,topic=null,subtopic=null){const u=new URL(window.location.href);if(view==='dashboard'){u.search=''}else{u.searchParams.set('view',view);if(topic)u.searchParams.set('topic',topic);else u.searchParams.delete('topic');if(subtopic)u.searchParams.set('subtopic',subtopic);else u.searchParams.delete('subtopic')}history.pushState({},'',u)}
+function applyUrlState(){const p=new URLSearchParams(location.search);const view=p.get('view')||'dashboard';const topic=p.get('topic');const subtopic=p.get('subtopic');setView(view,topic,false,subtopic)}
 
 function technologyStatusClass(status){
   if(status==='진행 중') return 'is-doing';
@@ -67,7 +68,33 @@ function renderTechnologyV14(topic=null){
 }
 
 
-function renderResearchArea(key,slug=null){
+function renderResearchList(containerId,items,fallbackTitle,kind){
+  const normalized=(items||[]).slice(0,6);
+  if(!normalized.length){
+    $(containerId).innerHTML=`<article class="research-list-item is-placeholder"><span>${kind}</span><strong>${fallbackTitle} 자료를 추가해 주세요</strong><i class="bi bi-plus-circle"></i></article>`;
+    return;
+  }
+  $(containerId).innerHTML=normalized.map(item=>`<article class="research-list-item"><span>${item.type||kind}</span><strong>${item.title}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
+}
+function renderResearchSubtopic(item,subtopic=null){
+  const selected=subtopic&&item.children.includes(subtopic)?subtopic:null;
+  state.currentSubtopic=selected;
+  $$('.research-subtopic').forEach(card=>card.classList.toggle('active',card.dataset.subtopic===selected));
+  const label=$('#researchSelectedSubtopic');
+  label.hidden=!selected;
+  if(selected)label.innerHTML=`<span>SELECTED SUBTOPIC</span><strong>${selected}</strong><button type="button" data-clear-subtopic>전체 자료 보기</button>`;
+  const prefix=selected?`${selected} · `:'';
+  const filterItems=(items)=>{
+    if(!selected)return items;
+    const matched=(items||[]).filter(x=>(x.subtopic||'')===selected||x.title.includes(selected));
+    return matched.length?matched:items;
+  };
+  renderResearchList('#researchReports',filterItems(item.reports),`${prefix}${item.title} Featured Report`,'REPORT');
+  renderResearchList('#researchResources',filterItems(item.resources),`${prefix}${item.title} Resource`,'SOURCE');
+  renderResearchList('#researchHylab',filterItems(item.hylab),`${prefix}${item.title} HyLab Report`,'HYLAB');
+  renderResearchList('#researchNotes',filterItems(item.notes),`${prefix}${item.title} Research Note`,'NOTE');
+}
+function renderResearchArea(key,slug=null,subtopic=null){
   const area=state.data.researchAreasV2?.[key];
   if(!area)return;
   const entries=Object.entries(area.topics);
@@ -78,41 +105,34 @@ function renderResearchArea(key,slug=null){
   $('#researchAreaHeading').textContent=`${area.title} Areas`;
   $('#researchStats').innerHTML=area.stats.map(([value,label])=>`<article class="research-stat"><strong>${value}</strong><span>${label}</span></article>`).join('');
   $('#researchAreaGrid').innerHTML=entries.map(([topic,item])=>`<a class="research-area-card ${topic===selected?'active':''}" href="index.html?view=${key}&topic=${topic}" data-topic-link data-view="${key}" data-topic="${topic}"><span class="research-card-icon"><i class="bi ${item.icon}"></i></span><span class="research-card-kicker">${item.short}</span><h3>${item.title}</h3><p>${item.summary}</p><div class="research-card-children">${item.children.map(child=>`<span>${child}</span>`).join('')}</div><strong class="research-card-link">Explore <i class="bi bi-arrow-right"></i></strong></a>`).join('');
+  $('#researchQuestionHeading').textContent=key==='technology'?'AI 정책질문':'핵심 연구질문';
   $('#researchQuestions').innerHTML=area.questions.map((q,i)=>`<article class="research-question"><span>Q${String(i+1).padStart(2,'0')}</span><strong>${q}</strong></article>`).join('');
   $('#researchTopicPanel').hidden=!selected;
-  if(!selected)return;
+  if(!selected){state.currentSubtopic=null;return;}
   const item=area.topics[selected];
   $('#researchBreadcrumb').innerHTML=`<button data-view="${key}">Research</button><i class="bi bi-chevron-right"></i><button data-view="${key}">${area.title}</button><i class="bi bi-chevron-right"></i><strong>${item.title}</strong>`;
   $('#researchTopicEyebrow').textContent=`${area.eyebrow} / TOPIC`;
   $('#researchTopicTitle').textContent=item.title;
   $('#researchTopicSummary').textContent=item.summary;
-  $('#researchSubtopicGrid').innerHTML=item.children.map((child,i)=>`<article class="research-subtopic"><span>${String(i+1).padStart(2,'0')}</span><h3>${child}</h3><p>${item.title} 분야의 ${child} 관련 정책·지표·자료를 연결합니다.</p><button type="button">자료 보기 <i class="bi bi-arrow-right"></i></button></article>`).join('');
-  const list=(kind)=>item.children.slice(0,3).map((child,i)=>`<article class="research-list-item"><span>${kind}</span><strong>${item.title} ${child} ${i===0?'동향과 주요 과제':'자료'}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
-  $('#researchReports').innerHTML=list('REPORT');
-  $('#researchResources').innerHTML=list('SOURCE');
-  $('#researchHylab').innerHTML=list('HYLAB');
-  $('#researchNotes').innerHTML=list('NOTE');
+  $('#researchSubtopicGrid').innerHTML=item.children.map((child,i)=>`<button class="research-subtopic ${child===subtopic?'active':''}" type="button" data-subtopic="${child}"><span>${String(i+1).padStart(2,'0')}</span><h3>${child}</h3><p>${item.title} 분야의 ${child} 관련 자료를 축적하고 연결합니다.</p><strong>자료 보기 <i class="bi bi-arrow-right"></i></strong></button>`).join('');
+  renderResearchSubtopic(item,subtopic);
   requestAnimationFrame(()=>$('#researchTopicPanel').scrollIntoView({behavior:'smooth',block:'start'}));
 }
-
-function renderSection(key,topic=null){
+function renderSection(key,topic=null,subtopic=null){
   const s=state.data.sections[key];
   document.documentElement.style.setProperty('--hero1',s.colors[0]);
   document.documentElement.style.setProperty('--hero2',s.colors[1]);
-  const isTechnology=key==='technology';
-  const isResearch=['policy','industry','institution'].includes(key);
+  const isResearch=['technology','policy','industry','institution'].includes(key);
   const area=state.data.researchAreasV2?.[key];
-  $('#sectionHero').innerHTML=`<span class="eyebrow light">${isTechnology?'TECHNOLOGY INTELLIGENCE':area?.eyebrow||s.title.toUpperCase()}</span><h2>${isTechnology?s.title:area?.title||s.title}</h2><p>${isTechnology?s.description:area?.subtitle||s.description}</p>`;
-  $('#technologyWorkspace').hidden=!isTechnology;
+  $('#sectionHero').innerHTML=`<span class="eyebrow light">${area?.eyebrow||s.title.toUpperCase()}</span><h2>${area?.title||s.title}</h2><p>${area?.subtitle||s.description}</p>`;
   $('#researchWorkspace').hidden=!isResearch;
   $('#legacySectionSummary').style.display='none';
   $('#legacyIndicatorPanel').style.display='none';
-  if(isTechnology)renderTechnologyV14(topic);
-  if(isResearch)renderResearchArea(key,topic);
+  if(isResearch)renderResearchArea(key,topic,subtopic);
 }
 function renderIndicatorTable(filter=''){const q=($('#indicatorSearch')?.value||'').toLowerCase();const rows=state.data.indicators.filter(r=>(!filter||r[0]===state.data.sections[filter]?.title||filter==='explorer'||filter==='archive')&&r.join(' ').toLowerCase().includes(q));$('#indicatorTable').innerHTML=rows.map(r=>`<tr>${r.map(c=>`<td>${c||'-'}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="5">검색 결과가 없습니다.</td></tr>'}
-function setView(view,topic=null,shouldUpdateUrl=true){
-  state.currentView=view;state.currentTopic=topic;
+function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
+  state.currentView=view;state.currentTopic=topic;state.currentSubtopic=subtopic;
   $$('.view').forEach(v=>v.classList.remove('active'));
   $$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
   const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'REGULATION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};
@@ -128,25 +148,55 @@ function setView(view,topic=null,shouldUpdateUrl=true){
   }else{
     $('#sectionView').classList.add('active');
     const key=['technology','policy','industry','institution'].includes(view)?view:'technology';
-    renderSection(key,topic);
+    renderSection(key,topic,subtopic);
     if(view==='explorer'||view==='archive'){
-      $('#technologyWorkspace').hidden=true;
             $('#legacySectionSummary').style.display='none';
       $('#legacyIndicatorPanel').style.display='block';
       renderIndicatorTable(view);
       $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·제도 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
     }
-    const techTitle=topic&&state.data.technologyV14?.topics?.[topic]?.title;
     const researchTitle=topic&&state.data.researchAreasV2?.[key]?.topics?.[topic]?.title;
-    $('#pageTitle').textContent=techTitle||researchTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.researchAreasV2?.[key]?.title||state.data.sections[key].title);
-    $('#pageSubtitle').textContent=view==='technology'?'바이오 일반의 핵심지표와 AI 정책질문, 기술주제를 탐색합니다.':topic?'선택한 세부 영역의 자료와 연구질문을 탐색합니다.':'영역 카드를 통해 하위 주제와 자료로 이동합니다.';
+    $('#pageTitle').textContent=researchTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.researchAreasV2?.[key]?.title||state.data.sections[key].title);
+    $('#pageSubtitle').textContent=topic?'선택한 세부 영역과 하위꼭지의 자료를 탐색합니다.':'영역 카드를 통해 하위 주제와 자료로 이동합니다.';
   }
-  if(shouldUpdateUrl)updateUrl(view,topic);
+  if(shouldUpdateUrl)updateUrl(view,topic,subtopic);
   closeSidebar();window.scrollTo({top:0,behavior:'smooth'});
 }
 function renderPromptChips(){const prompts=['합성생물학을 4개 영역으로 요약해줘','BT 투자 지표를 알려줘','바이오산업 인력 현황은?'];$('#promptChips').innerHTML=prompts.map(p=>`<button class="prompt-chip">${p}</button>`).join('')}
 function answerQuestion(q){const t=Object.keys(state.data.topics).find(k=>q.includes(k));if(t){const o=state.data.topics[t];return `${t}은 다음과 같이 연결됩니다.\n\n기술: ${o.기술.join(', ')}\n정책: ${o.정책.join(', ')}\n산업: ${o.산업.join(', ')}\n제도: ${o.제도.join(', ')}`}if(q.includes('투자'))return '정부 BT 연구개발비는 예시 데이터 기준 2024년 5.2조원입니다.';if(q.includes('인력'))return '바이오산업 인력은 예시 데이터 기준 2024년 10.3만명입니다.';return '현재 데모는 등록된 주제와 지표를 중심으로 답변합니다.'}
 function addMessage(text,type){const d=document.createElement('div');d.className=type==='user'?'user-message':'assistant-message';d.textContent=text;$('#chatLog').appendChild(d);$('#chatLog').scrollTop=$('#chatLog').scrollHeight}
-function bindEvents(){$$('.nav-item').forEach(n=>n.addEventListener('click',()=>setView(n.dataset.view)));document.addEventListener('click',e=>{const a=e.target.closest('[data-topic-link]');if(!a)return;e.preventDefault();setView(a.dataset.view,a.dataset.topic)});document.addEventListener('click',e=>{const tab=e.target.closest('.technology-topic-tab');if(tab){renderTechnologyTopic(tab.dataset.topic);updateUrl('technology',tab.dataset.topic);$('#technologyTopicDetail').scrollIntoView({behavior:'smooth',block:'start'});return;}const trend=e.target.closest('.technology-trend-tab');if(trend){const topic=state.data.technologyV14.topics[state.currentTopic];$$('.technology-trend-tab').forEach(t=>t.classList.remove('active'));trend.classList.add('active');$('#technologyTrendContent').textContent=topic.trends[trend.dataset.trend];}});$('#researchOverviewButton').addEventListener('click',()=>setView(state.currentView));document.addEventListener('click',e=>{const b=e.target.closest('.research-breadcrumb button[data-view]');if(b)setView(b.dataset.view)});window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);setView(p.get('view')||'technology',p.get('topic'),false)});$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));$('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');$('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';setTimeout(renderCharts,80)});$('#menuButton').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#sidebarOverlay').classList.add('show')});$('#sidebarOverlay').addEventListener('click',closeSidebar);$('#indicatorSearch').addEventListener('input',()=>renderIndicatorTable(state.currentView));$('#promptChips').addEventListener('click',e=>{if(e.target.matches('.prompt-chip')){$('#chatInput').value=e.target.textContent;$('#chatForm').requestSubmit()}});$('#chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('#chatInput').value.trim();if(!q)return;addMessage(q,'user');$('#chatInput').value='';setTimeout(()=>addMessage(answerQuestion(q),'assistant'),300)});$$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()))}
+function bindEvents(){
+  $$('.nav-item').forEach(n=>n.addEventListener('click',()=>setView(n.dataset.view)));
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('[data-topic-link]');
+    if(a){e.preventDefault();setView(a.dataset.view,a.dataset.topic);return;}
+    const news=e.target.closest('.news-filter');
+    if(news){renderNews(news.dataset.newsFilter);return;}
+    const child=e.target.closest('.research-subtopic');
+    if(child&&state.currentTopic){
+      const area=state.data.researchAreasV2?.[state.currentView];
+      const item=area?.topics?.[state.currentTopic];
+      if(item){renderResearchSubtopic(item,child.dataset.subtopic);updateUrl(state.currentView,state.currentTopic,child.dataset.subtopic);}
+      return;
+    }
+    if(e.target.closest('[data-clear-subtopic]')){
+      const item=state.data.researchAreasV2?.[state.currentView]?.topics?.[state.currentTopic];
+      if(item){renderResearchSubtopic(item,null);updateUrl(state.currentView,state.currentTopic,null);}
+      return;
+    }
+    const b=e.target.closest('.research-breadcrumb button[data-view]');
+    if(b)setView(b.dataset.view);
+  });
+  $('#researchOverviewButton').addEventListener('click',()=>setView(state.currentView));
+  window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);setView(p.get('view')||'dashboard',p.get('topic'),false,p.get('subtopic'))});
+  $$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));
+  $('#themeButton').addEventListener('click',()=>{document.body.classList.toggle('dark');$('#themeButton i').className=document.body.classList.contains('dark')?'bi bi-sun':'bi bi-moon';setTimeout(renderCharts,80)});
+  $('#menuButton').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#sidebarOverlay').classList.add('show')});
+  $('#sidebarOverlay').addEventListener('click',closeSidebar);
+  $('#indicatorSearch').addEventListener('input',()=>renderIndicatorTable(state.currentView));
+  $('#promptChips').addEventListener('click',e=>{if(e.target.matches('.prompt-chip')){$('#chatInput').value=e.target.textContent;$('#chatForm').requestSubmit()}});
+  $('#chatForm').addEventListener('submit',e=>{e.preventDefault();const q=$('#chatInput').value.trim();if(!q)return;addMessage(q,'user');$('#chatInput').value='';setTimeout(()=>addMessage(answerQuestion(q),'assistant'),300)});
+  $$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+}
 function closeSidebar(){$('#sidebar').classList.remove('open');$('#sidebarOverlay').classList.remove('show')}
 document.addEventListener('DOMContentLoaded',init);

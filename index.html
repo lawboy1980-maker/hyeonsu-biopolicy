@@ -9,10 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.0.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <script src="assets/js/data.js?v=2.0.1" defer></script>
-  <script src="assets/js/app.js?v=2.0.1" defer></script>
+  <script src="assets/js/data.js?v=2.1.0" defer></script>
+  <script src="assets/js/app.js?v=2.1.0" defer></script>
 </head>
 <body>
 <div class="app-shell">
@@ -42,7 +42,7 @@
       <button class="icon-button mobile-only" id="menuButton" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
       <div class="page-title">
         <span class="breadcrumb">BIOPOLICY / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
-        <h1 id="pageTitle">기술 <span class="version-badge">V2.0</span></h1>
+        <h1 id="pageTitle">기술 <span class="version-badge">V2.1</span></h1>
         <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·제도까지 한눈에 살펴봅니다.</p>
       </div>
       <div class="topbar-actions">
@@ -83,7 +83,22 @@
         </section>
       </div>
 
-      <!-- 2행: KPI -->
+      <!-- 2행: 바이오 정책 뉴스 -->
+      <section class="panel news-panel">
+        <div class="panel-heading news-heading">
+          <div><span class="eyebrow">BIO POLICY NEWS</span><h2>바이오 정책 뉴스</h2><p>기술·정책·산업·제도의 주요 변화를 한곳에서 확인합니다.</p></div>
+          <div class="news-filters" id="newsFilters" aria-label="뉴스 분야 필터">
+            <button class="news-filter active" data-news-filter="전체">전체</button>
+            <button class="news-filter" data-news-filter="기술">기술</button>
+            <button class="news-filter" data-news-filter="정책">정책</button>
+            <button class="news-filter" data-news-filter="산업">산업</button>
+            <button class="news-filter" data-news-filter="제도">제도</button>
+          </div>
+        </div>
+        <div class="news-grid" id="newsGrid"></div>
+      </section>
+
+      <!-- 3행: KPI -->
       <section class="panel kpi-panel">
         <div class="panel-heading">
           <div><span class="eyebrow">KEY INDICATORS</span><h2>핵심 지표</h2></div>
@@ -92,7 +107,7 @@
         <div class="kpi-grid" id="kpiGrid"></div>
       </section>
 
-      <!-- 3행: Quick Research -->
+      <!-- 4행: Quick Research -->
       <section class="panel topic-panel">
         <div class="panel-heading topic-heading">
           <div><span class="eyebrow">QUICK RESEARCH</span><h2>Quick Research</h2><p>기술·정책·산업·제도 순으로 핵심 주제를 빠르게 탐색합니다.</p></div>
@@ -101,7 +116,7 @@
         <div class="topic-grid" id="topicGrid"></div>
       </section>
 
-      <!-- 4행: 4개 차트 -->
+      <!-- 5행: 4개 차트 -->
       <section class="analytics-section">
         <div class="section-title-row"><div><span class="eyebrow">DATA SNAPSHOT</span><h2>주요 통계 차트</h2></div><span class="data-note">JSON 데이터 기반</span></div>
         <div class="dashboard-grid analytics-grid">
@@ -116,76 +131,7 @@
     <section id="sectionView" class="view">
       <div class="section-hero" id="sectionHero"></div>
 
-      <!-- v1.4 기술 전용 화면: 기술주제 상단 배치 -->
-      <section id="technologyWorkspace" class="technology-workspace" hidden>
-        <nav class="technology-topic-tabs" id="technologyTopicTabs" aria-label="기술주제"></nav>
-
-        <section class="panel technology-overview-panel">
-          <div class="panel-heading technology-heading">
-            <div>
-              <span class="eyebrow">TECHNOLOGY INTELLIGENCE</span>
-              <h2>기술 분야 개요</h2>
-              <p>바이오 일반의 연구역량을 핵심지표와 AI 정책질문을 중심으로 살펴봅니다.</p>
-            </div>
-          </div>
-
-          <div class="technology-overview-grid">
-            <div class="technology-copy">
-              <strong>바이오기술</strong>
-              <p>생명현상의 이해와 활용을 통해 의약, 농업, 식품, 소재, 환경 및 제조 분야의 혁신을 창출하는 핵심 기반기술입니다.</p>
-            </div>
-            <div class="technology-general-kpis" id="technologyGeneralKpis"></div>
-          </div>
-        </section>
-
-        <section class="panel technology-ai-panel">
-          <div class="panel-heading technology-heading">
-            <div>
-              <span class="eyebrow">AI POLICY QUESTIONS</span>
-              <h2>AI 정책질문</h2>
-              <p>바이오 일반의 지표와 자료를 바탕으로 정책 분석을 시작합니다.</p>
-            </div>
-          </div>
-          <div class="technology-question-grid" id="technologyAiQuestions"></div>
-        </section>
-
-        <section class="panel technology-topic-detail" id="technologyTopicDetail">
-          <div class="technology-topic-head">
-            <div>
-              <span class="eyebrow">TECHNOLOGY TOPIC</span>
-              <h2 id="technologyTopicTitle">합성생물학</h2>
-              <p id="technologyTopicDefinition"></p>
-            </div>
-          </div>
-
-          <div class="technology-detail-grid">
-            <section class="technology-detail-block agenda-block">
-              <div class="subsection-heading"><h3>정책 아젠다</h3><p>현재 수행 중이거나 향후 추진할 정책업무</p></div>
-              <div class="technology-agenda-list" id="technologyAgendaList"></div>
-            </section>
-
-            <section class="technology-detail-block">
-              <div class="subsection-heading"><h3>핵심기술</h3><p>기술주제를 구성하는 주요 기술요소</p></div>
-              <div class="technology-chip-list" id="technologyCoreTech"></div>
-            </section>
-          </div>
-
-          <div class="technology-detail-grid lower-grid">
-            <section class="technology-detail-block">
-              <div class="subsection-heading"><h3>국내외 동향</h3><p>기술·정책·산업·제도 관점의 흐름</p></div>
-              <div class="technology-trend-tabs" id="technologyTrendTabs"></div>
-              <div class="technology-trend-content" id="technologyTrendContent"></div>
-            </section>
-
-            <section class="technology-detail-block">
-              <div class="subsection-heading"><h3>관련자료</h3><p>보고서·법령·논문·BioIN 등 원문 연결</p></div>
-              <div class="technology-resource-list" id="technologyResourceList"></div>
-            </section>
-          </div>
-        </section>
-      </section>
-
-      <!-- Policy · Industry · Regulation 공통 탐색 워크스페이스 -->
+      <!-- Technology · Policy · Industry · Regulation 공통 탐색 워크스페이스 -->
       <section class="research-workspace" id="researchWorkspace" hidden>
         <section class="panel research-overview-panel">
           <div class="research-overview-copy">
@@ -210,16 +156,18 @@
             <button class="text-button" id="researchOverviewButton"><i class="bi bi-grid"></i> 전체 영역 보기</button>
           </div>
           <div class="research-subtopic-grid" id="researchSubtopicGrid"></div>
+          <div class="research-selected-subtopic" id="researchSelectedSubtopic" hidden></div>
           <div class="research-content-grid">
-            <section class="research-content-block"><div class="subsection-heading"><h3>Featured Reports</h3><p>핵심 정책·산업·제도 보고서</p></div><div class="research-list" id="researchReports"></div></section>
+            <section class="research-content-block"><div class="subsection-heading"><h3>Featured Reports</h3><p>핵심 기술·정책·산업·제도 보고서</p></div><div class="research-list" id="researchReports"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Resources</h3><p>법령·통계·원문 데이터</p></div><div class="research-list" id="researchResources"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>HyLab Reports</h3><p>HyLab 분석자료와 브리프</p></div><div class="research-list" id="researchHylab"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Research Notes</h3><p>연구 메모와 정책질문</p></div><div class="research-list" id="researchNotes"></div></section>
           </div>
+          <p class="content-manage-note"><i class="bi bi-database-add"></i> 자료는 <code>assets/js/data.js</code> 또는 <code>data/dashboard.json</code>의 해당 주제 항목에 추가할 수 있습니다.</p>
         </section>
 
         <section class="panel research-question-panel">
-          <div class="panel-heading research-heading"><div><span class="eyebrow">KEY QUESTIONS</span><h2>핵심 연구질문</h2></div></div>
+          <div class="panel-heading research-heading"><div><span class="eyebrow">KEY QUESTIONS</span><h2 id="researchQuestionHeading">핵심 연구질문</h2></div></div>
           <div class="research-question-grid" id="researchQuestions"></div>
         </section>
       </section>
