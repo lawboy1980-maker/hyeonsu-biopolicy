@@ -3,29 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="기술·정책·산업·규제를 연결하는 HyLab 디지털 연구 워크스페이스">
-  <title>HyLab | Digital Research Workspace</title>
+  <meta name="description" content="기술·정책·산업·규제를 연결하는 HsLab 디지털 연구 워크스페이스">
+  <title>HsLab | Digital Research Workspace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.3.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.0.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <script src="assets/js/data.js?v=2.3.0" defer></script>
-  <script src="assets/js/statistics.js?v=2.3.0" defer></script>
-  <script src="assets/js/app.js?v=2.3.0" defer></script>
-  <script src="assets/js/kbiois-pilot.js?v=3.0.0" defer></script>
-
-  <style>
-    .kbiois-panel{margin-top:24px}.kbiois-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.kbiois-kpi-card{padding:20px;border:1px solid var(--line,#dbe3ee);border-radius:16px;background:var(--card,#fff)}.kbiois-kpi-card span,.kbiois-kpi-card small{display:block;color:var(--muted,#64748b)}.kbiois-kpi-card strong{display:block;margin:10px 0;font-size:30px}.kbiois-charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}.kbiois-chart-card{padding:18px;border:1px solid var(--line,#dbe3ee);border-radius:16px;background:var(--card,#fff)}.kbiois-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.kbiois-chart-head span{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--primary,#2563eb)}.kbiois-chart-head h3{margin:4px 0 0}.kbiois-chart-wrap{height:230px;margin-top:16px}.kbiois-empty{grid-column:1/-1;padding:28px;border:1px dashed var(--line,#cbd5e1);border-radius:14px;text-align:center}.kbiois-empty p{color:var(--muted,#64748b)}@media(max-width:1100px){.kbiois-charts{grid-template-columns:1fr}.kbiois-kpi-grid{grid-template-columns:1fr}}
-  </style>
+  <script src="assets/js/data.js?v=4.0.0" defer></script>
+  <script src="assets/js/statistics.js?v=4.0.0" defer></script>
+  <script src="assets/js/app.js?v=4.0.0" defer></script>
+  <script src="assets/js/news-feed.js?v=4.0.0" defer></script>
+  <script src="assets/js/kbiois-pilot.js?v=4.0.0" defer></script>
 </head>
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="index.html">
-      <span class="brand-mark">HL</span>
-      <span><strong>HyLab</strong><small>Digital Research Workspace</small></span>
+      <span class="brand-mark">HS</span>
+      <span><strong>HsLab</strong><small>Digital Research Workspace</small></span>
     </a>
     <nav class="main-nav" aria-label="주 메뉴">
       <p class="nav-label">OVERVIEW</p>
@@ -40,15 +37,15 @@
       <button class="nav-item" data-view="archive"><i class="bi bi-folder2-open"></i><span>정책자료실</span></button>
       <button class="nav-item" data-view="assistant"><i class="bi bi-stars"></i><span>AI 정책 Q&A</span></button>
     </nav>
-    <div class="sidebar-footer"><div class="profile-badge">HL</div><div><strong>HyLab</strong><span>Bio Policy Intelligence</span></div></div>
+    <div class="sidebar-footer"><div class="profile-badge">HL</div><div><strong>HsLab</strong><span>Bio Policy Intelligence</span></div></div>
   </aside>
 
   <main class="main-content">
     <header class="topbar">
       <button class="icon-button mobile-only" id="menuButton" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
       <div class="page-title">
-        <span class="breadcrumb">HYLAB / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
-        <h1 id="pageTitle">HyLab <span class="version-badge">V2.3</span></h1>
+        <span class="breadcrumb">HSLAB / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
+        <h1 id="pageTitle">HsLab <span class="version-badge">V4.0</span></h1>
         <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.</p>
       </div>
       <div class="topbar-actions">
@@ -61,7 +58,7 @@
       <section class="hero-panel">
         <div class="hero-copy">
           <span class="eyebrow light">DIGITAL RESEARCH WORKSPACE</span>
-          <h2>HyLab</h2>
+          <h2>HsLab</h2>
           <p>기술 신호, 정부 정책, 산업 성과, 법·규제 변화를 하나의 흐름으로 연결합니다.</p>
           <div class="hero-actions">
             <button class="primary-button" data-jump="assistant"><i class="bi bi-stars"></i> AI 정책 검색</button>
@@ -88,38 +85,17 @@
           <div class="schedule-list" id="scheduleList"></div>
         </section>
       </div>
-
-      <!-- 2행: 바이오 정책 뉴스 -->
-      <section class="panel news-panel">
+      <section class="panel news-panel hslab-news-panel">
         <div class="panel-heading news-heading">
-          <div><span class="eyebrow">BIO POLICY NEWS</span><h2>바이오 정책 뉴스</h2><p>기술·정책·산업·규제의 주요 변화를 한곳에서 확인합니다.</p></div>
-          <div class="news-filters" id="newsFilters" aria-label="뉴스 분야 필터">
-            <button class="news-filter active" data-news-filter="전체">전체</button>
-            <button class="news-filter" data-news-filter="기술">기술</button>
-            <button class="news-filter" data-news-filter="정책">정책</button>
-            <button class="news-filter" data-news-filter="산업">산업</button>
-            <button class="news-filter" data-news-filter="규제">규제</button>
-          </div>
+          <div><span class="eyebrow">BIO NEWS</span><h2>바이오 뉴스</h2><p>국내 언론, 정부 부처, 해외 동향, Nature의 최신 소식을 출처별로 확인합니다.</p></div>
+          <span class="data-note" id="newsUpdatedAt">업데이트 확인 중</span>
         </div>
-        <div class="news-grid" id="newsGrid"></div>
-      </section>
-
-      <!-- 3행: KPI -->
-      <section class="panel kpi-panel">
-        <div class="panel-heading">
-          <div><span class="eyebrow">KEY INDICATORS</span><h2>핵심 지표</h2></div>
-          <span class="data-note">원자료 연결 · 2020~2021년 기준</span>
+        <div class="news-source-grid" id="newsSourceGrid">
+          <section class="news-source-column" data-news-section="domestic"><div class="news-source-head"><span>01</span><div><strong>국내 뉴스</strong><small>BIOIN 오늘의 뉴스</small></div></div><div class="news-source-list" id="domesticNewsList"></div></section>
+          <section class="news-source-column" data-news-section="government"><div class="news-source-head"><span>02</span><div><strong>부처 보도자료</strong><small>BIOIN 부처별 자료</small></div></div><div class="news-source-list" id="governmentNewsList"></div></section>
+          <section class="news-source-column" data-news-section="overseas"><div class="news-source-head"><span>03</span><div><strong>해외 자료</strong><small>BIOIN 해외뉴스</small></div></div><div class="news-source-list" id="overseasNewsList"></div></section>
+          <section class="news-source-column" data-news-section="nature"><div class="news-source-head"><span>04</span><div><strong>Nature News</strong><small>Nature 최신 기사</small></div></div><div class="news-source-list" id="natureNewsList"></div></section>
         </div>
-        <div class="kpi-grid" id="kpiGrid"></div>
-      </section>
-
-      <section class="panel kbiois-panel" id="kbioisPilotPanel">
-        <div class="panel-heading">
-          <div><span class="eyebrow">KBIOIS OPEN API PILOT</span><h2>생산규모·업체수·종사자수</h2><p>전체 시계열과 분야별 구성을 KBIOIS 캐시 데이터로 표시합니다.</p></div>
-          <span class="data-note" id="kbioisUpdatedAt">업데이트 확인 중</span>
-        </div>
-        <div class="kbiois-kpi-grid" id="kbioisKpiGrid"></div>
-        <div class="kbiois-charts" id="kbioisCharts"></div>
       </section>
 
       <!-- 4행: Quick Research -->
@@ -175,7 +151,7 @@
           <div class="research-content-grid">
             <section class="research-content-block"><div class="subsection-heading"><h3>Featured Reports</h3><p>핵심 기술·정책·산업·규제 보고서</p></div><div class="research-list" id="researchReports"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Resources</h3><p>법령·통계·원문 데이터</p></div><div class="research-list" id="researchResources"></div></section>
-            <section class="research-content-block"><div class="subsection-heading"><h3>HyLab Reports</h3><p>HyLab 분석자료와 브리프</p></div><div class="research-list" id="researchHylab"></div></section>
+            <section class="research-content-block"><div class="subsection-heading"><h3>HsLab Reports</h3><p>HsLab 분석자료와 브리프</p></div><div class="research-list" id="researchHylab"></div></section>
             <section class="research-content-block"><div class="subsection-heading"><h3>Research Notes</h3><p>연구 메모와 정책질문</p></div><div class="research-list" id="researchNotes"></div></section>
           </div>
           <p class="content-manage-note"><i class="bi bi-database-add"></i> 자료는 <code>assets/js/data.js</code> 또는 <code>data/dashboard.json</code>의 해당 주제 항목에 추가할 수 있습니다.</p>
@@ -190,7 +166,22 @@
         <section class="panel"><div class="panel-heading"><h2>핵심 지표</h2></div><div id="sectionKpis" class="mini-kpi-grid"></div></section>
         <section class="panel"><div class="panel-heading"><h2 id="sectionQuestionTitle">주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
       </div>
-      <section class="panel" id="legacyIndicatorPanel"><div class="panel-heading"><div><span class="eyebrow">HYLAB DATA CATALOG</span><h2>통계 분류표</h2><p class="catalog-summary" id="catalogSummary"></p></div><div class="catalog-actions"><select id="categoryFilter" class="search-input" aria-label="대분류 필터"><option value="">전체 대분류</option></select><input id="indicatorSearch" class="search-input" placeholder="지표명·분류 검색"></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>대분류</th><th>중분류</th><th>통계 제목</th><th>기준연도</th><th>상태</th><th>원자료</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
+      <section class="panel" id="legacyIndicatorPanel"><div class="panel-heading"><div><span class="eyebrow">HSLAB DATA CATALOG</span><h2>통계 분류표</h2><p class="catalog-summary" id="catalogSummary"></p></div><div class="catalog-actions"><select id="categoryFilter" class="search-input" aria-label="대분류 필터"><option value="">전체 대분류</option></select><input id="indicatorSearch" class="search-input" placeholder="지표명·분류 검색"></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>대분류</th><th>중분류</th><th>통계 제목</th><th>기준연도</th><th>상태</th><th>원자료</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
+    </section>
+
+    <section id="statisticsHub" class="statistics-hub" hidden>
+      <section class="panel statistics-intro-panel">
+        <div><span class="eyebrow">BIO INDUSTRY STATISTICS</span><h2>바이오산업 핵심 통계</h2><p>생산규모, 업체수, 종사자수를 전체·분야별·시계열로 탐색합니다.</p></div>
+        <a class="source-link" href="https://www.bioin.or.kr/" target="_blank" rel="noopener noreferrer">원자료 확인 <i class="bi bi-arrow-up-right"></i></a>
+      </section>
+      <section class="panel kbiois-panel" id="kbioisPilotPanel">
+        <div class="panel-heading"><div><span class="eyebrow">KBIOIS OPEN API</span><h2>생산규모·업체수·종사자수</h2><p>KBIOIS 캐시 데이터를 기반으로 최신값과 추이를 표시합니다.</p></div><span class="data-note" id="kbioisUpdatedAt">업데이트 확인 중</span></div>
+        <div class="kbiois-kpi-grid" id="kbioisKpiGrid"></div><div class="kbiois-charts" id="kbioisCharts"></div>
+      </section>
+    </section>
+    <section id="industryStatisticsLink" class="panel industry-stat-link" hidden>
+      <div><span class="eyebrow">INDUSTRY DATA</span><h2>바이오산업 핵심지표 보기</h2><p>생산규모·업체수·종사자수의 최신값과 시계열은 통계·데이터에서 제공합니다.</p></div>
+      <button class="primary-button" data-jump="explorer"><i class="bi bi-bar-chart"></i> 통계·데이터 열기</button>
     </section>
 
     <section id="assistantView" class="view">

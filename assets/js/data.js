@@ -2097,7 +2097,7 @@ window.DASHBOARD_DATA = {
   },
   "researchAreasV2": {
     "technology": {
-      "eyebrow": "HYLAB / TECHNOLOGY INTELLIGENCE",
+      "eyebrow": "HSLAB / TECHNOLOGY INTELLIGENCE",
       "title": "기술",
       "subtitle": "바이오 기술의 변화와 연구역량을 연결합니다.",
       "overview": "합성생물학, AI 바이오, 신약개발, 그린·화이트바이오의 핵심기술과 연구자료를 주제별로 탐색합니다.",
@@ -2145,11 +2145,11 @@ window.DASHBOARD_DATA = {
           ],
           "hylab": [
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "합성생물학 기술·정책 인텔리전스 브리프"
             },
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "합성생물학 핵심지표 대시보드"
             }
           ],
@@ -2215,11 +2215,11 @@ window.DASHBOARD_DATA = {
           ],
           "hylab": [
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "AI 바이오 기술·정책 인텔리전스 브리프"
             },
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "AI 바이오 핵심지표 대시보드"
             }
           ],
@@ -2289,11 +2289,11 @@ window.DASHBOARD_DATA = {
           ],
           "hylab": [
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "신약개발 기술·정책 인텔리전스 브리프"
             },
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "신약개발 핵심지표 대시보드"
             }
           ],
@@ -2355,11 +2355,11 @@ window.DASHBOARD_DATA = {
           ],
           "hylab": [
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "그린·화이트바이오 기술·정책 인텔리전스 브리프"
             },
             {
-              "type": "HYLAB",
+              "type": "HSLAB",
               "title": "그린·화이트바이오 핵심지표 대시보드"
             }
           ],
@@ -2409,7 +2409,7 @@ window.DASHBOARD_DATA = {
       ]
     },
     "policy": {
-      "eyebrow": "HYLAB / POLICY INTELLIGENCE",
+      "eyebrow": "HSLAB / POLICY INTELLIGENCE",
       "title": "정책",
       "subtitle": "국가 바이오전략과 실행체계를 연결합니다.",
       "overview": "국가전략과 기본계획에서 연도별 시행계획, 기술평가, 실태조사·통계, 바이오인력까지 정책의 수립·이행·평가 전 과정을 탐색합니다.",
@@ -2515,7 +2515,7 @@ window.DASHBOARD_DATA = {
       ]
     },
     "industry": {
-      "eyebrow": "HYLAB / INDUSTRY INTELLIGENCE",
+      "eyebrow": "HSLAB / INDUSTRY INTELLIGENCE",
       "title": "산업",
       "subtitle": "연구성과가 시장과 산업생태계로 이어지는 경로를 분석합니다.",
       "overview": "기술사업화, 바이오클러스터, 소부장, 투자·금융을 중심으로 바이오산업의 성장 기반과 병목요인을 살펴봅니다.",
@@ -2610,7 +2610,7 @@ window.DASHBOARD_DATA = {
       ]
     },
     "institution": {
-      "eyebrow": "HYLAB / REGULATION INTELLIGENCE",
+      "eyebrow": "HSLAB / REGULATION INTELLIGENCE",
       "title": "규제",
       "subtitle": "법·제도, 규제와 표준화를 하나의 체계로 연결합니다.",
       "overview": "바이오혁신을 뒷받침하는 법·제도, 인허가와 규제과학, 국제표준과 시험·인증 체계를 종합적으로 탐색합니다.",
@@ -2702,7 +2702,7 @@ window.DASHBOARD_DATA = {
     {
       "category": "기술",
       "title": "AI 기반 바이오 설계와 자동화 연구 동향",
-      "source": "HyLab Research",
+      "source": "HsLab Research",
       "date": "2026.07.25",
       "summary": "AI·DBTL·바이오파운드리 융합기술의 주요 신호를 살펴봅니다.",
       "url": "#"

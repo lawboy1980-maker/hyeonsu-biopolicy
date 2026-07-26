@@ -1,7 +1,7 @@
 const state={data:null,charts:[],currentView:'technology',currentTopic:null,currentSubtopic:null,newsFilter:'전체'};
 const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
 async function init(){try{if(window.DASHBOARD_DATA){state.data=window.DASHBOARD_DATA;}else{const r=await fetch('data/dashboard.json');if(!r.ok)throw new Error('data load failed');state.data=await r.json();}renderAll();bindEvents();}catch(e){document.body.innerHTML='<main style="padding:40px;font-family:sans-serif"><h1>데이터를 불러오지 못했습니다.</h1><p>파일 구성과 경로를 확인해 주세요.</p></main>'}}
-function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderNews();renderKpis();renderQuickAccess();renderCharts();renderPromptChips();initCatalogFilters();applyUrlState()}
+function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderQuickAccess();renderCharts();renderPromptChips();initCatalogFilters();applyUrlState()}
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
 function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·규제</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
@@ -91,7 +91,7 @@ function renderResearchSubtopic(item,subtopic=null){
   };
   renderResearchList('#researchReports',filterItems(item.reports),`${prefix}${item.title} Featured Report`,'REPORT');
   renderResearchList('#researchResources',filterItems(item.resources),`${prefix}${item.title} Resource`,'SOURCE');
-  renderResearchList('#researchHylab',filterItems(item.hylab),`${prefix}${item.title} HyLab Report`,'HYLAB');
+  renderResearchList('#researchHylab',filterItems(item.hylab),`${prefix}${item.title} HsLab Report`,'HSLAB');
   renderResearchList('#researchNotes',filterItems(item.notes),`${prefix}${item.title} Research Note`,'NOTE');
 }
 function renderResearchArea(key,slug=null,subtopic=null){
@@ -131,7 +131,7 @@ function renderSection(key,topic=null,subtopic=null){
   if(isResearch)renderResearchArea(key,topic,subtopic);
 }
 function renderIndicatorTable(filter=''){
-  const stats=window.HYLAB_STATISTICS;
+  const stats=window.HSLAB_STATISTICS;
   const q=($('#indicatorSearch')?.value||'').trim().toLowerCase();
   const category=$('#categoryFilter')?.value||'';
   if(stats){
@@ -144,19 +144,21 @@ function renderIndicatorTable(filter=''){
   $('#indicatorTable').innerHTML=rows.map(r=>`<tr>${r.map(c=>`<td>${c||'-'}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="7">검색 결과가 없습니다.</td></tr>';
 }
 function initCatalogFilters(){
-  const stats=window.HYLAB_STATISTICS;if(!stats||!$('#categoryFilter'))return;
+  const stats=window.HSLAB_STATISTICS;if(!stats||!$('#categoryFilter'))return;
   const cats=[...new Set(stats.catalog.map(r=>r.category))];
   $('#categoryFilter').innerHTML='<option value="">전체 대분류</option>'+cats.map(c=>`<option value="${c}">${c}</option>`).join('');
 }
 function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
   state.currentView=view;state.currentTopic=topic;state.currentSubtopic=subtopic;
+  const statisticsHub=$('#statisticsHub');if(statisticsHub)statisticsHub.hidden=view!=='explorer';
+  const industryLink=$('#industryStatisticsLink');if(industryLink)industryLink.hidden=view!=='industry';
   $$('.view').forEach(v=>v.classList.remove('active'));
   $$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
   const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'REGULATION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};
   $('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';
   if(view==='dashboard'){
     $('#dashboardView').classList.add('active');
-    $('#pageTitle').textContent='HyLab';
+    $('#pageTitle').textContent='HsLab';
     $('#pageSubtitle').textContent='오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.';
   }else if(view==='assistant'){
     $('#assistantView').classList.add('active');

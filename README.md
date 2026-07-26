@@ -1,47 +1,20 @@
-# HyLab Digital Research Workspace — KBIOIS Pilot
+# HsLab v4.0
 
-## 시범 연동 범위
-- 바이오산업 생산규모: 국내판매 + 수출 합산
-- 바이오산업 업체수
-- 바이오산업 종사자수
-- 각 지표는 전체 시계열과 분야별 구성을 함께 저장합니다.
+바이오 정책·산업·통계를 연결하는 디지털 연구 워크스페이스입니다.
 
-## 구조
-```text
-KBIOIS OpenAPI → scripts/update_kbiois.py → data/kbiois-pilot.json → index.html
-```
-브라우저에서 KBIOIS를 직접 호출하지 않습니다. 인증키는 GitHub Secret에 보관하고, GitHub Actions가 정적 JSON 캐시를 생성합니다.
+## v4.0 변경사항
+
+- 브랜드명 `HyLab` → `HsLab`
+- 대시보드 뉴스: 국내 뉴스 / 부처 보도자료 / 해외 자료 / Nature News
+- BIOIN 및 Nature RSS 자동 수집
+- 생산규모·업체수·종사자수를 `통계·데이터` 화면으로 이동
+- 산업 화면에 통계·데이터 연결 카드 추가
 
 ## GitHub 설정
-1. 저장소 `Settings → Secrets and variables → Actions`로 이동합니다.
-2. Repository secret 이름을 `KBIOIS_API_KEY`로 등록합니다.
-3. `Actions → Update KBIOIS Pilot → Run workflow`를 실행합니다.
-4. 생성된 `data/kbiois-pilot.json`이 자동 커밋되면 GitHub Pages 화면이 갱신됩니다.
 
-## 로컬 실행
-```bash
-export KBIOIS_API_KEY="발급받은_인증키"
-python scripts/update_kbiois.py
-python -m http.server 8000
-```
-Windows PowerShell:
-```powershell
-$env:KBIOIS_API_KEY="발급받은_인증키"
-python scripts/update_kbiois.py
-python -m http.server 8000
-```
+1. 저장소 루트에 전체 파일을 업로드합니다.
+2. `Settings → Secrets and variables → Actions`에서 `KBIOIS_API_KEY`를 등록합니다.
+3. Actions에서 `Update HsLab News`와 `Update KBIOIS Statistics`를 한 번씩 수동 실행합니다.
+4. `.github` 폴더 업로드가 어려우면 `WORKFLOW-SETUP` 안의 파일을 GitHub 웹에서 `.github/workflows/`에 생성합니다.
 
-## 통계표 코드
-- 분야별 국내판매: `T228313007602109`
-- 분야별 수출: `T221983007616496`
-- 분야별 업체: `T233613007424798`
-- 분야별 인력: `T229813007584612`
-
-## 유의사항
-- 생산규모는 시범 구현에서 `국내판매 + 수출`로 산출합니다. KBIOIS의 공식 생산규모 정의와 다른 경우 `config/kbiois-indicators.json`의 소스를 조정해야 합니다.
-- API가 제공하지 않는 연도는 오류 목록에 남기고 나머지 연도는 계속 갱신합니다.
-- 인증키는 소스코드나 JSON 파일에 저장하지 마십시오.
-
-## 배포 대상
-- GitHub 저장소: `lawboy1980-maker/hyeonsu-biopolicy`
-- GitHub Pages: `https://lawboy1980-maker.github.io/hyeonsu-biopolicy/`
+뉴스는 매일, KBIOIS 통계는 매주 자동 갱신됩니다. BIOIN 페이지 구조가 변경되면 `scripts/update_news.py`의 파서를 조정해야 합니다.
