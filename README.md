@@ -11,3 +11,8 @@ Technology, Policy, Industry, Regulation을 동일한 탐색 구조로 구현한
 - Regulation 3개 영역 및 하위 주제 탐색
 - 공통 Overview, Areas, Key Statistics, Featured Reports, Resources, HyLab Reports, Research Notes
 - URL 쿼리 기반 직접 접근 및 뒤로가기 지원
+
+## v2.0.1 hotfix
+- Fixed chapter separation between Technology, Policy, Industry, and Regulation.
+- Hidden workspaces now remain fully hidden even when their component CSS uses `display:grid`.
+- Added cache-busting query strings for GitHub Pages deployment.
