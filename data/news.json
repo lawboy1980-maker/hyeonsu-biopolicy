@@ -1,8 +1,85 @@
 {
-  "updated_at": "자동 업데이트 대기",
+  "updated_at": "2026-07-26 23:13 KST",
   "domestic": [],
   "government": [],
   "overseas": [],
-  "nature": [],
-  "errors": []
+  "nature": [
+    {
+      "title": "Combined effect of Al2O3 microparticle-enhanced cultivation (MPEC) and inoculation strategy on Streptomyces rimosus",
+      "source": "Nature",
+      "date": "Sun, 26 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-63686-7"
+    },
+    {
+      "title": "Polyethylene glycol-enhanced removal of 2,4-dichlorophenol and 4-chlorophenol by peroxidase from shepherd’s purse (Capsella bursa-pastoris)",
+      "source": "Nature",
+      "date": "Sun, 26 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-64317-x"
+    },
+    {
+      "title": "Sustained simvastatin delivery via poly(lactide) nanoparticles enhances early osteogenic-associated responses in human periodontal ligament stem cells",
+      "source": "Nature",
+      "date": "Sun, 26 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-63776-6"
+    },
+    {
+      "title": "Flow cytometry as a tool for real-time monitoring of antifungal activity and aggregation in Candida auris",
+      "source": "Nature",
+      "date": "Sun, 26 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-63581-1"
+    },
+    {
+      "title": "Design and transfection of CRISPR/Cas9 constructs for the myostatin gene in Labeo rohita muscle cells",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-61844-5"
+    },
+    {
+      "title": "Doxorubicin-loaded gold nanoparticles for enhanced anticancer efficacy: in vitro, in vivo, and FTIR-based tissue analysis",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-61018-3"
+    },
+    {
+      "title": "Finding the perfect promoter for Cas9 in homing gene drives using single cell transcriptome data",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41467-026-76107-0"
+    },
+    {
+      "title": "Effectiveness of pH on formation and characterization of chitosan-alginate nanoparticles and nanohydrogels based on the formed nanoparticles",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-62504-4"
+    },
+    {
+      "title": "Chromosome-level genome assembly of the Shiqi pigeon (Columba livia)",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41597-026-07987-6"
+    },
+    {
+      "title": "Generation of high-producing CHO cell lines using cell picking system combined with fluorescent labeling of secreted products",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s41598-026-63844-x"
+    },
+    {
+      "title": "Transparent silk hydrogels as a versatile platform for cell culture and imaging",
+      "source": "Nature",
+      "date": "Sat, 25 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s43246-026-01299-3"
+    },
+    {
+      "title": "In vivo study of the effect of composition and implantation site on scaffold degradation rate",
+      "source": "Nature",
+      "date": "Fri, 24 Jul 2026 00:",
+      "url": "https://www.nature.com/articles/s43246-026-01308-5"
+    }
+  ],
+  "errors": [
+    "domestic: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /hbrd_News.do?bid=todaynews (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a64467a10>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "government: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /board.do?bid=division (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a63ce6240>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "overseas: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /hbrd_News.do?bid=overseanews (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7a63ce66f0>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))"
+  ]
 }
