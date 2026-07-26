@@ -9,10 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.3.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-  <script src="assets/js/data.js?v=2.2.0" defer></script>
-  <script src="assets/js/app.js?v=2.2.0" defer></script>
+  <script src="assets/js/data.js?v=2.3.0" defer></script>
+  <script src="assets/js/statistics.js?v=2.3.0" defer></script>
+  <script src="assets/js/app.js?v=2.3.0" defer></script>
 </head>
 <body>
 <div class="app-shell">
@@ -42,7 +43,7 @@
       <button class="icon-button mobile-only" id="menuButton" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
       <div class="page-title">
         <span class="breadcrumb">HYLAB / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
-        <h1 id="pageTitle">HyLab <span class="version-badge">V2.2</span></h1>
+        <h1 id="pageTitle">HyLab <span class="version-badge">V2.3</span></h1>
         <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.</p>
       </div>
       <div class="topbar-actions">
@@ -102,7 +103,7 @@
       <section class="panel kpi-panel">
         <div class="panel-heading">
           <div><span class="eyebrow">KEY INDICATORS</span><h2>핵심 지표</h2></div>
-          <span class="data-note">※ 현재 예시 데이터</span>
+          <span class="data-note">원자료 연결 · 2020~2021년 기준</span>
         </div>
         <div class="kpi-grid" id="kpiGrid"></div>
       </section>
@@ -175,7 +176,7 @@
         <section class="panel"><div class="panel-heading"><h2>핵심 지표</h2></div><div id="sectionKpis" class="mini-kpi-grid"></div></section>
         <section class="panel"><div class="panel-heading"><h2 id="sectionQuestionTitle">주요 정책 질문</h2></div><div id="sectionQuestions" class="question-list"></div></section>
       </div>
-      <section class="panel" id="legacyIndicatorPanel"><div class="panel-heading"><h2>관련 지표 목록</h2><input id="indicatorSearch" class="search-input" placeholder="지표명 검색"></div><div class="table-wrap"><table><thead><tr><th>구분</th><th>번호</th><th>주요 내용</th><th>그래프</th><th>핵심 질문</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
+      <section class="panel" id="legacyIndicatorPanel"><div class="panel-heading"><div><span class="eyebrow">HYLAB DATA CATALOG</span><h2>통계 분류표</h2><p class="catalog-summary" id="catalogSummary"></p></div><div class="catalog-actions"><select id="categoryFilter" class="search-input" aria-label="대분류 필터"><option value="">전체 대분류</option></select><input id="indicatorSearch" class="search-input" placeholder="지표명·분류 검색"></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>대분류</th><th>중분류</th><th>통계 제목</th><th>기준연도</th><th>상태</th><th>원자료</th></tr></thead><tbody id="indicatorTable"></tbody></table></div></section>
     </section>
 
     <section id="assistantView" class="view">

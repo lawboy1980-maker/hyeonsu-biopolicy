@@ -1,44 +1,18 @@
-# HyLab Digital Research Workspace v2.2
+# HyLab Digital Research Workspace v2.3
 
-GitHub Pages용 정적 웹사이트입니다.
+## 이번 버전의 데이터 연결
+- 원본 `내손안의바이오통계_2022.xlsm` 연결
+- 대시보드 핵심지표 8개를 실제 원자료 값으로 교체
+- 실제 시계열 7개를 JSON/JavaScript 데이터로 변환
+- 통계·데이터 메뉴에 113개 HyLab 통계분류표 연결
+- 대분류 필터와 검색 제공
+- 원자료 Excel 다운로드 연결
 
-## v2.1 변경사항
+## 주요 파일
+- `assets/js/statistics.js`: 정적 웹에서 바로 사용하는 통계 데이터
+- `data/statistics.json`: 향후 API/자동화 전환용 JSON
+- `source/내손안의바이오통계_2022.xlsm`: 연결된 원자료
+- `source/HyLab_통계분류표_v1.0.xlsx`: 분류 기준표
 
-- 대시보드에 `바이오 정책 뉴스` 영역과 분야별 필터 추가
-- Technology를 Policy·Industry·Regulation과 같은 공통 구조로 통합
-- 기술 주제: 합성생물학, AI 바이오, 신약개발, 그린·화이트바이오
-- 각 기술 주제의 하위 기술을 클릭해 자료 영역을 탐색 가능
-- 모든 챕터에서 Featured Reports, Resources, HyLab Reports, Research Notes 제공
-- URL에 `subtopic` 값이 반영되어 하위꼭지 직접 연결 가능
-- 루트 주소 접속 시 대시보드가 기본 화면으로 표시
-
-## 자료 추가 위치
-
-`assets/js/data.js`와 `data/dashboard.json`의 `researchAreasV2` 항목에서 관리합니다.
-
-각 주제에 아래 배열을 추가하거나 수정할 수 있습니다.
-
-- `reports`
-- `resources`
-- `hylab`
-- `notes`
-
-하위꼭지별 자료는 항목에 `subtopic` 값을 추가하면 필터링됩니다.
-
-```json
-{
-  "type": "REPORT",
-  "title": "DBTL 기술동향 보고서",
-  "subtopic": "DBTL"
-}
-```
-
-뉴스는 최상위 `news` 배열에서 관리합니다.
-
-
-## v2.2 브랜드 변경
-- BioPolicy → HyLab
-- BP → HL
-- Intelligence Platform → Digital Research Workspace
-- 대시보드 및 상위 메뉴의 제도 → 규제
-- Technology, Policy, Industry, Regulation 영역에 HyLab Intelligence 표기 적용
+## 주의
+현재 수치는 원본 파일 기준 2020~2021년 데이터입니다. 화면에 기준연도와 출처를 함께 표시했으며, 최신 데이터로 업데이트가 필요합니다.
