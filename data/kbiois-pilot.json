@@ -1,8 +1,303 @@
 {
   "provider": "KBIOIS",
-  "generated_at": null,
-  "period": {"start": 2016, "end": null},
-  "indicators": [],
-  "errors": [],
-  "status": "Run scripts/update_kbiois.py with KBIOIS_API_KEY to populate this file."
+  "generated_at": "2026-07-26T12:46:22.305720+00:00",
+  "period": {
+    "start": 2016,
+    "end": 2026
+  },
+  "indicators": [
+    {
+      "id": "production",
+      "title": "바이오산업 생산규모",
+      "unit": "백만원",
+      "method": "sum_sources",
+      "sources": [
+        {
+          "statbl_id": "T228313007602109",
+          "label": "국내판매"
+        },
+        {
+          "statbl_id": "T221983007616496",
+          "label": "수출"
+        }
+      ],
+      "latest": null,
+      "change_rate": null,
+      "series": []
+    },
+    {
+      "id": "companies",
+      "title": "바이오산업 업체수",
+      "unit": "개사",
+      "method": "single_source",
+      "sources": [
+        {
+          "statbl_id": "T233613007424798",
+          "label": "업체"
+        }
+      ],
+      "latest": null,
+      "change_rate": null,
+      "series": []
+    },
+    {
+      "id": "workforce",
+      "title": "바이오산업 종사자수",
+      "unit": "명",
+      "method": "single_source",
+      "sources": [
+        {
+          "statbl_id": "T229813007584612",
+          "label": "종사자"
+        }
+      ],
+      "latest": null,
+      "change_rate": null,
+      "series": []
+    }
+  ],
+  "errors": [
+    {
+      "indicator": "production",
+      "year": 2016,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2017,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2018,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2019,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2020,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2021,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2022,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2023,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2024,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2025,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "production",
+      "year": 2026,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found",
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2016,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2017,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2018,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2019,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2020,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2021,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2022,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2023,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2024,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2025,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "companies",
+      "year": 2026,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2016,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2017,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2018,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2019,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2020,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2021,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2022,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2023,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2024,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2025,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    },
+    {
+      "indicator": "workforce",
+      "year": 2026,
+      "messages": [
+        "INVALID_RESPONSE: SttsApiTblData wrapper not found"
+      ]
+    }
+  ]
 }
