@@ -321,9 +321,11 @@
       return;
     }
 
-    const safeItems = Array.isArray(items)
-      ? sortItems(items).slice(0, MAX_ITEMS)
-      : [];
+    const allItems = Array.isArray(items)
+  ? sortItems(items)
+  : [];
+
+const safeItems = allItems.slice(0, MAX_ITEMS);
 
     container.classList.add("hslab-news-panel");
     container.replaceChildren();
