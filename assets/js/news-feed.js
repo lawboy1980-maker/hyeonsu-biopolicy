@@ -350,6 +350,36 @@ const safeItems = allItems.slice(0, MAX_ITEMS);
     });
 
     container.appendChild(list);
+   if (allItems.length > MAX_ITEMS) {
+
+  const btn = document.createElement("button");
+
+  btn.className = "news-more-btn";
+
+  btn.textContent = "더보기 ▼";
+
+  let expanded = false;
+
+  btn.onclick = () => {
+
+    expanded = !expanded;
+
+    list.innerHTML = "";
+
+    const displayItems = expanded
+      ? allItems
+      : allItems.slice(0, MAX_ITEMS);
+
+    displayItems.forEach(item=>{
+      list.appendChild(createNewsItem(item));
+    });
+
+    btn.textContent =
+      expanded ? "접기 ▲" : "더보기 ▼";
+  };
+
+  container.appendChild(btn);
+}
   }
 
   function renderUpdatedTime(updatedAt) {
