@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-07-27T22:22:17.187340+09:00",
+  "updated_at": "2026-07-27T22:57:27.988696+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-07-27T00:00:00+09:00",
   "range_end": "2026-08-04T00:00:00+09:00",
-  "today_count": 2,
-  "week_count": 7,
+  "today_count": 1,
+  "week_count": 5,
   "events": [
-    {
-      "id": "5012mikt9k34mn2lcc1m421vq1@google.com",
-      "title": "ㅇㄹㅇㄹㄹ",
-      "start": "2026-07-27T21:30:00+09:00",
-      "end": "2026-07-27T22:30:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "6ru72kmpj2jh140iapnqkh43i1@google.com",
       "title": "ㅇㄹㅇㄹㅇㄹ",
@@ -26,28 +17,19 @@
       "description": ""
     },
     {
-      "id": "4b755qtjim3sa7kb5jnujj21cs@google.com",
-      "title": "건강검진",
-      "start": "2026-07-28T08:00:00+09:00",
-      "end": "2026-07-28T09:00:00+09:00",
+      "id": "2f56tke9urbijjbpp9tgl9tcng@google.com",
+      "title": "어린이집 상담(사임당)",
+      "start": "2026-07-28T14:00:00+09:00",
+      "end": "2026-07-28T14:30:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
     },
     {
-      "id": "7i81jplr427lp2omus3s2gk8he@google.com",
-      "title": "ㅇㄹㅇㄻㄹㅇㅁㅁ",
-      "start": "2026-07-28T22:30:00+09:00",
-      "end": "2026-07-28T23:30:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "7b1qdrmk13744jcum4v2911s2g@google.com",
-      "title": "건강검진",
-      "start": "2026-07-28T22:30:00+09:00",
-      "end": "2026-07-28T23:30:00+09:00",
+      "id": "0gu9n16pckb12ato7kbh935mu6@google.com",
+      "title": "건강검진(건양대병원)",
+      "start": "2026-07-29T08:00:00+09:00",
+      "end": "2026-07-29T10:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
