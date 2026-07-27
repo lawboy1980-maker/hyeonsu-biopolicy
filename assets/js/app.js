@@ -161,6 +161,36 @@ function initCatalogFilters(){
 }
 function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
   state.currentView=view;state.currentTopic=topic;state.currentSubtopic=subtopic;
+  function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
+  state.currentView=view;
+  state.currentTopic=topic;
+  state.currentSubtopic=subtopic;
+
+  const isDashboard = view === 'dashboard';
+
+  const dashboardOnlySections = [
+    '.hero-section',
+    '.performance-section',
+    '#trendDashboardSection',
+    '.lead-grid',
+    '.hslab-news-panel',
+    '.news-panel',
+    '#myWorkspacePanel'
+  ];
+
+  dashboardOnlySections.forEach(selector => {
+    document.querySelectorAll(selector).forEach(element => {
+      element.style.display = isDashboard ? '' : 'none';
+    });
+  });
+
+  const statisticsHub=$('#statisticsHub');
+  if(statisticsHub)statisticsHub.hidden=view!=='explorer';
+
+  const industryLink=$('#industryStatisticsLink');
+  if(industryLink)industryLink.hidden=view!=='industry';
+
+  $$('.view').forEach(v=>v.classList.remove('active'));
   const statisticsHub=$('#statisticsHub');if(statisticsHub)statisticsHub.hidden=view!=='explorer';
   const industryLink=$('#industryStatisticsLink');if(industryLink)industryLink.hidden=view!=='industry';
   $$('.view').forEach(v=>v.classList.remove('active'));
