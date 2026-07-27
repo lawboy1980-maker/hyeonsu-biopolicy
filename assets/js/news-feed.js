@@ -44,6 +44,7 @@
       .hslab-news-date { flex:0 0 auto; white-space:nowrap; }
       .hslab-news-empty { margin:0; padding:28px 18px; color:#98a2b3; font-size:13px; text-align:center; }
       .news-more-btn { width:100%; border:0; border-top:1px solid #edf0f4; background:#fff; padding:12px 16px; color:#667085; font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+      .bioin-item-count { margin-left:auto; color:#8a96a6; font-size:12px; font-weight:700; white-space:nowrap; }
       .news-more-btn:hover { background:#f8fafc; color:#315b88; }
       @media (max-width:900px) {
         .hslab-news-header { min-height:48px; padding:0 15px; }
@@ -137,19 +138,17 @@
   function renderSection(sectionKey, items) {
     const config = SECTION_CONFIG[sectionKey];
     if (!config) return;
+
     const container = findContainer(config.selectors);
     if (!container) {
-      console.warn(`[news-feed] ${config.title} 영역을 찾지 못했습니다.`);
+      console.warn(`[news-feed] ${config.title} 목록 영역을 찾지 못했습니다.`);
       return;
     }
 
     const allItems = Array.isArray(items) ? sortItems(items) : [];
-    const initialItems = allItems.slice(0, MAX_ITEMS);
-    container.classList.add("hslab-news-panel");
     container.replaceChildren();
-    container.appendChild(createHeader(config.title, initialItems.length));
 
-    if (!initialItems.length) {
+    if (!allItems.length) {
       const empty = document.createElement("p");
       empty.className = "hslab-news-empty";
       empty.textContent = "수집된 자료가 없습니다.";
@@ -159,13 +158,27 @@
 
     const list = document.createElement("div");
     list.className = "hslab-news-list";
+
     const draw = (expanded) => {
       list.replaceChildren();
       const visible = expanded ? allItems : allItems.slice(0, MAX_ITEMS);
       visible.forEach((item) => list.appendChild(createNewsItem(item)));
     };
+
     draw(false);
     container.appendChild(list);
+
+    const column = container.closest("[data-news-section]");
+    const countTarget = column?.querySelector(".news-source-head");
+    if (countTarget) {
+      let badge = countTarget.querySelector(".bioin-item-count");
+      if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "bioin-item-count";
+        countTarget.appendChild(badge);
+      }
+      badge.textContent = `${Math.min(allItems.length, MAX_ITEMS)}건`;
+    }
 
     if (allItems.length > MAX_ITEMS) {
       const button = document.createElement("button");
