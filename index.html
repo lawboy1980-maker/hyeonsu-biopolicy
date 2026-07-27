@@ -57,18 +57,86 @@
     </header>
 
     <section id="dashboardView" class="view active">
-      <section class="hero-panel">
-        <div class="hero-copy">
-          <span class="eyebrow light">DIGITAL RESEARCH WORKSPACE</span>
-          <h2>HsLab</h2>
-          <p>기술 신호, 정부 정책, 산업 성과, 법·규제 변화를 하나의 흐름으로 연결합니다.</p>
-          <div class="hero-actions">
-            <button class="primary-button" data-jump="assistant"><i class="bi bi-stars"></i> AI 정책 검색</button>
-            <button class="secondary-button" data-jump="explorer"><i class="bi bi-bar-chart"></i> 통계 탐색</button>
-          </div>
-        </div>
-        <div class="hero-spotlight" id="heroSpotlight"></div>
-      </section>
+      <section class="hero-panel hero-workspace">
+  <div class="hero-copy">
+    <span class="eyebrow light">BIO POLICY INTELLIGENCE PLATFORM</span>
+
+    <h2>HsLab</h2>
+
+    <strong class="hero-tagline">
+      오늘의 연구와 정책을 한 곳에서.
+    </strong>
+
+    <p>
+      기술·정책·산업·규제·일정을 연결하여<br>
+      빠르고 전략적인 의사결정을 지원합니다.
+    </p>
+
+    <div class="hero-actions">
+      <button class="primary-button" data-jump="assistant">
+        <i class="bi bi-stars"></i>
+        AI 정책 검색
+      </button>
+
+      <button class="secondary-button" data-jump="explorer">
+        <i class="bi bi-bar-chart"></i>
+        통계 탐색
+      </button>
+    </div>
+  </div>
+
+  <aside class="agenda-card" id="heroSpotlight">
+    <div class="agenda-header">
+      <div>
+        <span class="agenda-eyebrow">TODAY'S AGENDA</span>
+        <h3>오늘의 일정</h3>
+      </div>
+
+      <span class="agenda-date" id="agendaDate"></span>
+    </div>
+
+    <div class="agenda-placeholder">
+      <span class="agenda-calendar-icon">
+        <i class="bi bi-calendar3"></i>
+      </span>
+
+      <strong>Google Calendar 연결 준비</strong>
+
+      <p>
+        캘린더를 연결하면 오늘의 일정과<br>
+        이번 주 마감 일정이 자동으로 표시됩니다.
+      </p>
+    </div>
+
+    <div class="agenda-features">
+      <div>
+        <i class="bi bi-clock"></i>
+        <span>오늘 일정</span>
+      </div>
+
+      <div>
+        <i class="bi bi-calendar-week"></i>
+        <span>이번 주 일정</span>
+      </div>
+
+      <div>
+        <i class="bi bi-flag"></i>
+        <span>마감 일정</span>
+      </div>
+    </div>
+
+    <a
+      class="calendar-connect-button"
+      href="https://calendar.google.com/calendar/u/0/r?pli=1"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="bi bi-google"></i>
+      Google Calendar 열기
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+  </aside>
+</section>
 
       <!-- 주요성과 -->
       <section class="performance-section">
