@@ -1,0 +1,42 @@
+name: Update HsLab Calendar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hslab-calendar-update
+  cancel-in-progress: false
+
+jobs:
+  update-calendar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install calendar dependencies
+        run: pip install requests icalendar recurring-ical-events
+
+      - name: Build agenda data
+        env:
+          ICAL_URL: ${{ secrets.ICAL_URL }}
+        run: python scripts/update_calendar.py
+
+      - name: Commit updated agenda
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/agenda.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: update HsLab calendar"
+          git pull --rebase
+          git push
