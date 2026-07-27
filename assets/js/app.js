@@ -14,7 +14,19 @@ function renderAll(){
   applyUrlState();
 }
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
-function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·규제</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
+function renderHero() {
+  const dateElement = document.querySelector('#agendaDate');
+
+  if (dateElement) {
+    const today = new Date();
+
+    dateElement.textContent = new Intl.DateTimeFormat('ko-KR', {
+      month: 'long',
+      day: 'numeric',
+      weekday: 'short'
+    }).format(today);
+  }
+}
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
 function renderSchedules(){$('#scheduleList').innerHTML=state.data.schedules.slice(0,5).map(s=>`<div class="schedule-item"><span class="badge">${s.date}</span><span>${s.title}</span><i class="bi bi-chevron-right"></i></div>`).join('')}
 function renderNews(filter=state.newsFilter){state.newsFilter=filter;const items=(state.data.news||[]).filter(n=>filter==='전체'||n.category===filter);$('#newsGrid').innerHTML=items.map(n=>`<article class="news-card"><div class="news-meta"><span class="news-category">${n.category}</span><span>${n.source} · ${n.date}</span></div><h3>${n.title}</h3><p>${n.summary||''}</p><a href="${n.url||'#'}" ${n.url&&n.url!=='#'?'target="_blank" rel="noopener noreferrer"':''}>기사 보기 <i class="bi bi-arrow-up-right"></i></a></article>`).join('')||'<p class="empty-state">등록된 뉴스가 없습니다.</p>';$$('.news-filter').forEach(b=>b.classList.toggle('active',b.dataset.newsFilter===filter))}
