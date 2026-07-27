@@ -91,50 +91,35 @@
         <span class="agenda-eyebrow">TODAY'S AGENDA</span>
         <h3>오늘의 일정</h3>
       </div>
-
       <span class="agenda-date" id="agendaDate"></span>
     </div>
 
-    <div class="agenda-placeholder">
-      <span class="agenda-calendar-icon">
-        <i class="bi bi-calendar3"></i>
-      </span>
-
-      <strong>Google Calendar 연결 준비</strong>
-
-      <p>
-        캘린더를 연결하면 오늘의 일정과<br>
-        이번 주 마감 일정이 자동으로 표시됩니다.
-      </p>
+    <div class="agenda-status" id="agendaStatus" aria-live="polite">
+      <i class="bi bi-arrow-repeat"></i>
+      <span>캘린더를 불러오는 중입니다.</span>
     </div>
 
-    <div class="agenda-features">
-      <div>
-        <i class="bi bi-clock"></i>
-        <span>오늘 일정</span>
-      </div>
-
-      <div>
-        <i class="bi bi-calendar-week"></i>
-        <span>이번 주 일정</span>
-      </div>
-
-      <div>
-        <i class="bi bi-flag"></i>
-        <span>마감 일정</span>
-      </div>
+    <div class="agenda-summary" id="agendaSummary" hidden>
+      <div><strong id="agendaTodayCount">0</strong><span>오늘</span></div>
+      <div><strong id="agendaWeekCount">0</strong><span>7일간</span></div>
+      <div><strong id="agendaNextLabel">-</strong><span>다음 일정</span></div>
     </div>
 
-    <a
-      class="calendar-connect-button"
-      href="https://calendar.google.com/calendar/u/0/r?pli=1"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="bi bi-google"></i>
-      Google Calendar 열기
-      <i class="bi bi-arrow-up-right"></i>
-    </a>
+    <div class="agenda-list" id="agendaList"></div>
+
+    <div class="agenda-footer">
+      <span class="agenda-updated" id="agendaUpdated"></span>
+      <a
+        class="calendar-connect-button"
+        href="https://calendar.google.com/calendar/u/0/r?pli=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="bi bi-google"></i>
+        Google Calendar 열기
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
   </aside>
 </section>
 

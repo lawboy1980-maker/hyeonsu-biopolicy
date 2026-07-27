@@ -1,0 +1,9 @@
+{
+  "status": "pending",
+  "updated_at": "",
+  "timezone": "Asia/Seoul",
+  "today_count": 0,
+  "week_count": 0,
+  "events": [],
+  "message": "GitHub Actions에서 캘린더 동기화를 실행해 주세요."
+}

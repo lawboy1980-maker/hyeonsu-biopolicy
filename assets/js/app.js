@@ -16,16 +16,111 @@ function renderAll(){
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
 function renderHero() {
   const dateElement = document.querySelector('#agendaDate');
-
   if (dateElement) {
-    const today = new Date();
-
     dateElement.textContent = new Intl.DateTimeFormat('ko-KR', {
       month: 'long',
       day: 'numeric',
       weekday: 'short'
-    }).format(today);
+    }).format(new Date());
   }
+  renderAgenda();
+}
+
+async function renderAgenda() {
+  const statusEl = $('#agendaStatus');
+  const listEl = $('#agendaList');
+  const summaryEl = $('#agendaSummary');
+  const updatedEl = $('#agendaUpdated');
+  if (!statusEl || !listEl) return;
+
+  try {
+    const response = await fetch(`data/agenda.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    const events = Array.isArray(data.events) ? data.events : [];
+    const now = new Date();
+    const todayKey = localDateKey(now);
+    const todayEvents = events.filter(event => localDateKey(new Date(event.start)) === todayKey);
+    const visibleEvents = (todayEvents.length ? todayEvents : events).slice(0, 4);
+
+    $('#agendaTodayCount').textContent = String(data.today_count ?? todayEvents.length);
+    $('#agendaWeekCount').textContent = String(data.week_count ?? events.length);
+    $('#agendaNextLabel').textContent = nextAgendaLabel(events, now);
+    summaryEl.hidden = false;
+
+    if (visibleEvents.length) {
+      statusEl.hidden = true;
+      listEl.innerHTML = visibleEvents.map(event => agendaItemTemplate(event, todayEvents.length === 0)).join('');
+    } else {
+      statusEl.hidden = false;
+      statusEl.className = 'agenda-status is-empty';
+      statusEl.innerHTML = '<i class="bi bi-calendar-check"></i><span>오늘과 앞으로 7일간 등록된 일정이 없습니다.</span>';
+      listEl.innerHTML = '';
+    }
+
+    if (data.status === 'error') {
+      statusEl.hidden = false;
+      statusEl.className = 'agenda-status is-error';
+      statusEl.innerHTML = '<i class="bi bi-exclamation-triangle"></i><span>캘린더 동기화가 필요합니다. Actions를 실행해 주세요.</span>';
+    }
+
+    updatedEl.textContent = data.updated_at ? `업데이트 ${formatAgendaUpdated(data.updated_at)}` : '';
+  } catch (error) {
+    summaryEl.hidden = true;
+    listEl.innerHTML = '';
+    statusEl.hidden = false;
+    statusEl.className = 'agenda-status is-error';
+    statusEl.innerHTML = '<i class="bi bi-exclamation-triangle"></i><span>일정 데이터를 불러오지 못했습니다.</span>';
+    updatedEl.textContent = '';
+    console.error('Agenda load failed:', error);
+  }
+}
+
+function localDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function agendaItemTemplate(event, showDate) {
+  const start = new Date(event.start);
+  const timeText = event.all_day
+    ? '종일'
+    : new Intl.DateTimeFormat('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
+  const dateText = new Intl.DateTimeFormat('ko-KR', { month: 'numeric', day: 'numeric', weekday: 'short' }).format(start);
+  const meta = showDate ? `${dateText} · ${timeText}` : timeText;
+  const location = event.location ? `<span class="agenda-item-location"><i class="bi bi-geo-alt"></i>${escapeHtml(event.location)}</span>` : '';
+  return `<article class="agenda-item">
+    <div class="agenda-item-time">${escapeHtml(meta)}</div>
+    <div class="agenda-item-body">
+      <strong>${escapeHtml(event.title || '제목 없는 일정')}</strong>
+      ${location}
+    </div>
+  </article>`;
+}
+
+function nextAgendaLabel(events, now) {
+  const next = events.map(event => new Date(event.start)).find(date => date >= now);
+  if (!next) return '-';
+  if (localDateKey(next) === localDateKey(now)) {
+    return new Intl.DateTimeFormat('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false }).format(next);
+  }
+  return new Intl.DateTimeFormat('ko-KR', { month: 'numeric', day: 'numeric' }).format(next);
+}
+
+function formatAgendaUpdated(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('ko-KR', {
+    month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+  }).format(date);
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[char]));
 }
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
 function renderSchedules(){$('#scheduleList').innerHTML=state.data.schedules.slice(0,5).map(s=>`<div class="schedule-item"><span class="badge">${s.date}</span><span>${s.title}</span><i class="bi bi-chevron-right"></i></div>`).join('')}

@@ -498,3 +498,124 @@ body.dark .agenda-card {
     justify-content: center;
   }
 }
+
+/* =========================================================
+   Live Google Calendar agenda
+========================================================= */
+.agenda-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 82px;
+  padding: 16px;
+  margin: 14px 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(232, 243, 255, 0.84);
+  font-size: 12px;
+  text-align: center;
+}
+
+.agenda-status[hidden] { display: none; }
+.agenda-status.is-empty { color: rgba(232, 243, 255, 0.82); }
+.agenda-status.is-error { background: rgba(255, 161, 161, 0.12); color: #ffd2d2; }
+
+.agenda-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 12px;
+}
+
+.agenda-summary[hidden] { display: none; }
+
+.agenda-summary > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.agenda-summary strong {
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.agenda-summary span {
+  margin-top: 5px;
+  color: rgba(221, 238, 255, 0.72);
+  font-size: 9px;
+}
+
+.agenda-list {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.agenda-item {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 46px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.agenda-item-time {
+  color: #a9ddff;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.agenda-item-body {
+  min-width: 0;
+}
+
+.agenda-item-body strong {
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.agenda-item-location {
+  display: block;
+  overflow: hidden;
+  margin-top: 3px;
+  color: rgba(220, 237, 255, 0.66);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.agenda-item-location i { margin-right: 3px; }
+
+.agenda-footer {
+  margin-top: auto;
+}
+
+.agenda-updated {
+  display: block;
+  min-height: 14px;
+  margin-bottom: 6px;
+  color: rgba(220, 237, 255, 0.55);
+  font-size: 9px;
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  .agenda-summary { grid-template-columns: repeat(3, 1fr); }
+  .agenda-item { grid-template-columns: 70px minmax(0, 1fr); }
+}
