@@ -97,11 +97,15 @@ function agendaItemTemplate(event, showDate) {
     : '';
 
   return `<article class="agenda-item" style="--agenda-accent:${category.color}">
-    <div class="agenda-item-icon" aria-hidden="true"><i class="bi ${category.icon}"></i></div>
     <div class="agenda-item-time">${escapeHtml(meta)}</div>
-    <div class="agenda-item-body">
-      <strong>${escapeHtml(event.title || '제목 없는 일정')}</strong>
-      <span class="agenda-item-category">${escapeHtml(category.label)}</span>
+    <div class="agenda-timeline" aria-hidden="true">
+      <span class="agenda-timeline-dot"><i class="bi ${category.icon}"></i></span>
+    </div>
+    <div class="agenda-item-panel">
+      <div class="agenda-item-heading">
+        <strong>${escapeHtml(event.title || '제목 없는 일정')}</strong>
+        <span class="agenda-item-category">${escapeHtml(category.label)}</span>
+      </div>
       ${location}
     </div>
   </article>`;
