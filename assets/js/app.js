@@ -41,7 +41,15 @@ async function renderAgenda() {
     const now = new Date();
     const todayKey = localDateKey(now);
     const todayEvents = events.filter(event => localDateKey(new Date(event.start)) === todayKey);
-    const visibleEvents = (todayEvents.length ? todayEvents : events).slice(0, 4);
+    const activeTodayEvents = todayEvents.filter(event => {
+      const end = event.end ? new Date(event.end) : new Date(event.start);
+      return Boolean(event.all_day) || end >= now;
+    });
+    const futureEvents = events.filter(event => {
+      const end = event.end ? new Date(event.end) : new Date(event.start);
+      return Boolean(event.all_day) || end >= now;
+    });
+    const visibleEvents = (activeTodayEvents.length ? activeTodayEvents : futureEvents).slice(0, 4);
 
     $('#agendaTodayCount').textContent = String(data.today_count ?? todayEvents.length);
     $('#agendaWeekCount').textContent = String(data.week_count ?? events.length);
@@ -50,7 +58,7 @@ async function renderAgenda() {
 
     if (visibleEvents.length) {
       statusEl.hidden = true;
-      listEl.innerHTML = visibleEvents.map(event => agendaItemTemplate(event, todayEvents.length === 0)).join('');
+      listEl.innerHTML = visibleEvents.map(event => agendaItemTemplate(event, activeTodayEvents.length === 0)).join('');
     } else {
       statusEl.hidden = false;
       statusEl.className = 'agenda-status is-empty';
@@ -64,7 +72,7 @@ async function renderAgenda() {
       statusEl.innerHTML = '<i class="bi bi-exclamation-triangle"></i><span>캘린더 동기화가 필요합니다. Actions를 실행해 주세요.</span>';
     }
 
-    updatedEl.textContent = data.updated_at ? `업데이트 ${formatAgendaUpdated(data.updated_at)}` : '';
+    updatedEl.textContent = data.updated_at ? `${relativeAgendaUpdated(data.updated_at)} 업데이트` : '';
   } catch (error) {
     summaryEl.hidden = true;
     listEl.innerHTML = '';
@@ -143,6 +151,18 @@ function nextAgendaLabel(events, now) {
     return new Intl.DateTimeFormat('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false }).format(next);
   }
   return new Intl.DateTimeFormat('ko-KR', { month: 'numeric', day: 'numeric' }).format(next);
+}
+
+
+function relativeAgendaUpdated(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  const minutes = Math.max(0, Math.floor((Date.now() - date.getTime()) / 60000));
+  if (minutes < 1) return '방금';
+  if (minutes < 60) return `${minutes}분 전`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}시간 전`;
+  return formatAgendaUpdated(value);
 }
 
 function formatAgendaUpdated(value) {
@@ -384,4 +404,4 @@ function bindEvents(){
   $$('.topic-primary.disabled').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
 }
 function closeSidebar(){$('#sidebar').classList.remove('open');$('#sidebarOverlay').classList.remove('show')}
-document.addEventListener('DOMContentLoaded',init);
+document.addEventListener('DOMContentLoaded',()=>{init();setInterval(renderAgenda,300000);});

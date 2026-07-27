@@ -1,18 +1,27 @@
-# HsLab V12
+# HsLab Dashboard v7 Patch
+
+## 반영 내용
+
+1. 주요성과(KPI) 다음에 핵심지표 트렌드 6개를 3열 × 2행으로 배치
+2. 주요현안 오른쪽의 `다가오는 일정`을 `Strategic Intelligence`로 변경
+3. BioIN Hub 다음에 `My Workspace` 추가
+4. My Workspace에서 제공된 Notion 페이지로 이동
+5. Quick Research와 기존 4개 주요 통계 차트는 메인 대시보드에서 숨김
 
 ## 적용 방법
-1. ZIP을 풀고 저장소 최상위에 모든 파일을 덮어씁니다.
-2. `.github/workflows/update-calendar.yml`과 `scripts/update_calendar.py`가 포함되어 있는지 확인합니다.
-3. GitHub 저장소의 `Settings > Secrets and variables > Actions`에 `ICAL_URL`이 등록되어 있어야 합니다.
-4. `Actions > Update HsLab Calendar > Run workflow`를 한 번 실행합니다.
-5. GitHub Pages 배포 후 강력 새로고침(Ctrl+F5)합니다.
 
-## V12 변경사항
-- 일정 제목, 시간, 요약 숫자 글씨 확대
-- `agenda.json` 캐시 방지
-- 페이지에서 5분마다 자동 재조회
-- 진행 중 일정 강조
-- 종료 일정은 화면에서 제외
-- 오늘 일정이 없으면 다음 일정 표시
-- 동기화 시각과 상태 표시
-- 모바일 반응형 개선
+저장소 전체를 내려받은 뒤, 이 폴더의 `apply_patch.py`를 저장소 루트에서 실행합니다.
+
+```bash
+python apply_patch.py
+```
+
+그 다음 변경된 파일을 GitHub에 업로드/커밋합니다.
+
+- `index.html`
+- `assets/css/dashboard-v7.css`
+- `assets/js/dashboard-v7.js`
+
+## Notion 관련
+
+현재 연결 방식은 안전한 외부 링크입니다. GitHub Pages에 Notion API 토큰을 직접 넣으면 토큰이 노출되므로 금지해야 합니다. 최근 문서·할 일 자동 표시는 추후 GitHub Actions 또는 Cloudflare Worker를 통해 구현하는 방식이 적절합니다.
