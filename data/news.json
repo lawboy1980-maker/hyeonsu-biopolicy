@@ -1,303 +1,414 @@
 {
-  "updated_at": "2026-07-27 09:47 KST",
-  "domestic": [
+  "updated_at": "2026-07-27 18:11 KST",
+  "news": [
     {
-      "title": "시지메드텍, 성남 '리젠 허브' 조직은행 허가 획득…hECM·CDMO 사업 본격화",
-      "source": "약업신문",
+      "title": "[26.07.27.월] CRISPR 효소가 암세포 DNA를 잘라 새로운 치료 가능성을 보이다",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB3U2s4bzdpaHlRa28xd0FpY3ZUcmdXaEk0MEg5MkhUZjNRa0Qyb1hQZk1tSnItWXJuZ0E2M2ZtLTVDT19wQ0hZNklSYmVCY2FhVlZsamNsRXY2cnBraVctcVhySGRKM040VERRaTJiY3B5T2lVUU5LRWZR?oc=5"
+      "url": "https://www.nature.com/articles/d41586-026-02268-z"
     },
     {
-      "title": "차바이오텍, 정부 AX 사업 선정…생성형 AI로 세포치료제 규제문서 자동화 추진",
-      "source": "바이오타임즈",
+      "title": "필요한 국가 연구시설·장비, AI로 찾아 예약까지 한번에",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5YYVZHTXAxWUxueldPYW1jNV9RNnhrZ2FqY2tzRDBWeEE5NWJEbVJjT2dNQXNRcTktN0xMSzRkRl80amtZOWpmR0dGYVRGUTBQNnpKOFZ3bXg4UzRiajdhRDFYbjFsUXpVRkdMWg?oc=5"
+      "url": "https://www.dongascience.com/news/79121"
     },
     {
-      "title": "바이오드, '초격차 스타트업' AX 컨소시엄 선정…AI로 조류인플루엔자 변이 예측한다",
-      "source": "바이오타임즈",
+      "title": "한국파트너스, 국내 최초 임상3상 특화펀드 운용 맡는다",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9VSVZtZ2RkNkhuVzRjcTlKTl9seUkyNXVCdURrRkt6N1ltc3M3MGFKemtoNnBjcG9jS3hWcnk1THhudTgxSFYzMGptX1hjVnkxWFN6am1VbTNQeTE5b0IwbW1tSHZwYXItXzcxeA?oc=5"
+      "url": "https://www.news1.kr/bio/welfare-medical/6239652"
     },
     {
-      "title": "GC녹십자, 국산 코로나19 mRNA 백신 임상 2상 진입…백신 자급화 박차",
-      "source": "서울경제TV",
+      "title": "바이오협회 “투자 지원 결실…바이오텍 7개사 투자 유치”",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5EV2d4T2Y4LXZEamNkRHROZEFaRmRVRWNXVEpiZUtobkFqem8wY2VyaVlrbWNlLVVNb1l4WTItTnJHVUh5QWpnU1dOaVZwSE9rbUQ2bWo2TWt3VUdGMndFVnFRa0E?oc=5"
+      "url": "https://www.etnews.com/20260727000230"
     },
     {
-      "title": "GC녹십자, 코로나 mRNA 백신 임상 2상 IND 제출",
-      "source": "한국경제",
+      "title": "'PFAS 대체 신물질' 얼마나 안전한가...독성연, 장기 독성 첫 검증",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5Zk9oZm9Ed1h3bEFQZzlUNGd4ZDVpSVlPQ0JmX3UwenA3YmlfS2hEbTlzeWkzUnFTTE9UcjVzOHhhUHQ3WXlKUDBwN1VtUEltNHVycVd5endWZw?oc=5"
+      "url": "https://www.etnews.com/20260727000218"
     },
     {
-      "title": "GC녹십자, 코로나19 mRNA 백신 임상 2상 지원사업 선정",
-      "source": "히트뉴스",
+      "title": "과기정통부 ‘충청 정보보호 클러스터’ 출범…스마트시티·국방·바이오 연계",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1JR2p3NEFTMXZmcEo3RHo1M1JyZ0o0Q0diallCWDNPZmVtZTZoYWdZYkl0a2dER05FaV9IQUVJVy1GbThDMnEwOVVFYkdKaGJvbDFlaHJuSENGa0lQQjFjdllIRjVFRlpmMTRn?oc=5"
+      "url": "https://www.dailian.co.kr/news/view/1670720/%EA%B3%BC%EA%B8%B0%EC%A0%95%ED%86%B5%EB%B6%80-%E2%80%98%EC%B6%A9%EC%B2%AD-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%E2%80%99-2026"
     },
     {
-      "title": "[바이오 CFO 길라잡이]대한민국 바이오헬스 기업의 글로벌 진출 기회 – 베트남 ①",
-      "source": "한국경제",
+      "title": "\"BCI, 핵무기 개발 초기 단계와 같아…규제 논의 주도해야\"",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBGN01ETS1CMEJSOFBZRW9OSHpBZEVmdFVjOXRsc0lMZEpEd3dicE1NS2JiMUVsS2RIWmtvNVNoc3FZbEdyTVJlTnhHQVVFMHlLemJJSW9oSmtHUQ?oc=5"
+      "url": "https://www.dongascience.com/news/79049"
     },
     {
-      "title": "[이여원 변호사의 법률 스터디]2026-2027 Compliance & Governance Frontier 바이오 기업을 위한 규제·계약·윤리 전략의 진화 ④ 헬스케어 데이터의 국외 이전과 보건정보 보호: 글로벌 규제 동향과 한국 기업의 대응",
-      "source": "한국경제",
+      "title": "'AI 신약개발' K멜로디 3년차… 수행기관 5곳 합류",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53RmhyMUxsbkVyQ1lsbmtFdGp4WGVoeWxsODM4TDA4c1gwUUhoZ1NpUFlfbWkxUE5EWXpPc1o4YkdJTGV4bVpoRDF2djVEWVR3aXdsajJXS09pdw?oc=5"
+      "url": "https://www.fnnews.com/news/202607261814474679"
     },
     {
-      "title": "에스바이오메딕스, 파킨슨병 세포치료 성공 조건 찾았다…셀스템셀논문 게재 - 머니투데이",
-      "source": "머니투데이",
+      "title": "박순석·정규식, 犬 암·악액질 진단 '마이크로RNA' 바이오마커 규명",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA3ZG40QWZ4SDR0Z1FVb0JkNGYzT0tPNUFIT1dUZHJON09iT2dJWlotb05SWnlZLWxYal9pS2lyYWlYbXBKS1JHTE1QU1hHaDRxVnNRaVBoMTlxSjBBbXQxdjhGUkY1NVdvYXR2enJ30gFuQVVfeXFMUDdkbjRBZnhINHRnUVVvQmQ0ZjNPS081QUhPV1Rkck43T2JPZ0laWi1vTlJaeVktbFhqX2lLaXJhaVhtcEpLUkdMTVBTWEdoNHFWc1FpUGgxOXFKMEFtdDF2OEZSRjU1V29hdHZ6cnc?oc=5"
+      "url": "https://www.news1.kr/industry/general-industry/6239197"
     },
     {
-      "title": "[기고] K-제약바이오, 임상 3상 ‘통곡의 벽’을 제대로 넘어서려면",
-      "source": "약업신문",
+      "title": "세포핵 속 'DNA 구조 변화' 그린 4차원 지도",
+      "source": "BioIN 뉴스",
       "date": "2026-07-27",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5MUzhOUktCcEN4bUJCMHdHRlhJa1BoSlJGOU9tVDRwWk1xc2dmLWFuV0llQkpCbkNvdWM1bUQweF8yM3hTdFB2RGpUZUFoem9mTU9yYngtbkxJSVI0ZHF2Z1RLQ3ozUWhucUdONWpwVQ?oc=5"
+      "url": "https://www.dongascience.com/news/79098"
     },
     {
-      "title": "판 커진 넥틴-4 ADC… 2조6천억 시장에 삼성바이오에피스도 가세",
-      "source": "히트뉴스",
-      "date": "2026-07-26",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9ob0VGWnFPakY0YmhYX0NuYUVzVnlBbVpWWDNJQkxyYl9kRDJQYWNLMGJqUk5KR1pFV0NBd1gyREZvYm9BUldWZDhCZTV0TF91OEdZYjlnc2dreWtxeGk3S2lQYURFakJBVUxV?oc=5"
+      "title": "천종식 CJ바사 고문, 미생물학 국제상 수상…원핵생물 분류에 기여",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://biz.chosun.com/science-chosun/science/2026/07/25/JPMWD7URU5C6XAJBN22N43FX5M/"
     },
     {
-      "title": "미국·유럽, 바이오시밀러 규제 완화 가시화…국내 기업에 미칠 영향은",
-      "source": "서울경제TV",
-      "date": "2026-07-25",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBxRlYtNlNjNU9FWkJRMzNkeDA1NlJrclRLcEl3UzJxbnRlRmlaeklzNVhqbHE2OHZTLWg5SG05OHp5LU02LVUwOGh4SWtCQ1BUZktiUHhKUlRuc1NLZUZocWQ1Vkg?oc=5"
+      "title": "K바이오, 돈맥경화 아닌 경로의 문제",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.etnews.com/20260724000196"
+    },
+    {
+      "title": "AI 대전환과 비만치료제 열풍… 한국과학기자협회, ‘2026 과학기자대회’ 28일 개최",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.mk.co.kr/news/it/12106721"
+    },
+    {
+      "title": "잇단 패소 이어 임상마저 실패…‘콜린’시장, 26년만에 무너지나",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.sedaily.com/article/20072041?ref=naver"
+    },
+    {
+      "title": "“세계는 오래 가는 주사제 전쟁중...AI로 개발 앞당길 것”",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.mk.co.kr/news/it/12107737"
+    },
+    {
+      "title": "서울대병원, '줄기세포 단일배양 이종조직판막 재세포화' 최초 성공",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://view.asiae.co.kr/article/2026072708160383413"
+    },
+    {
+      "title": "세포성장 신호켜는 핵심 스위치 발견…KAIST \"차세대 항암 표적\"",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.yna.co.kr/view/AKR20260724151800063?input=1195m"
+    },
+    {
+      "title": "국가연구개발사업 행정 서식 93% 줄인다",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.etnews.com/20260724000171"
+    },
+    {
+      "title": "이주한 대통령실 비서관 \"출연연 내년 인건비 100% 보장\"",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://zdnet.co.kr/view/?no=20260726141511"
+    },
+    {
+      "title": "바이오의약품 CDMO 수출 지원체계 마련…시설기준 구체화",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-24",
+      "url": "https://www.yna.co.kr/view/AKR20260724092700017?input=1195m"
     }
   ],
-  "government": [
+  "trend": [
     {
-      "title": "[보도참고] 치과 병·의원에 의료용 마약류 안전관리 교육 강화한다",
-      "source": "식품의약품안전처",
+      "title": "신약 개발 전주기 AI 융합기술 관련 특허 동향",
+      "source": "BioIN 동향",
       "date": "2026-07-27",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50226"
+      "url": "https://www.khidi.or.kr/board/view?pageNum=1&rowCnt=10&no1=584&linkId=48947362&menuId=MENU01783&maxIndex=00489473629998&minIndex=00488973039998&schType=0&schText=&schStartDate=&schEndDate=&boardStyle=&categoryId=&continent=&country="
     },
     {
-      "title": "[보도참고] 식약처, 화장품 안전성 평가 전문인력 양성 교육 참여자 모집",
-      "source": "식품의약품안전처",
+      "title": "버려진 플라스틱이 화장품·향료 원료로…미생물의 '바이오 업사이클링'",
+      "source": "BioIN 동향",
       "date": "2026-07-27",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50225"
+      "url": "https://www.hankyung.com/article/2026071434621"
     },
     {
-      "title": "식약처, 팥빙수·우베 디저트 등 배달 음식점 및 인기 음식점 집중…93곳 적발",
-      "source": "식품의약품안전처",
+      "title": "위고비로 인한 2025년 국내 바이오의약품 수입 지형 변화",
+      "source": "BioIN 동향",
       "date": "2026-07-27",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50224"
+      "url": "https://www.koreabio.org/board/board.php?bo_table=report&idx=828"
     },
     {
-      "title": "숭고한 의(義)를 실천한 1인, 의사자로 인정",
-      "source": "보건복지부",
+      "title": "AI 전환(AX) 시대, 중소기업의 데이터·AI 인프라 활용 전략",
+      "source": "BioIN 동향",
+      "date": "2026-07-27",
+      "url": "https://www.kisti.re.kr/post/policy-report/7049?t=1784764987648"
+    },
+    {
+      "title": "2026년 싱가포르 의료기기 산업 정보",
+      "source": "BioIN 동향",
+      "date": "2026-07-27",
+      "url": "https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?pageNo=5&pagePerCnt=10&SITE_NO=3&MENU_ID=170&CONTENTS_NO=1&bbsGbn=01&bbsSn=243%2C254%2C403%2C257&pNttSn=242737&recordCountPerPage=10&viewType=&pNewsGbn=&pStartDt=&pEndDt=&sSearchVal=&pRegnCd=&pNatCd=&pKbcCd=&pIndustCd=&pHsCode=&pHsCodeNm=&pHsCdType=&sSearchVal="
+    },
+    {
+      "title": "AI 기반 의약품 개발 관련 규제⋅심사 동향 정보자료집",
+      "source": "BioIN 동향",
       "date": "2026-07-24",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491420&act=view"
+      "url": "https://www.nifds.go.kr/brd/m_18/view.do?seq=12885&srchFr=&srchTo=&srchWord=&srchTp=&itm_seq_1=0&itm_seq_2=0&multi_itm_seq=0&company_cd=&company_nm=&page=1"
     },
     {
-      "title": "정은경 장관, 전주시 방문해 장애인 자립？돌봄 현장 점검... “지역사회 자립 지원 지속 확대하겠다”",
-      "source": "보건복지부",
+      "title": "OECD MSTI 2026-March의 주요 내용 및 기업 연구개발비 분석 결과",
+      "source": "BioIN 동향",
       "date": "2026-07-24",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491417&act=view"
+      "url": "https://www.kistep.re.kr/board.es?mid=a10306010000&bid=0031&act=view&list_no=94782"
     },
     {
-      "title": "간세포암？림프종 환자에 새로운 치료 기회, 첨단재생의료 실시계획 2건 적합 의결",
-      "source": "보건복지부",
+      "title": "CAR-T/NK 세포 치료제의 차세대 개발 방향과 임상 적용 사례",
+      "source": "BioIN 동향",
       "date": "2026-07-24",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491416&act=view"
+      "url": "https://www.ibric.org/bric/trend/bio-report.do?mode=view&articleNo=10040098&srCategoryId=100&article.offset=0&articleLimit=10#!/list"
     },
     {
-      "title": "[보도참고] 식약처, 「CDMO 규제지원 특별법」 본격 시행을 위한 하위 규정 입법예고",
-      "source": "식품의약품안전처",
+      "title": "과학을 과학으로 혁신하다. : 영국 메타과학 유닛이 바꾸는 연구 지원의 문법",
+      "source": "BioIN 동향",
       "date": "2026-07-24",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50223"
+      "url": "https://www.nrf.re.kr/page/419?ac=view&searchType=&searchText=&pageNum=1&menuNo=419&boardNo=150&postNo=277324&menuCatCd=&menuCatCd2=&menuTypeCd=MENU_TYPE_05"
     },
     {
-      "title": "식약처, 하수 내 불법 마약류 31종 확인",
-      "source": "식품의약품안전처",
-      "date": "2026-07-24",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50222"
-    },
-    {
-      "title": "보건복지부 소관 2개 법률안 7월 23일 국회 본회의 통과",
-      "source": "보건복지부",
+      "title": "과학기술 AI Agent 활성화 방안 연구",
+      "source": "BioIN 동향",
       "date": "2026-07-23",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491413&act=view"
+      "url": "https://www.nrf.re.kr/page/419?ac=view&searchType=&searchText=&pageNum=1&menuNo=419&boardNo=150&postNo=276634&menuCatCd=&menuCatCd2=&menuTypeCd=MENU_TYPE_05"
     },
     {
-      "title": "보건의료 국가대표기술 30선 선정 추진, 바이오헬스 초격차 확보 나선다",
-      "source": "보건복지부",
+      "title": "보스턴 바이오 생태계 분석을 통한 창업 및 클러스터 모델 연구",
+      "source": "BioIN 동향",
       "date": "2026-07-23",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491411&act=view"
+      "url": "https://www.khidi.or.kr/board/view?pageNum=1&rowCnt=10&no1=51&linkId=48947075&menuId=MENU02686&maxIndex=00489470759998&minIndex=00488546179998&schType=0&schText=&schStartDate=&schEndDate=&boardStyle=&categoryId=&continent=&country="
     },
     {
-      "title": "[보도자료] 식약처, ‘올레샷’, ‘먹는 위고비’ 등 다이어트 식품 부당광고 26개소 적발",
-      "source": "식품의약품안전처",
+      "title": "중국도 의약품 동물대체시험법 개발 시범사업 추진",
+      "source": "BioIN 동향",
       "date": "2026-07-23",
-      "url": "https://www.mfds.go.kr/brd/m_99/view.do?seq=50220"
+      "url": "https://www.koreabio.org/board/board.php?bo_table=report&idx=831"
     },
     {
-      "title": "기대수명 83.7년으로 역대 최고, 우리나라 보건의료 수준 양호",
-      "source": "보건복지부",
+      "title": "[주간 건강과 질병 19권 26호] 2021–2025년 국내 말라리아 진단 현황 외",
+      "source": "BioIN 동향",
       "date": "2026-07-23",
-      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1491405&act=view"
-    }
-  ],
-  "overseas": [
-    {
-      "title": "Biotech companies are being reshaped by AI",
-      "source": "SiliconANGLE",
-      "date": "2026-07-25",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lZ0dpRDMtNUM4c1dnSG8yZjlVWmgtWmp6ckdFSGg2a3ExbTRScmRKR21TUWJVb1VfeUZzdDQtRHJSSTVvNThHdm5BQTI0Y3BnOVhsSDU3TVYxR2o2VU9TWnlYS19ib1RoY1lSMTE1VXdXeW1qeVhsYXVuamd5OEk?oc=5"
+      "url": "https://www.phwr.org/journal/list.html?pn=current_issue"
     },
     {
-      "title": "Insilico Says AI, China Research Model Cuts Drug Development Timeline to Just One Year",
-      "source": "Medical Dialogues",
-      "date": "2026-07-24",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNVE1Za1E3NEhkNkJ0Z2RGMlhyUm9kOWRxZWlLYlFpajNuM2hTNVlXRjV4NzBPOXo3RmFXLXJiS2JlQ3Nrck5uZ2VRNU5QeVE4R0lsekNTbUxOWWNVbDZPTVotNHF2SlNkQVljYUJXTGpMa3NYdEZTMU5MY1IxcmhKSFk0M2t4a3RnWUkxRExsMWVkQ1psQ1hGX3doZTlnQ2g0R2pqV28wcmJvZHhDQ0pCdHpmbzV3T0cwMGVWVmxxR0I4VXFFN2F2SElZVzRSZW5rWC1iTlpjOXVNWTAyU3NB0gHkAUFVX3lxTFB0U2NFNEkwZlVYNUQyeERpSmFZRmlkcEhibDNKSEhSRGNrUEF3RlBjZy0yY3FYdm5DLUFoNG9XeXBWUG9RWS1lektLR29BZ1FzMUlKdmNxNGNLNTZUenlYZTdpNmNFa3dGY2hxV2JnallUeGQ4YllhdDVqQk1nOVl0R29NM3BCVkRlQlRyenBrVm1SVzg1QTYzZkJoV1FsLUNsS1BUNzJCZTVrRmdkb0hMbG9uRWJ6a1hBa285cmFKUG1EV0pjUXFtTW83VmVwajU3YmcycnlVSEZiSTR1eFB3OGtxSw?oc=5"
-    },
-    {
-      "title": "An AI Biotech Just Reported a 46% Revenue Jump and Its First Recurring Platform Contracts, as Its Pivot Starts Showing Up in the Numbers",
-      "source": "PR Newswire",
-      "date": "2026-07-23",
-      "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOYzc2bnotMzJtclV3eFI2RUJqV2I2aDFGcFlsdzFpMDZIX2daczMyWXNkamk1SkMxSUxGYTdjV3BxdlljY1FCZVBGVlQ0WkZ5WDItTF9oSnJDSnF5REE2UlRLczRld1YyQmdwRVJGZzF3TVNLYWY1NERVX0pEQ2h2NTJ1cThDNUpobXl1d3FMdERLQzY1UGU3UkVFQWdQa0xWcEZsN0tMNlNIYmVkdzR4VW5mZmxGU2FBMERhWXNqeVZtS09rUjVuekZkX1RobE9LZUFjWGNMSjRVdHRIOVlzYnpET0RUVnpHcTYtc3JJeHAzeDZJQWktbk9rTzZHQVZyaGVMNnNBQUpNYkFSZHVxTlZlSHQ0dEV0UWc?oc=5"
-    },
-    {
-      "title": "AI shortens drug discovery to around 1 year in China, Insilico CEO says",
-      "source": "Reuters",
-      "date": "2026-07-23",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPU2hPemVGZW1od1dteWxLOVRyMEs0elY2c0lJeGRkNHd4eVNIVnlCUjJ0MjQ3ekFTYXVFakFwZm4yYUtMWHVRa3BmYzRZM3JuaVRKNlUwRV9fdDdsNnRqY2dFTnExRVRYRW51b2VRWFZRcDA0TVlKQWxtdzRpRGRWWldSOHQ1MkVrSy1fa0UzeXo2NHlRSkt5VHdGWGgtdllhRVlIb0NpNm9pcHZpekFxWERhNkl5XzdWVVo3UE5QN3ZzX0NtenhpSks2Q1p6RlU5Zmc?oc=5"
-    },
-    {
-      "title": "Rise of AI and Biotech Reshaping Healthcare Sector",
-      "source": "HKTDC Research",
-      "date": "2026-07-23",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ka2lzOVJXSWNwUDdvcGJXdk1HTmROU3JTTGtpalBxOTM4S25BSTZiSmxsb1JJUmU4SXotOXR1OHI1SWhLNHd0am1xNHIxcjZZN1hqbzh3ZkE2UDFRTDRJZTl3?oc=5"
-    },
-    {
-      "title": "NIH joins Trump’s $5B AI mission with biomedical research push",
-      "source": "Fierce Biotech",
-      "date": "2026-07-23",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQN2Q1bXR0eGhjRXFWaG8yNkR3c0hhMzlqU0txb25JRlFsMFpwMWZnV3BKeUIwMWZVdGcxZE5WR2hsUmZNY0M0VGZwOHhwdWdFcGdBdzdHRF9oREFVbVhFQ1V2MHRpY0dZOFlLdF95bHZaSzVuenkxaWxmT2w3bUc4ZUFnb0FLck1XRXhJUkpHaEIzdUhYZktUdWd2MA?oc=5"
-    },
-    {
-      "title": "OMEICOS takes repurposed drug directly into Phase 3",
-      "source": "European Biotechnology Magazine",
+      "title": "[과학기술&ICT 정책·기술동향 314호] 미국 복지부, 임상 연구 및 신약 개발 주도권 회복을 위한 로드맵 발표 외",
+      "source": "BioIN 동향",
       "date": "2026-07-22",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ282U2treEZIZUhlUmw0NUx6c3ctcXljaFkxNkxvWlZjRXM0dWlRcGQ3T3RLTjZtaWZVRWNobDQ5SVZ3YTQ1MlhINHdSdi1UNnNTTkVqV0ppSXBPUnRNSUJxOU0xM3hUcG1kQUtrSG5jOXBPUFBOWUVrUEFNQmVuaHdaTkhocmxPaWpEemw0aFlRdlJRejlUYU5EWEtEWVJ0?oc=5"
+      "url": "https://www.kistep.re.kr/board.es?mid=a30501000000&bid=0067&act=view&list_no=94781"
     },
     {
-      "title": "Strides Pharma's CDMO Unit Secures ₹801 Crore In Pre-listing Investment Round",
-      "source": "ascendants.in",
+      "title": "세포 및 유전자치료제 산업화 동향",
+      "source": "BioIN 동향",
       "date": "2026-07-22",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ2drTHRMUzlTNVhUY3ZGTG1XSXhJc1ZwZmwwM3lKdkZSU2hXbnpHRUNsNU9JZFFVazh2UlVVV2JUMVFVekV0SWZMdmdLUTFXRENZV1IzdEdwQlJ6SjRxY1c2N1F4Uk5BbHp6djIwellvYzFtb3FXRWprc1poenNfT0p6NDhoc2lqMkNLcWcyUU9GaWFfU0Q5VERxdkV4dzgybHp0eG9sWEdJUnhqQlo0M3hMM0tyd2JfN20zVTloVDhuNW9KdEhnOE5WQndHZFJYaU1Xc0ZwcXRWNWNN?oc=5"
+      "url": "https://www.ibric.org/bric/trend/bio-report.do?mode=view&articleNo=10037398&srCategoryId=100&article.offset=0&articleLimit=10#!/list"
     },
     {
-      "title": "Agentic AI in biomedical research: What is it and can it expedite science?",
-      "source": "Stanford Medicine",
+      "title": "미국 FDA, 의약품 제조소 등록 요건 개정 추진",
+      "source": "BioIN 동향",
       "date": "2026-07-22",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcGtmcFlsRktpWkpKOGdtbF9BZDR3bXRPWlB4MVVJNEFBWkNIaHFlZ0N5OXlEcmZIYUNzYmJuaFdrMkdBZTh4NUREY0FmTEk5SFA2aEFjekxvWmRlLVpPZXN2MW0zdFVyMXNRal9Na3pJQWIzaVZESzBYeE1mVTJtbGpZRW1rbWY4SkxPQUdR?oc=5"
+      "url": "https://www.koreabio.org/board/board.php?bo_table=report&idx=835"
     },
     {
-      "title": "Daphne Koller on Why Insitro Skipped Biotech’s Shortcut",
-      "source": "observer.com",
+      "title": "[주간 브리프_Vol.27] 관계부처합동, 국내 최초 농림위성 발사 외",
+      "source": "BioIN 동향",
       "date": "2026-07-22",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdDNKQTExWEdwYkZmSHlNQlZvY2JwQktjcXBacFA4YzhDdm1rbzJ0VDVHOE9PbURQMkdKS0g1WmZzbXlsbUNUUWM0V2U0MVRuZWVnRXE2bFpEN05QNW1rOHQ2bmQ1R21NclNFZi1nTFRqVHB5dGJkaTZlVVE2YXZxNkRYS1pHdjF1cXpVMg?oc=5"
+      "url": "https://www.krei.re.kr/krei/page/17?cmd=view&pst=505410&pageIndex=1"
     },
     {
-      "title": "Investors bet on AI drug discovery despite approval gap",
-      "source": "Financial Times",
+      "title": "[2026년 6월 BIO 동향] 제18차 규제자유특구위원회 서면심의 외",
+      "source": "BioIN 동향",
       "date": "2026-07-21",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQaWNmODdNYTdpZDhUUUdUU0tobmQyTVZBdnNpekU1eTg2SmFLaUZUMldySVpPWTBnMHZubGtnR1hJM1hiWkF2U0k0WUs5UkR3TXVDRHNnUnR5THNzV1R2cy1jdDhQWVdySUtCWEVncmVxMXFxZ1dhQm1jbWJqc0IxcmtoRDI?oc=5"
+      "url": "https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=948&page=1&code=newsletter"
     },
     {
-      "title": "An Overview of U.S.-China Life Sciences Competition and Cooperation",
-      "source": "Asia Society",
+      "title": "과학기술의 헌법적 가치 제고와 미래세대를 위한 국가상·기본권의 정립: 과학기술 개헌 패러다임 제언",
+      "source": "BioIN 동향",
       "date": "2026-07-21",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbG9GTGVRbFpFb2VESy1hbzBuMVRVVjR5RExLWUhTaUl3QkxJdXpkdERUTEExMVdQbkJ6dnJQYlZFRkFkR3RrY2JCcVpTS21aWS1zSjU2U0pQTHhJM1RQRUt4aGhpazl1X0NZVG1XNXkzc0RzQ2RFSklWYWhUVUdMNlpBcnV4U1JvOTlQNHF4SDlYeUNZZ0FvLTZ0RGFUNEhfemc?oc=5"
+      "url": "https://www.stepi.re.kr/site/stepiko/report/View.do?pageIndex=1&cateTypeCd=A05&tgtTypeCd=ALL&searchType=&reIdx=70&cateCont=A0513&cbIdx=0&searchKey="
+    },
+    {
+      "title": "[주간 브리프_Vol.26] 제22대 국회 후반기 농해수위원장 선출 및 농해수위 위원 구성 확정 외",
+      "source": "BioIN 동향",
+      "date": "2026-07-21",
+      "url": "https://www.krei.re.kr/krei/page/17?cmd=view&pst=505373&pageIndex=1"
     }
   ],
-  "nature": [
+  "knowledge": [
     {
-      "title": "Combined effect of Al2O3 microparticle-enhanced cultivation (MPEC) and inoculation strategy on Streptomyces rimosus",
-      "source": "Nature",
-      "date": "2026-07-26",
-      "url": "https://www.nature.com/articles/s41598-026-63686-7"
+      "title": "AI가 설계한 '분자 가위'로 성능이 강화된 CRISPR",
+      "source": "BioIN 지식",
+      "date": "2026-07-23",
+      "url": ""
     },
     {
-      "title": "Polyethylene glycol-enhanced removal of 2,4-dichlorophenol and 4-chlorophenol by peroxidase from shepherd’s purse (Capsella bursa-pastoris)",
-      "source": "Nature",
-      "date": "2026-07-26",
-      "url": "https://www.nature.com/articles/s41598-026-64317-x"
+      "title": "30 주년을 맞이한 복제양 돌리가 남긴 유산과 과제",
+      "source": "BioIN 지식",
+      "date": "2026-07-21",
+      "url": ""
     },
     {
-      "title": "Sustained simvastatin delivery via poly(lactide) nanoparticles enhances early osteogenic-associated responses in human periodontal ligament stem cells",
-      "source": "Nature",
-      "date": "2026-07-26",
-      "url": "https://www.nature.com/articles/s41598-026-63776-6"
+      "title": "인간 배아 염기편집, 과학적 진전과 윤리 논쟁",
+      "source": "BioIN 지식",
+      "date": "2026-07-16",
+      "url": ""
     },
     {
-      "title": "Flow cytometry as a tool for real-time monitoring of antifungal activity and aggregation in Candida auris",
-      "source": "Nature",
-      "date": "2026-07-26",
-      "url": "https://www.nature.com/articles/s41598-026-63581-1"
+      "title": "유전자 발현으로 측정하는 전사체 노화시계",
+      "source": "BioIN 지식",
+      "date": "2026-07-14",
+      "url": ""
     },
     {
-      "title": "Design and transfection of CRISPR/Cas9 constructs for the myostatin gene in Labeo rohita muscle cells",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41598-026-61844-5"
+      "title": "난치성 뇌종양 치료를 위한 맞춤형 DNA 백신",
+      "source": "BioIN 지식",
+      "date": "2026-07-10",
+      "url": ""
     },
     {
-      "title": "Doxorubicin-loaded gold nanoparticles for enhanced anticancer efficacy: in vitro, in vivo, and FTIR-based tissue analysis",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41598-026-61018-3"
+      "title": "줄기세포 기반 배아 모델(SCBEM) 연구·규제 국제 합의문 발표",
+      "source": "BioIN 지식",
+      "date": "2026-07-07",
+      "url": ""
     },
     {
-      "title": "Finding the perfect promoter for Cas9 in homing gene drives using single cell transcriptome data",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41467-026-76107-0"
+      "title": "MIT 테크놀로지 리뷰, 미래의 직업 선정",
+      "source": "BioIN 지식",
+      "date": "2026-07-02",
+      "url": ""
     },
     {
-      "title": "Effectiveness of pH on formation and characterization of chitosan-alginate nanoparticles and nanohydrogels based on the formed nanoparticles",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41598-026-62504-4"
+      "title": "세포·유전자치료제(CGT) 분야 4P 분석_2026",
+      "source": "BioIN 지식",
+      "date": "2026-07-01",
+      "url": ""
     },
     {
-      "title": "Chromosome-level genome assembly of the Shiqi pigeon (Columba livia)",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41597-026-07987-6"
+      "title": "주요 AI기업 CEO, 핵산 합성에 관한 규제 촉구",
+      "source": "BioIN 지식",
+      "date": "2026-06-30",
+      "url": ""
     },
     {
-      "title": "Generation of high-producing CHO cell lines using cell picking system combined with fluorescent labeling of secreted products",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s41598-026-63844-x"
+      "title": "2026년 글로벌 의약품 시장 현황 및 전망",
+      "source": "BioIN 지식",
+      "date": "2026-06-29",
+      "url": ""
     },
     {
-      "title": "Transparent silk hydrogels as a versatile platform for cell culture and imaging",
-      "source": "Nature",
-      "date": "2026-07-25",
-      "url": "https://www.nature.com/articles/s43246-026-01299-3"
+      "title": "GLP-1 비만 치료제에 대한 유전적 접근",
+      "source": "BioIN 지식",
+      "date": "2026-06-25",
+      "url": ""
     },
     {
-      "title": "In vivo study of the effect of composition and implantation site on scaffold degradation rate",
-      "source": "Nature",
-      "date": "2026-07-24",
-      "url": "https://www.nature.com/articles/s43246-026-01308-5"
+      "title": "중국, 세계 첫 침습형 BCI 승인",
+      "source": "BioIN 지식",
+      "date": "2026-06-23",
+      "url": ""
+    },
+    {
+      "title": "네이처 인덱스(Nature Index) 2026, 우리나라 7위",
+      "source": "BioIN 지식",
+      "date": "2026-06-19",
+      "url": ""
+    },
+    {
+      "title": "수면 시간과 생물학적 노화의 상관관계 - 50만 명 대규모 다중 오믹스 분석 -",
+      "source": "BioIN 지식",
+      "date": "2026-06-16",
+      "url": ""
+    },
+    {
+      "title": "가상생물학 이니셔티브(Virtual Biology Initiative)",
+      "source": "BioIN 지식",
+      "date": "2026-06-11",
+      "url": ""
+    },
+    {
+      "title": "바이오경제 촉진을 위한 정책 프레임워크",
+      "source": "BioIN 지식",
+      "date": "2026-06-10",
+      "url": ""
+    },
+    {
+      "title": "사이키델릭 의약품, 코카인 사용 장애 치료 효과 확인",
+      "source": "BioIN 지식",
+      "date": "2026-06-09",
+      "url": ""
+    },
+    {
+      "title": "초기 인간 배아의 시공간적 유전체 아틀라스",
+      "source": "BioIN 지식",
+      "date": "2026-06-04",
+      "url": ""
+    },
+    {
+      "title": "단일세포 분석기술 분야 4P 분석_2026",
+      "source": "BioIN 지식",
+      "date": "2026-06-01",
+      "url": ""
+    },
+    {
+      "title": "추론모델로 더욱 진화된 의료 AI의 가능성",
+      "source": "BioIN 지식",
+      "date": "2026-05-28",
+      "url": ""
     }
   ],
-  "errors": [
-    "overseas: new collection empty; preserved previous data",
-    "nature: new collection empty; preserved previous data"
-  ]
+  "publication": [
+    {
+      "title": "2025년 내 손 안의 바이오 통계",
+      "source": "BioIN 발간물",
+      "date": "2026-05-13",
+      "url": "042-879-8387"
+    },
+    {
+      "title": "2025 바이오인글로벌 모음집",
+      "source": "BioIN 발간물",
+      "date": "2026-05-11",
+      "url": "042-879-8388"
+    },
+    {
+      "title": "2025년 하반기 BioIINwatch Collection",
+      "source": "BioIN 발간물",
+      "date": "2026-05-08",
+      "url": "042-879-8388"
+    },
+    {
+      "title": "2025년 상반기 BioIINwatch Collection",
+      "source": "BioIN 발간물",
+      "date": "2026-05-08",
+      "url": "042-879-8388"
+    },
+    {
+      "title": "2025 정부BT 연구성과 보도자료 모음집",
+      "source": "BioIN 발간물",
+      "date": "2026-04-03",
+      "url": "042-879-8389"
+    },
+    {
+      "title": "2023년 기준 국내 바이오 중소·벤처기업 현황통계",
+      "source": "BioIN 발간물",
+      "date": "2026-03-06",
+      "url": "042-879-8386"
+    },
+    {
+      "title": "2026 바이오 미래기술",
+      "source": "BioIN 발간물",
+      "date": "2026-02-25",
+      "url": "042-879-8365"
+    }
+  ],
+  "errors": []
 }
