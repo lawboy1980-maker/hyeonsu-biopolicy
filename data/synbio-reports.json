@@ -1,18 +1,32 @@
 {
   "updated_at": "2026-07-27",
-  "reports": [
+  "items": [
     {
-      "title": "합성생물학 주요 보고서를 이 목록에 등록하세요",
+      "type": "법령",
+      "title": "합성생물학 육성법",
+      "source": "국가법령정보",
+      "date": "2025",
+      "url": "https://www.law.go.kr/"
+    },
+    {
+      "type": "보고서",
+      "title": "합성생물학 기술·산업·정책 분석",
       "source": "HsLab",
-      "date": "2026-07-27",
-      "type": "안내",
+      "date": "2026",
       "url": "https://drive.google.com/drive/folders/1s1vy6vjNK1jGlnGq-BFtoqVrA-E5Q2uV"
     },
     {
-      "title": "Google Drive 자동 연동 전까지 파일명·날짜·링크를 JSON으로 관리합니다",
+      "type": "브리프",
+      "title": "합성생물학 정책동향 브리프",
+      "source": "BioIN",
+      "date": "2026",
+      "url": "https://www.bioin.or.kr/"
+    },
+    {
+      "type": "논문",
+      "title": "Synthetic Biology Governance Review",
       "source": "HsLab",
-      "date": "2026-07-27",
-      "type": "안내",
+      "date": "2026",
       "url": "https://drive.google.com/drive/folders/1s1vy6vjNK1jGlnGq-BFtoqVrA-E5Q2uV"
     }
   ]

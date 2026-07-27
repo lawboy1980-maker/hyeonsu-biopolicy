@@ -12,10 +12,12 @@
   <link rel="stylesheet" href="assets/css/style.css?v=4.0.4">
   <link rel="stylesheet" href="assets/css/dashboard-v8.css?v=8.1.0">
   <link rel="stylesheet" href="assets/css/v12-hero.css?v=12.1.0">
+  <link rel="stylesheet" href="assets/css/synbio-workspace.css?v=13.1.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
   <script src="assets/js/data.js?v=8.1.0" defer></script>
   <script src="assets/js/statistics.js?v=8.1.0" defer></script>
-  <script src="assets/js/app.js?v=4.0.4" defer></script>
+  <script src="assets/js/app.js?v=13.1.0" defer></script>
+  <script src="assets/js/synbio-workspace.js?v=13.1.0" defer></script>
   <script src="assets/js/news-feed.js?v=6.1.0" defer></script>
   <script src="assets/js/kbiois-pilot.js?v=4.0.0" defer></script>
   <script src="assets/js/dashboard-v8.1.js?v=8.1.0" defer></script>
@@ -189,6 +191,56 @@
             <div><span class="eyebrow" id="researchTopicEyebrow">TOPIC</span><h2 id="researchTopicTitle"></h2><p id="researchTopicSummary"></p></div>
             <button class="text-button" id="researchOverviewButton"><i class="bi bi-grid"></i> 전체 영역 보기</button>
           </div>
+          <section class="synbio-workspace" id="synbioWorkspace" hidden aria-label="합성생물학 연구 워크스페이스">
+            <div class="synbio-command-grid">
+              <a class="synbio-command-card task" href="https://tasks.google.com/tasks/?utm_source=OGB&utm_medium=app" target="_blank" rel="noopener noreferrer">
+                <span class="synbio-command-icon"><i class="bi bi-check2-square"></i></span>
+                <span class="synbio-command-kicker">TODAY</span><h3>최근 할 일</h3>
+                <p>Google Tasks에서 오늘의 연구·정책 업무를 확인합니다.</p><strong>할 일 열기 <i class="bi bi-arrow-up-right"></i></strong>
+              </a>
+              <a class="synbio-command-card trends" href="https://www.bics.re.kr/synbio_korea/news/domestic/search" target="_blank" rel="noopener noreferrer">
+                <span class="synbio-command-icon"><i class="bi bi-newspaper"></i></span>
+                <span class="synbio-command-kicker">BICS</span><h3>최신 동향</h3>
+                <p>합성생물학 정책·기술·산업 관련 최신 정보를 확인합니다.</p><strong>전체 동향 보기 <i class="bi bi-arrow-up-right"></i></strong>
+              </a>
+              <a class="synbio-command-card reports" href="https://drive.google.com/drive/folders/1s1vy6vjNK1jGlnGq-BFtoqVrA-E5Q2uV" target="_blank" rel="noopener noreferrer">
+                <span class="synbio-command-icon"><i class="bi bi-folder2-open"></i></span>
+                <span class="synbio-command-kicker">DRIVE</span><h3>주요 보고서</h3>
+                <p>합성생물학 전용 Google Drive 폴더로 연결합니다.</p><strong>보고서 폴더 열기 <i class="bi bi-arrow-up-right"></i></strong>
+              </a>
+              <a class="synbio-command-card notes" href="https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s" target="_blank" rel="noopener noreferrer">
+                <span class="synbio-command-icon"><i class="bi bi-journal-text"></i></span>
+                <span class="synbio-command-kicker">NOTION</span><h3>연구노트</h3>
+                <p>기획 메모, 정책질문, 연구 아이디어를 이어서 정리합니다.</p><strong>연구노트 열기 <i class="bi bi-arrow-up-right"></i></strong>
+              </a>
+            </div>
+
+            <div class="synbio-live-grid">
+              <section class="synbio-live-panel">
+                <div class="synbio-panel-head"><div><span>LATEST INTELLIGENCE</span><h3>최신 동향</h3></div><a href="https://www.bics.re.kr/synbio_korea/news/domestic/search" target="_blank" rel="noopener noreferrer">BICS <i class="bi bi-arrow-up-right"></i></a></div>
+                <div class="synbio-feed" id="synbioNewsFeed"><p class="synbio-loading">최신동향을 불러오는 중입니다.</p></div>
+              </section>
+              <section class="synbio-live-panel">
+                <div class="synbio-panel-head"><div><span>CURATED REPORTS</span><h3>주요 보고서</h3></div><a href="https://drive.google.com/drive/folders/1s1vy6vjNK1jGlnGq-BFtoqVrA-E5Q2uV" target="_blank" rel="noopener noreferrer">Drive <i class="bi bi-arrow-up-right"></i></a></div>
+                <div class="synbio-feed" id="synbioReportFeed"><p class="synbio-loading">보고서 목록을 불러오는 중입니다.</p></div>
+              </section>
+            </div>
+
+            <section class="synbio-country-section">
+              <div class="synbio-section-title"><div><span>GLOBAL POLICY MAP</span><h3>국가별 정책</h3></div><p>주요국 정책·법제·투자 흐름을 국가 단위로 연결합니다.</p></div>
+              <div class="synbio-country-grid">
+                <article><span>US</span><h4>미국</h4><p>바이오경제, 바이오제조, 연방 규제와 행정정책</p></article>
+                <article><span>UK</span><h4>영국</h4><p>공학생물학 전략, 정밀육종 및 혁신 규제</p></article>
+                <article><span>JP</span><h4>일본</h4><p>바이오전략, SDN 분류와 산업화 지원</p></article>
+                <article><span>KR</span><h4>한국</h4><p>합성생물학 육성법, 기본계획과 정책전문기관</p></article>
+              </div>
+            </section>
+
+            <section class="synbio-ai-panel">
+              <div><span>AI POLICY SEARCH</span><h3>합성생물학 정책검색</h3><p>기술·정책·산업·규제 자료를 연결하여 질문할 수 있는 AI 검색 영역입니다.</p></div>
+              <button type="button" data-jump="assistant"><i class="bi bi-stars"></i> AI 정책 Q&amp;A 열기</button>
+            </section>
+          </section>
           <div class="research-subtopic-grid" id="researchSubtopicGrid"></div>
           <div class="research-selected-subtopic" id="researchSelectedSubtopic" hidden></div>
           <div class="research-content-grid">
