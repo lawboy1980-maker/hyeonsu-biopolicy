@@ -1,7 +1,18 @@
 const state={data:null,charts:[],currentView:'technology',currentTopic:null,currentSubtopic:null,newsFilter:'전체'};
 const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
 async function init(){try{if(window.DASHBOARD_DATA){state.data=window.DASHBOARD_DATA;}else{const r=await fetch('data/dashboard.json');if(!r.ok)throw new Error('data load failed');state.data=await r.json();}renderAll();bindEvents();}catch(e){document.body.innerHTML='<main style="padding:40px;font-family:sans-serif"><h1>데이터를 불러오지 못했습니다.</h1><p>파일 구성과 경로를 확인해 주세요.</p></main>'}}
-function renderAll(){renderYears();renderHero();renderIssues();renderSchedules();renderQuickAccess();renderCharts();renderPromptChips();initCatalogFilters();applyUrlState()}
+function renderAll(){
+  renderYears();
+  renderHero();
+  renderKpis();
+  renderIssues();
+  renderSchedules();
+  renderQuickAccess();
+  renderCharts();
+  renderPromptChips();
+  initCatalogFilters();
+  applyUrlState();
+}
 function renderYears(){const el=$('#yearSelect');el.innerHTML=state.data.years.map(y=>`<option>${y}</option>`).join('')}
 function renderHero(){const first=state.data.issues[0];$('#heroSpotlight').innerHTML=`<span class="spotlight-label">오늘의 최우선 현안</span><div class="spotlight-title">${first.title}</div><div class="spotlight-meta"><div><span>우선순위</span><strong>${first.level}</strong></div><div><span>마감</span><strong>${first.dday}</strong></div><div><span>관련 영역</span><strong>정책·규제</strong></div><div><span>상태</span><strong>검토 중</strong></div></div>`}
 function renderIssues(){$('#issueList').innerHTML=state.data.issues.slice(0,5).map(i=>`<div class="issue-item"><span class="badge ${i.level==='긴급'?'urgent':''}">${i.level}</span><span>${i.title}</span><span class="dday">${i.dday}</span></div>`).join('')}
