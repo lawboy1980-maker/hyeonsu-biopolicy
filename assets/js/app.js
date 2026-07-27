@@ -160,29 +160,9 @@ function initCatalogFilters(){
   $('#categoryFilter').innerHTML='<option value="">전체 대분류</option>'+cats.map(c=>`<option value="${c}">${c}</option>`).join('');
 }
 function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
-  state.currentView=view;state.currentTopic=topic;state.currentSubtopic=subtopic;
-  function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
   state.currentView=view;
   state.currentTopic=topic;
   state.currentSubtopic=subtopic;
-
-  const isDashboard = view === 'dashboard';
-
-  const dashboardOnlySections = [
-    '.hero-section',
-    '.performance-section',
-    '#trendDashboardSection',
-    '.lead-grid',
-    '.hslab-news-panel',
-    '.news-panel',
-    '#myWorkspacePanel'
-  ];
-
-  dashboardOnlySections.forEach(selector => {
-    document.querySelectorAll(selector).forEach(element => {
-      element.style.display = isDashboard ? '' : 'none';
-    });
-  });
 
   const statisticsHub=$('#statisticsHub');
   if(statisticsHub)statisticsHub.hidden=view!=='explorer';
@@ -191,12 +171,11 @@ function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
   if(industryLink)industryLink.hidden=view!=='industry';
 
   $$('.view').forEach(v=>v.classList.remove('active'));
-  const statisticsHub=$('#statisticsHub');if(statisticsHub)statisticsHub.hidden=view!=='explorer';
-  const industryLink=$('#industryStatisticsLink');if(industryLink)industryLink.hidden=view!=='industry';
-  $$('.view').forEach(v=>v.classList.remove('active'));
   $$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
+
   const labels={dashboard:'DASHBOARD',technology:'TECHNOLOGY',policy:'POLICY',industry:'INDUSTRY',institution:'REGULATION',explorer:'DATA',archive:'ARCHIVE',assistant:'AI ASSISTANT'};
   $('#breadcrumbLabel').textContent=labels[view]||'DASHBOARD';
+
   if(view==='dashboard'){
     $('#dashboardView').classList.add('active');
     $('#pageTitle').textContent='HsLab';
@@ -210,7 +189,7 @@ function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
     const key=['technology','policy','industry','institution'].includes(view)?view:'technology';
     renderSection(key,topic,subtopic);
     if(view==='explorer'||view==='archive'){
-            $('#legacySectionSummary').style.display='none';
+      $('#legacySectionSummary').style.display='none';
       $('#legacyIndicatorPanel').style.display='block';
       renderIndicatorTable(view);
       $('#sectionHero').innerHTML=`<span class="eyebrow light">${view==='explorer'?'DATA EXPLORER':'POLICY ARCHIVE'}</span><h2>${view==='explorer'?'통계·데이터':'정책자료실'}</h2><p>${view==='explorer'?'기술·정책·산업·규제 지표를 통합 검색합니다.':'향후 보고서·법령·통계 원문을 축적할 공간입니다.'}</p>`;
@@ -219,9 +198,12 @@ function setView(view,topic=null,shouldUpdateUrl=true,subtopic=null){
     $('#pageTitle').textContent=researchTitle||(view==='explorer'?'통계·데이터':view==='archive'?'정책자료실':state.data.researchAreasV2?.[key]?.title||state.data.sections[key].title);
     $('#pageSubtitle').textContent=topic?'선택한 세부 영역과 하위꼭지의 자료를 탐색합니다.':'영역 카드를 통해 하위 주제와 자료로 이동합니다.';
   }
+
   if(shouldUpdateUrl)updateUrl(view,topic,subtopic);
-  closeSidebar();window.scrollTo({top:0,behavior:'smooth'});
+  closeSidebar();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+
 function renderPromptChips(){const prompts=['합성생물학을 4개 영역으로 요약해줘','BT 투자 지표를 알려줘','바이오산업 인력 현황은?'];$('#promptChips').innerHTML=prompts.map(p=>`<button class="prompt-chip">${p}</button>`).join('')}
 function answerQuestion(q){const t=Object.keys(state.data.topics).find(k=>q.includes(k));if(t){const o=state.data.topics[t];return `${t}은 다음과 같이 연결됩니다.\n\n기술: ${o.기술.join(', ')}\n정책: ${o.정책.join(', ')}\n산업: ${o.산업.join(', ')}\n제도: ${o.제도.join(', ')}`}if(q.includes('투자'))return '연결된 원자료 기준 정부 BT 연구개발비는 2020년 4조 1,253억 원이며, 바이오·의료 VC 신규투자는 2021년 1조 6,770억 원입니다.';if(q.includes('인력'))return '연결된 원자료 기준 바이오산업 종사자는 2020년 53,546명이고, 바이오 대학원 졸업자는 2021년 11,605명입니다.';return '현재 데모는 등록된 주제와 지표를 중심으로 답변합니다.'}
 function addMessage(text,type){const d=document.createElement('div');d.className=type==='user'?'user-message':'assistant-message';d.textContent=text;$('#chatLog').appendChild(d);$('#chatLog').scrollTop=$('#chatLog').scrollHeight}

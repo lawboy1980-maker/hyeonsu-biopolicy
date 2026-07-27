@@ -74,11 +74,6 @@ body.dark .news-filter{background:#142438;color:#c6d4e5}body.dark .news-card,bod
   width: 100% !important;
 }
 
-/* 다른 메뉴에서는 대시보드 전체를 숨김 */
-#dashboardView:not(.active) {
-  display: none !important;
-}
-
 /* 주요성과 */
 #dashboardView > .performance-section {
   display: block !important;
@@ -192,3 +187,8 @@ cursor:pointer;
 background:#eef3fb;
 
 }
+
+
+/* View switching fix */
+.view { display: none !important; }
+.view.active { display: block !important; }
