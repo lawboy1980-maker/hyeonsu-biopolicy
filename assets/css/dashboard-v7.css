@@ -1,0 +1,30 @@
+/* HsLab Dashboard v7 layout patch */
+.trend-dashboard-section{margin-top:28px}
+.trend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.trend-card{min-width:0}
+.trend-card .panel-heading{align-items:flex-start}
+.trend-card h3{margin:4px 0 0;font-size:1rem}
+.trend-card .trend-meta{display:flex;gap:8px;align-items:center;color:var(--muted,#718096);font-size:.78rem}
+.trend-card .trend-latest{font-weight:800;color:var(--text,#172033)}
+.trend-card .chart-wrap{height:210px}
+.trend-empty{height:210px;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted,#718096);border:1px dashed rgba(120,140,170,.28);border-radius:14px;background:rgba(120,140,170,.04)}
+.strategic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+.strategic-item{padding:12px 13px;border:1px solid rgba(120,140,170,.18);border-radius:13px;background:rgba(120,140,170,.045)}
+.strategic-item span{display:block;font-size:.7rem;font-weight:800;letter-spacing:.08em;color:var(--muted,#718096);margin-bottom:5px}
+.strategic-item strong{font-size:.9rem;line-height:1.45}
+.strategic-insight{grid-column:1/-1;padding:14px 15px;border-radius:13px;background:linear-gradient(135deg,rgba(47,109,246,.11),rgba(115,87,233,.08));border:1px solid rgba(47,109,246,.18)}
+.workspace-panel{overflow:hidden}
+.workspace-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:stretch}
+.workspace-main{padding:4px 2px}
+.workspace-main h3{font-size:1.25rem;margin:6px 0 8px}
+.workspace-main p{margin:0 0 18px;color:var(--muted,#718096);line-height:1.7}
+.workspace-actions{display:flex;gap:10px;flex-wrap:wrap}
+.workspace-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.workspace-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.workspace-chip{padding:13px;border-radius:13px;background:rgba(120,140,170,.06);border:1px solid rgba(120,140,170,.16)}
+.workspace-chip i{display:block;font-size:1.15rem;margin-bottom:7px}
+.workspace-chip strong{display:block;font-size:.88rem}
+.workspace-chip small{display:block;margin-top:4px;color:var(--muted,#718096)}
+.dashboard-v7-hidden{display:none!important}
+@media(max-width:1100px){.trend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace-layout{grid-template-columns:1fr}}
+@media(max-width:700px){.trend-grid{grid-template-columns:1fr}.strategic-grid,.workspace-side{grid-template-columns:1fr}.strategic-insight{grid-column:auto}.trend-card .chart-wrap,.trend-empty{height:190px}}

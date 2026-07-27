@@ -1,13 +1,27 @@
-# HsLab v6.0.1 실제 데이터 교체본
+# HsLab Dashboard v7 Patch
 
-다음 5개 파일을 GitHub의 같은 경로에 덮어쓰세요.
+## 반영 내용
 
-- index.html
-- assets/js/data.js
-- assets/js/statistics.js
-- data/dashboard.json
-- data/statistics.json
+1. 주요성과(KPI) 다음에 핵심지표 트렌드 6개를 3열 × 2행으로 배치
+2. 주요현안 오른쪽의 `다가오는 일정`을 `Strategic Intelligence`로 변경
+3. BioIN Hub 다음에 `My Workspace` 추가
+4. My Workspace에서 제공된 Notion 페이지로 이동
+5. Quick Research와 기존 4개 주요 통계 차트는 메인 대시보드에서 숨김
 
-index.html의 캐시 버전을 v6.0.1로 변경했으므로, 이전 2020~2021 데이터가 브라우저 캐시에 남는 문제를 방지합니다.
+## 적용 방법
 
-반영 KPI: 정부 BT R&D(2024), 바이오 대학원 졸업자(2025), 바이오산업 종사자(2024), SCIE 논문(2024), 등록특허(2025), 국내 바이오산업 시장규모(2024), VC 투자(2025), 기술특례상장(2025).
+저장소 전체를 내려받은 뒤, 이 폴더의 `apply_patch.py`를 저장소 루트에서 실행합니다.
+
+```bash
+python apply_patch.py
+```
+
+그 다음 변경된 파일을 GitHub에 업로드/커밋합니다.
+
+- `index.html`
+- `assets/css/dashboard-v7.css`
+- `assets/js/dashboard-v7.js`
+
+## Notion 관련
+
+현재 연결 방식은 안전한 외부 링크입니다. GitHub Pages에 Notion API 토큰을 직접 넣으면 토큰이 노출되므로 금지해야 합니다. 최근 문서·할 일 자동 표시는 추후 GitHub Actions 또는 Cloudflare Worker를 통해 구현하는 방식이 적절합니다.
