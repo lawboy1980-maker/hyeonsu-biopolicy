@@ -65,3 +65,99 @@ body.dark .news-filter{background:#142438;color:#c6d4e5}body.dark .news-card,bod
 
 /* HsLab v4.0 */
 .news-source-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.news-source-column{min-width:0;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.news-source-head{display:flex;gap:12px;align-items:center;padding:17px 18px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(47,109,246,.08),transparent)}.news-source-head>span{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--primary);color:#fff;font-size:12px;font-weight:800}.news-source-head strong,.news-source-head small{display:block}.news-source-head small{margin-top:2px;color:var(--muted);font-size:11px}.news-source-list{padding:4px 16px 10px}.news-source-item{padding:14px 0;border-bottom:1px solid var(--line)}.news-source-item:last-child{border-bottom:0}.news-source-meta{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;color:var(--muted);font-size:11px}.news-source-item a{display:flex;gap:8px;justify-content:space-between;color:var(--text);text-decoration:none;line-height:1.45}.news-source-item a:hover strong{color:var(--primary)}.news-source-item i{flex:none;color:var(--primary)}.news-empty{display:flex;align-items:center;justify-content:center;gap:8px;min-height:160px;color:var(--muted);font-size:13px}.statistics-hub{display:grid;gap:20px;margin-top:20px}.statistics-intro-panel,.industry-stat-link{display:flex;align-items:center;justify-content:space-between;gap:24px}.kbiois-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.kbiois-kpi-card{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.kbiois-kpi-card span,.kbiois-kpi-card small{display:block;color:var(--muted)}.kbiois-kpi-card strong{display:block;margin:10px 0;font-size:30px}.kbiois-charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}.kbiois-chart-card{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.kbiois-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.kbiois-chart-wrap{height:230px;margin-top:16px}.kbiois-empty{grid-column:1/-1;padding:28px;border:1px dashed var(--line);border-radius:14px;text-align:center}.industry-stat-link{margin-top:20px}@media(max-width:1180px){.news-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kbiois-charts{grid-template-columns:1fr}}@media(max-width:720px){.news-source-grid,.kbiois-kpi-grid{grid-template-columns:1fr}.statistics-intro-panel,.industry-stat-link{align-items:flex-start;flex-direction:column}}
+/* =========================================
+   HsLab dashboard row layout
+   ========================================= */
+
+/* 대시보드의 각 주요 영역을 독립된 행으로 배치 */
+#dashboardView {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 주요성과 */
+#dashboardView > .performance-section {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 28px !important;
+}
+
+/* 주요현안 + 다가오는 일정: 한 행에 50%씩 */
+#dashboardView > .lead-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+  margin-bottom: 28px !important;
+}
+
+/* 두 패널이 같은 높이로 표시 */
+#dashboardView > .lead-grid > .panel {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 바이오 뉴스: 반드시 별도 행, 전체 폭 */
+#dashboardView > .news-panel {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-column: 1 / -1 !important;
+  margin: 0 0 28px !important;
+  box-sizing: border-box !important;
+}
+
+/* 뉴스 내부 4개 출처 */
+#dashboardView .news-source-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+}
+
+/* Quick Research: 반드시 별도 행, 전체 폭 */
+#dashboardView > .topic-panel {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-column: 1 / -1 !important;
+  margin: 0 0 28px !important;
+  box-sizing: border-box !important;
+}
+
+/* 주요 통계 차트: 반드시 별도 행, 전체 폭 */
+#dashboardView > .analytics-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-column: 1 / -1 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 통계 차트 내부는 2열 */
+#dashboardView .analytics-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+/* 태블릿 */
+@media (max-width: 1200px) {
+  #dashboardView .news-source-grid,
+  #dashboardView .analytics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 760px) {
+  #dashboardView > .lead-grid,
+  #dashboardView .news-source-grid,
+  #dashboardView .analytics-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
