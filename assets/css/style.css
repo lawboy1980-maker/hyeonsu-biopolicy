@@ -619,3 +619,86 @@ body.dark .agenda-card {
   .agenda-summary { grid-template-columns: repeat(3, 1fr); }
   .agenda-item { grid-template-columns: 70px minmax(0, 1fr); }
 }
+
+/* =========================================================
+   HsLab Agenda V10 — category, icons and time ranges
+========================================================= */
+.agenda-item {
+  position: relative;
+  grid-template-columns: 34px 92px minmax(0, 1fr);
+  gap: 10px;
+  min-height: 58px;
+  padding: 9px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.085);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.agenda-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--agenda-accent, #9edbff);
+}
+
+.agenda-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.agenda-item-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  color: var(--agenda-accent, #9edbff);
+  background: color-mix(in srgb, var(--agenda-accent, #9edbff) 17%, transparent);
+  font-size: 14px;
+}
+
+.agenda-item-time {
+  color: #d8efff;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.agenda-item-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 5px 8px;
+}
+
+.agenda-item-body strong {
+  font-size: 12px;
+}
+
+.agenda-item-category {
+  justify-self: end;
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--agenda-accent, #9edbff) 35%, transparent);
+  border-radius: 999px;
+  color: var(--agenda-accent, #9edbff);
+  background: color-mix(in srgb, var(--agenda-accent, #9edbff) 10%, transparent);
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.agenda-item-location {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+@media (max-width: 680px) {
+  .agenda-item {
+    grid-template-columns: 30px 78px minmax(0, 1fr);
+    gap: 8px;
+  }
+  .agenda-item-category { display: none; }
+  .agenda-item-body { grid-template-columns: 1fr; }
+}

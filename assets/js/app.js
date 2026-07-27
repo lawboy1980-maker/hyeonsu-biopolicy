@@ -85,19 +85,51 @@ function localDateKey(date) {
 
 function agendaItemTemplate(event, showDate) {
   const start = new Date(event.start);
-  const timeText = event.all_day
-    ? '종일'
-    : new Intl.DateTimeFormat('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
-  const dateText = new Intl.DateTimeFormat('ko-KR', { month: 'numeric', day: 'numeric', weekday: 'short' }).format(start);
+  const end = event.end ? new Date(event.end) : null;
+  const category = agendaCategory(event.title || '', event.description || '');
+  const timeText = agendaTimeRange(start, end, Boolean(event.all_day));
+  const dateText = new Intl.DateTimeFormat('ko-KR', {
+    month: 'numeric', day: 'numeric', weekday: 'short'
+  }).format(start);
   const meta = showDate ? `${dateText} · ${timeText}` : timeText;
-  const location = event.location ? `<span class="agenda-item-location"><i class="bi bi-geo-alt"></i>${escapeHtml(event.location)}</span>` : '';
-  return `<article class="agenda-item">
+  const location = event.location
+    ? `<span class="agenda-item-location"><i class="bi bi-geo-alt"></i>${escapeHtml(event.location)}</span>`
+    : '';
+
+  return `<article class="agenda-item" style="--agenda-accent:${category.color}">
+    <div class="agenda-item-icon" aria-hidden="true"><i class="bi ${category.icon}"></i></div>
     <div class="agenda-item-time">${escapeHtml(meta)}</div>
     <div class="agenda-item-body">
       <strong>${escapeHtml(event.title || '제목 없는 일정')}</strong>
+      <span class="agenda-item-category">${escapeHtml(category.label)}</span>
       ${location}
     </div>
   </article>`;
+}
+
+function agendaTimeRange(start, end, allDay) {
+  if (allDay) return '종일';
+  const formatter = new Intl.DateTimeFormat('ko-KR', {
+    hour: '2-digit', minute: '2-digit', hour12: false
+  });
+  const startText = formatter.format(start);
+  if (!end || Number.isNaN(end.getTime())) return startText;
+  const endText = formatter.format(end);
+  return `${startText}–${endText}`;
+}
+
+function agendaCategory(title, description) {
+  const text = `${title} ${description}`.toLowerCase();
+  const rules = [
+    { words: ['과기부', '정책', '법', '시행령', '규제', '정부', '부처'], label: '정책', icon: 'bi-building', color: '#79c6ff' },
+    { words: ['논문', '연구', '보고서', '원고', '리비전', 'revision', '세미나'], label: '연구', icon: 'bi-journal-text', color: '#8ee3b4' },
+    { words: ['회의', '미팅', '면담', '자문', '간담회', 'meeting'], label: '회의', icon: 'bi-people', color: '#c3a6ff' },
+    { words: ['강의', '수업', '발표', '인터뷰', '영어'], label: '강의·발표', icon: 'bi-mic', color: '#ffd18a' },
+    { words: ['병원', '예방접종', '가족', '육아', '정원', '주호', '채원'], label: '가족', icon: 'bi-house-heart', color: '#ffaaa8' }
+  ];
+  return rules.find(rule => rule.words.some(word => text.includes(word))) || {
+    label: '일정', icon: 'bi-calendar-event', color: '#9edbff'
+  };
 }
 
 function nextAgendaLabel(events, now) {
