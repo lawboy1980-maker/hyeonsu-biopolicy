@@ -702,3 +702,24 @@ body.dark .agenda-card {
   .agenda-item-category { display: none; }
   .agenda-item-body { grid-template-columns: 1fr; }
 }
+.agenda-item-title{
+    font-size:18px;
+    font-weight:800;
+    color:#fff;
+    letter-spacing:-0.3px;
+}
+.agenda-item-time{
+    font-size:14px;
+    font-weight:700;
+    color:rgba(255,255,255,.82);
+}
+.agenda-item{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+}
+.agenda-item-category{
+    background:rgba(255,255,255,.08);
+    color:#dfefff;
+    font-size:11px;
+    font-weight:700;
+}
