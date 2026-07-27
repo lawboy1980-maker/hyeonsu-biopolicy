@@ -1,9 +1,75 @@
 {
-  "status": "pending",
-  "updated_at": "",
+  "status": "ok",
+  "updated_at": "2026-07-27T22:22:17.187340+09:00",
   "timezone": "Asia/Seoul",
-  "today_count": 0,
-  "week_count": 0,
-  "events": [],
-  "message": "GitHub Actions에서 캘린더 동기화를 실행해 주세요."
+  "range_start": "2026-07-27T00:00:00+09:00",
+  "range_end": "2026-08-04T00:00:00+09:00",
+  "today_count": 2,
+  "week_count": 7,
+  "events": [
+    {
+      "id": "5012mikt9k34mn2lcc1m421vq1@google.com",
+      "title": "ㅇㄹㅇㄹㄹ",
+      "start": "2026-07-27T21:30:00+09:00",
+      "end": "2026-07-27T22:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "6ru72kmpj2jh140iapnqkh43i1@google.com",
+      "title": "ㅇㄹㅇㄹㅇㄹ",
+      "start": "2026-07-27T22:00:00+09:00",
+      "end": "2026-07-27T23:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "4b755qtjim3sa7kb5jnujj21cs@google.com",
+      "title": "건강검진",
+      "start": "2026-07-28T08:00:00+09:00",
+      "end": "2026-07-28T09:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "7i81jplr427lp2omus3s2gk8he@google.com",
+      "title": "ㅇㄹㅇㄻㄹㅇㅁㅁ",
+      "start": "2026-07-28T22:30:00+09:00",
+      "end": "2026-07-28T23:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "7b1qdrmk13744jcum4v2911s2g@google.com",
+      "title": "건강검진",
+      "start": "2026-07-28T22:30:00+09:00",
+      "end": "2026-07-28T23:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "F1044888-2155-431C-9CB3-71679961DB5D",
+      "title": "건강검진",
+      "start": "2026-07-29T08:30:00+09:00",
+      "end": "2026-07-29T09:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "6gnc1bp6fe9it70c9vlaqogglk@google.com",
+      "title": "연구내용",
+      "start": "2026-07-31T22:00:00+09:00",
+      "end": "2026-07-31T23:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    }
+  ],
+  "message": ""
 }
