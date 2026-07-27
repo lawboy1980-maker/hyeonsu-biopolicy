@@ -71,8 +71,12 @@ body.dark .news-filter{background:#142438;color:#c6d4e5}body.dark .news-card,bod
 
 /* 대시보드의 각 주요 영역을 독립된 행으로 배치 */
 #dashboardView {
-  display: block !important;
   width: 100% !important;
+}
+
+/* 다른 메뉴에서는 대시보드 전체를 숨김 */
+#dashboardView:not(.active) {
+  display: none !important;
 }
 
 /* 주요성과 */
