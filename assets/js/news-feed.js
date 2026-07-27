@@ -2,7 +2,7 @@
   "use strict";
 
   const NEWS_JSON_PATH = "data/news.json";
-  const MAX_ITEMS = 12;
+  const MAX_ITEMS = 5;
 
   const SECTION_CONFIG = {
     domestic: {
