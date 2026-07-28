@@ -29,3 +29,8 @@ body.dark .hslab-launch-hero{box-shadow:none}.dark .hslab-workspace-panel{backgr
 @media(max-width:1180px){.hslab-launch-hero{grid-template-columns:1fr}.hslab-brand-panel{min-height:auto;text-align:center;padding:10px 20px 18px}.hslab-brand-panel p{margin-left:auto;margin-right:auto}}
 @media(max-width:760px){.hslab-launch-hero{padding:16px;border-radius:20px;gap:16px}.hslab-brand-panel{padding:12px 8px}.hslab-brand-panel h2{font-size:52px}.hslab-slogan{font-size:25px}.hslab-workspace-panel{padding:16px}.ai-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:460px){.work-links,.ai-links{grid-template-columns:1fr}.hslab-brand-panel p{font-size:14px}.workspace-note{display:none}}
+.workspace-heading h3{font-size:40px!important;}
+.workspace-link strong{font-size:20px!important;}
+.workspace-link small{font-size:15px!important;}
+.workspace-eyebrow,.workspace-group-label{font-size:15px!important;}
+.tool-icon{width:46px!important;height:46px!important;font-size:18px!important;}
