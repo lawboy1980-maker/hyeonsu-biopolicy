@@ -2,8 +2,43 @@ name: Update HsLab News
 
 on:
   workflow_dispatch:
+  name: Update Bio News
+
+on:
   schedule:
-    - cron: '15 22 * * *'
+    # 한국시간 09:15
+    - cron: '15 0 * * *'
+
+    # 한국시간 15:15
+    - cron: '15 6 * * *'
+
+    # 한국시간 21:15
+    - cron: '15 12 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -r requirements.txt
+
+      - run: python scripts/update_news.py
+
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+          git add data/news.json
+          git commit -m "Auto update news" || echo "No changes"
+          git push
 
 permissions:
   contents: write
