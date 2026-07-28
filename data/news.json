@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27 19:56 KST",
+  "updated_at": "2026-07-28 17:01 KST",
   "news": [
     {
       "title": "[26.07.27.월] CRISPR 효소가 암세포 DNA를 잘라 새로운 치료 가능성을 보이다",
@@ -410,5 +410,14 @@
       "url": "042-879-8365"
     }
   ],
-  "errors": []
+  "errors": [
+    "BioIN 뉴스: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /rss/rssNews.xml (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7d868256a0>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "news: 새 수집 결과가 없어 기존 데이터를 유지했습니다.",
+    "BioIN 동향: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /rss/rssTrend.xml (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7d86825bb0>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "trend: 새 수집 결과가 없어 기존 데이터를 유지했습니다.",
+    "BioIN 지식: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /rss/rssKnow.xml (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7d868262a0>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "knowledge: 새 수집 결과가 없어 기존 데이터를 유지했습니다.",
+    "BioIN 발간물: HTTPSConnectionPool(host='www.bioin.or.kr', port=443): Max retries exceeded with url: /rss/rssPblcte.xml (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.bioin.or.kr', port=443) at 0x7f7d86826990>, 'Connection to www.bioin.or.kr timed out. (connect timeout=30)'))",
+    "publication: 새 수집 결과가 없어 기존 데이터를 유지했습니다."
+  ]
 }
