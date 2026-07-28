@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css?v=4.0.4">
   <link rel="stylesheet" href="assets/css/dashboard-v8.css?v=8.1.0">
-  <link rel="stylesheet" href="assets/css/v12-hero.css?v=12.1.0">
+  <link rel="stylesheet" href="assets/css/v12-hero.css?v=14.0.0">
   <link rel="stylesheet" href="assets/css/synbio-workspace.css?v=13.2.0">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
   <script src="assets/js/data.js?v=8.1.0" defer></script>
@@ -50,7 +50,7 @@
       <button class="icon-button mobile-only" id="menuButton" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
       <div class="page-title">
         <span class="breadcrumb">HSLAB / <strong id="breadcrumbLabel">DASHBOARD</strong></span>
-        <h1 id="pageTitle">HsLab <span class="version-badge">V8.1</span></h1>
+        <h1 id="pageTitle">HsLab <span class="version-badge">V14.0</span></h1>
         <p id="pageSubtitle">오늘의 현안에서 기술·정책·산업·규제까지 한눈에 살펴봅니다.</p>
       </div>
       <div class="topbar-actions">
@@ -60,43 +60,58 @@
     </header>
 
     <section id="dashboardView" class="view active">
-      <section class="v12-hero" id="top">
-        <div class="v12-hero-copy">
-          <span class="v12-kicker">BIO POLICY INTELLIGENCE PLATFORM</span>
+      <section class="v12-hero hslab-launch-hero" id="top" aria-label="HsLab 시작 화면">
+        <div class="v12-hero-copy hslab-brand-panel">
+          <span class="v12-kicker">DIGITAL RESEARCH WORKSPACE</span>
           <h2>HsLab</h2>
-          <strong>오늘의 연구와 정책을 한 곳에서.</strong>
-          <p>정책 동향, 연구 아젠다, 통계와 개인 일정을 연결해 매일의 정책연구 흐름을 시작합니다.</p>
-          <div class="v12-actions">
-            <button class="v12-primary" data-jump="assistant">AI 정책검색 <i class="bi bi-arrow-right"></i></button>
-            <button class="v12-secondary" data-jump="explorer">통계 탐색 <i class="bi bi-arrow-up-right"></i></button>
-          </div>
+          <strong class="hslab-slogan">Think. Connect. Build.</strong>
+          <p>생각을 정리하고, 지식과 도구를 연결해, 연구와 정책의 결과물을 만들어갑니다.</p>
         </div>
 
-        <aside class="v12-agenda" id="heroSpotlight">
-          <div class="agenda-header">
+        <aside class="hslab-workspace-panel" aria-label="업무 및 AI 도구 바로가기">
+          <div class="workspace-heading">
             <div>
-              <span class="agenda-eyebrow">TODAY'S AGENDA</span>
-              <h3>오늘의 일정</h3>
+              <span class="workspace-eyebrow">WORKSPACE</span>
+              <h3>바로 시작하기</h3>
             </div>
-            <span class="agenda-date" id="agendaDate"></span>
+            <span class="workspace-note">자주 쓰는 도구</span>
           </div>
 
-          <div class="agenda-summary" id="agendaSummary" hidden>
-            <div><strong id="agendaTodayCount">0</strong><span>오늘</span></div>
-            <div><strong id="agendaWeekCount">0</strong><span>7일간</span></div>
-            <div><strong id="agendaNextLabel">-</strong><span>다음 일정</span></div>
+          <div class="workspace-group">
+            <span class="workspace-group-label">WORK</span>
+            <div class="workspace-link-grid work-links">
+              <a class="workspace-link" href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" rel="noopener noreferrer" aria-label="Google Calendar 열기">
+                <span class="tool-icon calendar-icon"><i class="bi bi-calendar3"></i></span>
+                <span><strong>Calendar</strong><small>일정 관리</small></span>
+                <i class="bi bi-arrow-up-right workspace-arrow"></i>
+              </a>
+              <a class="workspace-link" href="https://mailon.kr/integrated/login" target="_blank" rel="noopener noreferrer" aria-label="MailON 열기">
+                <span class="tool-icon mailon-icon"><i class="bi bi-envelope-paper"></i></span>
+                <span><strong>MailON</strong><small>업무 메일</small></span>
+                <i class="bi bi-arrow-up-right workspace-arrow"></i>
+              </a>
+            </div>
           </div>
 
-          <div class="agenda-status" id="agendaStatus" aria-live="polite">
-            <i class="bi bi-arrow-repeat"></i><span>캘린더를 불러오는 중입니다.</span>
-          </div>
-          <div class="agenda-list" id="agendaList"></div>
-
-          <div class="agenda-footer">
-            <span class="agenda-updated" id="agendaUpdated"></span>
-            <a class="calendar-connect-button" href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-google"></i> Google Calendar 열기 <i class="bi bi-arrow-up-right"></i>
-            </a>
+          <div class="workspace-group ai-workspace-group">
+            <span class="workspace-group-label">AI WORKSPACE</span>
+            <div class="workspace-link-grid ai-links">
+              <a class="workspace-link ai-tool" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT 열기">
+                <span class="tool-icon chatgpt-icon">GPT</span><span><strong>ChatGPT</strong><small>사고·작성</small></span>
+              </a>
+              <a class="workspace-link ai-tool" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" aria-label="Gemini 열기">
+                <span class="tool-icon gemini-icon"><i class="bi bi-stars"></i></span><span><strong>Gemini</strong><small>검색·분석</small></span>
+              </a>
+              <a class="workspace-link ai-tool" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" aria-label="NotebookLM 열기">
+                <span class="tool-icon notebook-icon"><i class="bi bi-journal-text"></i></span><span><strong>NotebookLM</strong><small>자료 기반</small></span>
+              </a>
+              <a class="workspace-link ai-tool" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" aria-label="Claude 열기">
+                <span class="tool-icon claude-icon">C</span><span><strong>Claude</strong><small>긴 문서</small></span>
+              </a>
+              <a class="workspace-link ai-tool" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" aria-label="Perplexity 열기">
+                <span class="tool-icon perplexity-icon">P</span><span><strong>Perplexity</strong><small>웹 리서치</small></span>
+              </a>
+            </div>
           </div>
         </aside>
       </section>
