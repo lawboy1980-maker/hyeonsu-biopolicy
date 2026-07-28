@@ -142,7 +142,29 @@ def main() -> None:
     print(f"Wrote data/news.json; counts={counts}")
     for error in errors:
         print(f"WARNING: {error}")
+import time
+import feedparser
 
+def get_feed(url):
+
+    for i in range(3):
+
+        try:
+
+            feed = feedparser.parse(url)
+
+            if len(feed.entries) > 0:
+                return feed
+
+        except Exception:
+            pass
+
+        print(f"Retry {i+1}/3")
+
+        time.sleep(15)
+
+    return None
 
 if __name__ == "__main__":
     main()
+feed = get_feed(url)
