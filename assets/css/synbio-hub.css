@@ -50,3 +50,28 @@
     background:#eef5ff;
     border-color:#b7d0ff;
 }
+/* ===== V15 Equal Height Cards ===== */
+
+.content-grid{
+    display:grid;
+    grid-template-columns:1.35fr .85fr;
+    gap:18px;
+    align-items:stretch;
+}
+
+.content-grid > .panel{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+/* 카드 내용이 남는 공간을 채움 */
+.data-list,
+.note-box{
+    flex:1;
+}
+
+/* 버튼은 항상 카드 하단 */
+.panel-button{
+    margin-top:auto;
+}
