@@ -2132,68 +2132,56 @@ window.DASHBOARD_DATA = {
           "icon": "bi-diagram-3",
           "summary": "합성생물학은 생명시스템을 설계·제작하는 공학기술로, 바이오제조와 AI 기반 바이오혁신을 이끄는 핵심 플랫폼 기술입니다.",
           "children": [
-            "DBTL",
             "바이오파운드리",
+            "DBTL·BioCAD",
             "DNA 설계·합성",
-            "세포공장",
-            "유전자회로",
-            "대사공학"
+            "합성세포·세포공장",
+            "바이오안전·보안",
+            "규제·거버넌스"
           ],
           "reports": [
-            {
-              "type": "보고서",
-              "title": "합성생물학 기술·산업·정책 분석"
-            },
-            {
-              "type": "논문",
-              "title": "Synthetic Biology Governance Review"
-            }
+            {"type":"보고서","title":"공공 바이오파운드리 구축과 운영전략","subtopic":"바이오파운드리"},
+            {"type":"보고서","title":"바이오파운드리 자동화·표준화 정책 분석","subtopic":"바이오파운드리"},
+            {"type":"보고서","title":"DBTL 고속화와 BioCAD 기술로드맵","subtopic":"DBTL·BioCAD"},
+            {"type":"논문","title":"AI 기반 DBTL 폐루프 최적화 동향","subtopic":"DBTL·BioCAD"},
+            {"type":"보고서","title":"DNA 설계·합성 기술 및 공급망 분석","subtopic":"DNA 설계·합성"},
+            {"type":"논문","title":"대규모 DNA 합성의 정확도와 품질관리","subtopic":"DNA 설계·합성"},
+            {"type":"보고서","title":"합성세포와 세포공장 기술개발 전략","subtopic":"합성세포·세포공장"},
+            {"type":"논문","title":"Synthetic Cells and Programmable Cell Factories","subtopic":"합성세포·세포공장"},
+            {"type":"보고서","title":"합성생물학 바이오안전·바이오보안 프레임워크","subtopic":"바이오안전·보안"},
+            {"type":"브리프","title":"DNA 주문 스크리닝과 연구보안 동향","subtopic":"바이오안전·보안"},
+            {"type":"보고서","title":"합성생물학 규제 공진화와 거버넌스","subtopic":"규제·거버넌스"},
+            {"type":"논문","title":"Synthetic Biology Governance Review","subtopic":"규제·거버넌스"}
           ],
           "resources": [
-            {
-              "type": "법령",
-              "title": "합성생물학 육성법"
-            },
-            {
-              "type": "보고서",
-              "title": "합성생물학 기술·산업·정책 분석"
-            },
-            {
-              "type": "BioIN",
-              "title": "합성생물학 정책동향 브리프"
-            },
-            {
-              "type": "논문",
-              "title": "Synthetic Biology Governance Review"
-            }
+            {"type":"인프라","title":"공공 바이오파운드리 구축·활용 자료","subtopic":"바이오파운드리"},
+            {"type":"표준","title":"바이오파운드리 데이터·장비 상호운용 표준","subtopic":"바이오파운드리"},
+            {"type":"기술","title":"DBTL 및 BioCAD 핵심기술 자료","subtopic":"DBTL·BioCAD"},
+            {"type":"데이터","title":"실험설계·학습 데이터 품질관리 자료","subtopic":"DBTL·BioCAD"},
+            {"type":"기술","title":"DNA 설계·합성 플랫폼 자료","subtopic":"DNA 설계·합성"},
+            {"type":"산업","title":"DNA 합성 기업·시장·공급망 자료","subtopic":"DNA 설계·합성"},
+            {"type":"기술","title":"합성세포·세포공장 연구자료","subtopic":"합성세포·세포공장"},
+            {"type":"산업","title":"세포공장 기반 바이오제조 사례","subtopic":"합성세포·세포공장"},
+            {"type":"가이드","title":"바이오안전·바이오보안 국제 가이드","subtopic":"바이오안전·보안"},
+            {"type":"정책","title":"주요국 DNA 스크리닝 정책자료","subtopic":"바이오안전·보안"},
+            {"type":"법령","title":"합성생물학 육성법 및 하위법령","subtopic":"규제·거버넌스"},
+            {"type":"국제","title":"OECD·UNESCO 합성생물학 거버넌스 자료","subtopic":"규제·거버넌스"}
           ],
           "hylab": [
-            {
-              "type": "HSLAB",
-              "title": "합성생물학 기술·정책 인텔리전스 브리프"
-            },
-            {
-              "type": "HSLAB",
-              "title": "합성생물학 핵심지표 대시보드"
-            }
+            {"type":"HSLAB","title":"바이오파운드리 정책·규제 인텔리전스 브리프","subtopic":"바이오파운드리"},
+            {"type":"HSLAB","title":"DBTL·BioCAD 핵심기술 이슈트리","subtopic":"DBTL·BioCAD"},
+            {"type":"HSLAB","title":"DNA 설계·합성 기술·산업 브리프","subtopic":"DNA 설계·합성"},
+            {"type":"HSLAB","title":"합성세포·세포공장 미래 아젠다","subtopic":"합성세포·세포공장"},
+            {"type":"HSLAB","title":"합성생물학 안전·보안 정책지도","subtopic":"바이오안전·보안"},
+            {"type":"HSLAB","title":"합성생물학 법·정책·거버넌스 리뷰","subtopic":"규제·거버넌스"}
           ],
           "notes": [
-            {
-              "type": "NOTE",
-              "title": "기본계획: 합성생물학 육성을 위한 중장기 정책방향 수립"
-            },
-            {
-              "type": "NOTE",
-              "title": "시행령: 법 시행을 위한 하위법령 및 세부기준 마련"
-            },
-            {
-              "type": "NOTE",
-              "title": "정책전문기관: 법정 정책지원 기능과 추진체계 구축"
-            },
-            {
-              "type": "NOTE",
-              "title": "기술수준평가: 국가 기술경쟁력과 기술격차 분석체계 마련"
-            }
+            {"type":"NOTE","title":"바이오파운드리: 공공 인프라의 기능과 운영모델","subtopic":"바이오파운드리"},
+            {"type":"NOTE","title":"DBTL·BioCAD: 자동화 검증과 데이터 표준","subtopic":"DBTL·BioCAD"},
+            {"type":"NOTE","title":"DNA 설계·합성: 품질·공급망·스크리닝 쟁점","subtopic":"DNA 설계·합성"},
+            {"type":"NOTE","title":"합성세포·세포공장: 독립 정책아젠다 가능성","subtopic":"합성세포·세포공장"},
+            {"type":"NOTE","title":"바이오안전·보안: 선제적 위험관리와 연구보안","subtopic":"바이오안전·보안"},
+            {"type":"NOTE","title":"규제·거버넌스: 기본계획·시행령·정책전문기관","subtopic":"규제·거버넌스"}
           ]
         },
         "ai-bio": {
