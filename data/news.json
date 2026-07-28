@@ -1,90 +1,6 @@
 {
-  "updated_at": "2026-07-28 12:03 KST",
+  "updated_at": "2026-07-27 19:56 KST",
   "news": [
-    {
-      "title": "식약처, 간 오가노이드 독성평가 기술 대웅제약 이전...OECD 국제표준화 추진",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.fnnews.com/news/202607280908363609"
-    },
-    {
-      "title": "비만약이 키운 '몸매 다듬기' 시장…지방분해주사 경쟁 불붙었다",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.etnews.com/20260727000170"
-    },
-    {
-      "title": "뇌에 칩 심어 문장 쓰고 로봇 팔 움직인다…실제로 환자 치료",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.hankyung.com/article/2026072773331"
-    },
-    {
-      "title": "[26.07.28.화] 프로테오믹스 연구로 ALS를 증상 발생 수년 전에 예측하다",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.genengnews.com/topics/omics/als-could-be-predicted-years-before-symptoms-proteomics-study-finds/"
-    },
-    {
-      "title": "\"살아야 한다\"… 제약·바이오·헬스 ‘동전주’ 퇴출 피하려 릴레이 액면병합",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.dt.co.kr/article/12074987?ref=naver"
-    },
-    {
-      "title": "\"90초 불면 끝\"…지방 태우는 순간 알려주는 휴대용 측정기 나왔다",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://zdnet.co.kr/view/?no=20260727132339"
-    },
-    {
-      "title": "루게릭병, 나타나기 전에 잡는다… 혈액 단백질 19종이 열쇠",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://biz.chosun.com/science-chosun/science/2026/07/27/NLDCFGK3HJDFLDK2CLV6BUOS4M/"
-    },
-    {
-      "title": "암 임상·공공 데이터 활용 겨룬다…'K-큐어 데이터 경진대회' 개최",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.etnews.com/20260727000296"
-    },
-    {
-      "title": "셀트리온, 국내 제약·바이오 분기 매출 1위 등극…매출 1조3937억원",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.etnews.com/20260727000295"
-    },
-    {
-      "title": "혈액 속 암 치료 나침반 '순환종양 DNA’",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.hankyung.com/article/2026072788791"
-    },
-    {
-      "title": "파킨슨병 줄기세포 치료 성공 조건 제시…한·미·일 임상 분석",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://biz.chosun.com/science-chosun/medicine-health/2026/07/27/TCF6RAFOVVBB5OMANU6AAIHYXQ/"
-    },
-    {
-      "title": "방사성의약품 핵심기지 떠오른 韓…정부·업계·학계 협력도 주목",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.news1.kr/bio/pharmaceutical-bio/6240264"
-    },
-    {
-      "title": "암세포가 스스로 면역공격 유도하는 항암 플랫폼 개발",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.news1.kr/local/daejeon-chungnam/6240854"
-    },
-    {
-      "title": "CDMO 특별법 하위법령 입법예고…업계 \"실효성 있는 세부 기준 기대\"",
-      "source": "BioIN 뉴스",
-      "date": "2026-07-28",
-      "url": "https://www.news1.kr/bio/pharmaceutical-bio/6240479"
-    },
     {
       "title": "[26.07.27.월] CRISPR 효소가 암세포 DNA를 잘라 새로운 치료 가능성을 보이다",
       "source": "BioIN 뉴스",
@@ -120,33 +36,93 @@
       "source": "BioIN 뉴스",
       "date": "2026-07-27",
       "url": "https://www.dailian.co.kr/news/view/1670720/%EA%B3%BC%EA%B8%B0%EC%A0%95%ED%86%B5%EB%B6%80-%E2%80%98%EC%B6%A9%EC%B2%AD-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%E2%80%99-2026"
+    },
+    {
+      "title": "\"BCI, 핵무기 개발 초기 단계와 같아…규제 논의 주도해야\"",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.dongascience.com/news/79049"
+    },
+    {
+      "title": "'AI 신약개발' K멜로디 3년차… 수행기관 5곳 합류",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.fnnews.com/news/202607261814474679"
+    },
+    {
+      "title": "박순석·정규식, 犬 암·악액질 진단 '마이크로RNA' 바이오마커 규명",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.news1.kr/industry/general-industry/6239197"
+    },
+    {
+      "title": "세포핵 속 'DNA 구조 변화' 그린 4차원 지도",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.dongascience.com/news/79098"
+    },
+    {
+      "title": "천종식 CJ바사 고문, 미생물학 국제상 수상…원핵생물 분류에 기여",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://biz.chosun.com/science-chosun/science/2026/07/25/JPMWD7URU5C6XAJBN22N43FX5M/"
+    },
+    {
+      "title": "K바이오, 돈맥경화 아닌 경로의 문제",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.etnews.com/20260724000196"
+    },
+    {
+      "title": "AI 대전환과 비만치료제 열풍… 한국과학기자협회, ‘2026 과학기자대회’ 28일 개최",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.mk.co.kr/news/it/12106721"
+    },
+    {
+      "title": "잇단 패소 이어 임상마저 실패…‘콜린’시장, 26년만에 무너지나",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.sedaily.com/article/20072041?ref=naver"
+    },
+    {
+      "title": "“세계는 오래 가는 주사제 전쟁중...AI로 개발 앞당길 것”",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.mk.co.kr/news/it/12107737"
+    },
+    {
+      "title": "서울대병원, '줄기세포 단일배양 이종조직판막 재세포화' 최초 성공",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://view.asiae.co.kr/article/2026072708160383413"
+    },
+    {
+      "title": "세포성장 신호켜는 핵심 스위치 발견…KAIST \"차세대 항암 표적\"",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.yna.co.kr/view/AKR20260724151800063?input=1195m"
+    },
+    {
+      "title": "국가연구개발사업 행정 서식 93% 줄인다",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://www.etnews.com/20260724000171"
+    },
+    {
+      "title": "이주한 대통령실 비서관 \"출연연 내년 인건비 100% 보장\"",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-27",
+      "url": "https://zdnet.co.kr/view/?no=20260726141511"
+    },
+    {
+      "title": "바이오의약품 CDMO 수출 지원체계 마련…시설기준 구체화",
+      "source": "BioIN 뉴스",
+      "date": "2026-07-24",
+      "url": "https://www.yna.co.kr/view/AKR20260724092700017?input=1195m"
     }
   ],
   "trend": [
-    {
-      "title": "유럽 생명과학 및 바이오 산업 2030 전략",
-      "source": "BioIN 동향",
-      "date": "2026-07-28",
-      "url": "https://www.gtonline.or.kr/home/kor/M130166046/board.do?deleteAt=N&act=detail&idx=cb00d1a0008a85e71a41b8741facbffe47a4a8c6db2cc771e14ae8e8af05466b&searchValue1=0&searchKeyword=&eSearchValue5=&eSearchValue7=&eSearchValue8=&pageIndex=1"
-    },
-    {
-      "title": "AI 국가전략의 진화 : 산업혁신을 넘어 국가생존 전략으로",
-      "source": "BioIN 동향",
-      "date": "2026-07-28",
-      "url": "https://www.nrf.re.kr/page/419?ac=view&searchType=&searchText=&pageNum=1&menuNo=419&boardNo=150&postNo=277707&menuCatCd=&menuCatCd2=&menuTypeCd=MENU_TYPE_05"
-    },
-    {
-      "title": "中 유니트리 휴머노이드, 생체 수술까지 넘봤다",
-      "source": "BioIN 동향",
-      "date": "2026-07-28",
-      "url": "https://www.kostec.re.kr/policy_trends/view/id/38552#u"
-    },
-    {
-      "title": "DSI 이익공유와 Cali Fund 실질적 운영을 위한 전략적 로드맵",
-      "source": "BioIN 동향",
-      "date": "2026-07-28",
-      "url": "https://www.biosafety.or.kr/portal/page/e_02?bbscttPid=5847&bbsPid=1&totalCnt=&searchCode=A&searchText=&bbsPid=1&pageSize=15&pageNumber=1&"
-    },
     {
       "title": "신약 개발 전주기 AI 융합기술 관련 특허 동향",
       "source": "BioIN 동향",
@@ -242,6 +218,30 @@
       "source": "BioIN 동향",
       "date": "2026-07-22",
       "url": "https://www.koreabio.org/board/board.php?bo_table=report&idx=835"
+    },
+    {
+      "title": "[주간 브리프_Vol.27] 관계부처합동, 국내 최초 농림위성 발사 외",
+      "source": "BioIN 동향",
+      "date": "2026-07-22",
+      "url": "https://www.krei.re.kr/krei/page/17?cmd=view&pst=505410&pageIndex=1"
+    },
+    {
+      "title": "[2026년 6월 BIO 동향] 제18차 규제자유특구위원회 서면심의 외",
+      "source": "BioIN 동향",
+      "date": "2026-07-21",
+      "url": "https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=948&page=1&code=newsletter"
+    },
+    {
+      "title": "과학기술의 헌법적 가치 제고와 미래세대를 위한 국가상·기본권의 정립: 과학기술 개헌 패러다임 제언",
+      "source": "BioIN 동향",
+      "date": "2026-07-21",
+      "url": "https://www.stepi.re.kr/site/stepiko/report/View.do?pageIndex=1&cateTypeCd=A05&tgtTypeCd=ALL&searchType=&reIdx=70&cateCont=A0513&cbIdx=0&searchKey="
+    },
+    {
+      "title": "[주간 브리프_Vol.26] 제22대 국회 후반기 농해수위원장 선출 및 농해수위 위원 구성 확정 외",
+      "source": "BioIN 동향",
+      "date": "2026-07-21",
+      "url": "https://www.krei.re.kr/krei/page/17?cmd=view&pst=505373&pageIndex=1"
     }
   ],
   "knowledge": [

@@ -177,16 +177,14 @@
     const trends = $('#trendDashboard');
     const lead = $('.lead-grid');
     const news = $('.hslab-news-panel');
-    const workspace = $('#myWorkspace');
     if (!dashboard) return;
-    [hero, performance, trends, lead, news, workspace].filter(Boolean).forEach(element => dashboard.appendChild(element));
+    [hero, performance, trends, lead, news].filter(Boolean).forEach(element => dashboard.appendChild(element));
   }
 
   function boot() {
     if (!window.Chart || !window.DASHBOARD_DATA) return;
     createTrendDashboard();
     createStrategicIntelligence();
-    createWorkspace();
     removeDuplicatedSections();
     reorderDashboard();
   }
