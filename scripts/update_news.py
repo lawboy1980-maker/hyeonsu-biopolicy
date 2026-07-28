@@ -168,3 +168,4 @@ def get_feed(url):
 if __name__ == "__main__":
     main()
 feed = get_feed(url)
+timeout=90
