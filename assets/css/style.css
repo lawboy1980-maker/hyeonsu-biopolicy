@@ -916,3 +916,31 @@ body.dark .agenda-card {
   .agenda-item-heading strong { font-size: 14px; }
   .agenda-item-category { display: inline-flex; }
 }
+/* ===== Hero Workspace Text Size ===== */
+
+.workspace-label{
+    font-size:18px !important;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.workspace-title{
+    font-size:52px !important;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.workspace-section-title{
+    font-size:18px !important;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.workspace-card-title{
+    font-size:23px !important;
+    font-weight:700;
+}
+
+.workspace-card-desc{
+    font-size:16px !important;
+}
