@@ -248,7 +248,12 @@ function renderResearchList(containerId,items,fallbackTitle,kind){
     $(containerId).innerHTML=`<article class="research-list-item is-placeholder"><span>${kind}</span><strong>${fallbackTitle} 자료를 추가해 주세요</strong><i class="bi bi-plus-circle"></i></article>`;
     return;
   }
-  $(containerId).innerHTML=normalized.map(item=>`<article class="research-list-item"><span>${item.type||kind}</span><strong>${item.title}</strong><i class="bi bi-arrow-up-right"></i></article>`).join('');
+  $(containerId).innerHTML=normalized.map(item=>{
+    const content=`<span>${item.type||kind}</span><strong>${item.title}</strong><i class="bi bi-arrow-up-right"></i>`;
+    return item.url
+      ? `<a class="research-list-item is-link" href="${item.url}" target="_blank" rel="noopener noreferrer">${content}</a>`
+      : `<article class="research-list-item">${content}</article>`;
+  }).join('');
 }
 function renderResearchSubtopic(item,subtopic=null){
   const selected=subtopic&&item.children.includes(subtopic)?subtopic:null;
@@ -267,6 +272,10 @@ function renderResearchSubtopic(item,subtopic=null){
   renderResearchList('#researchResources',filterItems(item.resources),`${prefix}${item.title} Resource`,'SOURCE');
   renderResearchList('#researchHylab',filterItems(item.hylab),`${prefix}${item.title} HsLab Report`,'HSLAB');
   renderResearchList('#researchNotes',filterItems(item.notes),`${prefix}${item.title} Research Note`,'NOTE');
+  const notionUrl=(selected&&item.notionLinks?.[selected])||item.notionUrl||'';
+  if(notionUrl){
+    $('#researchNotes').insertAdjacentHTML('beforeend',`<a class="notion-note-button" href="${notionUrl}" target="_blank" rel="noopener noreferrer"><span><i class="bi bi-journal-richtext"></i><strong>${selected||item.title} 연구노트</strong><small>Notion에서 메모·초안·회의기록 이어쓰기</small></span><i class="bi bi-arrow-up-right"></i></a>`);
+  }
 }
 function renderResearchArea(key,slug=null,subtopic=null){
   const area=state.data.researchAreasV2?.[key];

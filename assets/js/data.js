@@ -2131,6 +2131,15 @@ window.DASHBOARD_DATA = {
           "short": "설계·제작·바이오제조",
           "icon": "bi-diagram-3",
           "summary": "합성생물학은 생명시스템을 설계·제작하는 공학기술로, 바이오제조와 AI 기반 바이오혁신을 이끄는 핵심 플랫폼 기술입니다.",
+          "notionUrl": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+          "notionLinks": {
+            "바이오파운드리": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+            "DBTL·BioCAD": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+            "DNA 설계·합성": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+            "합성세포·세포공장": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+            "바이오안전·보안": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s",
+            "규제·거버넌스": "https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"
+          },
           "children": [
             "바이오파운드리",
             "DBTL·BioCAD",
@@ -2176,12 +2185,12 @@ window.DASHBOARD_DATA = {
             {"type":"HSLAB","title":"합성생물학 법·정책·거버넌스 리뷰","subtopic":"규제·거버넌스"}
           ],
           "notes": [
-            {"type":"NOTE","title":"바이오파운드리: 공공 인프라의 기능과 운영모델","subtopic":"바이오파운드리"},
-            {"type":"NOTE","title":"DBTL·BioCAD: 자동화 검증과 데이터 표준","subtopic":"DBTL·BioCAD"},
-            {"type":"NOTE","title":"DNA 설계·합성: 품질·공급망·스크리닝 쟁점","subtopic":"DNA 설계·합성"},
-            {"type":"NOTE","title":"합성세포·세포공장: 독립 정책아젠다 가능성","subtopic":"합성세포·세포공장"},
-            {"type":"NOTE","title":"바이오안전·보안: 선제적 위험관리와 연구보안","subtopic":"바이오안전·보안"},
-            {"type":"NOTE","title":"규제·거버넌스: 기본계획·시행령·정책전문기관","subtopic":"규제·거버넌스"}
+            {"type":"NOTE","title":"바이오파운드리: 공공 인프라의 기능과 운영모델","subtopic":"바이오파운드리","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"},
+            {"type":"NOTE","title":"DBTL·BioCAD: 자동화 검증과 데이터 표준","subtopic":"DBTL·BioCAD","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"},
+            {"type":"NOTE","title":"DNA 설계·합성: 품질·공급망·스크리닝 쟁점","subtopic":"DNA 설계·합성","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"},
+            {"type":"NOTE","title":"합성세포·세포공장: 독립 정책아젠다 가능성","subtopic":"합성세포·세포공장","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"},
+            {"type":"NOTE","title":"바이오안전·보안: 선제적 위험관리와 연구보안","subtopic":"바이오안전·보안","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"},
+            {"type":"NOTE","title":"규제·거버넌스: 기본계획·시행령·정책전문기관","subtopic":"규제·거버넌스","url":"https://app.notion.com/p/2212897503e280b7b31ae7cc5ded1247?p=2252897503e2809391f0e1cc56533c21&pm=s"}
           ]
         },
         "ai-bio": {

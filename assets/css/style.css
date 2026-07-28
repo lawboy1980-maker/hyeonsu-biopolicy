@@ -944,3 +944,15 @@ body.dark .agenda-card {
 .workspace-card-desc{
     font-size:16px !important;
 }
+
+/* V16.1 Synthetic Biology × Notion */
+.research-list-item.is-link{text-decoration:none;color:var(--ink);transition:.18s}
+.research-list-item.is-link:hover{padding-left:6px;color:var(--hero1)}
+.notion-note-button{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:12px;padding:14px;border:1px solid color-mix(in srgb,#111 18%,var(--line));border-radius:13px;background:linear-gradient(135deg,#fff,#f7f7f5);color:#191919;text-decoration:none;transition:.2s}
+.notion-note-button:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(20,20,20,.09)}
+.notion-note-button>span{display:grid;grid-template-columns:26px 1fr;column-gap:9px;align-items:center}
+.notion-note-button>span>i{grid-row:1/3;font-size:20px}
+.notion-note-button strong,.notion-note-button small{display:block}
+.notion-note-button strong{font-size:12px}.notion-note-button small{font-size:10px;color:#737373;margin-top:2px}
+body.dark .notion-note-button{background:linear-gradient(135deg,#20262e,#171c22);color:#f3f3f3;border-color:#39424d}
+body.dark .notion-note-button small{color:#aab3bd}
