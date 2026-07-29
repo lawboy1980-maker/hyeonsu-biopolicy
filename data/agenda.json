@@ -1,30 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-07-29T20:00:15.129144+09:00",
+  "updated_at": "2026-07-30T01:12:19.361199+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-07-29T00:00:00+09:00",
-  "range_end": "2026-08-06T00:00:00+09:00",
-  "today_count": 2,
-  "week_count": 3,
+  "range_start": "2026-07-30T00:00:00+09:00",
+  "range_end": "2026-08-07T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 1,
   "events": [
-    {
-      "id": "0gu9n16pckb12ato7kbh935mu6@google.com",
-      "title": "건강검진(건양대병원)",
-      "start": "2026-07-29T08:00:00+09:00",
-      "end": "2026-07-29T10:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "2f56tke9urbijjbpp9tgl9tcng@google.com",
-      "title": "어린이집 상담(사임당)",
-      "start": "2026-07-29T14:00:00+09:00",
-      "end": "2026-07-29T14:30:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "6gnc1bp6fe9it70c9vlaqogglk@google.com",
       "title": "연구내용",
