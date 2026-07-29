@@ -1,26 +1,17 @@
 {
   "status": "ok",
-  "updated_at": "2026-07-29T05:38:12.327429+09:00",
+  "updated_at": "2026-07-29T09:13:36.483299+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-07-29T00:00:00+09:00",
   "range_end": "2026-08-06T00:00:00+09:00",
-  "today_count": 3,
-  "week_count": 4,
+  "today_count": 2,
+  "week_count": 3,
   "events": [
     {
       "id": "0gu9n16pckb12ato7kbh935mu6@google.com",
       "title": "건강검진(건양대병원)",
       "start": "2026-07-29T08:00:00+09:00",
       "end": "2026-07-29T10:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "F1044888-2155-431C-9CB3-71679961DB5D",
-      "title": "건강검진",
-      "start": "2026-07-29T08:30:00+09:00",
-      "end": "2026-07-29T09:30:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
