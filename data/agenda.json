@@ -1,21 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-07-31T17:11:17.392176+09:00",
+  "updated_at": "2026-08-01T01:16:27.075601+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-07-31T00:00:00+09:00",
-  "range_end": "2026-08-08T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 1,
-  "events": [
-    {
-      "id": "6gnc1bp6fe9it70c9vlaqogglk@google.com",
-      "title": "연구내용",
-      "start": "2026-07-31T22:00:00+09:00",
-      "end": "2026-07-31T23:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    }
-  ],
+  "range_start": "2026-08-01T00:00:00+09:00",
+  "range_end": "2026-08-09T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 0,
+  "events": [],
   "message": ""
 }
