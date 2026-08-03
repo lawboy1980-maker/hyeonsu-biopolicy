@@ -1,11 +1,21 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-03T17:52:03.301854+09:00",
+  "updated_at": "2026-08-04T02:17:47.666829+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-03T00:00:00+09:00",
-  "range_end": "2026-08-11T00:00:00+09:00",
+  "range_start": "2026-08-04T00:00:00+09:00",
+  "range_end": "2026-08-12T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 0,
-  "events": [],
+  "week_count": 1,
+  "events": [
+    {
+      "id": "27BC61AB-66F6-4C8B-8007-56479FBBA157",
+      "title": "승급교육",
+      "start": "2026-08-11T00:00:00+09:00",
+      "end": "2026-08-13T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
+      "description": ""
+    }
+  ],
   "message": ""
 }
