@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-05T06:51:02.150205+09:00",
+  "updated_at": "2026-08-05T16:59:35.248398+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-05T00:00:00+09:00",
   "range_end": "2026-08-13T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 1,
+  "week_count": 2,
   "events": [
     {
       "id": "27BC61AB-66F6-4C8B-8007-56479FBBA157",
@@ -13,6 +13,15 @@
       "start": "2026-08-11T00:00:00+09:00",
       "end": "2026-08-13T00:00:00+09:00",
       "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "9F60E826-2970-4209-A664-E3C1B5A2F43C",
+      "title": "병원진료",
+      "start": "2026-08-12T15:10:00+09:00",
+      "end": "2026-08-12T16:10:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     }
