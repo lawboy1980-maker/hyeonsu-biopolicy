@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-06T19:58:00.376405+09:00",
+  "updated_at": "2026-08-07T10:53:32.579161+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-06T00:00:00+09:00",
-  "range_end": "2026-08-14T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 3,
+  "range_start": "2026-08-07T00:00:00+09:00",
+  "range_end": "2026-08-15T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 2,
   "events": [
-    {
-      "id": "F30FEE80-B9C5-465D-B35E-DDCBCEF8D298",
-      "title": "정원 병원",
-      "start": "2026-08-06T11:00:00+09:00",
-      "end": "2026-08-06T12:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "27BC61AB-66F6-4C8B-8007-56479FBBA157",
       "title": "승급교육",
