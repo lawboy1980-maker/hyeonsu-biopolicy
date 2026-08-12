@@ -1,17 +1,26 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-12T14:17:28.492192+09:00",
+  "updated_at": "2026-08-12T18:47:41.761264+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-12T00:00:00+09:00",
   "range_end": "2026-08-20T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 1,
+  "week_count": 2,
   "events": [
     {
       "id": "9F60E826-2970-4209-A664-E3C1B5A2F43C",
       "title": "병원진료",
       "start": "2026-08-12T15:10:00+09:00",
       "end": "2026-08-12T16:10:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "EC86E8EB-EFDB-4986-9CFF-228DD2F7E560",
+      "title": "CT촬영",
+      "start": "2026-08-14T15:30:00+09:00",
+      "end": "2026-08-14T16:30:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
