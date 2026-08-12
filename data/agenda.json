@@ -1,26 +1,35 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-12T21:35:25.261791+09:00",
+  "updated_at": "2026-08-13T01:13:36.512316+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-12T00:00:00+09:00",
-  "range_end": "2026-08-20T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 2,
+  "range_start": "2026-08-13T00:00:00+09:00",
+  "range_end": "2026-08-21T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 3,
   "events": [
-    {
-      "id": "9F60E826-2970-4209-A664-E3C1B5A2F43C",
-      "title": "병원진료",
-      "start": "2026-08-12T15:10:00+09:00",
-      "end": "2026-08-12T16:10:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "EC86E8EB-EFDB-4986-9CFF-228DD2F7E560",
       "title": "CT촬영",
       "start": "2026-08-14T15:30:00+09:00",
       "end": "2026-08-14T16:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "87158F45-8D1A-4E8C-9A74-20363BC3BBAB",
+      "title": "병국이 대전 오후",
+      "start": "2026-08-20T00:00:00+09:00",
+      "end": "2026-08-21T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "3D274159-99F5-4E86-BD58-BDA9EA716480",
+      "title": "사진촬영",
+      "start": "2026-08-20T10:00:00+09:00",
+      "end": "2026-08-20T11:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
