@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-17T23:58:08.453852+09:00",
+  "updated_at": "2026-08-18T00:54:39.056893+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-17T00:00:00+09:00",
-  "range_end": "2026-08-25T00:00:00+09:00",
+  "range_start": "2026-08-18T00:00:00+09:00",
+  "range_end": "2026-08-26T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 2,
+  "week_count": 1,
   "events": [
-    {
-      "id": "87158F45-8D1A-4E8C-9A74-20363BC3BBAB",
-      "title": "병국이 대전 오후",
-      "start": "2026-08-20T00:00:00+09:00",
-      "end": "2026-08-21T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "3D274159-99F5-4E86-BD58-BDA9EA716480",
       "title": "사진촬영",
