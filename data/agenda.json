@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-18T20:56:57.517812+09:00",
+  "updated_at": "2026-08-18T23:07:11.642450+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-18T00:00:00+09:00",
   "range_end": "2026-08-26T00:00:00+09:00",
@@ -8,8 +8,8 @@
   "week_count": 3,
   "events": [
     {
-      "id": "e532a42181d14cca88dfb53adac4a358@google.com",
-      "title": "ㅇㄹㅇㄹ",
+      "id": "792d6e8c71814b2db80be3b750481cd0@google.com",
+      "title": "ㅇㄹㄷㄹㄷㄹ",
       "start": "2026-08-18T19:30:00+09:00",
       "end": "2026-08-18T20:00:00+09:00",
       "all_day": false,
@@ -17,8 +17,8 @@
       "description": ""
     },
     {
-      "id": "792d6e8c71814b2db80be3b750481cd0@google.com",
-      "title": "ㅇㄹㄷㄹㄷㄹ",
+      "id": "e532a42181d14cca88dfb53adac4a358@google.com",
+      "title": "ㅇㄹㅇㄹ",
       "start": "2026-08-18T19:30:00+09:00",
       "end": "2026-08-18T20:00:00+09:00",
       "all_day": false,
