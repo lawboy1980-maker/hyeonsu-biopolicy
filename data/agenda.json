@@ -1,17 +1,26 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-19T07:56:22.456370+09:00",
+  "updated_at": "2026-08-19T08:51:57.717159+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-19T00:00:00+09:00",
   "range_end": "2026-08-27T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 1,
+  "week_count": 2,
   "events": [
     {
       "id": "3D274159-99F5-4E86-BD58-BDA9EA716480",
       "title": "사진촬영",
       "start": "2026-08-20T10:00:00+09:00",
       "end": "2026-08-20T11:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "E07E7182-F4EE-47C5-BC4B-2F5158D2E499",
+      "title": "영규 저녁",
+      "start": "2026-08-25T20:00:00+09:00",
+      "end": "2026-08-25T21:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
