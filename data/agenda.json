@@ -1,12 +1,30 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-18T18:52:23.448906+09:00",
+  "updated_at": "2026-08-18T20:00:55.963930+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-18T00:00:00+09:00",
   "range_end": "2026-08-26T00:00:00+09:00",
-  "today_count": 0,
-  "week_count": 1,
+  "today_count": 2,
+  "week_count": 3,
   "events": [
+    {
+      "id": "e532a42181d14cca88dfb53adac4a358@google.com",
+      "title": "ㅇㄹㅇㄹ",
+      "start": "2026-08-18T19:30:00+09:00",
+      "end": "2026-08-18T20:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "792d6e8c71814b2db80be3b750481cd0@google.com",
+      "title": "ㅇㄹㄷㄹㄷㄹ",
+      "start": "2026-08-18T19:30:00+09:00",
+      "end": "2026-08-18T20:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
     {
       "id": "3D274159-99F5-4E86-BD58-BDA9EA716480",
       "title": "사진촬영",
