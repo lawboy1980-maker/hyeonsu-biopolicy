@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-20T23:10:25.662086+09:00",
+  "updated_at": "2026-08-21T01:04:18.808347+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-20T00:00:00+09:00",
-  "range_end": "2026-08-28T00:00:00+09:00",
-  "today_count": 1,
+  "range_start": "2026-08-21T00:00:00+09:00",
+  "range_end": "2026-08-29T00:00:00+09:00",
+  "today_count": 0,
   "week_count": 3,
   "events": [
-    {
-      "id": "3D274159-99F5-4E86-BD58-BDA9EA716480",
-      "title": "사진촬영",
-      "start": "2026-08-20T10:00:00+09:00",
-      "end": "2026-08-20T11:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "E07E7182-F4EE-47C5-BC4B-2F5158D2E499",
       "title": "영규 저녁",
@@ -31,6 +22,15 @@
       "start": "2026-08-27T00:00:00+09:00",
       "end": "2026-08-28T00:00:00+09:00",
       "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "F83F4E28-5BEE-4E71-B00A-9B1E059C4AF8",
+      "title": "매매 잔금",
+      "start": "2026-08-28T14:00:00+09:00",
+      "end": "2026-08-28T15:00:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     }
