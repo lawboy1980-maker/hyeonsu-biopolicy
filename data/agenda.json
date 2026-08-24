@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-24T23:52:18.923244+09:00",
+  "updated_at": "2026-08-25T00:49:00.940110+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-24T00:00:00+09:00",
-  "range_end": "2026-09-01T00:00:00+09:00",
-  "today_count": 0,
-  "week_count": 3,
+  "range_start": "2026-08-25T00:00:00+09:00",
+  "range_end": "2026-09-02T00:00:00+09:00",
+  "today_count": 1,
+  "week_count": 5,
   "events": [
     {
       "id": "E07E7182-F4EE-47C5-BC4B-2F5158D2E499",
@@ -30,6 +30,24 @@
       "title": "매매 잔금",
       "start": "2026-08-28T14:00:00+09:00",
       "end": "2026-08-28T15:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "E73E922B-AFFF-4167-A139-D6113F88D69A",
+      "title": "합성전략팀 업무회의",
+      "start": "2026-09-01T10:30:00+09:00",
+      "end": "2026-09-01T11:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "9DC2838D-B428-4590-B96B-73F71CF5B7EA",
+      "title": "실업무회의",
+      "start": "2026-09-01T21:00:00+09:00",
+      "end": "2026-09-01T22:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
