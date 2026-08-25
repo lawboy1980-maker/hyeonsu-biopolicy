@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-25T23:54:55.489227+09:00",
+  "updated_at": "2026-08-26T00:53:06.602780+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-25T00:00:00+09:00",
-  "range_end": "2026-09-02T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 5,
+  "range_start": "2026-08-26T00:00:00+09:00",
+  "range_end": "2026-09-03T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 4,
   "events": [
-    {
-      "id": "E07E7182-F4EE-47C5-BC4B-2F5158D2E499",
-      "title": "영규 저녁",
-      "start": "2026-08-25T20:00:00+09:00",
-      "end": "2026-08-25T21:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "94C349D7-3243-435A-AAF2-EAB60D31B008",
       "title": "이사",
