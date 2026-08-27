@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-27T18:25:24.518970+09:00",
+  "updated_at": "2026-08-28T05:18:06.870819+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-08-27T00:00:00+09:00",
-  "range_end": "2026-09-04T00:00:00+09:00",
+  "range_start": "2026-08-28T00:00:00+09:00",
+  "range_end": "2026-09-05T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 4,
+  "week_count": 3,
   "events": [
-    {
-      "id": "94C349D7-3243-435A-AAF2-EAB60D31B008",
-      "title": "이사",
-      "start": "2026-08-27T00:00:00+09:00",
-      "end": "2026-08-28T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "F83F4E28-5BEE-4E71-B00A-9B1E059C4AF8",
       "title": "매매 잔금",
