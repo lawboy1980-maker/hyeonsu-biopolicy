@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-08-31T14:20:09.079224+09:00",
+  "updated_at": "2026-08-31T22:31:03.240737+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-08-31T00:00:00+09:00",
   "range_end": "2026-09-08T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 2,
+  "week_count": 3,
   "events": [
     {
       "id": "E73E922B-AFFF-4167-A139-D6113F88D69A",
@@ -21,6 +21,15 @@
       "title": "실업무회의",
       "start": "2026-09-01T21:00:00+09:00",
       "end": "2026-09-01T22:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "868841FA-8DE3-4419-888B-6D5DA4B23857",
+      "title": "건강노화 브레인스토밍 회의;ㅣ",
+      "start": "2026-09-03T12:00:00+09:00",
+      "end": "2026-09-03T13:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
