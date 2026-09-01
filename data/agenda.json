@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-01T13:54:31.743011+09:00",
+  "updated_at": "2026-09-01T18:56:42.892218+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-01T00:00:00+09:00",
   "range_end": "2026-09-09T00:00:00+09:00",
   "today_count": 2,
-  "week_count": 4,
+  "week_count": 6,
   "events": [
     {
       "id": "E73E922B-AFFF-4167-A139-D6113F88D69A",
@@ -26,8 +26,17 @@
       "description": ""
     },
     {
+      "id": "4E2A3AD8-35D0-4F07-996A-ACAF954EA3F8",
+      "title": "사회적수용성 회의",
+      "start": "2026-09-02T10:00:00+09:00",
+      "end": "2026-09-02T11:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
       "id": "868841FA-8DE3-4419-888B-6D5DA4B23857",
-      "title": "건강노화 브레인스토밍 회의;ㅣ",
+      "title": "건강노화 브레인스토밍 회의",
       "start": "2026-09-03T12:00:00+09:00",
       "end": "2026-09-03T13:00:00+09:00",
       "all_day": false,
@@ -42,6 +51,15 @@
       "all_day": false,
       "location": "",
       "description": "어머님 치과치료"
+    },
+    {
+      "id": "E6FB33E0-8E6D-4600-9E01-7222047E1345",
+      "title": "재택신청",
+      "start": "2026-09-08T14:00:00+09:00",
+      "end": "2026-09-08T15:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
     }
   ],
   "message": ""
