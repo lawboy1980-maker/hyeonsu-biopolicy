@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-01T18:56:42.892218+09:00",
+  "updated_at": "2026-09-01T23:44:13.298332+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-01T00:00:00+09:00",
   "range_end": "2026-09-09T00:00:00+09:00",
   "today_count": 2,
-  "week_count": 6,
+  "week_count": 7,
   "events": [
     {
       "id": "E73E922B-AFFF-4167-A139-D6113F88D69A",
@@ -39,6 +39,15 @@
       "title": "건강노화 브레인스토밍 회의",
       "start": "2026-09-03T12:00:00+09:00",
       "end": "2026-09-03T13:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "34E55A23-5E24-4FDA-B975-2E29BF6EAF30",
+      "title": "순원 점심",
+      "start": "2026-09-07T12:00:00+09:00",
+      "end": "2026-09-07T13:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
