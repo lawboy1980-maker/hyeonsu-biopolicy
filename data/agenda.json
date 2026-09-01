@@ -1,30 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-01T23:44:13.298332+09:00",
+  "updated_at": "2026-09-02T03:22:15.668457+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-01T00:00:00+09:00",
-  "range_end": "2026-09-09T00:00:00+09:00",
+  "range_start": "2026-09-02T00:00:00+09:00",
+  "range_end": "2026-09-10T00:00:00+09:00",
   "today_count": 2,
-  "week_count": 7,
+  "week_count": 9,
   "events": [
-    {
-      "id": "E73E922B-AFFF-4167-A139-D6113F88D69A",
-      "title": "합성전략팀 업무회의",
-      "start": "2026-09-01T10:30:00+09:00",
-      "end": "2026-09-01T11:30:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "9DC2838D-B428-4590-B96B-73F71CF5B7EA",
-      "title": "실업무회의",
-      "start": "2026-09-01T21:00:00+09:00",
-      "end": "2026-09-01T22:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "4E2A3AD8-35D0-4F07-996A-ACAF954EA3F8",
       "title": "사회적수용성 회의",
@@ -35,11 +17,38 @@
       "description": ""
     },
     {
+      "id": "F62D69C5-9E79-4C8D-9DA7-B1FF63CCCBD6",
+      "title": "질병청 회의",
+      "start": "2026-09-02T14:00:00+09:00",
+      "end": "2026-09-02T15:00:00+09:00",
+      "all_day": false,
+      "location": "국립의과학지식센터 2층",
+      "description": ""
+    },
+    {
+      "id": "B230AE16-BBBB-497B-BFD6-84183C442C00",
+      "title": "정책팀 업무보고",
+      "start": "2026-09-03T09:00:00+09:00",
+      "end": "2026-09-03T10:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
       "id": "868841FA-8DE3-4419-888B-6D5DA4B23857",
       "title": "건강노화 브레인스토밍 회의",
       "start": "2026-09-03T12:00:00+09:00",
       "end": "2026-09-03T13:00:00+09:00",
       "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "26FEDC2C-AFE9-467E-9068-E64747DC2824",
+      "title": "전화영어 신청일",
+      "start": "2026-09-07T00:00:00+09:00",
+      "end": "2026-09-08T00:00:00+09:00",
+      "all_day": true,
       "location": "",
       "description": ""
     },
@@ -66,6 +75,15 @@
       "title": "재택신청",
       "start": "2026-09-08T14:00:00+09:00",
       "end": "2026-09-08T15:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "4E2A3AD8-35D0-4F07-996A-ACAF954EA3F8",
+      "title": "사회적수용성 회의",
+      "start": "2026-09-09T10:00:00+09:00",
+      "end": "2026-09-09T11:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
