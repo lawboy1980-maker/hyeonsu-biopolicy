@@ -1,28 +1,19 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-03T23:23:42.635485+09:00",
+  "updated_at": "2026-09-04T03:31:35.557419+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-03T00:00:00+09:00",
-  "range_end": "2026-09-11T00:00:00+09:00",
-  "today_count": 2,
+  "range_start": "2026-09-04T00:00:00+09:00",
+  "range_end": "2026-09-12T00:00:00+09:00",
+  "today_count": 1,
   "week_count": 6,
   "events": [
     {
-      "id": "B230AE16-BBBB-497B-BFD6-84183C442C00",
-      "title": "정책팀 업무보고",
-      "start": "2026-09-03T09:00:00+09:00",
-      "end": "2026-09-03T10:00:00+09:00",
+      "id": "81D73E63-735D-46B8-9C92-3B7174A2E1B8",
+      "title": "5극3특 회의",
+      "start": "2026-09-04T14:00:00+09:00",
+      "end": "2026-09-04T15:00:00+09:00",
       "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "868841FA-8DE3-4419-888B-6D5DA4B23857",
-      "title": "건강노화 브레인스토밍 회의",
-      "start": "2026-09-03T12:00:00+09:00",
-      "end": "2026-09-03T13:00:00+09:00",
-      "all_day": false,
-      "location": "",
+      "location": "융합기술연구생산센터 223-1 회의실",
       "description": ""
     },
     {
@@ -59,6 +50,15 @@
       "end": "2026-09-09T11:00:00+09:00",
       "all_day": false,
       "location": "",
+      "description": ""
+    },
+    {
+      "id": "5FD03BF7-AA6E-4F34-BDA3-ECC7709299D9",
+      "title": "AFOB 미팅",
+      "start": "2026-09-11T09:30:00+09:00",
+      "end": "2026-09-11T10:30:00+09:00",
+      "all_day": false,
+      "location": "센터 서울회의실",
       "description": ""
     }
   ],
