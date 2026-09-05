@@ -1,9 +1,9 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-05T21:35:58.298057+09:00",
+  "updated_at": "2026-09-06T00:56:45.022521+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-05T00:00:00+09:00",
-  "range_end": "2026-09-13T00:00:00+09:00",
+  "range_start": "2026-09-06T00:00:00+09:00",
+  "range_end": "2026-09-14T00:00:00+09:00",
   "today_count": 0,
   "week_count": 5,
   "events": [
