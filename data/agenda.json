@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-06T19:47:10.407513+09:00",
+  "updated_at": "2026-09-06T23:06:31.555748+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-06T00:00:00+09:00",
   "range_end": "2026-09-14T00:00:00+09:00",
   "today_count": 0,
   "week_count": 6,
   "events": [
-    {
-      "id": "26FEDC2C-AFE9-467E-9068-E64747DC2824",
-      "title": "전화영어 신청일",
-      "start": "2026-09-07T00:00:00+09:00",
-      "end": "2026-09-08T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "34E55A23-5E24-4FDA-B975-2E29BF6EAF30",
       "title": "순원 점심",
@@ -48,6 +39,15 @@
       "title": "작은형님 식사",
       "start": "2026-09-10T11:30:00+09:00",
       "end": "2026-09-10T12:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "29B0E63D-09A4-42C2-B699-FD8F4099F998",
+      "title": "바파사업단 미팅",
+      "start": "2026-09-10T14:00:00+09:00",
+      "end": "2026-09-10T15:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
