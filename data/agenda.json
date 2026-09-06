@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-07T06:12:59.799837+09:00",
+  "updated_at": "2026-09-07T08:44:53.775190+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-07T00:00:00+09:00",
   "range_end": "2026-09-15T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 6,
+  "week_count": 7,
   "events": [
     {
       "id": "34E55A23-5E24-4FDA-B975-2E29BF6EAF30",
@@ -31,6 +31,15 @@
       "start": "2026-09-09T10:00:00+09:00",
       "end": "2026-09-09T11:00:00+09:00",
       "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
+      "title": "유연근무신청",
+      "start": "2026-09-10T00:00:00+09:00",
+      "end": "2026-09-11T00:00:00+09:00",
+      "all_day": true,
       "location": "",
       "description": ""
     },
