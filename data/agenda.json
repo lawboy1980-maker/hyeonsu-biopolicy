@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-07T19:08:17.186644+09:00",
+  "updated_at": "2026-09-08T01:23:22.120713+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-07T00:00:00+09:00",
-  "range_end": "2026-09-15T00:00:00+09:00",
+  "range_start": "2026-09-08T00:00:00+09:00",
+  "range_end": "2026-09-16T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 7,
+  "week_count": 6,
   "events": [
-    {
-      "id": "34E55A23-5E24-4FDA-B975-2E29BF6EAF30",
-      "title": "순원 점심",
-      "start": "2026-09-07T12:00:00+09:00",
-      "end": "2026-09-07T13:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "53BA21A5-5DF4-4603-AE7B-00508157D34E",
       "title": "어머님 치과",
@@ -44,10 +35,10 @@
       "description": ""
     },
     {
-      "id": "5FD5C120-9EEE-4C09-8155-1DDDEA88ED5B",
-      "title": "작은형님 식사",
-      "start": "2026-09-10T11:30:00+09:00",
-      "end": "2026-09-10T12:30:00+09:00",
+      "id": "1BEDCB4B-DECF-43D5-AAB9-668D73BC62CF",
+      "title": "기본계획 부처보고",
+      "start": "2026-09-10T09:00:00+09:00",
+      "end": "2026-09-10T10:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
