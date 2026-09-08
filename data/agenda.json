@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-08T13:22:49.548504+09:00",
+  "updated_at": "2026-09-08T18:32:07.189162+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-08T00:00:00+09:00",
   "range_end": "2026-09-16T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 6,
+  "week_count": 7,
   "events": [
     {
       "id": "53BA21A5-5DF4-4603-AE7B-00508157D34E",
@@ -15,6 +15,15 @@
       "all_day": false,
       "location": "",
       "description": "어머님 치과치료"
+    },
+    {
+      "id": "F0D7258A-A1DA-4AB1-84E5-B9030DD01AA3",
+      "title": "발접협 미팅",
+      "start": "2026-09-09T08:30:00+09:00",
+      "end": "2026-09-09T09:30:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
     },
     {
       "id": "4E2A3AD8-35D0-4F07-996A-ACAF954EA3F8",
