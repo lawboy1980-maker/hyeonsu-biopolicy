@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-10T03:29:19.968984+09:00",
+  "updated_at": "2026-09-10T06:38:04.031017+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-10T00:00:00+09:00",
   "range_end": "2026-09-18T00:00:00+09:00",
-  "today_count": 3,
-  "week_count": 7,
+  "today_count": 2,
+  "week_count": 6,
   "events": [
     {
       "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
@@ -21,15 +21,6 @@
       "title": "기본계획 부처보고",
       "start": "2026-09-10T09:00:00+09:00",
       "end": "2026-09-10T10:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "29B0E63D-09A4-42C2-B699-FD8F4099F998",
-      "title": "바파사업단 미팅",
-      "start": "2026-09-10T14:00:00+09:00",
-      "end": "2026-09-10T15:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
