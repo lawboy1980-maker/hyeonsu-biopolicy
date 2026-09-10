@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-10T06:38:04.031017+09:00",
+  "updated_at": "2026-09-10T09:04:09.497504+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-10T00:00:00+09:00",
   "range_end": "2026-09-18T00:00:00+09:00",
   "today_count": 2,
-  "week_count": 6,
+  "week_count": 7,
   "events": [
     {
       "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
@@ -32,6 +32,15 @@
       "end": "2026-09-11T10:30:00+09:00",
       "all_day": false,
       "location": "센터 서울회의실",
+      "description": ""
+    },
+    {
+      "id": "17FE8B81-7DBA-4728-B2A2-98D6A287423A",
+      "title": "김은수선생님 식사",
+      "start": "2026-09-14T00:00:00+09:00",
+      "end": "2026-09-15T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
       "description": ""
     },
     {
