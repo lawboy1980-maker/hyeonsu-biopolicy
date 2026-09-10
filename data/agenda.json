@@ -1,30 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-10T23:16:46.802508+09:00",
+  "updated_at": "2026-09-11T03:18:28.084678+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-10T00:00:00+09:00",
-  "range_end": "2026-09-18T00:00:00+09:00",
-  "today_count": 2,
-  "week_count": 7,
+  "range_start": "2026-09-11T00:00:00+09:00",
+  "range_end": "2026-09-19T00:00:00+09:00",
+  "today_count": 1,
+  "week_count": 5,
   "events": [
-    {
-      "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
-      "title": "유연근무신청",
-      "start": "2026-09-10T00:00:00+09:00",
-      "end": "2026-09-11T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "1BEDCB4B-DECF-43D5-AAB9-668D73BC62CF",
-      "title": "기본계획 부처보고",
-      "start": "2026-09-10T09:00:00+09:00",
-      "end": "2026-09-10T10:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "5FD03BF7-AA6E-4F34-BDA3-ECC7709299D9",
       "title": "AFOB 미팅",
