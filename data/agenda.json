@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-11T18:32:15.783106+09:00",
+  "updated_at": "2026-09-11T23:17:07.746877+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-11T00:00:00+09:00",
   "range_end": "2026-09-19T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 7,
+  "week_count": 6,
   "events": [
     {
       "id": "5FD03BF7-AA6E-4F34-BDA3-ECC7709299D9",
@@ -22,15 +22,6 @@
       "start": "2026-09-14T00:00:00+09:00",
       "end": "2026-09-15T00:00:00+09:00",
       "all_day": true,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "4E2A3AD8-35D0-4F07-996A-ACAF954EA3F8",
-      "title": "사회적수용성 회의",
-      "start": "2026-09-16T10:00:00+09:00",
-      "end": "2026-09-16T11:00:00+09:00",
-      "all_day": false,
       "location": "",
       "description": ""
     },
