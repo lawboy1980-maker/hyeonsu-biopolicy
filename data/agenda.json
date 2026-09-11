@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-11T23:17:07.746877+09:00",
+  "updated_at": "2026-09-12T03:22:39.082461+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-11T00:00:00+09:00",
-  "range_end": "2026-09-19T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 6,
+  "range_start": "2026-09-12T00:00:00+09:00",
+  "range_end": "2026-09-20T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 5,
   "events": [
-    {
-      "id": "5FD03BF7-AA6E-4F34-BDA3-ECC7709299D9",
-      "title": "AFOB 미팅",
-      "start": "2026-09-11T09:30:00+09:00",
-      "end": "2026-09-11T10:30:00+09:00",
-      "all_day": false,
-      "location": "센터 서울회의실",
-      "description": ""
-    },
     {
       "id": "17FE8B81-7DBA-4728-B2A2-98D6A287423A",
       "title": "김은수선생님 식사",
