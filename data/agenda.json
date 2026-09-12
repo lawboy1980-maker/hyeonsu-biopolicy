@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-12T06:40:00.648652+09:00",
+  "updated_at": "2026-09-12T09:07:56.006097+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-12T00:00:00+09:00",
   "range_end": "2026-09-20T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 5,
+  "week_count": 3,
   "events": [
     {
       "id": "17FE8B81-7DBA-4728-B2A2-98D6A287423A",
@@ -22,24 +22,6 @@
       "start": "2026-09-17T00:00:00+09:00",
       "end": "2026-09-18T00:00:00+09:00",
       "all_day": true,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "41BC71B2-0A1A-4938-BB29-8376F6662337",
-      "title": "미래전략 포럼 ",
-      "start": "2026-09-17T07:30:00+09:00",
-      "end": "2026-09-17T08:30:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "49DFA295-4136-4137-A639-058EE5802BF4",
-      "title": "국바위 회의",
-      "start": "2026-09-17T10:00:00+09:00",
-      "end": "2026-09-17T11:00:00+09:00",
-      "all_day": false,
       "location": "",
       "description": ""
     },
