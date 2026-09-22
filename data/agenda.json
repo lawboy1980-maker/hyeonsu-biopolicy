@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-22T23:40:38.354061+09:00",
+  "updated_at": "2026-09-23T03:44:52.462030+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-22T00:00:00+09:00",
-  "range_end": "2026-09-30T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 2,
+  "range_start": "2026-09-23T00:00:00+09:00",
+  "range_end": "2026-10-01T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 1,
   "events": [
-    {
-      "id": "04DC96C6-A24F-411C-A1F8-0FC4C265B6C9",
-      "title": "배관표교수님 식사",
-      "start": "2026-09-22T12:00:00+09:00",
-      "end": "2026-09-22T13:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
       "title": "유연근무신청",
