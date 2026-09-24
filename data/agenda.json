@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-24T23:54:14.487678+09:00",
+  "updated_at": "2026-09-25T04:00:45.446667+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-24T00:00:00+09:00",
-  "range_end": "2026-10-02T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 3,
+  "range_start": "2026-09-25T00:00:00+09:00",
+  "range_end": "2026-10-03T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 2,
   "events": [
-    {
-      "id": "F706637F-3C8D-46A6-BC3F-64A93F298F82",
-      "title": "유연근무신청",
-      "start": "2026-09-24T00:00:00+09:00",
-      "end": "2026-09-25T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "82A902A2-5C3C-4E88-97AC-C35935E92630",
       "title": "합성전략팀 업무회의",
