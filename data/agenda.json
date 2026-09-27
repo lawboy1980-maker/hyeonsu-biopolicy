@@ -1,12 +1,21 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-27T16:59:59.674781+09:00",
+  "updated_at": "2026-09-27T22:50:06.714473+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-09-27T00:00:00+09:00",
   "range_end": "2026-10-05T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 2,
+  "week_count": 3,
   "events": [
+    {
+      "id": "FACA83C9-2190-4762-8A45-F50492030032",
+      "title": "정책연구팀 업무보고",
+      "start": "2026-09-28T09:00:00+09:00",
+      "end": "2026-09-28T10:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
     {
       "id": "82A902A2-5C3C-4E88-97AC-C35935E92630",
       "title": "합성전략팀 업무회의",
