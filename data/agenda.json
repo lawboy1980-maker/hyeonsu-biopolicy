@@ -1,17 +1,17 @@
 {
   "status": "ok",
-  "updated_at": "2026-09-28T15:39:19.206720+09:00",
+  "updated_at": "2026-09-29T00:17:17.227141+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-09-28T00:00:00+09:00",
-  "range_end": "2026-10-06T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 3,
+  "range_start": "2026-09-29T00:00:00+09:00",
+  "range_end": "2026-10-07T00:00:00+09:00",
+  "today_count": 3,
+  "week_count": 4,
   "events": [
     {
-      "id": "FFCED585-678A-4E5A-8325-B7302D21B009",
-      "title": "정책연구팀 업무보고",
-      "start": "2026-09-28T09:00:00+09:00",
-      "end": "2026-09-28T10:00:00+09:00",
+      "id": "181C6B47-DA48-4F12-9245-B875E3E4C888",
+      "title": "규제회의",
+      "start": "2026-09-29T08:20:00+09:00",
+      "end": "2026-09-29T09:20:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
@@ -32,6 +32,15 @@
       "end": "2026-09-29T15:30:00+09:00",
       "all_day": false,
       "location": "나눔관 대회의실",
+      "description": ""
+    },
+    {
+      "id": "BCD910B8-30AC-4969-BE25-DBF0875BB3A8",
+      "title": "질병청 유전자재조합지침",
+      "start": "2026-10-06T14:00:00+09:00",
+      "end": "2026-10-06T15:00:00+09:00",
+      "all_day": false,
+      "location": "",
       "description": ""
     }
   ],
