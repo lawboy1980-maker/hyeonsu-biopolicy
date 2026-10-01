@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-01T07:58:24.688395+09:00",
+  "updated_at": "2026-10-01T11:01:02.219475+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-10-01T00:00:00+09:00",
   "range_end": "2026-10-09T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 2,
+  "week_count": 1,
   "events": [
-    {
-      "id": "BCD910B8-30AC-4969-BE25-DBF0875BB3A8",
-      "title": "질병청 유전자재조합지침",
-      "start": "2026-10-06T14:00:00+09:00",
-      "end": "2026-10-06T15:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "FE0E2B0F-0DBA-4BF6-9BC0-D19C0E1B6C28",
       "title": "Kistep  회의",
