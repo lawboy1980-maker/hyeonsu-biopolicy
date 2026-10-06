@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-06T19:04:56.302709+09:00",
+  "updated_at": "2026-10-07T01:42:44.395869+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-10-06T00:00:00+09:00",
-  "range_end": "2026-10-14T00:00:00+09:00",
+  "range_start": "2026-10-07T00:00:00+09:00",
+  "range_end": "2026-10-15T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 5,
+  "week_count": 4,
   "events": [
-    {
-      "id": "931CB34B-E352-4CAA-A72B-017334AA2984",
-      "title": "이마트 상품권",
-      "start": "2026-10-06T11:00:00+09:00",
-      "end": "2026-10-06T12:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "FE0E2B0F-0DBA-4BF6-9BC0-D19C0E1B6C28",
       "title": "Kistep  회의",
