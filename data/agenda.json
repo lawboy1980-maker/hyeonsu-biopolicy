@@ -1,17 +1,26 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-13T09:31:52.956133+09:00",
+  "updated_at": "2026-10-13T16:37:02.723647+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-10-13T00:00:00+09:00",
   "range_end": "2026-10-21T00:00:00+09:00",
   "today_count": 0,
-  "week_count": 1,
+  "week_count": 2,
   "events": [
     {
       "id": "E097AAB6-3E90-45E6-977D-20C8EBB78733",
       "title": "이승훈 미팅",
       "start": "2026-10-14T10:00:00+09:00",
       "end": "2026-10-14T11:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "F7A91470-5BA8-4AB1-93B4-50AD49BD717C",
+      "title": "발전협 식사",
+      "start": "2026-10-14T12:00:00+09:00",
+      "end": "2026-10-14T13:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
