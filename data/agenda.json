@@ -1,17 +1,17 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-22T07:14:56.732263+09:00",
+  "updated_at": "2026-10-22T10:25:40.809846+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-10-22T00:00:00+09:00",
   "range_end": "2026-10-30T00:00:00+09:00",
   "today_count": 2,
-  "week_count": 5,
+  "week_count": 6,
   "events": [
     {
       "id": "eb4bdb28013a4dc3a3521472d5771989@google.com",
       "title": "사업단 차년도 연구계획 브레인스토밍회의",
-      "start": "2026-10-22T08:30:00+09:00",
-      "end": "2026-10-22T09:30:00+09:00",
+      "start": "2026-10-22T08:00:00+09:00",
+      "end": "2026-10-22T09:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
@@ -21,6 +21,15 @@
       "title": "합성 기본계획 보고",
       "start": "2026-10-22T14:00:00+09:00",
       "end": "2026-10-22T15:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "7CBD276D-B0CE-4244-8DA3-87C06605ED97",
+      "title": "5차 기본계획 회의",
+      "start": "2026-10-26T09:00:00+09:00",
+      "end": "2026-10-26T10:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
