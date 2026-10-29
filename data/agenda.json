@@ -1,39 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-29T18:47:01.976153+09:00",
+  "updated_at": "2026-10-30T01:51:29.172106+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-10-29T00:00:00+09:00",
-  "range_end": "2026-11-06T00:00:00+09:00",
-  "today_count": 3,
-  "week_count": 8,
+  "range_start": "2026-10-30T00:00:00+09:00",
+  "range_end": "2026-11-07T00:00:00+09:00",
+  "today_count": 1,
+  "week_count": 4,
   "events": [
-    {
-      "id": "D1CBF332-09E9-459E-8F87-5AD7E35BF28B",
-      "title": "돌봄시작날 오전 10시",
-      "start": "2026-10-29T10:00:00+09:00",
-      "end": "2026-10-29T15:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "9982E6C8-D225-4660-A820-CEAAAB8F7512",
-      "title": "합성 기본계획 회의",
-      "start": "2026-10-29T14:00:00+09:00",
-      "end": "2026-10-29T15:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "E83570A1-634D-4090-BCF2-F9DCC6DA9077",
-      "title": "규제정책플랫폼",
-      "start": "2026-10-29T15:00:00+09:00",
-      "end": "2026-10-29T16:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "3D70FF45-921F-482A-887F-A074A980E7C4",
       "title": "연선 건강검진",
@@ -49,15 +22,6 @@
       "start": "2026-11-01T00:00:00+09:00",
       "end": "2026-11-02T00:00:00+09:00",
       "all_day": true,
-      "location": "",
-      "description": ""
-    },
-    {
-      "id": "02009EE4-C121-4D79-92B8-6C5F8C1BF633",
-      "title": "신약단장님 점심",
-      "start": "2026-11-03T12:00:00+09:00",
-      "end": "2026-11-03T13:00:00+09:00",
-      "all_day": false,
       "location": "",
       "description": ""
     },
