@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-10-30T17:29:35.380235+09:00",
+  "updated_at": "2026-10-31T00:49:00.327723+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-10-30T00:00:00+09:00",
-  "range_end": "2026-11-07T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 4,
+  "range_start": "2026-10-31T00:00:00+09:00",
+  "range_end": "2026-11-08T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 3,
   "events": [
-    {
-      "id": "3D70FF45-921F-482A-887F-A074A980E7C4",
-      "title": "연선 건강검진",
-      "start": "2026-10-30T00:00:00+09:00",
-      "end": "2026-10-31T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "647A9382-8570-428A-A896-613D3D79CFD3",
       "title": "돌잔치. 따봉즈",
