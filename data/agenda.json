@@ -1,18 +1,18 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-01T18:07:00.799706+09:00",
+  "updated_at": "2026-11-02T00:57:43.309409+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-01T00:00:00+09:00",
-  "range_end": "2026-11-09T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 3,
+  "range_start": "2026-11-02T00:00:00+09:00",
+  "range_end": "2026-11-10T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 5,
   "events": [
     {
-      "id": "647A9382-8570-428A-A896-613D3D79CFD3",
-      "title": "돌잔치. 따봉즈",
-      "start": "2026-11-01T00:00:00+09:00",
-      "end": "2026-11-02T00:00:00+09:00",
-      "all_day": true,
+      "id": "0C4685A2-1632-4D0D-A202-BFCD6BFB4414",
+      "title": "롯데시티호텔 취소",
+      "start": "2026-11-03T11:00:00+09:00",
+      "end": "2026-11-03T12:00:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     },
@@ -31,6 +31,24 @@
       "start": "2026-11-05T00:00:00+09:00",
       "end": "2026-11-06T00:00:00+09:00",
       "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "F047961F-69C2-4CE1-8F19-8482544F4ABB",
+      "title": "따봉즈 병원 영유아 검진, 예방접중",
+      "start": "2026-11-09T00:00:00+09:00",
+      "end": "2026-11-10T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "2983FE77-024C-4B88-AE5E-5C5B1476AEF5",
+      "title": "서류발표",
+      "start": "2026-11-09T10:00:00+09:00",
+      "end": "2026-11-09T11:00:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     }
