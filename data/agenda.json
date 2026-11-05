@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-05T19:42:18.787597+09:00",
+  "updated_at": "2026-11-06T03:39:33.461468+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-05T00:00:00+09:00",
-  "range_end": "2026-11-13T00:00:00+09:00",
+  "range_start": "2026-11-06T00:00:00+09:00",
+  "range_end": "2026-11-14T00:00:00+09:00",
   "today_count": 1,
   "week_count": 6,
   "events": [
-    {
-      "id": "7E87BBAA-EA0C-49D9-8B18-0813B92EC0DD",
-      "title": "돌사진 12시",
-      "start": "2026-11-05T00:00:00+09:00",
-      "end": "2026-11-06T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "44F85C90-824A-44E4-9A0C-12374D86E633",
       "title": "유전자재조합실험지침",
@@ -58,6 +49,15 @@
       "start": "2026-11-11T00:00:00+09:00",
       "end": "2026-11-12T00:00:00+09:00",
       "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "7B5FD774-B72C-4E5C-A5E0-BC1DDBD1C806",
+      "title": "기본계획 미팅",
+      "start": "2026-11-13T15:00:00+09:00",
+      "end": "2026-11-13T16:00:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     }
