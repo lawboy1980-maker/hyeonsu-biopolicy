@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-05T11:14:25.964408+09:00",
+  "updated_at": "2026-11-05T19:42:18.787597+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-11-05T00:00:00+09:00",
   "range_end": "2026-11-13T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 5,
+  "week_count": 6,
   "events": [
     {
       "id": "7E87BBAA-EA0C-49D9-8B18-0813B92EC0DD",
@@ -40,6 +40,15 @@
       "start": "2026-11-09T10:00:00+09:00",
       "end": "2026-11-09T11:00:00+09:00",
       "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "7C4E9AD9-01FF-4023-A2E9-177F371C6B74",
+      "title": "안과 진료",
+      "start": "2026-11-10T00:00:00+09:00",
+      "end": "2026-11-11T00:00:00+09:00",
+      "all_day": true,
       "location": "",
       "description": ""
     },
