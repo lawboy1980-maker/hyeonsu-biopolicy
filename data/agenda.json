@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-06T23:56:08.866306+09:00",
+  "updated_at": "2026-11-07T05:48:29.584971+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-06T00:00:00+09:00",
-  "range_end": "2026-11-14T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 7,
+  "range_start": "2026-11-07T00:00:00+09:00",
+  "range_end": "2026-11-15T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 6,
   "events": [
-    {
-      "id": "44F85C90-824A-44E4-9A0C-12374D86E633",
-      "title": "유전자재조합실험지침",
-      "start": "2026-11-06T10:00:00+09:00",
-      "end": "2026-11-06T11:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "F047961F-69C2-4CE1-8F19-8482544F4ABB",
       "title": "따봉즈 병원 영유아 검진, 예방접중",
