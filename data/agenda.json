@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-06T09:03:57.251519+09:00",
+  "updated_at": "2026-11-06T15:25:56.419626+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-11-06T00:00:00+09:00",
   "range_end": "2026-11-14T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 6,
+  "week_count": 7,
   "events": [
     {
       "id": "44F85C90-824A-44E4-9A0C-12374D86E633",
@@ -48,6 +48,15 @@
       "title": "미래포럼",
       "start": "2026-11-11T00:00:00+09:00",
       "end": "2026-11-12T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "410B4B45-DEE4-4036-8A82-89D9E08D7552",
+      "title": "법학 식사",
+      "start": "2026-11-12T00:00:00+09:00",
+      "end": "2026-11-13T00:00:00+09:00",
       "all_day": true,
       "location": "",
       "description": ""
