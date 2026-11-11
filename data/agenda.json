@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-11T23:01:16.658597+09:00",
+  "updated_at": "2026-11-12T06:15:22.205320+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-11T00:00:00+09:00",
-  "range_end": "2026-11-19T00:00:00+09:00",
+  "range_start": "2026-11-12T00:00:00+09:00",
+  "range_end": "2026-11-20T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 4,
+  "week_count": 3,
   "events": [
-    {
-      "id": "8540F2A9-A756-4B64-96E9-B339583ACB8A",
-      "title": "미래포럼",
-      "start": "2026-11-11T00:00:00+09:00",
-      "end": "2026-11-12T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "410B4B45-DEE4-4036-8A82-89D9E08D7552",
       "title": "안과진료 ",
