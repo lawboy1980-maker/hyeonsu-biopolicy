@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-12T19:53:11.283780+09:00",
+  "updated_at": "2026-11-13T03:47:48.601854+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-12T00:00:00+09:00",
-  "range_end": "2026-11-20T00:00:00+09:00",
+  "range_start": "2026-11-13T00:00:00+09:00",
+  "range_end": "2026-11-21T00:00:00+09:00",
   "today_count": 1,
   "week_count": 4,
   "events": [
-    {
-      "id": "410B4B45-DEE4-4036-8A82-89D9E08D7552",
-      "title": "안과진료 ",
-      "start": "2026-11-12T00:00:00+09:00",
-      "end": "2026-11-13T00:00:00+09:00",
-      "all_day": true,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "7B5FD774-B72C-4E5C-A5E0-BC1DDBD1C806",
       "title": "기본계획 미팅",
@@ -41,6 +32,15 @@
       "end": "2026-11-18T16:30:00+09:00",
       "all_day": false,
       "location": "센터장님 플랫폼 소개",
+      "description": ""
+    },
+    {
+      "id": "1F215879-16DC-4A86-A618-C13D5C80EE09",
+      "title": "심장초음파 채원 정원 ",
+      "start": "2026-11-20T00:00:00+09:00",
+      "end": "2026-11-21T00:00:00+09:00",
+      "all_day": true,
+      "location": "",
       "description": ""
     }
   ],
