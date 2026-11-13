@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-13T15:30:11.094132+09:00",
+  "updated_at": "2026-11-14T00:16:52.263227+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-13T00:00:00+09:00",
-  "range_end": "2026-11-21T00:00:00+09:00",
-  "today_count": 1,
-  "week_count": 4,
+  "range_start": "2026-11-14T00:00:00+09:00",
+  "range_end": "2026-11-22T00:00:00+09:00",
+  "today_count": 0,
+  "week_count": 3,
   "events": [
-    {
-      "id": "7B5FD774-B72C-4E5C-A5E0-BC1DDBD1C806",
-      "title": "기본계획 미팅",
-      "start": "2026-11-13T15:00:00+09:00",
-      "end": "2026-11-13T16:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "C64BFB19-9E66-4A40-8F34-9CEB72DB7029",
       "title": "센터 면접",
