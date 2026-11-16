@@ -1,21 +1,12 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-16T18:26:09.337906+09:00",
+  "updated_at": "2026-11-17T05:17:28.502359+09:00",
   "timezone": "Asia/Seoul",
-  "range_start": "2026-11-16T00:00:00+09:00",
-  "range_end": "2026-11-24T00:00:00+09:00",
-  "today_count": 1,
+  "range_start": "2026-11-17T00:00:00+09:00",
+  "range_end": "2026-11-25T00:00:00+09:00",
+  "today_count": 0,
   "week_count": 3,
   "events": [
-    {
-      "id": "C64BFB19-9E66-4A40-8F34-9CEB72DB7029",
-      "title": "센터 면접",
-      "start": "2026-11-16T09:00:00+09:00",
-      "end": "2026-11-16T10:00:00+09:00",
-      "all_day": false,
-      "location": "",
-      "description": ""
-    },
     {
       "id": "6E60FBDB-4110-4C9E-A516-90E29D4ED83E",
       "title": "센터 회의",
@@ -31,6 +22,15 @@
       "start": "2026-11-20T00:00:00+09:00",
       "end": "2026-11-21T00:00:00+09:00",
       "all_day": true,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "74C0B702-42C7-4142-974F-5E46E11875EB",
+      "title": "규제과학 회의",
+      "start": "2026-11-24T10:00:00+09:00",
+      "end": "2026-11-24T11:00:00+09:00",
+      "all_day": false,
       "location": "",
       "description": ""
     }
