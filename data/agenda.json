@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-24T06:11:23.172417+09:00",
+  "updated_at": "2026-11-24T14:53:15.081090+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-11-24T00:00:00+09:00",
   "range_end": "2026-12-02T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 2,
+  "week_count": 3,
   "events": [
     {
       "id": "74C0B702-42C7-4142-974F-5E46E11875EB",
@@ -21,6 +21,15 @@
       "title": "기본계획 회의",
       "start": "2026-11-26T16:00:00+09:00",
       "end": "2026-11-26T17:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "31B25336-ACDA-458E-97FF-7D81E86E32C9",
+      "title": "Cgt 규제",
+      "start": "2026-11-30T13:00:00+09:00",
+      "end": "2026-11-30T14:00:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
