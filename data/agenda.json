@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "updated_at": "2026-11-26T13:54:16.883229+09:00",
+  "updated_at": "2026-11-26T23:57:48.049852+09:00",
   "timezone": "Asia/Seoul",
   "range_start": "2026-11-26T00:00:00+09:00",
   "range_end": "2026-12-04T00:00:00+09:00",
   "today_count": 1,
-  "week_count": 4,
+  "week_count": 6,
   "events": [
     {
       "id": "B0F72569-D7F6-4B65-A628-40C3D99A6843",
@@ -30,6 +30,24 @@
       "title": "Cgt 규제",
       "start": "2026-11-30T13:00:00+09:00",
       "end": "2026-11-30T14:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "AB04EBA8-4E9C-4498-BB13-A01EC18721F8",
+      "title": "기본계획 회의",
+      "start": "2026-12-02T09:00:00+09:00",
+      "end": "2026-12-02T10:00:00+09:00",
+      "all_day": false,
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "72D16F32-F08D-4E54-802C-6C28515A34CC",
+      "title": "대전시 ai바이오 회의",
+      "start": "2026-12-02T14:30:00+09:00",
+      "end": "2026-12-02T15:30:00+09:00",
       "all_day": false,
       "location": "",
       "description": ""
